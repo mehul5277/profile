@@ -24,3 +24,10 @@
     @include remove-img-thumbnail-style;
     width: 144px;
 }
+
+.img-thumbnail:hover,
+.img-thumbnail:focus,
+.img-thumbnail:active {
+    transform: scale(1.2);
+    transition: transform 0.4s ease-in-out;
+}
