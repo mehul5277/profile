@@ -1,0 +1,33 @@
+@mixin text-gradient ($color1: #88EB4B, $color2: #005035) {
+    background: linear-gradient(266deg, $color1 42.82%, $color2 95.23%);
+    background-clip: border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin text-trigradient ($color1: #fe765a, $color2: #8e75d2, $color3: #2b98f9) {
+    background-image: linear-gradient(90deg, $color1, $color2, $color3);
+    background-clip: border-box;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-gradient {
+    @include text-trigradient;
+}
+
+.btn-gradient {
+     @include text-trigradient;
+}
+
+slideBtm animation {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.main-banner-text {
+    animation: 1.5s ease-out forwards slideBtm;
+}
+

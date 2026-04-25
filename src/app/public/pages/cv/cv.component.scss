@@ -1,0 +1,96 @@
+.nav-tabs-scrollable {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling for mobile */
+    /* Fades the left and right 40px of the tab bar */
+    //mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+    // -webkit-mask-image: linear-gradient(to right, transparent, black 40px, black calc(100% - 40px), transparent);
+    /* Applies a fade-out only at the end (right side) */
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 50px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 50px), transparent 100%);
+
+}
+
+@media (min-width: 770px) {
+    .nav-tabs-scrollable {
+        mask-image: none;
+        /* Remove the fade on larger screens */
+    }
+}
+
+/* Prevent text from wrapping to a second line */
+.nav-tabs-scrollable .nav-item {
+    white-space: nowrap;
+}
+
+/* Optional: Hide scrollbar for a cleaner look while keeping functionality */
+.nav-tabs-scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-tabs-scrollable {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+.glow-button {
+    background-color: #222;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #00d2ff;
+    border-radius: 5px;
+    /* x-offset y-offset blur-radius spread-radius color */
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow-button:hover {
+    box-shadow: 0 0 20px #00d2ff, 0 0 40px #00d2ff;
+}
+
+.box {
+    margin: 0 auto;
+    padding: 2em;
+    width: 200px;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #1c1f2b;
+    color: #fff;
+    position: relative;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-image: conic-gradient(red, orange, yellow, green, cyan, blue, magenta, red);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+.bi {
+    fill: #0a66c2;
+}

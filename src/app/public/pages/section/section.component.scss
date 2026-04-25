@@ -1,0 +1,26 @@
+// @import "bootstrap/scss/functions";
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/variables-dark";
+// @import "bootstrap/scss/maps";
+// @import "bootstrap/scss/mixins";
+// @import "bootstrap/scss/utilities";
+
+// $utilities: map-merge($utilities,
+//         ("width": map-merge(map-get($utilities, "width"),
+//                 (responsive: true))));
+
+// @import "bootstrap/scss/utilities/api";
+
+@mixin remove-img-thumbnail-style {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    /* Optional: removes background padding */
+    padding: 0 !important;
+    /* Optional: removes padding */
+}
+
+.img-thumbnail {
+    @include remove-img-thumbnail-style;
+    width: 144px;
+}

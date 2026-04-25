@@ -1,0 +1,22 @@
+<div class="p-4 p-md-5 mb-4 text-body-emphasis bg-body-secondary">
+    <div class="col-lg-10 px-0">
+        <h1 class="display-4 fst-italic fw-bold text-muted">Full Stack Development Services Covers</h1>
+        <p class="lead my-3">Our Full Stack Development Services cover every aspect of web development, ensuring your solution is built with precision and efficiency.</p>
+    </div>
+</div>
+<div class="container-fluid p-3">
+    <div class="row gx-4">
+        @for (service of services; track service.name) {
+        <div class="col-md-6 col-lg-3 mb-3">
+            <a class="btn btn-outline-secondary btn-lg w-100 text-start" routerLink="service.link">
+                <span class="vstack fw-400">
+                    <span>{{service.service}}</span>
+                    <span>{{service.type}}</span>
+                </span>
+            </a>
+        </div>
+        } @empty {
+        <li>There are no items.</li>
+        }
+    </div>
+</div>

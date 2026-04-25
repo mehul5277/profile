@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-12 p-0">
+        <div class="bg-dark text-light text-center py-5">
+            <h1 class="display-4 fw-bold">Industries We Serve</h1>
+            <p class="lead mb-4">Discover the industries we serve with our custom software development services.</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid p-4">
+    <div class="row py-3">
+        @for (industry of industries; track industry.name) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+            <a class="btn btn-outline-secondary btn-lg w-100 text-center wow fadeInUp" routerLink="industry.link">
+                <!-- <img src="{{industry.logo}}" alt="{{industry.industry}} logo" class="mb-2" style="max-width: 50px; max-height: 50px;"> -->
+                <svg class="bi ms-2" width="50" height="50" aria-hidden="true">
+                    <use [attr.xlink:href]="industry.icon"></use>
+                </svg>
+                <span class="vstack fw-400">
+                    <span>{{industry.industry}}</span>
+                </span>
+            </a>
+        </div> } @empty {
+        <li>There are no items.</li>}
+    </div>
+</div>

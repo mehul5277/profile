@@ -1,0 +1,34 @@
+[
+    {
+        "stack": "UI/UX",
+        "urls": [
+            "https://gocxm.com",
+            "https://www.zignuts.com",
+            "https://www.compugen.com",
+            "https://www.salesforce.com/industries",
+            "https://servicepath.co",
+            "https://uiverse.io/forms",
+            "https://traits.com",
+            "https://resume.io/resume-templates",
+            "https://hofmannsven.com",
+            "https://www.milanjovanovic.tech",
+            "https://www.resonaite.ai",
+            "https://www.avanciers.com",
+            "https://github.com/darkroomengineering/lenis/tree/main/examples/scrollbar",
+            "https://startscalr.com",
+            "https://wowjs.uk/docs.html",
+            "https://lottiefiles.com/popular-free-animations",
+            "https://www.edoardolunardi.dev/blog/building-smooth-scroll-in-2025-with-lenis",
+            "https://gsap.com/showcase/?tags=Scroll+Animation",
+            "https://codepen.io/ClementRoche/pen/OJqBLod"
+        ]
+    },
+    {
+        "stack": "Learning",
+        "urls": [
+            "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
+            "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
+            "https://netbasal.medium.com/"
+        ]
+    }
+]

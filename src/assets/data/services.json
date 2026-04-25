@@ -1,0 +1,1616 @@
+{
+    "website": "/",
+    "name": "",
+    "logo": "",
+    "description": "Jiexo Technolab is a leading software development company that offers a wide range of IT services and solutions to businesses worldwide. With a team of highly skilled professionals, we specialize in custom software development, mobile app development, web development, cloud solutions, and digital marketing services. Our mission is to help businesses leverage technology to drive growth and achieve their goals. We are committed to delivering high-quality, innovative, and cost-effective solutions that meet the unique needs of our clients.",
+    "services": [
+        {
+            "type": "Service",
+            "service": "Custom Software Development",
+            "img": "assets/images/services/custom-software-development.svg",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development",
+            "subServices": [
+                {
+                    "service": "Tailored Functionality",
+                    "description": "Solutions built to meet specific business objectives. We analyze your requirements and design software that aligns perfectly with your goals, ensuring maximum efficiency and effectiveness."
+                },
+                {
+                    "service": "Scalability and Performance",
+                    "description": "Flexible software to grow with your business. Our custom solutions are designed to scale seamlessly, ensuring optimal performance even as your user base and data volume increase."
+                },
+                {
+                    "service": "Seamless Integration",
+                    "description": "Compatible with your existing systems. We ensure that our custom software integrates smoothly with your current infrastructure, allowing for efficient data flow and enhanced functionality across your technology stack."
+                },
+                {
+                    "service": "Enhanced Security",
+                    "description": "Robust security measures to protect your data. We implement industry best practices and advanced security protocols to safeguard your software and sensitive information from potential threats."
+                },
+                {
+                    "service": "User-Centric Design",
+                    "description": "Applications designed with the end-user in mind. We focus on creating intuitive and engaging user experiences that drive adoption and satisfaction."
+                }
+            ]
+        },
+        {
+            "type": "Service",
+            "service": "Full Stack Development",
+            "img": "assets/images/services/full-stack-development.svg",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "full-stack-development-services"
+        },
+        {
+            "type": "Engineering",
+            "service": "Digital Product",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development"
+        },
+        {
+            "type": "Service",
+            "service": "Digital Transformation",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development"
+        },
+        {
+            "type": "Service",
+            "service": "MVP Development",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development"
+        },
+        {
+            "type": "Service",
+            "service": "SaaS Development",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development"
+        },
+        {
+            "type": "Service",
+            "service": "UI/UX Design",
+            "description": "Our UI/UX design services focus on creating intuitive and visually appealing interfaces. We design user-centric experiences that enhance usability and drive user engagement.",
+            "icon": "brush",
+            "link": "/services/ui-ux-design"
+        },
+        {
+            "type": "Service",
+            "service": "AI Agent Development",
+            "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
+            "icon": "code",
+            "link": "/services/custom-software-development"
+        },
+        {
+            "type": "Service",
+            "service": "Mobile App Development",
+            "description": "We offer mobile app development services for iOS and Android platforms. Our team builds high-performance, feature-rich mobile applications that engage users and enhance your brand presence.",
+            "icon": "phone_iphone",
+            "link": "/services/mobile-app-development"
+        },
+        {
+            "type": "Service",
+            "service": "Web Development",
+            "description": "Our web development services include building responsive, SEO-friendly websites and web applications. We use the latest technologies to create engaging online experiences that drive traffic and conversions.",
+            "icon": "language",
+            "link": "/services/web-development"
+        },
+        {
+            "type": "Service",
+            "service": "Cloud Solutions",
+            "description": "We provide cloud solutions that help businesses leverage the power of cloud computing. Our services include cloud migration, infrastructure management, and cloud-based application development.",
+            "icon": "cloud",
+            "link": "/services/cloud-solutions"
+        },
+        {
+            "type": "Service",
+            "service": "E-commerce Development",
+            "description": "We offer e-commerce development services to help businesses establish a strong online presence. Our solutions include custom e-commerce platforms, shopping cart integration, and payment gateway setup.",
+            "icon": "shopping_cart",
+            "link": "/services/e-commerce-development"
+        },
+        {
+            "type": "Service",
+            "service": "Digital Marketing",
+            "description": "Our digital marketing services help businesses reach their target audience and grow their online presence. We offer SEO, social media marketing, content marketing, and pay-per-click advertising.",
+            "icon": "trending_up",
+            "link": "/services/digital-marketing"
+        },
+        {
+            "type": "Service",
+            "service": "IT Consulting",
+            "description": "Our IT consulting services provide expert guidance to help businesses optimize their technology strategies. We offer IT strategy development, technology assessment, and digital transformation consulting.",
+            "icon": "support_agent",
+            "link": "/services/it-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Cybersecurity",
+            "description": "We offer cybersecurity services to protect your business from cyber threats. Our services include vulnerability assessments, penetration testing, and security monitoring.",
+            "icon": "security",
+            "link": "/services/cybersecurity"
+        },
+        {
+            "type": "Service",
+            "service": "Data Analytics",
+            "description": "Our data analytics services help businesses make informed decisions by analyzing and interpreting complex data. We offer data visualization, predictive analytics, and business intelligence solutions.",
+            "icon": "analytics",
+            "link": "/services/data-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "AI and Machine Learning",
+            "description": "We provide AI and machine learning services to help businesses leverage the power of artificial intelligence. Our solutions include natural language processing, computer vision, and predictive modeling.",
+            "icon": "memory",
+            "link": "/services/ai-machine-learning"
+        },
+        {
+            "type": "Service",
+            "service": "DevOps",
+            "description": "Our DevOps services help businesses streamline their software development and deployment processes. We offer continuous integration, continuous delivery, and infrastructure automation solutions.",
+            "icon": "build",
+            "link": "/services/devops"
+        },
+        {
+            "type": "Service",
+            "service": "Blockchain Development",
+            "description": "We offer blockchain development services to help businesses leverage the benefits of blockchain technology. Our solutions include smart contract development, decentralized application (DApp) development, and blockchain consulting.",
+            "icon": "account_balance_wallet",
+            "link": "/services/blockchain-development"
+        },
+        {
+            "type": "Service",
+            "service": "Software Maintenance and Support",
+            "description": "Our software maintenance and support services ensure that your applications remain up-to-date, secure, and efficient. We offer bug fixing, performance optimization, and feature enhancements.",
+            "icon": "build_circle",
+            "link": "/services/software-maintenance-support"
+        },
+        {
+            "type": "Service",
+            "service": "Quality Assurance and Testing",
+            "description": "We provide quality assurance and testing services to ensure that your software meets the highest standards of quality. Our services include manual testing, automated testing, and performance testing.",
+            "icon": "check_circle",
+            "link": "/services/quality-assurance-testing"
+        },
+        {
+            "type": "Service",
+            "service": "IT Staffing",
+            "description": "Our IT staffing services help businesses find and hire top talent for their technology needs. We offer contract staffing, permanent placement, and project-based staffing solutions.",
+            "icon": "people",
+            "link": "/services/it-staffing"
+        },
+        {
+            "type": "Service",
+            "service": "Business Intelligence",
+            "description": "Our business intelligence services help businesses gain insights from their data to make informed decisions. We offer data warehousing, reporting, and dashboard development solutions.",
+            "icon": "insights",
+            "link": "/services/business-intelligence"
+        },
+        {
+            "type": "Service",
+            "service": "Cloud Migration",
+            "description": "We provide cloud migration services to help businesses transition their applications and infrastructure to the cloud. Our services include cloud strategy development, migration planning, and execution.",
+            "icon": "cloud_upload",
+            "link": "/services/cloud-migration"
+        },
+        {
+            "type": "Service",
+            "service": "Software Integration",
+            "description": "Our software integration services help businesses connect their applications and systems for seamless data flow and improved efficiency. We offer API development, middleware solutions, and system integration services.",
+            "icon": "integration_instructions",
+            "link": "/services/software-integration"
+        },
+        {
+            "type": "Service",
+            "service": "IT Project Management",
+            "description": "Our IT project management services help businesses successfully plan, execute, and deliver technology projects. We offer project planning, resource management, and risk management solutions.",
+            "icon": "assignment",
+            "link": "/services/it-project-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Architecture",
+            "description": "We provide software architecture services to help businesses design scalable and maintainable software systems. Our services include architecture assessment, design, and documentation.",
+            "icon": "architecture",
+            "link": "/services/software-architecture"
+        },
+        {
+            "type": "Service",
+            "service": "IT Training and Education",
+            "description": "Our IT training and education services help businesses upskill their workforce in the latest technologies and best practices. We offer customized training programs, workshops, and online courses.",
+            "icon": "school",
+            "link": "/services/it-training-education"
+        },
+        {
+            "type": "Service",
+            "service": "Software Prototyping",
+            "description": "Our software prototyping services help businesses quickly validate their ideas and concepts. We create interactive prototypes that allow you to test and refine your software before development.",
+            "icon": "construction",
+            "link": "/services/software-prototyping"
+        },
+        {
+            "type": "Service",
+            "service": "Legacy System Modernization",
+            "description": "We offer legacy system modernization services to help businesses update and enhance their existing software systems. Our solutions include code refactoring, technology migration, and performance optimization.",
+            "icon": "update",
+            "link": "/services/legacy-system-modernization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Localization",
+            "description": "Our software localization services help businesses adapt their applications for global markets. We provide translation, cultural adaptation, and internationalization solutions to ensure your software resonates with users worldwide.",
+            "icon": "translate",
+            "link": "/services/software-localization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Performance Optimization",
+            "description": "We offer software performance optimization services to help businesses improve the speed and efficiency of their applications. Our solutions include code optimization, database tuning, and performance monitoring.",
+            "icon": "speed",
+            "link": "/services/software-performance-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Documentation",
+            "description": "Our software documentation services help businesses create clear and comprehensive documentation for their applications. We provide user manuals, API documentation, and technical guides to ensure your software is well-documented.",
+            "icon": "description",
+            "link": "/services/software-documentation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Deployment",
+            "description": "We offer software deployment services to help businesses efficiently deploy their applications to production environments. Our solutions include deployment automation, release management, and post-deployment support.",
+            "icon": "cloud_done",
+            "link": "/services/software-deployment"
+        },
+        {
+            "type": "Service",
+            "service": "Software Scalability",
+            "description": "Our software scalability services help businesses design and implement scalable software systems that can handle increased load and growth. We provide scalability assessment, design, and implementation solutions.",
+            "icon": "trending_up",
+            "link": "/services/software-scalability"
+        },
+        {
+            "type": "Service",
+            "service": "Software Security",
+            "description": "We offer software security services to help businesses protect their applications from security threats. Our solutions include security assessments, vulnerability management, and secure coding practices.",
+            "icon": "security",
+            "link": "/services/software-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Refactoring",
+            "description": "Our software refactoring services help businesses improve the structure and maintainability of their codebase. We provide code analysis, refactoring recommendations, and implementation services to enhance your software's quality.",
+            "icon": "code",
+            "link": "/services/software-refactoring"
+        },
+        {
+            "type": "Service",
+            "service": "Software Testing Automation",
+            "description": "We offer software testing automation services to help businesses improve the efficiency and effectiveness of their testing processes. Our solutions include test automation strategy, framework development, and test execution.",
+            "icon": "automation",
+            "link": "/services/software-testing-automation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Code Review",
+            "description": "Our software code review services help businesses ensure the quality and maintainability of their codebase. We provide code review guidelines, best practices, and implementation services to enhance your software's quality.",
+            "icon": "rate_review",
+            "link": "/services/software-code-review"
+        },
+        {
+            "type": "Service",
+            "service": "Software Version Control",
+            "description": "We offer software version control services to help businesses manage their codebase effectively. Our solutions include version control strategy, repository setup, and training on version control best practices.",
+            "icon": "version",
+            "link": "/services/software-version-control"
+        },
+        {
+            "type": "Service",
+            "service": "Software Release Management",
+            "description": "Our software release management services help businesses plan, schedule, and control the software release process. We provide release management strategy, process implementation, and post-release support services.",
+            "icon": "release",
+            "link": "/services/software-release-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Configuration Management",
+            "description": "We offer software configuration management services to help businesses manage and control their software configurations effectively. Our solutions include configuration management strategy, process implementation, and tool setup.",
+            "icon": "settings",
+            "link": "/services/software-configuration-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Incident Management",
+            "description": "Our software incident management services help businesses respond to and resolve software incidents efficiently. We provide incident management strategy, process implementation, and post-incident analysis services.",
+            "icon": "report_problem",
+            "link": "/services/software-incident-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Change Management",
+            "description": "We offer software change management services to help businesses manage changes to their software systems effectively. Our solutions include change management strategy, process implementation, and change impact analysis services.",
+            "icon": "change_history",
+            "link": "/services/software-change-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Asset Management",
+            "description": "Our software asset management services help businesses track and manage their software assets effectively. We provide asset inventory management, license compliance, and cost optimization services.",
+            "icon": "inventory",
+            "link": "/services/software-asset-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software End-of-Life Management",
+            "description": "We offer software end-of-life management services to help businesses plan and manage the end-of-life process for their software products. Our solutions include end-of-life strategy, communication planning, and support transition services.",
+            "icon": "end_of_life",
+            "link": "/services/software-end-of-life-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Retirement",
+            "description": "Our software retirement services help businesses plan and execute the retirement of their software applications. We provide retirement strategy, data migration, and post-retirement support services.",
+            "icon": "retirement",
+            "link": "/services/software-retirement"
+        },
+        {
+            "type": "Service",
+            "service": "Software Decommissioning",
+            "description": "We offer software decommissioning services to help businesses safely and efficiently decommission their software systems. Our solutions include decommissioning strategy, data archiving, and system shutdown services.",
+            "icon": "decommission",
+            "link": "/services/software-decommissioning"
+        },
+        {
+            "type": "Service",
+            "service": "Software Disaster Recovery",
+            "description": "Our software disaster recovery services help businesses prepare for and recover from software-related disasters. We provide disaster recovery strategy, backup solutions, and recovery testing services.",
+            "icon": "disaster_recovery",
+            "link": "/services/software-disaster-recovery"
+        },
+        {
+            "type": "Service",
+            "service": "Software Business Continuity",
+            "description": "We offer software business continuity services to help businesses ensure the continuity of their software operations during disruptions. Our solutions include business continuity planning, risk assessment, and continuity testing services.",
+            "icon": "business_continuity",
+            "link": "/services/software-business-continuity"
+        },
+        {
+            "type": "Service",
+            "service": "Software Compliance",
+            "description": "Our software compliance services help businesses ensure that their software systems comply with relevant regulations and standards. We provide compliance assessment, remediation planning, and ongoing compliance monitoring services.",
+            "icon": "compliance",
+            "link": "/services/software-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Governance",
+            "description": "We offer software governance services to help businesses establish effective governance frameworks for their software development and operations. Our solutions include governance strategy, process implementation, and governance training services.",
+            "icon": "governance",
+            "link": "/services/software-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Risk Management",
+            "description": "Our software risk management services help businesses identify, assess, and mitigate risks associated with their software systems. We provide risk assessment, mitigation planning, and ongoing risk monitoring services.",
+            "icon": "risk_management",
+            "link": "/services/software-risk-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Vendor Management",
+            "description": "We offer software vendor management services to help businesses effectively manage their relationships with software vendors. Our solutions include vendor selection, contract negotiation, and vendor performance management services.",
+            "icon": "vendor_management",
+            "link": "/services/software-vendor-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software License Management",
+            "description": "Our software license management services help businesses track and manage their software licenses effectively. We provide license inventory management, compliance monitoring, and cost optimization services.",
+            "icon": "license_management",
+            "link": "/services/software-license-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Asset Disposal",
+            "description": "We offer software asset disposal services to help businesses safely and responsibly dispose of their software assets. Our solutions include asset decommissioning, data wiping, and environmentally friendly disposal methods.",
+            "icon": "asset_disposal",
+            "link": "/services/software-asset-disposal"
+        },
+        {
+            "type": "Service",
+            "service": "Software Sustainability",
+            "description": "Our software sustainability services help businesses develop and maintain sustainable software systems. We provide sustainability assessment, green coding practices, and ongoing sustainability monitoring services.",
+            "icon": "sustainability",
+            "link": "/services/software-sustainability"
+        },
+        {
+            "type": "Service",
+            "service": "Software Innovation",
+            "description": "We offer software innovation services to help businesses drive innovation through their software systems. Our solutions include innovation strategy, ideation workshops, and innovation implementation services.",
+            "icon": "innovation",
+            "link": "/services/software-innovation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Research and Development",
+            "description": "Our software research and development services help businesses explore new technologies and develop innovative software solutions. We provide R&D strategy, prototyping, and technology exploration services.",
+            "icon": "research_and_development",
+            "link": "/services/software-research-development"
+        },
+        {
+            "type": "Service",
+            "service": "Software Incubation",
+            "description": "We offer software incubation services to help startups and entrepreneurs develop and launch their software products. Our solutions include mentorship, technical support, and access to resources for software incubation.",
+            "icon": "incubation",
+            "link": "/services/software-incubation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Acceleration",
+            "description": "Our software acceleration services help businesses speed up the development and delivery of their software products. We provide acceleration strategy, process optimization, and resource allocation services.",
+            "icon": "acceleration",
+            "link": "/services/software-acceleration"
+        },
+        {
+            "type": "Service",
+            "service": "Software Scaling",
+            "description": "We offer software scaling services to help businesses scale their software systems to meet growing demand. Our solutions include scalability assessment, architecture design, and implementation services for software scaling.",
+            "icon": "scaling",
+            "link": "/services/software-scaling"
+        },
+        {
+            "type": "Service",
+            "service": "Software Globalization",
+            "description": "Our software globalization services help businesses adapt their software products for global markets. We provide globalization strategy, localization support, and internationalization services for software globalization.",
+            "icon": "globalization",
+            "link": "/services/software-globalization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Personalization",
+            "description": "We offer software personalization services to help businesses create personalized experiences for their users. Our solutions include user profiling, recommendation systems, and personalized content delivery for software personalization.",
+            "icon": "personalization",
+            "link": "/services/software-personalization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Gamification",
+            "description": "Our software gamification services help businesses enhance user engagement through gamification techniques. We provide gamification strategy, game design, and implementation services for software gamification.",
+            "icon": "gamification",
+            "link": "/services/software-gamification"
+        },
+        {
+            "type": "Service",
+            "service": "Software Augmented Reality",
+            "description": "We offer software augmented reality services to help businesses create immersive AR experiences. Our solutions include AR strategy, AR application development, and AR content creation for software augmented reality.",
+            "icon": "augmented_reality",
+            "link": "/services/software-augmented-reality"
+        },
+        {
+            "type": "Service",
+            "service": "Software Virtual Reality",
+            "description": "Our software virtual reality services help businesses create immersive VR experiences. We provide VR strategy, VR application development, and VR content creation for software virtual reality.",
+            "icon": "virtual_reality",
+            "link": "/services/software-virtual-reality"
+        },
+        {
+            "type": "Service",
+            "service": "Software Mixed Reality",
+            "description": "We offer software mixed reality services to help businesses create blended reality experiences. Our solutions include mixed reality strategy, application development, and content creation for software mixed reality.",
+            "icon": "mixed_reality",
+            "link": "/services/software-mixed-reality"
+        },
+        {
+            "type": "Service",
+            "service": "Software Internet of Things (IoT)",
+            "description": "Our software Internet of Things (IoT) services help businesses develop and deploy IoT solutions. We provide IoT strategy, application development, and device integration services for software IoT.",
+            "icon": "iot",
+            "link": "/services/software-internet-of-things"
+        },
+        {
+            "type": "Service",
+            "service": "Software Edge Computing",
+            "description": "We offer software edge computing services to help businesses leverage the benefits of edge computing. Our solutions include edge computing strategy, application development, and edge device integration for software edge computing.",
+            "icon": "edge_computing",
+            "link": "/services/software-edge-computing"
+        },
+        {
+            "type": "Service",
+            "service": "Software 5G",
+            "description": "Our software 5G services help businesses take advantage of the capabilities of 5G technology. We provide 5G strategy, application development, and network integration services for software 5G.",
+            "icon": "5g",
+            "link": "/services/software-5g"
+        },
+        {
+            "type": "Service",
+            "service": "Software Quantum Computing",
+            "description": "We offer software quantum computing services to help businesses explore the potential of quantum computing. Our solutions include quantum computing strategy, application development, and quantum algorithm design for software quantum computing.",
+            "icon": "quantum_computing",
+            "link": "/services/software-quantum-computing"
+        },
+        {
+            "type": "Service",
+            "service": "Software Robotics",
+            "description": "Our software robotics services help businesses develop and deploy robotic solutions. We provide robotics strategy, application development, and robot integration services for software robotics.",
+            "icon": "robotics",
+            "link": "/services/software-robotics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Autonomous Systems",
+            "description": "We offer software autonomous systems services to help businesses create self-operating systems. Our solutions include autonomous systems strategy, application development, and system integration for software autonomous systems.",
+            "icon": "autonomous_systems",
+            "link": "/services/software-autonomous-systems"
+        },
+        {
+            "type": "Service",
+            "service": "Software Natural Language Processing (NLP)",
+            "description": "Our software natural language processing (NLP) services help businesses create applications that understand and process human language. We provide NLP strategy, application development, and language model training for software NLP.",
+            "icon": "natural_language_processing",
+            "link": "/services/software-natural-language-processing"
+        },
+        {
+            "type": "Service",
+            "service": "Software Computer Vision",
+            "description": "We offer software computer vision services to help businesses create applications that can interpret visual data. Our solutions include computer vision strategy, application development, and model training for software computer vision.",
+            "icon": "computer_vision",
+            "link": "/services/software-computer-vision"
+        },
+        {
+            "type": "Service",
+            "service": "Software Predictive Analytics",
+            "description": "Our software predictive analytics services help businesses make data-driven predictions about future events. We provide predictive analytics strategy, model development, and implementation services for software predictive analytics.",
+            "icon": "predictive_analytics",
+            "link": "/services/software-predictive-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Recommendation Systems",
+            "description": "We offer software recommendation systems services to help businesses create personalized recommendations for their users. Our solutions include recommendation system strategy, algorithm development, and implementation for software recommendation systems.",
+            "icon": "recommendation_systems",
+            "link": "/services/software-recommendation-systems"
+        },
+        {
+            "type": "Service",
+            "service": "Software Chatbot",
+            "description": "Our software chatbot services help businesses create conversational agents that can interact with users. We provide chatbot strategy, application development, and natural language understanding for software chatbots.",
+            "icon": "chatbot",
+            "link": "/services/software-chatbot"
+        },
+        {
+            "type": "Service",
+            "service": "Software Voice Recognition",
+            "description": "We offer software voice recognition services to help businesses create applications that can recognize and process human speech. Our solutions include voice recognition strategy, application development, and model training for software voice recognition.",
+            "icon": "voice_recognition",
+            "link": "/services/software-voice-recognition"
+        },
+        {
+            "type": "Service",
+            "service": "Software Sentiment Analysis",
+            "description": "Our software sentiment analysis services help businesses analyze and understand the sentiment of text data. We provide sentiment analysis strategy, model development, and implementation services for software sentiment analysis.",
+            "icon": "sentiment_analysis",
+            "link": "/services/software-sentiment-analysis"
+        },
+        {
+            "type": "Service",
+            "service": "Software Anomaly Detection",
+            "description": "We offer software anomaly detection services to help businesses identify unusual patterns in their data. Our solutions include anomaly detection strategy, model development, and implementation for software anomaly detection.",
+            "icon": "anomaly_detection",
+            "link": "/services/software-anomaly-detection"
+        },
+        {
+            "type": "Service",
+            "service": "Software Fraud Detection",
+            "description": "Our software fraud detection services help businesses identify and prevent fraudulent activities. We provide fraud detection strategy, model development, and implementation services for software fraud detection.",
+            "icon": "fraud_detection",
+            "link": "/services/software-fraud-detection"
+        },
+        {
+            "type": "Service",
+            "service": "Software Customer Segmentation",
+            "description": "We offer software customer segmentation services to help businesses segment their customers based on various criteria. Our solutions include customer segmentation strategy, model development, and implementation for software customer segmentation.",
+            "icon": "customer_segmentation",
+            "link": "/services/software-customer-segmentation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Churn Prediction",
+            "description": "Our software churn prediction services help businesses predict which customers are likely to churn. We provide churn prediction strategy, model development, and implementation services for software churn prediction.",
+            "icon": "churn_prediction",
+            "link": "/services/software-churn-prediction"
+        },
+        {
+            "type": "Service",
+            "service": "Software Sales Forecasting",
+            "description": "We offer software sales forecasting services to help businesses predict future sales based on historical data. Our solutions include sales forecasting strategy, model development, and implementation for software sales forecasting.",
+            "icon": "sales_forecasting",
+            "link": "/services/software-sales-forecasting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Inventory Optimization",
+            "description": "Our software inventory optimization services help businesses optimize their inventory levels to meet demand while minimizing costs. We provide inventory optimization strategy, model development, and implementation services for software inventory optimization.",
+            "icon": "inventory_optimization",
+            "link": "/services/software-inventory-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Supply Chain Optimization",
+            "description": "We offer software supply chain optimization services to help businesses optimize their supply chain operations. Our solutions include supply chain optimization strategy, model development, and implementation for software supply chain optimization.",
+            "icon": "supply_chain_optimization",
+            "link": "/services/software-supply-chain-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Workforce Optimization",
+            "description": "Our software workforce optimization services help businesses optimize their workforce scheduling and management. We provide workforce optimization strategy, model development, and implementation services for software workforce optimization.",
+            "icon": "workforce_optimization",
+            "link": "/services/software-workforce-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Energy Optimization",
+            "description": "We offer software energy optimization services to help businesses reduce the energy consumption of their software systems. Our solutions include energy optimization strategy, model development, and implementation for software energy optimization.",
+            "icon": "energy_optimization",
+            "link": "/services/software-energy-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Cost Optimization",
+            "description": "Our software cost optimization services help businesses reduce the costs associated with their software systems. We provide cost optimization strategy, model development, and implementation services for software cost optimization.",
+            "icon": "cost_optimization",
+            "link": "/services/software-cost-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Performance Monitoring",
+            "description": "We offer software performance monitoring services to help businesses monitor and improve the performance of their software systems. Our solutions include performance monitoring strategy, tool setup, and ongoing performance analysis for software performance monitoring.",
+            "icon": "performance_monitoring",
+            "link": "/services/software-performance-monitoring"
+        },
+        {
+            "type": "Service",
+            "service": "Software User Experience (UX)",
+            "description": "Our software user experience (UX) services help businesses create intuitive and engaging user experiences for their applications. We provide UX strategy, user research, and design services for software user experience.",
+            "icon": "user_experience",
+            "link": "/services/software-user-experience"
+        },
+        {
+            "type": "Service",
+            "service": "Software Accessibility",
+            "description": "We offer software accessibility services to help businesses make their applications accessible to all users, including those with disabilities. Our solutions include accessibility assessment, remediation planning, and implementation for software accessibility.",
+            "icon": "accessibility",
+            "link": "/services/software-accessibility"
+        },
+        {
+            "type": "Service",
+            "service": "Software Internationalization",
+            "description": "Our software internationalization services help businesses prepare their applications for global markets.   We provide internationalization strategy, code modifications, and testing services for software internationalization.",
+            "icon": "internationalization",
+            "link": "/services/software-internationalization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Localization",
+            "description": "We offer software localization services to help businesses adapt their applications for specific languages and cultures. Our solutions include translation, cultural adaptation, and testing for software localization.",
+            "icon": "localization",
+            "link": "/services/software-localization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Multilingual Support",
+            "description": "Our software multilingual support services help businesses provide support for multiple languages in their applications. We provide multilingual support strategy, implementation, and ongoing maintenance for software multilingual support.",
+            "icon": "multilingual_support",
+            "link": "/services/software-multilingual-support"
+        },
+        {
+            "type": "Service",
+            "service": "Software Cultural Adaptation",
+            "description": "We offer software cultural adaptation services to help businesses adapt their applications to different cultural contexts. Our solutions include cultural adaptation strategy, content modification, and testing for software cultural adaptation.",
+            "icon": "cultural_adaptation",
+            "link": "/services/software-cultural-adaptation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Globalization",
+            "description": "Our software globalization services help businesses create applications that can be easily adapted for global markets. We provide globalization strategy, internationalization, and localization services for software globalization.",
+            "icon": "globalization",
+            "link": "/services/software-globalization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Translation",
+            "description": "We offer software translation services to help businesses translate their applications into different languages. Our solutions include translation strategy, content translation, and testing for software translation.",
+            "icon": "translation",
+            "link": "/services/software-translation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Multicultural Testing",
+            "description": "Our software multicultural testing services help businesses ensure that their applications work correctly in different cultural contexts. We provide multicultural testing strategy, test case development, and execution for software multicultural testing.",
+            "icon": "multicultural_testing",
+            "link": "/services/software-multicultural-testing"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global Market Entry",
+            "description": "We offer software global market entry services to help businesses successfully enter global markets with their applications. Our solutions include market research, entry strategy, and localization support for software global market entry.",
+            "icon": "global_market_entry",
+            "link": "/services/software-global-market-entry"
+        },
+        {
+            "type": "Service",
+            "service": "Software Cross-Cultural Communication",
+            "description": "Our software cross-cultural communication services help businesses effectively communicate with users from different cultural backgrounds. We provide cross-cultural communication strategy, content adaptation, and training for software cross-cultural communication.",
+            "icon": "cross_cultural_communication",
+            "link": "/services/software-cross-cultural-communication"
+        },
+        {
+            "type": "Service",
+            "service": "Software Cultural Sensitivity Training",
+            "description": "We offer software cultural sensitivity training services to help businesses train their teams on cultural sensitivity when developing and supporting applications. Our solutions include training strategy, content development, and delivery for software cultural sensitivity training.",
+            "icon": "cultural_sensitivity_training",
+            "link": "/services/software-cultural-sensitivity-training"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global User Support",
+            "description": "Our software global user support services help businesses provide support to users from around the world. We provide global user support strategy, multilingual support implementation, and ongoing maintenance for software global user support.",
+            "icon": "global_user_support",
+            "link": "/services/software-global-user-support"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global Compliance",
+            "description": "We offer software global compliance services to help businesses ensure that their applications comply with regulations in different countries. Our solutions include compliance assessment, remediation planning, and ongoing monitoring for software global compliance.",
+            "icon": "global_compliance",
+            "link": "/services/software-global-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global Security",
+            "description": "Our software global security services help businesses protect their applications from security threats in different regions. We provide global security strategy, threat assessment, and mitigation planning for software global security.",
+            "icon": "global_security",
+            "link": "/services/software-global-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global Performance Optimization",
+            "description": "We offer software global performance optimization services to help businesses optimize the performance of their applications for users around the world. Our solutions include performance optimization strategy, testing, and implementation for software global performance optimization.",
+            "icon": "global_performance_optimization",
+            "link": "/services/software-global-performance-optimization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global User Experience (UX)",
+            "description": "Our software global user experience (UX) services help businesses create user experiences that resonate with users from different cultures. We provide global UX strategy, user research, and design services for software global user experience.",
+            "icon": "global_user_experience",
+            "link": "/services/software-global-user-experience"
+        },
+        {
+            "type": "Service",
+            "service": "Software Global Accessibility",
+            "description": "We offer software global accessibility services to help businesses make their applications accessible to users with disabilities around the world. Our solutions include accessibility assessment, remediation planning, and implementation for software global accessibility.",
+            "icon": "global_accessibility",
+            "link": "/services/software-global-accessibility"
+        },
+        {
+            "type": "Service",
+            "service": "Software Globalization Consulting",
+            "description": "Our software globalization consulting services help businesses develop effective globalization strategies for their applications. We provide consulting on market research, entry strategy, and localization planning for software globalization consulting.",
+            "icon": "globalization_consulting",
+            "link": "/services/software-globalization-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Configuration Management",
+            "description": "Our software configuration management services help businesses manage and control their software configurations effectively. We provide configuration management strategy, process implementation, and tool setup services.",
+            "icon": "settings",
+            "link": "/services/software-configuration-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Incident Management",
+            "description": "Our software incident management services help businesses respond to and resolve software incidents efficiently. We provide incident management strategy, process implementation, and post-incident analysis services.",
+            "icon": "report_problem",
+            "link": "/services/software-incident-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Change Management",
+            "description": "We offer software change management services to help businesses manage changes to their software systems effectively. Our solutions include change management strategy, process implementation, and change impact analysis services.",
+            "icon": "change_history",
+            "link": "/services/software-change-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Asset Management",
+            "description": "Our software asset management services help businesses track and manage their software assets effectively. We provide asset inventory management, license compliance, and cost optimization services.",
+            "icon": "inventory",
+            "link": "/services/software-asset-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software End-of-Life Management",
+            "description": "We offer software end-of-life management services to help businesses plan and manage the end-of-life process for their software products. Our solutions include end-of-life strategy, communication planning, and support transition services.",
+            "icon": "end_of_life",
+            "link": "/services/software-end-of-life-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Retirement",
+            "description": "Our software retirement services help businesses plan and execute the retirement of their software applications. We provide retirement strategy, data migration, and post-retirement support services.",
+            "icon": "retirement",
+            "link": "/services/software-retirement"
+        },
+        {
+            "type": "Service",
+            "service": "Software Decommissioning",
+            "description": "We offer software decommissioning services to help businesses safely and responsibly decommission their software systems. Our solutions include decommissioning strategy, data wiping, and environmentally friendly disposal methods for software decommissioning.",
+            "icon": "decommissioning",
+            "link": "/services/software-decommissioning"
+        },
+        {
+            "type": "Service",
+            "service": "Software Disaster Recovery",
+            "description": "Our software disaster recovery services help businesses prepare for and recover from software disasters. We provide disaster recovery strategy, backup and recovery planning, and testing services for software disaster recovery.",
+            "icon": "disaster_recovery",
+            "link": "/services/software-disaster-recovery"
+        },
+        {
+            "type": "Service",
+            "service": "Software Business Continuity",
+            "description": "We offer software business continuity services to help businesses maintain operations during and after software disruptions. Our solutions include business continuity planning, risk assessment, and continuity testing services for software business continuity.",
+            "icon": "business_continuity",
+            "link": "/services/software-business-continuity"
+        },
+        {
+            "type": "Service",
+            "service": "Software Compliance",
+            "description": "Our software compliance services help businesses ensure that their software systems comply with relevant regulations and standards. We provide compliance assessment, remediation planning, and ongoing compliance monitoring services for software compliance.",
+            "icon": "compliance",
+            "link": "/services/software-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Governance",
+            "description": "We offer software governance services to help businesses establish effective governance frameworks for their software development and operations. Our solutions include governance strategy, process implementation, and governance training services for software governance.",
+            "icon": "governance",
+            "link": "/services/software-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Risk Management",
+            "description": "Our software risk management services help businesses identify, assess, and mitigate risks associated with their software systems. We provide risk assessment, mitigation planning, and ongoing risk monitoring services for software risk management.",
+            "icon": "risk_management",
+            "link": "/services/software-risk-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Vendor Management",
+            "description": "We offer software vendor management services to help businesses effectively manage their relationships with software vendors. Our solutions include vendor selection, contract negotiation, and vendor performance management services for software vendor management.",
+            "icon": "vendor_management",
+            "link": "/services/software-vendor-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software License Management",
+            "description": "Our software license management services help businesses track and manage their software licenses effectively. We provide license inventory management, compliance monitoring, and cost optimization services for software license management.",
+            "icon": "license_management",
+            "link": "/services/software-license-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Procurement",
+            "description": "We offer software procurement services to help businesses acquire the software products and services they need. Our solutions include procurement strategy, vendor evaluation, and contract negotiation services for software procurement.",
+            "icon": "procurement",
+            "link": "/services/software-procurement"
+        },
+        {
+            "type": "Service",
+            "service": "Software Contract Management",
+            "description": "Our software contract management services help businesses manage their software contracts effectively. We provide contract drafting, negotiation, and ongoing contract management services for software contract management.",
+            "icon": "contract_management",
+            "link": "/services/software-contract-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Intellectual Property Management",
+            "description": "We offer software intellectual property management services to help businesses protect and manage their software intellectual property. Our solutions include IP strategy, patent filing, and IP portfolio management services for software intellectual property management.",
+            "icon": "intellectual_property",
+            "link": "/services/software-intellectual-property-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Legal",
+            "description": "Our software legal services help businesses navigate the legal complexities of software development and operations. We provide legal consulting, contract review, and compliance support services for software legal services.",
+            "icon": "legal_services",
+            "link": "/services/software-legal-services"
+        },
+        {
+            "type": "Service",
+            "service": "Software Ethical Consulting",
+            "description": "We offer software ethical consulting services to help businesses ensure that their software development and operations align with ethical principles. Our solutions include ethical risk assessment, ethical guidelines development, and ethics training for software ethical consulting.",
+            "icon": "ethical_consulting",
+            "link": "/services/software-ethical-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Sustainability Consulting",
+            "description": "Our software sustainability consulting services help businesses develop and implement sustainable practices in their software development and operations. We provide sustainability assessment, strategy development, and implementation support for software sustainability consulting.",
+            "icon": "sustainability_consulting",
+            "link": "/services/software-sustainability-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Diversity and Inclusion Consulting",
+            "description": "We offer software diversity and inclusion consulting services to help businesses create more inclusive software development environments. Our solutions include diversity assessment, inclusion strategy development, and training for software diversity and inclusion consulting.",
+            "icon": "diversity_inclusion_consulting",
+            "link": "/services/software-diversity-inclusion-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Corporate Social Responsibility (CSR) Consulting",
+            "description": "Our software corporate social responsibility (CSR) consulting services help businesses develop and implement CSR initiatives related to their software development and operations. We provide CSR strategy development, program implementation, and impact assessment for software CSR consulting.",
+            "icon": "csr_consulting",
+            "link": "/services/software-csr-consulting"
+        },
+        {
+            "type": "Service",
+            "service": "Software Community Engagement",
+            "description": "We offer software community engagement services to help businesses engage with and contribute to the software development community. Our solutions include community engagement strategy, open source contribution support, and community event participation for software community engagement.",
+            "icon": "community_engagement",
+            "link": "/services/software-community-engagement"
+        },
+        {
+            "type": "Service",
+            "service": "Software Developer Advocacy",
+            "description": "Our software developer advocacy services help businesses build relationships with developers and advocate for their software products. We provide developer advocacy strategy, content creation, and event participation for software developer advocacy.",
+            "icon": "developer_advocacy",
+            "link": "/services/software-developer-advocacy"
+        },
+        {
+            "type": "Service",
+            "service": "Software Open Source",
+            "description": "We offer software open source services to help businesses leverage the benefits of open source software. Our solutions include open source strategy, contribution support, and open source project management for software open source services.",
+            "icon": "open_source",
+            "link": "/services/software-open-source"
+        },
+        {
+            "type": "Service",
+            "service": "Software Cloud",
+            "description": "Our software cloud services help businesses migrate to and optimize their use of cloud platforms. We provide cloud strategy, migration support, and cloud optimization services for software cloud services.",
+            "icon": "cloud",
+            "link": "/services/software-cloud"
+        },
+        {
+            "type": "Service",
+            "service": "Software DevOps",
+            "description": "We offer software DevOps services to help businesses implement DevOps practices and tools effectively. Our solutions include DevOps strategy, toolchain implementation, and ongoing support for software DevOps services.",
+            "icon": "devops",
+            "link": "/services/software-devops"
+        },
+        {
+            "type": "Service",
+            "service": "Software Agile",
+            "description": "Our software agile services help businesses adopt and optimize agile methodologies for their software development projects. We provide agile training, coaching, and process implementation for software agile services.",
+            "icon": "agile",
+            "link": "/services/software-agile"
+        },
+        {
+            "type": "Service",
+            "service": "Software Continuous Integration/Continuous Deployment (CI/CD)",
+            "description": "We offer software continuous integration/continuous deployment (CI/CD) services to help businesses implement CI/CD pipelines for their software projects. Our solutions include CI/CD strategy, toolchain implementation, and ongoing support for software CI/CD services.",
+            "icon": "ci_cd",
+            "link": "/services/software-ci-cd"
+        },
+        {
+            "type": "Service",
+            "service": "Software Containerization",
+            "description": "Our software containerization services help businesses containerize their applications for improved portability and scalability. We provide containerization strategy, implementation, and ongoing support for software containerization services.",
+            "icon": "containerization",
+            "link": "/services/software-containerization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Microservices",
+            "description": "We offer software microservices services to help businesses design and implement microservices architectures for their applications. Our solutions include microservices strategy, architecture design, and implementation support for software microservices services.",
+            "icon": "microservices",
+            "link": "/services/software-microservices"
+        },
+        {
+            "type": "Service",
+            "service": "Software Serverless",
+            "description": "Our software serverless services help businesses leverage serverless computing for their applications. We provide serverless strategy, implementation, and ongoing support for software serverless services.",
+            "icon": "serverless",
+            "link": "/services/software-serverless"
+        },
+        {
+            "type": "Service",
+            "service": "Software Edge Computing",
+            "description": "We offer software edge computing services to help businesses implement edge computing solutions for their applications. Our solutions include edge computing strategy, architecture design, and implementation support for software edge computing services.",
+            "icon": "edge_computing",
+            "link": "/services/software-edge-computing"
+        },
+        {
+            "type": "Service",
+            "service": "Software Internet of Things (IoT)",
+            "description": "Our software Internet of Things (IoT) services help businesses develop and implement IoT solutions for their applications. We provide IoT strategy, device integration, and ongoing support for software IoT services.",
+            "icon": "iot",
+            "link": "/services/software-iot"
+        },
+        {
+            "type": "Service",
+            "service": "Software Artificial Intelligence (AI)",
+            "description": "We offer software artificial intelligence (AI) services to help businesses integrate AI capabilities into their applications. Our solutions include AI strategy, model development, and implementation support for software AI services.",
+            "icon": "artificial_intelligence",
+            "link": "/services/software-artificial-intelligence"
+        },
+        {
+            "type": "Service",
+            "service": "Software Machine Learning",
+            "description": "Our software machine learning services help businesses develop and implement machine learning models for their applications. We provide machine learning strategy, model development, and ongoing support for software machine learning services.",
+            "icon": "machine_learning",
+            "link": "/services/software-machine-learning"
+        },
+        {
+            "type": "Service",
+            "service": "Software Deep Learning",
+            "description": "We offer software deep learning services to help businesses leverage deep learning techniques in their applications. Our solutions include deep learning strategy, model development, and implementation support for software deep learning services.",
+            "icon": "deep_learning",
+            "link": "/services/software-deep-learning"
+        },
+        {
+            "type": "Service",
+            "service": "Software Natural Language Processing (NLP)",
+            "description": "Our software natural language processing (NLP) services help businesses integrate NLP capabilities into their applications. We provide NLP strategy, model development, and implementation support for software NLP services.",
+            "icon": "natural_language_processing",
+            "link": "/services/software-natural-language-processing"
+        },
+        {
+            "type": "Service",
+            "service": "Software Computer Vision",
+            "description": "We offer software computer vision services to help businesses integrate computer vision capabilities into their applications. Our solutions include computer vision strategy, model development, and implementation support for software computer vision services.",
+            "icon": "computer_vision",
+            "link": "/services/software-computer-vision"
+        },
+        {
+            "type": "Service",
+            "service": "Software Robotics",
+            "description": "Our software robotics services help businesses develop and implement robotic solutions for their applications. We provide robotics strategy, model development, and ongoing support for software robotics services.",
+            "icon": "robotics",
+            "link": "/services/software-robotics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Automation",
+            "description": "We offer software automation services to help businesses automate various aspects of their software development and operations. Our solutions include automation strategy, tool implementation, and ongoing support for software automation services.",
+            "icon": "automation",
+            "link": "/services/software-automation"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Analytics",
+            "description": "Our software data analytics services help businesses analyze and derive insights from their software data. We provide data analytics strategy, tool implementation, and ongoing support for software data analytics services.",
+            "icon": "data_analytics",
+            "link": "/services/software-data-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Business Intelligence (BI)",
+            "description": "We offer software business intelligence (BI) services to help businesses make informed decisions based on their software data. Our solutions include BI strategy, dashboard development, and ongoing support for software BI services.",
+            "icon": "business_intelligence",
+            "link": "/services/software-business-intelligence"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Visualization",
+            "description": "Our software data visualization services help businesses create compelling visualizations of their software data. We provide data visualization strategy, design, and implementation support for software data visualization services.",
+            "icon": "data_visualization",
+            "link": "/services/software-data-visualization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Science",
+            "description": "We offer software data science services to help businesses leverage data science techniques for their applications. Our solutions include data science strategy, model development, and implementation support for software data science services.",
+            "icon": "data_science",
+            "link": "/services/software-data-science"
+        },
+        {
+            "type": "Service",
+            "service": "Software Big Data",
+            "description": "Our software big data services help businesses manage and analyze large volumes of software data. We provide big data strategy, tool implementation, and ongoing support for software big data services.",
+            "icon": "big_data",
+            "link": "/services/software-big-data"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Engineering",
+            "description": "We offer software data engineering services to help businesses build and maintain robust data pipelines for their applications. Our solutions include data engineering strategy, pipeline development, and ongoing support for software data engineering services.",
+            "icon": "data_engineering",
+            "link": "/services/software-data-engineering"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Governance",
+            "description": "Our software data governance services help businesses establish effective data governance frameworks for their software data. We provide data governance strategy, policy development, and implementation support for software data governance services.",
+            "icon": "data_governance",
+            "link": "/services/software-data-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Privacy",
+            "description": "We offer software data privacy services to help businesses protect the privacy of their software data. Our solutions include data privacy assessment, policy development, and implementation support for software data privacy services.",
+            "icon": "data_privacy",
+            "link": "/services/software-data-privacy"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Security",
+            "description": "Our software data security services help businesses protect their software data from security threats. We provide data security strategy, risk assessment, and mitigation planning for software data security services.",
+            "icon": "data_security",
+            "link": "/services/software-data-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Compliance",
+            "description": "We offer software data compliance services to help businesses ensure that their software data complies with relevant regulations and standards. Our solutions include data compliance assessment, remediation planning, and ongoing compliance monitoring for software data compliance services.",
+            "icon": "data_compliance",
+            "link": "/services/software-data-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Management",
+            "description": "Our software data management services help businesses effectively manage their software data throughout its lifecycle. We provide data management strategy, implementation, and ongoing support for software data management services.",
+            "icon": "data_management",
+            "link": "/services/software-data-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Migration",
+            "description": "We offer software data migration services to help businesses migrate their software data to new systems or platforms. Our solutions include data migration strategy, planning, and execution for software data migration services.",
+            "icon": "data_migration",
+            "link": "/services/software-data-migration"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Archiving",
+            "description": "Our software data archiving services help businesses archive their software data securely and efficiently. We provide data archiving strategy, implementation, and ongoing support for software data archiving services.",
+            "icon": "data_archiving",
+            "link": "/services/software-data-archiving"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Retention",
+            "description": "We offer software data retention services to help businesses manage the retention of their software data in compliance with regulations and business needs. Our solutions include data retention policy development, implementation, and ongoing support for software data retention services.",
+            "icon": "data_retention",
+            "link": "/services/software-data-retention"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Destruction",
+            "description": "Our software data destruction services help businesses securely destroy their software data when it is no longer needed. We provide data destruction strategy, implementation, and ongoing support for software data destruction services.",
+            "icon": "data_destruction",
+            "link": "/services/software-data-destruction"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Backup",
+            "description": "We offer software data backup services to help businesses protect their software data from loss or corruption. Our solutions include data backup strategy, implementation, and ongoing support for software data backup services.",
+            "icon": "data_backup",
+            "link": "/services/software-data-backup"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Recovery",
+            "description": "Our software data recovery services help businesses recover their software data in the event of loss or corruption. We provide data recovery strategy, implementation, and ongoing support for software data recovery services.",
+            "icon": "data_recovery",
+            "link": "/services/software-data-recovery"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Analytics",
+            "description": "We offer software data analytics services to help businesses analyze and derive insights from their software data. Our solutions include data analytics strategy, tool implementation, and ongoing support for software data analytics services.",
+            "icon": "data_analytics",
+            "link": "/services/software-data-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Visualization",
+            "description": "Our software data visualization services help businesses create compelling visualizations of their software data. We provide data visualization strategy, design, and implementation support for software data visualization services.",
+            "icon": "data_visualization",
+            "link": "/services/software-data-visualization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Science",
+            "description": "We offer software data science services to help businesses leverage data science techniques for their applications. Our solutions include data science strategy, model development, and implementation support for software data science services.",
+            "icon": "data_science",
+            "link": "/services/software-data-science"
+        },
+        {
+            "type": "Service",
+            "service": "Software Big Data",
+            "description": "Our software big data services help businesses manage and analyze large volumes of software data. We provide big data strategy, tool implementation, and ongoing support for software big data services.",
+            "icon": "big_data",
+            "link": "/services/software-big-data"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Engineering",
+            "description": "We offer software data engineering services to help businesses build and maintain robust data pipelines for their applications. Our solutions include data engineering strategy, pipeline development, and ongoing support for software data engineering services.",
+            "icon": "data_engineering",
+            "link": "/services/software-data-engineering"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Governance",
+            "description": "Our software data governance services help businesses establish effective data governance frameworks for their software data. We provide data governance strategy, policy development, and implementation support for software data governance services.",
+            "icon": "data_governance",
+            "link": "/services/software-data-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Privacy",
+            "description": "We offer software data privacy services to help businesses protect the privacy of their software data. Our solutions include data privacy assessment, policy development, and implementation support for software data privacy services.",
+            "icon": "data_privacy",
+            "link": "/services/software-data-privacy"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Security",
+            "description": "Our software data security services help businesses protect their software data from security threats. We provide data security strategy, risk assessment, and mitigation planning for software data security services.",
+            "icon": "data_security",
+            "link": "/services/software-data-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Compliance",
+            "description": "We offer software data compliance services to help businesses ensure that their software data complies with relevant regulations and standards. Our solutions include data compliance assessment, remediation planning, and ongoing compliance monitoring for software data compliance services.",
+            "icon": "data_compliance",
+            "link": "/services/software-data-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Management",
+            "description": "Our software data management services help businesses effectively manage their software data. We provide data management strategy, tool implementation, and ongoing support for software data management services.",
+            "icon": "data_management",
+            "link": "/services/software-data-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Migration",
+            "description": "We offer software data migration services to help businesses migrate their software data to new systems or platforms. Our solutions include data migration strategy, planning, and execution for software data migration services.",
+            "icon": "data_migration",
+            "link": "/services/software-data-migration"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Archiving",
+            "description": "Our software data archiving services help businesses archive their software data securely and efficiently. We provide data archiving strategy, implementation, and ongoing support for software data archiving services.",
+            "icon": "data_archiving",
+            "link": "/services/software-data-archiving"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Retention",
+            "description": "We offer software data retention services to help businesses manage the retention of their software data in compliance with regulations and business needs. Our solutions include data retention policy development, implementation, and ongoing support for software data retention services.",
+            "icon": "data_retention",
+            "link": "/services/software-data-retention"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Destruction",
+            "description": "Our software data destruction services help businesses securely destroy their software data when it is no longer needed. We provide data destruction strategy, implementation, and ongoing support for software data destruction services.",
+            "icon": "data_destruction",
+            "link": "/services/software-data-destruction"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Backup",
+            "description": "We offer software data backup services to help businesses protect their software data from loss or corruption. Our solutions include data backup strategy, implementation, and ongoing support for software data backup services.",
+            "icon": "data_backup",
+            "link": "/services/software-data-backup"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Recovery",
+            "description": "Our software data recovery services help businesses recover their software data in the event of loss or corruption. We provide data recovery strategy, implementation, and ongoing support for software data recovery services.",
+            "icon": "data_recovery",
+            "link": "/services/software-data-recovery"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Analytics",
+            "description": "We offer software data analytics services to help businesses analyze and derive insights from their software data. Our solutions include data analytics strategy, tool implementation, and ongoing support for software data analytics services.",
+            "icon": "data_analytics",
+            "link": "/services/software-data-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Visualization",
+            "description": "Our software data visualization services help businesses create compelling visualizations of their software data. We provide data visualization strategy, design, and implementation support for software data visualization services.",
+            "icon": "data_visualization",
+            "link": "/services/software-data-visualization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Science",
+            "description": "We offer software data science services to help businesses leverage data science techniques for their applications. Our solutions include data science strategy, model development, and implementation support for software data science services.",
+            "icon": "data_science",
+            "link": "/services/software-data-science"
+        },
+        {
+            "type": "Service",
+            "service": "Software Big Data",
+            "description": "Our software big data services help businesses manage and analyze large volumes of software data. We provide big data strategy, tool implementation, and ongoing support for software big data services.",
+            "icon": "big_data",
+            "link": "/services/software-big-data"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Engineering",
+            "description": "We offer software data engineering services to help businesses build and maintain robust data pipelines for their applications. Our solutions include data engineering strategy, pipeline development, and ongoing support for software data engineering services.",
+            "icon": "data_engineering",
+            "link": "/services/software-data-engineering"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Governance",
+            "description": "Our software data governance services help businesses establish effective data governance frameworks for their software data. We provide data governance strategy, policy development, and implementation support for software data governance services.",
+            "icon": "data_governance",
+            "link": "/services/software-data-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Privacy",
+            "description": "We offer software data privacy services to help businesses protect the privacy of their software data. Our solutions include data privacy assessment, policy development, and implementation support for software data privacy services.",
+            "icon": "data_privacy",
+            "link": "/services/software-data-privacy"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Security",
+            "description": "Our software data security services help businesses protect their software data from security threats. We provide data security strategy, risk assessment, and mitigation planning for software data security services.",
+            "icon": "data_security",
+            "link": "/services/software-data-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Compliance",
+            "description": "We offer software data compliance services to help businesses ensure that their software data complies with relevant regulations and standards. Our solutions include data compliance assessment, remediation planning, and ongoing compliance monitoring for software data compliance services.",
+            "icon": "data_compliance",
+            "link": "/services/software-data-compliance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Management",
+            "description": "Our software data management services help businesses effectively manage their software data throughout its lifecycle. We provide data management strategy, implementation, and ongoing support for software data management services.",
+            "icon": "data_management",
+            "link": "/services/software-data-management"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Migration",
+            "description": "We offer software data migration services to help businesses migrate their software data to new systems or platforms. Our solutions include data migration strategy, planning, and execution for software data migration services.",
+            "icon": "data_migration",
+            "link": "/services/software-data-migration"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Archiving",
+            "description": "Our software data archiving services help businesses archive their software data securely and efficiently. We provide data archiving strategy, implementation, and ongoing support for software data archiving services.",
+            "icon": "data_archiving",
+            "link": "/services/software-data-archiving"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Retention",
+            "description": "We offer software data retention services to help businesses manage the retention of their software data in compliance with regulations and business needs. Our solutions include data retention policy development, implementation, and ongoing support for software data retention services.",
+            "icon": "data_retention",
+            "link": "/services/software-data-retention"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Destruction",
+            "description": "Our software data destruction services help businesses securely destroy their software data when it is no longer needed. We provide data destruction strategy, implementation, and ongoing support for software data destruction services.",
+            "icon": "data_destruction",
+            "link": "/services/software-data-destruction"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Backup",
+            "description": "We offer software data backup services to help businesses protect their software data from loss or corruption. Our solutions include data backup strategy, implementation, and ongoing support for software data backup services.",
+            "icon": "data_backup",
+            "link": "/services/software-data-backup"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Recovery",
+            "description": "Our software data recovery services help businesses recover their software data in the event of loss or corruption. We provide data recovery strategy, implementation, and ongoing support for software data recovery services.",
+            "icon": "data_recovery",
+            "link": "/services/software-data-recovery"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Analytics",
+            "description": "We offer software data analytics services to help businesses analyze and derive insights from their software data. Our solutions include data analytics strategy, tool implementation, and ongoing support for software data analytics services.",
+            "icon": "data_analytics",
+            "link": "/services/software-data-analytics"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Visualization",
+            "description": "Our software data visualization services help businesses create compelling visualizations of their software data. We provide data visualization strategy, design, and implementation support for software data visualization services.",
+            "icon": "data_visualization",
+            "link": "/services/software-data-visualization"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Science",
+            "description": "We offer software data science services to help businesses leverage data science techniques for their applications. Our solutions include data science strategy, model development, and implementation support for software data science services.",
+            "icon": "data_science",
+            "link": "/services/software-data-science"
+        },
+        {
+            "type": "Service",
+            "service": "Software Big Data",
+            "description": "Our software big data services help businesses manage and analyze large volumes of software data. We provide big data strategy, tool implementation, and ongoing support for software big data services.",
+            "icon": "big_data",
+            "link": "/services/software-big-data"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Engineering",
+            "description": "We offer software data engineering services to help businesses build and maintain robust data pipelines for their applications. Our solutions include data engineering strategy, pipeline development, and ongoing support for software data engineering services.",
+            "icon": "data_engineering",
+            "link": "/services/software-data-engineering"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Governance",
+            "description": "Our software data governance services help businesses establish effective data governance frameworks for their software data. We provide data governance strategy, policy development, and implementation support for software data governance services.",
+            "icon": "data_governance",
+            "link": "/services/software-data-governance"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Privacy",
+            "description": "We offer software data privacy services to help businesses protect the privacy of their software data. Our solutions include data privacy assessment, policy development, and implementation support for software data privacy services.",
+            "icon": "data_privacy",
+            "link": "/services/software-data-privacy"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Security",
+            "description": "Our software data security services help businesses protect their software data from security threats. We provide data security strategy, risk assessment, and mitigation planning for software data security services.",
+            "icon": "data_security",
+            "link": "/services/software-data-security"
+        },
+        {
+            "type": "Service",
+            "service": "Software Data Compliance",
+            "description": "We offer software data compliance services to help businesses ensure that their software data complies with relevant regulations and standards. Our solutions include data compliance assessment, remediation planning, and ongoing compliance monitoring for software data compliance services.",
+            "icon": "data_compliance",
+            "link": "/services/software-data-compliance"
+        }
+    ],
+    "industries": [
+        {
+            "type": "Industry",
+            "industry": "Healthcare",
+            "description": "We provide software development services tailored to the healthcare industry, including electronic health records (EHR) systems, telemedicine platforms, and healthcare analytics solutions.",
+            "icon": "#healthcare",
+            "link": "/industries/healthcare"
+        },
+        {
+            "type": "Industry",
+            "industry": "Finance",
+            "description": "Our software development services for the finance industry include financial management systems, trading platforms, and fintech solutions that enhance security and efficiency.",
+            "icon": "#finance",
+            "link": "/industries/finance"
+        },
+        {
+            "type": "Industry",
+            "industry": "Retail",
+            "description": "We offer software development services for the retail industry, including e-commerce platforms, inventory management systems, and customer relationship management (CRM) solutions.",
+            "icon": "#retail",
+            "link": "/industries/retail"
+        },
+        {
+            "type": "Industry",
+            "industry": "Manufacturing",
+            "description": "Our software development services for the manufacturing industry include supply chain management systems, production planning software, and industrial IoT solutions.",
+            "icon": "#manufacturing",
+            "link": "/industries/manufacturing"
+        },
+        {
+            "type": "Industry",
+            "industry": "Education",
+            "description": "We provide software development services for the education industry, including learning management systems (LMS), online course platforms, and educational analytics solutions.",
+            "icon": "#education",
+            "link": "/industries/education"
+        },
+        {
+            "type": "Industry",
+            "industry": "Transportation",
+            "description": "Our software development services for the transportation industry include fleet management systems, logistics software, and transportation analytics solutions.",
+            "icon": "#transportation",
+            "link": "/industries/transportation"
+        },
+        {
+            "type": "Industry",
+            "industry": "Energy",
+            "description": "We offer software development services for the energy industry, including energy management systems, renewable energy solutions, and energy analytics platforms.",
+            "icon": "#energy",
+            "link": "/industries/energy"
+        },
+        {
+            "type": "Industry",
+            "industry": "Entertainment",
+            "description": "Our software development services for the entertainment industry include streaming platforms, gaming solutions, and content management systems.",
+            "icon": "#entertainment",
+            "link": "/industries/entertainment"
+        },
+        {
+            "type": "Industry",
+            "industry": "Government",
+            "description": "We provide software development services for government agencies, including public service applications, data management systems, and citizen engagement platforms.",
+            "icon": "#government",
+            "link": "/industries/government"
+        },
+        {
+            "type": "Industry",
+            "industry": "Nonprofit",
+            "description": "Our software development services for nonprofit organizations include donor management systems, fundraising platforms, and volunteer coordination solutions.",
+            "icon": "#nonprofit",
+            "link": "/industries/nonprofit"
+        },
+        {
+            "type": "Industry",
+            "industry": "Telecommunications",
+            "description": "We offer software development services for the telecommunications industry, including network management systems, customer support platforms, and telecommunications analytics solutions.",
+            "icon": "#telecommunications",
+            "link": "/industries/telecommunications"
+        },
+        {
+            "type": "Industry",
+            "industry": "Real Estate",
+            "description": "Our software development services for the real estate industry include property management systems, real estate analytics platforms, and virtual tour solutions.",
+            "icon": "#real_estate",
+            "link": "/industries/real-estate"
+        },
+        {
+            "type": "Industry",
+            "industry": "Hospitality",
+            "description": "We provide software development services for the hospitality industry, including hotel management systems, reservation platforms, and hospitality analytics solutions.",
+            "icon": "#hospitality",
+            "link": "/industries/hospitality"
+        },
+        {
+            "type": "Industry",
+            "industry": "Agriculture",
+            "description": "Our software development services for the agriculture industry include farm management systems, agricultural analytics platforms, and precision agriculture solutions.",
+            "icon": "#agriculture",
+            "link": "/industries/agriculture"
+        },
+        {
+            "type": "Industry",
+            "industry": "Aerospace",
+            "description": "We offer software development services for the aerospace industry, including flight management systems, aerospace analytics platforms, and aerospace simulation solutions.",
+            "icon": "#aerospace",
+            "link": "/industries/aerospace"
+        },
+        {
+            "type": "Industry",
+            "industry": "Automotive",
+            "description": "Our software development services for the automotive industry include automotive management systems, automotive analytics platforms, and automotive simulation solutions.",
+            "icon": "#automotive",
+            "link": "/industries/automotive"
+        }
+    ]
+}
