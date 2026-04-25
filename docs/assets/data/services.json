@@ -7,13 +7,37 @@
         {
             "type": "Service",
             "service": "Custom Software Development",
+            "img": "assets/images/services/custom-software-development.svg",
             "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
             "icon": "code",
-            "link": "/services/custom-software-development"
+            "link": "/services/custom-software-development",
+            "subServices": [
+                {
+                    "service": "Tailored Functionality",
+                    "description": "Solutions built to meet specific business objectives. We analyze your requirements and design software that aligns perfectly with your goals, ensuring maximum efficiency and effectiveness."
+                },
+                {
+                    "service": "Scalability and Performance",
+                    "description": "Flexible software to grow with your business. Our custom solutions are designed to scale seamlessly, ensuring optimal performance even as your user base and data volume increase."
+                },
+                {
+                    "service": "Seamless Integration",
+                    "description": "Compatible with your existing systems. We ensure that our custom software integrates smoothly with your current infrastructure, allowing for efficient data flow and enhanced functionality across your technology stack."
+                },
+                {
+                    "service": "Enhanced Security",
+                    "description": "Robust security measures to protect your data. We implement industry best practices and advanced security protocols to safeguard your software and sensitive information from potential threats."
+                },
+                {
+                    "service": "User-Centric Design",
+                    "description": "Applications designed with the end-user in mind. We focus on creating intuitive and engaging user experiences that drive adoption and satisfaction."
+                }
+            ]
         },
         {
             "type": "Service",
             "service": "Full Stack Development",
+            "img": "assets/images/services/full-stack-development.svg",
             "description": "Custom software development services tailored to your business needs. We create scalable, secure, and user-friendly applications that drive growth and efficiency.",
             "icon": "code",
             "link": "full-stack-development-services"
@@ -1473,6 +1497,120 @@
             "description": "We offer software data compliance services to help businesses ensure that their software data complies with relevant regulations and standards. Our solutions include data compliance assessment, remediation planning, and ongoing compliance monitoring for software data compliance services.",
             "icon": "data_compliance",
             "link": "/services/software-data-compliance"
+        }
+    ],
+    "industries": [
+        {
+            "type": "Industry",
+            "industry": "Healthcare",
+            "description": "We provide software development services tailored to the healthcare industry, including electronic health records (EHR) systems, telemedicine platforms, and healthcare analytics solutions.",
+            "icon": "#healthcare",
+            "link": "/industries/healthcare"
+        },
+        {
+            "type": "Industry",
+            "industry": "Finance",
+            "description": "Our software development services for the finance industry include financial management systems, trading platforms, and fintech solutions that enhance security and efficiency.",
+            "icon": "#finance",
+            "link": "/industries/finance"
+        },
+        {
+            "type": "Industry",
+            "industry": "Retail",
+            "description": "We offer software development services for the retail industry, including e-commerce platforms, inventory management systems, and customer relationship management (CRM) solutions.",
+            "icon": "#retail",
+            "link": "/industries/retail"
+        },
+        {
+            "type": "Industry",
+            "industry": "Manufacturing",
+            "description": "Our software development services for the manufacturing industry include supply chain management systems, production planning software, and industrial IoT solutions.",
+            "icon": "#manufacturing",
+            "link": "/industries/manufacturing"
+        },
+        {
+            "type": "Industry",
+            "industry": "Education",
+            "description": "We provide software development services for the education industry, including learning management systems (LMS), online course platforms, and educational analytics solutions.",
+            "icon": "#education",
+            "link": "/industries/education"
+        },
+        {
+            "type": "Industry",
+            "industry": "Transportation",
+            "description": "Our software development services for the transportation industry include fleet management systems, logistics software, and transportation analytics solutions.",
+            "icon": "#transportation",
+            "link": "/industries/transportation"
+        },
+        {
+            "type": "Industry",
+            "industry": "Energy",
+            "description": "We offer software development services for the energy industry, including energy management systems, renewable energy solutions, and energy analytics platforms.",
+            "icon": "#energy",
+            "link": "/industries/energy"
+        },
+        {
+            "type": "Industry",
+            "industry": "Entertainment",
+            "description": "Our software development services for the entertainment industry include streaming platforms, gaming solutions, and content management systems.",
+            "icon": "#entertainment",
+            "link": "/industries/entertainment"
+        },
+        {
+            "type": "Industry",
+            "industry": "Government",
+            "description": "We provide software development services for government agencies, including public service applications, data management systems, and citizen engagement platforms.",
+            "icon": "#government",
+            "link": "/industries/government"
+        },
+        {
+            "type": "Industry",
+            "industry": "Nonprofit",
+            "description": "Our software development services for nonprofit organizations include donor management systems, fundraising platforms, and volunteer coordination solutions.",
+            "icon": "#nonprofit",
+            "link": "/industries/nonprofit"
+        },
+        {
+            "type": "Industry",
+            "industry": "Telecommunications",
+            "description": "We offer software development services for the telecommunications industry, including network management systems, customer support platforms, and telecommunications analytics solutions.",
+            "icon": "#telecommunications",
+            "link": "/industries/telecommunications"
+        },
+        {
+            "type": "Industry",
+            "industry": "Real Estate",
+            "description": "Our software development services for the real estate industry include property management systems, real estate analytics platforms, and virtual tour solutions.",
+            "icon": "#real_estate",
+            "link": "/industries/real-estate"
+        },
+        {
+            "type": "Industry",
+            "industry": "Hospitality",
+            "description": "We provide software development services for the hospitality industry, including hotel management systems, reservation platforms, and hospitality analytics solutions.",
+            "icon": "#hospitality",
+            "link": "/industries/hospitality"
+        },
+        {
+            "type": "Industry",
+            "industry": "Agriculture",
+            "description": "Our software development services for the agriculture industry include farm management systems, agricultural analytics platforms, and precision agriculture solutions.",
+            "icon": "#agriculture",
+            "link": "/industries/agriculture"
+        },
+        {
+            "type": "Industry",
+            "industry": "Aerospace",
+            "description": "We offer software development services for the aerospace industry, including flight management systems, aerospace analytics platforms, and aerospace simulation solutions.",
+            "icon": "#aerospace",
+            "link": "/industries/aerospace"
+        },
+        {
+            "type": "Industry",
+            "industry": "Automotive",
+            "description": "Our software development services for the automotive industry include automotive management systems, automotive analytics platforms, and automotive simulation solutions.",
+            "icon": "#automotive",
+            "link": "/industries/automotive"
         }
     ]
 }

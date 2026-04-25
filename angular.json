@@ -32,7 +32,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/js/wow.min.js",
+              "src/assets/js/wow.init.js"
+            ]
           },
           "configurations": {
             "production": {
