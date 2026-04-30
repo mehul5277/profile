@@ -1,0 +1,114 @@
+{
+    "request": {
+        "requestType": "API",
+        "requestMethod": "GET",
+        "requestUrl": "https://careerapi.Jiexo.com/bm9EUzRvVytnaWEvS05pSTZmWXNtQT09/CareerPortalStatesList/?country=CA",
+        "requestParameters": {}
+    },
+    "response": [
+        {
+            "id": 526,
+            "country": "Canada",
+            "name": "Alberta",
+            "abbreviation": "AB",
+            "standard_timezone": "(UTC-6.0) Edmonton",
+            "standard_timezone_default": "America/Edmonton"
+        },
+        {
+            "id": 527,
+            "country": "Canada",
+            "name": "British Columbia",
+            "abbreviation": "BC",
+            "standard_timezone": "(UTC-7.0) Vancouver",
+            "standard_timezone_default": "America/Vancouver"
+        },
+        {
+            "id": 528,
+            "country": "Canada",
+            "name": "Manitoba",
+            "abbreviation": "MB",
+            "standard_timezone": "(UTC-5.0) Winnipeg",
+            "standard_timezone_default": "America/Winnipeg"
+        },
+        {
+            "id": 529,
+            "country": "Canada",
+            "name": "New Brunswick",
+            "abbreviation": "NB",
+            "standard_timezone": "(UTC-3.0) Halifax",
+            "standard_timezone_default": "America/Halifax"
+        },
+        {
+            "id": 530,
+            "country": "Canada",
+            "name": "Newfoundland and Labrador",
+            "abbreviation": "NL",
+            "standard_timezone": "(UTC-3.0) Goose_Bay",
+            "standard_timezone_default": "America/Goose_Bay"
+        },
+        {
+            "id": 537,
+            "country": "Canada",
+            "name": "Northwest Territories",
+            "abbreviation": "NWT",
+            "standard_timezone": "(UTC-6.0) Yellowknife",
+            "standard_timezone_default": "America/Yellowknife"
+        },
+        {
+            "id": 531,
+            "country": "Canada",
+            "name": "Nova Scotia",
+            "abbreviation": "NS",
+            "standard_timezone": "(UTC-3.0) Halifax",
+            "standard_timezone_default": "America/Halifax"
+        },
+        {
+            "id": 538,
+            "country": "Canada",
+            "name": "Nunavut",
+            "abbreviation": "NU",
+            "standard_timezone": "(UTC-5.0) Rankin_Inlet",
+            "standard_timezone_default": "America/Rankin_Inlet"
+        },
+        {
+            "id": 532,
+            "country": "Canada",
+            "name": "Ontario",
+            "abbreviation": "ON",
+            "standard_timezone": "(UTC-4.0) Toronto",
+            "standard_timezone_default": "America/Toronto"
+        },
+        {
+            "id": 533,
+            "country": "Canada",
+            "name": "Prince Edward Island",
+            "abbreviation": "PEI",
+            "standard_timezone": "(UTC-3.0) Halifax",
+            "standard_timezone_default": "America/Halifax"
+        },
+        {
+            "id": 534,
+            "country": "Canada",
+            "name": "Quebec",
+            "abbreviation": "QC",
+            "standard_timezone": "(UTC-4.0) Montreal",
+            "standard_timezone_default": "America/Montreal"
+        },
+        {
+            "id": 535,
+            "country": "Canada",
+            "name": "Saskatchewan",
+            "abbreviation": "SK",
+            "standard_timezone": "(UTC-5.0) Winnipeg",
+            "standard_timezone_default": "America/Winnipeg"
+        },
+        {
+            "id": 536,
+            "country": "Canada",
+            "name": "Yukon",
+            "abbreviation": "YK",
+            "standard_timezone": "(UTC-7.0) Whitehorse",
+            "standard_timezone_default": "America/Whitehorse"
+        }
+    ]
+}

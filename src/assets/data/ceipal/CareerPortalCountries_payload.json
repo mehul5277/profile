@@ -1,0 +1,2251 @@
+{
+    "request": {
+        "requestType": "API",
+        "requestMethod": "GET",
+        "requestUrl": "https://careerapi.Jiexo.com/bm9EUzRvVytnaWEvS05pSTZmWXNtQT09/CareerPortalCountries",
+        "requestParameters": {}
+    },
+    "response": [
+        {
+            "id": 4,
+            "name": "Afghanistan",
+            "continent": "AS",
+            "currency": "Afghani",
+            "iso_currency_code": "AFN",
+            "phone_prefix": "93",
+            "iso": "AF"
+        },
+        {
+            "id": 248,
+            "name": "Aland Islands",
+            "continent": "AS",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "+358-18",
+            "iso": "AX"
+        },
+        {
+            "id": 8,
+            "name": "Albania",
+            "continent": "EU",
+            "currency": "Lek",
+            "iso_currency_code": "ALL",
+            "phone_prefix": "355",
+            "iso": "AL"
+        },
+        {
+            "id": 12,
+            "name": "Algeria",
+            "continent": "AF",
+            "currency": "Dinar",
+            "iso_currency_code": "DZD",
+            "phone_prefix": "213",
+            "iso": "DZ"
+        },
+        {
+            "id": 16,
+            "name": "American Samoa",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-684",
+            "iso": "AS"
+        },
+        {
+            "id": 20,
+            "name": "Andorra",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "376",
+            "iso": "AD"
+        },
+        {
+            "id": 24,
+            "name": "Angola",
+            "continent": "AF",
+            "currency": "Kwanza",
+            "iso_currency_code": "AOA",
+            "phone_prefix": "244",
+            "iso": "AO"
+        },
+        {
+            "id": 660,
+            "name": "Anguilla",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-264",
+            "iso": "AI"
+        },
+        {
+            "id": 28,
+            "name": "Antigua and Barbuda",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-268",
+            "iso": "AG"
+        },
+        {
+            "id": 32,
+            "name": "Argentina",
+            "continent": "SA",
+            "currency": "Peso",
+            "iso_currency_code": "ARS",
+            "phone_prefix": "54",
+            "iso": "AR"
+        },
+        {
+            "id": 51,
+            "name": "Armenia",
+            "continent": "EU",
+            "currency": "Dram",
+            "iso_currency_code": "AMD",
+            "phone_prefix": "374",
+            "iso": "AM"
+        },
+        {
+            "id": 533,
+            "name": "Aruba",
+            "continent": "NA",
+            "currency": "Guilder",
+            "iso_currency_code": "AWG",
+            "phone_prefix": "297",
+            "iso": "AW"
+        },
+        {
+            "id": 36,
+            "name": "Australia",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "61",
+            "iso": "AU"
+        },
+        {
+            "id": 40,
+            "name": "Austria",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "43",
+            "iso": "AT"
+        },
+        {
+            "id": 31,
+            "name": "Azerbaijan",
+            "continent": "EU",
+            "currency": "Manat",
+            "iso_currency_code": "AZN",
+            "phone_prefix": "994",
+            "iso": "AZ"
+        },
+        {
+            "id": 44,
+            "name": "Bahamas",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "BSD",
+            "phone_prefix": "+1-242",
+            "iso": "BS"
+        },
+        {
+            "id": 48,
+            "name": "Bahrain",
+            "continent": "AS",
+            "currency": "Dinar",
+            "iso_currency_code": "BHD",
+            "phone_prefix": "973",
+            "iso": "BH"
+        },
+        {
+            "id": 50,
+            "name": "Bangladesh",
+            "continent": "AS",
+            "currency": "Taka",
+            "iso_currency_code": "BDT",
+            "phone_prefix": "880",
+            "iso": "BD"
+        },
+        {
+            "id": 52,
+            "name": "Barbados",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "BBD",
+            "phone_prefix": "+1-246",
+            "iso": "BB"
+        },
+        {
+            "id": 112,
+            "name": "Belarus",
+            "continent": "EU",
+            "currency": "Ruble",
+            "iso_currency_code": "BYR",
+            "phone_prefix": "375",
+            "iso": "BY"
+        },
+        {
+            "id": 56,
+            "name": "Belgium",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "32",
+            "iso": "BE"
+        },
+        {
+            "id": 84,
+            "name": "Belize",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "BZD",
+            "phone_prefix": "501",
+            "iso": "BZ"
+        },
+        {
+            "id": 204,
+            "name": "Benin",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "229",
+            "iso": "BJ"
+        },
+        {
+            "id": 60,
+            "name": "Bermuda",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "BMD",
+            "phone_prefix": "+1-441",
+            "iso": "BM"
+        },
+        {
+            "id": 64,
+            "name": "Bhutan",
+            "continent": "AS",
+            "currency": "Ngultrum",
+            "iso_currency_code": "BTN",
+            "phone_prefix": "975",
+            "iso": "BT"
+        },
+        {
+            "id": 68,
+            "name": "Bolivia",
+            "continent": "SA",
+            "currency": "Boliviano",
+            "iso_currency_code": "BOB",
+            "phone_prefix": "591",
+            "iso": "BO"
+        },
+        {
+            "id": 70,
+            "name": "Bosnia and Herzegovina",
+            "continent": "EU",
+            "currency": "Marka",
+            "iso_currency_code": "BAM",
+            "phone_prefix": "387",
+            "iso": "BA"
+        },
+        {
+            "id": 72,
+            "name": "Botswana",
+            "continent": "AF",
+            "currency": "Pula",
+            "iso_currency_code": "BWP",
+            "phone_prefix": "267",
+            "iso": "BW"
+        },
+        {
+            "id": 74,
+            "name": "Bouvet Island",
+            "continent": "AN",
+            "currency": "Krone",
+            "iso_currency_code": "NOK",
+            "phone_prefix": "",
+            "iso": "BV"
+        },
+        {
+            "id": 76,
+            "name": "Brazil",
+            "continent": "SA",
+            "currency": "Real",
+            "iso_currency_code": "BRL",
+            "phone_prefix": "55",
+            "iso": "BR"
+        },
+        {
+            "id": 86,
+            "name": "British Indian Ocean Territory",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "246",
+            "iso": "IO"
+        },
+        {
+            "id": 92,
+            "name": "British Virgin Islands",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-284",
+            "iso": "VG"
+        },
+        {
+            "id": 96,
+            "name": "Brunei",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "BND",
+            "phone_prefix": "673",
+            "iso": "BN"
+        },
+        {
+            "id": 100,
+            "name": "Bulgaria",
+            "continent": "EU",
+            "currency": "Lev",
+            "iso_currency_code": "BGN",
+            "phone_prefix": "359",
+            "iso": "BG"
+        },
+        {
+            "id": 854,
+            "name": "Burkina Faso",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "226",
+            "iso": "BF"
+        },
+        {
+            "id": 108,
+            "name": "Burundi",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "BIF",
+            "phone_prefix": "257",
+            "iso": "BI"
+        },
+        {
+            "id": 896,
+            "name": "CA",
+            "continent": null,
+            "currency": null,
+            "iso_currency_code": null,
+            "phone_prefix": null,
+            "iso": null
+        },
+        {
+            "id": 116,
+            "name": "Cambodia",
+            "continent": "AS",
+            "currency": "Riels",
+            "iso_currency_code": "KHR",
+            "phone_prefix": "855",
+            "iso": "KH"
+        },
+        {
+            "id": 120,
+            "name": "Cameroon",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "237",
+            "iso": "CM"
+        },
+        {
+            "id": 124,
+            "name": "Canada",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "CAD",
+            "phone_prefix": "1",
+            "iso": "CA"
+        },
+        {
+            "id": 132,
+            "name": "Cape Verde",
+            "continent": "AF",
+            "currency": "Escudo",
+            "iso_currency_code": "CVE",
+            "phone_prefix": "238",
+            "iso": "CV"
+        },
+        {
+            "id": 136,
+            "name": "Cayman Islands",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "KYD",
+            "phone_prefix": "+1-345",
+            "iso": "KY"
+        },
+        {
+            "id": 140,
+            "name": "Central African Republic",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "236",
+            "iso": "CF"
+        },
+        {
+            "id": 148,
+            "name": "Chad",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "235",
+            "iso": "TD"
+        },
+        {
+            "id": 152,
+            "name": "Chile",
+            "continent": "SA",
+            "currency": "Peso",
+            "iso_currency_code": "CLP",
+            "phone_prefix": "56",
+            "iso": "CL"
+        },
+        {
+            "id": 156,
+            "name": "China",
+            "continent": "AS",
+            "currency": "Yuan Renminbi",
+            "iso_currency_code": "CNY",
+            "phone_prefix": "86",
+            "iso": "CN"
+        },
+        {
+            "id": 162,
+            "name": "Christmas Island",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "61",
+            "iso": "CX"
+        },
+        {
+            "id": 166,
+            "name": "Cocos Islands",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "61",
+            "iso": "CC"
+        },
+        {
+            "id": 170,
+            "name": "Colombia",
+            "continent": "SA",
+            "currency": "Peso",
+            "iso_currency_code": "COP",
+            "phone_prefix": "57",
+            "iso": "CO"
+        },
+        {
+            "id": 174,
+            "name": "Comoros",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "KMF",
+            "phone_prefix": "269",
+            "iso": "KM"
+        },
+        {
+            "id": 184,
+            "name": "Cook Islands",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "NZD",
+            "phone_prefix": "682",
+            "iso": "CK"
+        },
+        {
+            "id": 188,
+            "name": "Costa Rica",
+            "continent": "NA",
+            "currency": "Colon",
+            "iso_currency_code": "CRC",
+            "phone_prefix": "506",
+            "iso": "CR"
+        },
+        {
+            "id": 191,
+            "name": "Croatia",
+            "continent": "EU",
+            "currency": "Kuna",
+            "iso_currency_code": "HRK",
+            "phone_prefix": "385",
+            "iso": "HR"
+        },
+        {
+            "id": 192,
+            "name": "Cuba",
+            "continent": "NA",
+            "currency": "Peso",
+            "iso_currency_code": "CUP",
+            "phone_prefix": "53",
+            "iso": "CU"
+        },
+        {
+            "id": 196,
+            "name": "Cyprus",
+            "continent": "AS",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "357",
+            "iso": "CY"
+        },
+        {
+            "id": 203,
+            "name": "Czech Republic",
+            "continent": "EU",
+            "currency": "Koruna",
+            "iso_currency_code": "CZK",
+            "phone_prefix": "420",
+            "iso": "CZ"
+        },
+        {
+            "id": 180,
+            "name": "Democratic Republic of the Congo",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "CDF",
+            "phone_prefix": "243",
+            "iso": "CD"
+        },
+        {
+            "id": 208,
+            "name": "Denmark",
+            "continent": "EU",
+            "currency": "Krone",
+            "iso_currency_code": "DKK",
+            "phone_prefix": "45",
+            "iso": "DK"
+        },
+        {
+            "id": 262,
+            "name": "Djibouti",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "DJF",
+            "phone_prefix": "253",
+            "iso": "DJ"
+        },
+        {
+            "id": 212,
+            "name": "Dominica",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-767",
+            "iso": "DM"
+        },
+        {
+            "id": 214,
+            "name": "Dominican Republic",
+            "continent": "NA",
+            "currency": "Peso",
+            "iso_currency_code": "DOP",
+            "phone_prefix": "+1-809 and 1-829",
+            "iso": "DO"
+        },
+        {
+            "id": 218,
+            "name": "Ecuador",
+            "continent": "SA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "593",
+            "iso": "EC"
+        },
+        {
+            "id": 818,
+            "name": "Egypt",
+            "continent": "AF",
+            "currency": "Pound",
+            "iso_currency_code": "EGP",
+            "phone_prefix": "20",
+            "iso": "EG"
+        },
+        {
+            "id": 222,
+            "name": "El Salvador",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "503",
+            "iso": "SV"
+        },
+        {
+            "id": 226,
+            "name": "Equatorial Guinea",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "240",
+            "iso": "GQ"
+        },
+        {
+            "id": 232,
+            "name": "Eritrea",
+            "continent": "AF",
+            "currency": "Nakfa",
+            "iso_currency_code": "ERN",
+            "phone_prefix": "291",
+            "iso": "ER"
+        },
+        {
+            "id": 233,
+            "name": "Estonia",
+            "continent": "EU",
+            "currency": "Kroon",
+            "iso_currency_code": "EEK",
+            "phone_prefix": "372",
+            "iso": "EE"
+        },
+        {
+            "id": 231,
+            "name": "Ethiopia",
+            "continent": "AF",
+            "currency": "Birr",
+            "iso_currency_code": "ETB",
+            "phone_prefix": "251",
+            "iso": "ET"
+        },
+        {
+            "id": 238,
+            "name": "Falkland Islands",
+            "continent": "SA",
+            "currency": "Pound",
+            "iso_currency_code": "FKP",
+            "phone_prefix": "500",
+            "iso": "FK"
+        },
+        {
+            "id": 234,
+            "name": "Faroe Islands",
+            "continent": "AS",
+            "currency": "Krone",
+            "iso_currency_code": "DKK",
+            "phone_prefix": "298",
+            "iso": "FO"
+        },
+        {
+            "id": 242,
+            "name": "Fiji",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "FJD",
+            "phone_prefix": "679",
+            "iso": "FJ"
+        },
+        {
+            "id": 246,
+            "name": "Finland",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "358",
+            "iso": "FI"
+        },
+        {
+            "id": 250,
+            "name": "France",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "33",
+            "iso": "FR"
+        },
+        {
+            "id": 254,
+            "name": "French Guiana",
+            "continent": "SA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "594",
+            "iso": "GF"
+        },
+        {
+            "id": 258,
+            "name": "French Polynesia",
+            "continent": "OC",
+            "currency": "Franc",
+            "iso_currency_code": "XPF",
+            "phone_prefix": "689",
+            "iso": "PF"
+        },
+        {
+            "id": 260,
+            "name": "French Southern Territories",
+            "continent": "AN",
+            "currency": "Euro  ",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "",
+            "iso": "TF"
+        },
+        {
+            "id": 266,
+            "name": "Gabon",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "241",
+            "iso": "GA"
+        },
+        {
+            "id": 270,
+            "name": "Gambia",
+            "continent": "AF",
+            "currency": "Dalasi",
+            "iso_currency_code": "GMD",
+            "phone_prefix": "220",
+            "iso": "GM"
+        },
+        {
+            "id": 268,
+            "name": "Georgia",
+            "continent": "EU",
+            "currency": "Lari",
+            "iso_currency_code": "GEL",
+            "phone_prefix": "995",
+            "iso": "GE"
+        },
+        {
+            "id": 276,
+            "name": "Germany",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "49",
+            "iso": "DE"
+        },
+        {
+            "id": 288,
+            "name": "Ghana",
+            "continent": "AF",
+            "currency": "Cedi",
+            "iso_currency_code": "GHS",
+            "phone_prefix": "233",
+            "iso": "GH"
+        },
+        {
+            "id": 292,
+            "name": "Gibraltar",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "GIP",
+            "phone_prefix": "350",
+            "iso": "GI"
+        },
+        {
+            "id": 895,
+            "name": "Glendale, California",
+            "continent": null,
+            "currency": null,
+            "iso_currency_code": null,
+            "phone_prefix": null,
+            "iso": null
+        },
+        {
+            "id": 300,
+            "name": "Greece",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "30",
+            "iso": "GR"
+        },
+        {
+            "id": 304,
+            "name": "Greenland",
+            "continent": "NA",
+            "currency": "Krone",
+            "iso_currency_code": "DKK",
+            "phone_prefix": "299",
+            "iso": "GL"
+        },
+        {
+            "id": 308,
+            "name": "Grenada",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-473",
+            "iso": "GD"
+        },
+        {
+            "id": 312,
+            "name": "Guadeloupe",
+            "continent": "NA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "590",
+            "iso": "GP"
+        },
+        {
+            "id": 316,
+            "name": "Guam",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-671",
+            "iso": "GU"
+        },
+        {
+            "id": 320,
+            "name": "Guatemala",
+            "continent": "NA",
+            "currency": "Quetzal",
+            "iso_currency_code": "GTQ",
+            "phone_prefix": "502",
+            "iso": "GT"
+        },
+        {
+            "id": 831,
+            "name": "Guernsey",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "GBP",
+            "phone_prefix": "+44-1481",
+            "iso": "GG"
+        },
+        {
+            "id": 324,
+            "name": "Guinea",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "GNF",
+            "phone_prefix": "224",
+            "iso": "GN"
+        },
+        {
+            "id": 624,
+            "name": "Guinea-Bissau",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "245",
+            "iso": "GW"
+        },
+        {
+            "id": 328,
+            "name": "Guyana",
+            "continent": "SA",
+            "currency": "Dollar",
+            "iso_currency_code": "GYD",
+            "phone_prefix": "592",
+            "iso": "GY"
+        },
+        {
+            "id": 332,
+            "name": "Haiti",
+            "continent": "NA",
+            "currency": "Gourde",
+            "iso_currency_code": "HTG",
+            "phone_prefix": "509",
+            "iso": "HT"
+        },
+        {
+            "id": 334,
+            "name": "Heard Island and McDonald Islands",
+            "continent": "AN",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": " ",
+            "iso": "HM"
+        },
+        {
+            "id": 340,
+            "name": "Honduras",
+            "continent": "NA",
+            "currency": "Lempira",
+            "iso_currency_code": "HNL",
+            "phone_prefix": "504",
+            "iso": "HN"
+        },
+        {
+            "id": 344,
+            "name": "Hong Kong",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "HKD",
+            "phone_prefix": "852",
+            "iso": "HK"
+        },
+        {
+            "id": 348,
+            "name": "Hungary",
+            "continent": "EU",
+            "currency": "Forint",
+            "iso_currency_code": "HUF",
+            "phone_prefix": "36",
+            "iso": "HU"
+        },
+        {
+            "id": 352,
+            "name": "Iceland",
+            "continent": "EU",
+            "currency": "Krona",
+            "iso_currency_code": "ISK",
+            "phone_prefix": "354",
+            "iso": "IS"
+        },
+        {
+            "id": 356,
+            "name": "India",
+            "continent": "AS",
+            "currency": "Rupee",
+            "iso_currency_code": "INR",
+            "phone_prefix": "91",
+            "iso": "IN"
+        },
+        {
+            "id": 360,
+            "name": "Indonesia",
+            "continent": "AS",
+            "currency": "Rupiah",
+            "iso_currency_code": "IDR",
+            "phone_prefix": "62",
+            "iso": "ID"
+        },
+        {
+            "id": 364,
+            "name": "Iran",
+            "continent": "AS",
+            "currency": "Rial",
+            "iso_currency_code": "IRR",
+            "phone_prefix": "98",
+            "iso": "IR"
+        },
+        {
+            "id": 368,
+            "name": "Iraq",
+            "continent": "AS",
+            "currency": "Dinar",
+            "iso_currency_code": "IQD",
+            "phone_prefix": "964",
+            "iso": "IQ"
+        },
+        {
+            "id": 372,
+            "name": "Ireland",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "353",
+            "iso": "IE"
+        },
+        {
+            "id": 833,
+            "name": "Isle of Man",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "GBP",
+            "phone_prefix": "+44-1624",
+            "iso": "IM"
+        },
+        {
+            "id": 376,
+            "name": "Israel",
+            "continent": "AS",
+            "currency": "Shekel",
+            "iso_currency_code": "ILS",
+            "phone_prefix": "972",
+            "iso": "IL"
+        },
+        {
+            "id": 380,
+            "name": "Italy",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "39",
+            "iso": "IT"
+        },
+        {
+            "id": 384,
+            "name": "Ivory Coast",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "225",
+            "iso": "CI"
+        },
+        {
+            "id": 388,
+            "name": "Jamaica",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "JMD",
+            "phone_prefix": "+1-876",
+            "iso": "JM"
+        },
+        {
+            "id": 392,
+            "name": "Japan",
+            "continent": "AS",
+            "currency": "Yen",
+            "iso_currency_code": "JPY",
+            "phone_prefix": "81",
+            "iso": "JP"
+        },
+        {
+            "id": 832,
+            "name": "Jersey",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "GBP",
+            "phone_prefix": "+44-1534",
+            "iso": "JE"
+        },
+        {
+            "id": 400,
+            "name": "Jordan",
+            "continent": "AS",
+            "currency": "Dinar",
+            "iso_currency_code": "JOD",
+            "phone_prefix": "962",
+            "iso": "JO"
+        },
+        {
+            "id": 398,
+            "name": "Kazakhstan",
+            "continent": "EU",
+            "currency": "Tenge",
+            "iso_currency_code": "KZT",
+            "phone_prefix": "7",
+            "iso": "KZ"
+        },
+        {
+            "id": 404,
+            "name": "Kenya",
+            "continent": "AF",
+            "currency": "Shilling",
+            "iso_currency_code": "KES",
+            "phone_prefix": "254",
+            "iso": "KE"
+        },
+        {
+            "id": 296,
+            "name": "Kiribati",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "686",
+            "iso": "KI"
+        },
+        {
+            "id": 855,
+            "name": "Kosovo",
+            "continent": "AS",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "",
+            "iso": "XK"
+        },
+        {
+            "id": 414,
+            "name": "Kuwait",
+            "continent": "AS",
+            "currency": "Dinar",
+            "iso_currency_code": "KWD",
+            "phone_prefix": "965",
+            "iso": "KW"
+        },
+        {
+            "id": 417,
+            "name": "Kyrgyzstan",
+            "continent": "EU",
+            "currency": "Som",
+            "iso_currency_code": "KGS",
+            "phone_prefix": "996",
+            "iso": "KG"
+        },
+        {
+            "id": 418,
+            "name": "Laos",
+            "continent": "AS",
+            "currency": "Kip",
+            "iso_currency_code": "LAK",
+            "phone_prefix": "856",
+            "iso": "LA"
+        },
+        {
+            "id": 428,
+            "name": "Latvia",
+            "continent": "EU",
+            "currency": "Lat",
+            "iso_currency_code": "LVL",
+            "phone_prefix": "371",
+            "iso": "LV"
+        },
+        {
+            "id": 422,
+            "name": "Lebanon",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "LBP",
+            "phone_prefix": "961",
+            "iso": "LB"
+        },
+        {
+            "id": 426,
+            "name": "Lesotho",
+            "continent": "AF",
+            "currency": "Loti",
+            "iso_currency_code": "LSL",
+            "phone_prefix": "266",
+            "iso": "LS"
+        },
+        {
+            "id": 430,
+            "name": "Liberia",
+            "continent": "AF",
+            "currency": "Dollar",
+            "iso_currency_code": "LRD",
+            "phone_prefix": "231",
+            "iso": "LR"
+        },
+        {
+            "id": 434,
+            "name": "Libya",
+            "continent": "AF",
+            "currency": "Dinar",
+            "iso_currency_code": "LYD",
+            "phone_prefix": "218",
+            "iso": "LY"
+        },
+        {
+            "id": 438,
+            "name": "Liechtenstein",
+            "continent": "EU",
+            "currency": "Franc",
+            "iso_currency_code": "CHF",
+            "phone_prefix": "423",
+            "iso": "LI"
+        },
+        {
+            "id": 440,
+            "name": "Lithuania",
+            "continent": "EU",
+            "currency": "Litas",
+            "iso_currency_code": "LTL",
+            "phone_prefix": "370",
+            "iso": "LT"
+        },
+        {
+            "id": 442,
+            "name": "Luxembourg",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "352",
+            "iso": "LU"
+        },
+        {
+            "id": 446,
+            "name": "Macao",
+            "continent": "AS",
+            "currency": "Pataca",
+            "iso_currency_code": "MOP",
+            "phone_prefix": "853",
+            "iso": "MO"
+        },
+        {
+            "id": 807,
+            "name": "Macedonia",
+            "continent": "EU",
+            "currency": "Denar",
+            "iso_currency_code": "MKD",
+            "phone_prefix": "389",
+            "iso": "MK"
+        },
+        {
+            "id": 450,
+            "name": "Madagascar",
+            "continent": "AF",
+            "currency": "Ariary",
+            "iso_currency_code": "MGA",
+            "phone_prefix": "261",
+            "iso": "MG"
+        },
+        {
+            "id": 454,
+            "name": "Malawi",
+            "continent": "AF",
+            "currency": "Kwacha",
+            "iso_currency_code": "MWK",
+            "phone_prefix": "265",
+            "iso": "MW"
+        },
+        {
+            "id": 458,
+            "name": "Malaysia",
+            "continent": "AS",
+            "currency": "Ringgit",
+            "iso_currency_code": "MYR",
+            "phone_prefix": "60",
+            "iso": "MY"
+        },
+        {
+            "id": 462,
+            "name": "Maldives",
+            "continent": "AS",
+            "currency": "Rufiyaa",
+            "iso_currency_code": "MVR",
+            "phone_prefix": "960",
+            "iso": "MV"
+        },
+        {
+            "id": 466,
+            "name": "Mali",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "223",
+            "iso": "ML"
+        },
+        {
+            "id": 470,
+            "name": "Malta",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "356",
+            "iso": "MT"
+        },
+        {
+            "id": 584,
+            "name": "Marshall Islands",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "692",
+            "iso": "MH"
+        },
+        {
+            "id": 474,
+            "name": "Martinique",
+            "continent": "NA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "596",
+            "iso": "MQ"
+        },
+        {
+            "id": 478,
+            "name": "Mauritania",
+            "continent": "AF",
+            "currency": "Ouguiya",
+            "iso_currency_code": "MRO",
+            "phone_prefix": "222",
+            "iso": "MR"
+        },
+        {
+            "id": 480,
+            "name": "Mauritius",
+            "continent": "AF",
+            "currency": "Rupee",
+            "iso_currency_code": "MUR",
+            "phone_prefix": "230",
+            "iso": "MU"
+        },
+        {
+            "id": 175,
+            "name": "Mayotte",
+            "continent": "AF",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "269",
+            "iso": "YT"
+        },
+        {
+            "id": 484,
+            "name": "Mexico",
+            "continent": "NA",
+            "currency": "Peso",
+            "iso_currency_code": "MXN",
+            "phone_prefix": "52",
+            "iso": "MX"
+        },
+        {
+            "id": 583,
+            "name": "Micronesia",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "691",
+            "iso": "FM"
+        },
+        {
+            "id": 498,
+            "name": "Moldova",
+            "continent": "EU",
+            "currency": "Leu",
+            "iso_currency_code": "MDL",
+            "phone_prefix": "373",
+            "iso": "MD"
+        },
+        {
+            "id": 492,
+            "name": "Monaco",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "377",
+            "iso": "MC"
+        },
+        {
+            "id": 496,
+            "name": "Mongolia",
+            "continent": "AS",
+            "currency": "Tugrik",
+            "iso_currency_code": "MNT",
+            "phone_prefix": "976",
+            "iso": "MN"
+        },
+        {
+            "id": 499,
+            "name": "Montenegro",
+            "continent": "AS",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "381",
+            "iso": "ME"
+        },
+        {
+            "id": 500,
+            "name": "Montserrat",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-664",
+            "iso": "MS"
+        },
+        {
+            "id": 504,
+            "name": "Morocco",
+            "continent": "AF",
+            "currency": "Dirham",
+            "iso_currency_code": "MAD",
+            "phone_prefix": "212",
+            "iso": "MA"
+        },
+        {
+            "id": 508,
+            "name": "Mozambique",
+            "continent": "AF",
+            "currency": "Meticail",
+            "iso_currency_code": "MZN",
+            "phone_prefix": "258",
+            "iso": "MZ"
+        },
+        {
+            "id": 104,
+            "name": "Myanmar",
+            "continent": "AS",
+            "currency": "Kyat",
+            "iso_currency_code": "MMK",
+            "phone_prefix": "95",
+            "iso": "MM"
+        },
+        {
+            "id": 516,
+            "name": "Namibia",
+            "continent": "AF",
+            "currency": "Dollar",
+            "iso_currency_code": "NAD",
+            "phone_prefix": "264",
+            "iso": "NA"
+        },
+        {
+            "id": 520,
+            "name": "Nauru",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "674",
+            "iso": "NR"
+        },
+        {
+            "id": 524,
+            "name": "Nepal",
+            "continent": "AS",
+            "currency": "Rupee",
+            "iso_currency_code": "NPR",
+            "phone_prefix": "977",
+            "iso": "NP"
+        },
+        {
+            "id": 528,
+            "name": "Netherlands",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "31",
+            "iso": "NL"
+        },
+        {
+            "id": 530,
+            "name": "Netherlands Antilles",
+            "continent": "NA",
+            "currency": "Guilder",
+            "iso_currency_code": "ANG",
+            "phone_prefix": "599",
+            "iso": "AN"
+        },
+        {
+            "id": 540,
+            "name": "New Caledonia",
+            "continent": "OC",
+            "currency": "Franc",
+            "iso_currency_code": "XPF",
+            "phone_prefix": "687",
+            "iso": "NC"
+        },
+        {
+            "id": 554,
+            "name": "New Zealand",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "NZD",
+            "phone_prefix": "64",
+            "iso": "NZ"
+        },
+        {
+            "id": 558,
+            "name": "Nicaragua",
+            "continent": "NA",
+            "currency": "Cordoba",
+            "iso_currency_code": "NIO",
+            "phone_prefix": "505",
+            "iso": "NI"
+        },
+        {
+            "id": 562,
+            "name": "Niger",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "227",
+            "iso": "NE"
+        },
+        {
+            "id": 566,
+            "name": "Nigeria",
+            "continent": "AF",
+            "currency": "Naira",
+            "iso_currency_code": "NGN",
+            "phone_prefix": "234",
+            "iso": "NG"
+        },
+        {
+            "id": 570,
+            "name": "Niue",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "NZD",
+            "phone_prefix": "683",
+            "iso": "NU"
+        },
+        {
+            "id": 574,
+            "name": "Norfolk Island",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "672",
+            "iso": "NF"
+        },
+        {
+            "id": 408,
+            "name": "North Korea",
+            "continent": "AS",
+            "currency": "Won",
+            "iso_currency_code": "KPW",
+            "phone_prefix": "850",
+            "iso": "KP"
+        },
+        {
+            "id": 580,
+            "name": "Northern Mariana Islands",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-670",
+            "iso": "MP"
+        },
+        {
+            "id": 578,
+            "name": "Norway",
+            "continent": "EU",
+            "currency": "Krone",
+            "iso_currency_code": "NOK",
+            "phone_prefix": "47",
+            "iso": "NO"
+        },
+        {
+            "id": 512,
+            "name": "Oman",
+            "continent": "AS",
+            "currency": "Rial",
+            "iso_currency_code": "OMR",
+            "phone_prefix": "968",
+            "iso": "OM"
+        },
+        {
+            "id": 586,
+            "name": "Pakistan",
+            "continent": "AS",
+            "currency": "Rupee",
+            "iso_currency_code": "PKR",
+            "phone_prefix": "92",
+            "iso": "PK"
+        },
+        {
+            "id": 585,
+            "name": "Palau",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "680",
+            "iso": "PW"
+        },
+        {
+            "id": 275,
+            "name": "Palestinian Territory",
+            "continent": "AS",
+            "currency": "Shekel",
+            "iso_currency_code": "ILS",
+            "phone_prefix": "970",
+            "iso": "PS"
+        },
+        {
+            "id": 591,
+            "name": "Panama",
+            "continent": "NA",
+            "currency": "Balboa",
+            "iso_currency_code": "PAB",
+            "phone_prefix": "507",
+            "iso": "PA"
+        },
+        {
+            "id": 598,
+            "name": "Papua New Guinea",
+            "continent": "OC",
+            "currency": "Kina",
+            "iso_currency_code": "PGK",
+            "phone_prefix": "675",
+            "iso": "PG"
+        },
+        {
+            "id": 600,
+            "name": "Paraguay",
+            "continent": "SA",
+            "currency": "Guarani",
+            "iso_currency_code": "PYG",
+            "phone_prefix": "595",
+            "iso": "PY"
+        },
+        {
+            "id": 604,
+            "name": "Peru",
+            "continent": "SA",
+            "currency": "Sol",
+            "iso_currency_code": "PEN",
+            "phone_prefix": "51",
+            "iso": "PE"
+        },
+        {
+            "id": 608,
+            "name": "Philippines",
+            "continent": "AS",
+            "currency": "Peso",
+            "iso_currency_code": "PHP",
+            "phone_prefix": "63",
+            "iso": "PH"
+        },
+        {
+            "id": 612,
+            "name": "Pitcairn",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "NZD",
+            "phone_prefix": "",
+            "iso": "PN"
+        },
+        {
+            "id": 616,
+            "name": "Poland",
+            "continent": "EU",
+            "currency": "Zloty",
+            "iso_currency_code": "PLN",
+            "phone_prefix": "48",
+            "iso": "PL"
+        },
+        {
+            "id": 620,
+            "name": "Portugal",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "351",
+            "iso": "PT"
+        },
+        {
+            "id": 630,
+            "name": "Puerto Rico",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-787 and 1-939",
+            "iso": "PR"
+        },
+        {
+            "id": 634,
+            "name": "Qatar",
+            "continent": "AS",
+            "currency": "Rial",
+            "iso_currency_code": "QAR",
+            "phone_prefix": "974",
+            "iso": "QA"
+        },
+        {
+            "id": 178,
+            "name": "Republic of the Congo",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XAF",
+            "phone_prefix": "242",
+            "iso": "CG"
+        },
+        {
+            "id": 638,
+            "name": "Reunion",
+            "continent": "AF",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "262",
+            "iso": "RE"
+        },
+        {
+            "id": 642,
+            "name": "Romania",
+            "continent": "EU",
+            "currency": "Leu",
+            "iso_currency_code": "RON",
+            "phone_prefix": "40",
+            "iso": "RO"
+        },
+        {
+            "id": 643,
+            "name": "Russia",
+            "continent": "EU",
+            "currency": "Ruble",
+            "iso_currency_code": "RUB",
+            "phone_prefix": "7",
+            "iso": "RU"
+        },
+        {
+            "id": 646,
+            "name": "Rwanda",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "RWF",
+            "phone_prefix": "250",
+            "iso": "RW"
+        },
+        {
+            "id": 652,
+            "name": "Saint Barthélemy",
+            "continent": "NA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "590",
+            "iso": "BL"
+        },
+        {
+            "id": 654,
+            "name": "Saint Helena",
+            "continent": "AF",
+            "currency": "Pound",
+            "iso_currency_code": "SHP",
+            "phone_prefix": "290",
+            "iso": "SH"
+        },
+        {
+            "id": 659,
+            "name": "Saint Kitts and Nevis",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-869",
+            "iso": "KN"
+        },
+        {
+            "id": 662,
+            "name": "Saint Lucia",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-758",
+            "iso": "LC"
+        },
+        {
+            "id": 663,
+            "name": "Saint Martin",
+            "continent": "NA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "590",
+            "iso": "MF"
+        },
+        {
+            "id": 666,
+            "name": "Saint Pierre and Miquelon",
+            "continent": "NA",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "508",
+            "iso": "PM"
+        },
+        {
+            "id": 670,
+            "name": "Saint Vincent and the Grenadines",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "XCD",
+            "phone_prefix": "+1-784",
+            "iso": "VC"
+        },
+        {
+            "id": 882,
+            "name": "Samoa",
+            "continent": "OC",
+            "currency": "Tala",
+            "iso_currency_code": "WST",
+            "phone_prefix": "685",
+            "iso": "WS"
+        },
+        {
+            "id": 674,
+            "name": "San Marino",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "378",
+            "iso": "SM"
+        },
+        {
+            "id": 678,
+            "name": "Sao Tome and Principe",
+            "continent": "AF",
+            "currency": "Dobra",
+            "iso_currency_code": "STD",
+            "phone_prefix": "239",
+            "iso": "ST"
+        },
+        {
+            "id": 682,
+            "name": "Saudi Arabia",
+            "continent": "AS",
+            "currency": "Rial",
+            "iso_currency_code": "SAR",
+            "phone_prefix": "966",
+            "iso": "SA"
+        },
+        {
+            "id": 686,
+            "name": "Senegal",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "221",
+            "iso": "SN"
+        },
+        {
+            "id": 688,
+            "name": "Serbia",
+            "continent": "AS",
+            "currency": "Dinar",
+            "iso_currency_code": "RSD",
+            "phone_prefix": "381",
+            "iso": "RS"
+        },
+        {
+            "id": 891,
+            "name": "Serbia and Montenegro",
+            "continent": "EU",
+            "currency": "Dinar",
+            "iso_currency_code": "RSD",
+            "phone_prefix": "381",
+            "iso": "CS"
+        },
+        {
+            "id": 690,
+            "name": "Seychelles",
+            "continent": "AF",
+            "currency": "Rupee",
+            "iso_currency_code": "SCR",
+            "phone_prefix": "248",
+            "iso": "SC"
+        },
+        {
+            "id": 694,
+            "name": "Sierra Leone",
+            "continent": "AF",
+            "currency": "Leone",
+            "iso_currency_code": "SLL",
+            "phone_prefix": "232",
+            "iso": "SL"
+        },
+        {
+            "id": 702,
+            "name": "Singapore",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "SGD",
+            "phone_prefix": "65",
+            "iso": "SG"
+        },
+        {
+            "id": 703,
+            "name": "Slovakia",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "421",
+            "iso": "SK"
+        },
+        {
+            "id": 705,
+            "name": "Slovenia",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "386",
+            "iso": "SI"
+        },
+        {
+            "id": 90,
+            "name": "Solomon Islands",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "SBD",
+            "phone_prefix": "677",
+            "iso": "SB"
+        },
+        {
+            "id": 706,
+            "name": "Somalia",
+            "continent": "AF",
+            "currency": "Shilling",
+            "iso_currency_code": "SOS",
+            "phone_prefix": "252",
+            "iso": "SO"
+        },
+        {
+            "id": 710,
+            "name": "South Africa",
+            "continent": "AF",
+            "currency": "Rand",
+            "iso_currency_code": "ZAR",
+            "phone_prefix": "27",
+            "iso": "ZA"
+        },
+        {
+            "id": 239,
+            "name": "South Georgia and the South Sandwich Islands",
+            "continent": "AN",
+            "currency": "Pound",
+            "iso_currency_code": "GBP",
+            "phone_prefix": "",
+            "iso": "GS"
+        },
+        {
+            "id": 410,
+            "name": "South Korea",
+            "continent": "AS",
+            "currency": "Won",
+            "iso_currency_code": "KRW",
+            "phone_prefix": "82",
+            "iso": "KR"
+        },
+        {
+            "id": 724,
+            "name": "Spain",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "34",
+            "iso": "ES"
+        },
+        {
+            "id": 144,
+            "name": "Sri Lanka",
+            "continent": "AS",
+            "currency": "Rupee",
+            "iso_currency_code": "LKR",
+            "phone_prefix": "94",
+            "iso": "LK"
+        },
+        {
+            "id": 736,
+            "name": "Sudan",
+            "continent": "AF",
+            "currency": "Dinar",
+            "iso_currency_code": "SDG",
+            "phone_prefix": "249",
+            "iso": "SD"
+        },
+        {
+            "id": 740,
+            "name": "Suriname",
+            "continent": "SA",
+            "currency": "Dollar",
+            "iso_currency_code": "SRD",
+            "phone_prefix": "597",
+            "iso": "SR"
+        },
+        {
+            "id": 744,
+            "name": "Svalbard and Jan Mayen",
+            "continent": "AS",
+            "currency": "Krone",
+            "iso_currency_code": "NOK",
+            "phone_prefix": "47",
+            "iso": "SJ"
+        },
+        {
+            "id": 748,
+            "name": "Swaziland",
+            "continent": "AF",
+            "currency": "Lilangeni",
+            "iso_currency_code": "SZL",
+            "phone_prefix": "268",
+            "iso": "SZ"
+        },
+        {
+            "id": 752,
+            "name": "Sweden",
+            "continent": "EU",
+            "currency": "Krona",
+            "iso_currency_code": "SEK",
+            "phone_prefix": "46",
+            "iso": "SE"
+        },
+        {
+            "id": 756,
+            "name": "Switzerland",
+            "continent": "EU",
+            "currency": "Franc",
+            "iso_currency_code": "CHF",
+            "phone_prefix": "41",
+            "iso": "CH"
+        },
+        {
+            "id": 760,
+            "name": "Syria",
+            "continent": "AS",
+            "currency": "Pound",
+            "iso_currency_code": "SYP",
+            "phone_prefix": "963",
+            "iso": "SY"
+        },
+        {
+            "id": 158,
+            "name": "Taiwan",
+            "continent": "AS",
+            "currency": "Dollar",
+            "iso_currency_code": "TWD",
+            "phone_prefix": "886",
+            "iso": "TW"
+        },
+        {
+            "id": 762,
+            "name": "Tajikistan",
+            "continent": "EU",
+            "currency": "Somoni",
+            "iso_currency_code": "TJS",
+            "phone_prefix": "992",
+            "iso": "TJ"
+        },
+        {
+            "id": 834,
+            "name": "Tanzania",
+            "continent": "AF",
+            "currency": "Shilling",
+            "iso_currency_code": "TZS",
+            "phone_prefix": "255",
+            "iso": "TZ"
+        },
+        {
+            "id": 764,
+            "name": "Thailand",
+            "continent": "AS",
+            "currency": "Baht",
+            "iso_currency_code": "THB",
+            "phone_prefix": "66",
+            "iso": "TH"
+        },
+        {
+            "id": 626,
+            "name": "Timor-Leste",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "670",
+            "iso": "TL"
+        },
+        {
+            "id": 768,
+            "name": "Togo",
+            "continent": "AF",
+            "currency": "Franc",
+            "iso_currency_code": "XOF",
+            "phone_prefix": "228",
+            "iso": "TG"
+        },
+        {
+            "id": 772,
+            "name": "Tokelau",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "NZD",
+            "phone_prefix": "690",
+            "iso": "TK"
+        },
+        {
+            "id": 776,
+            "name": "Tonga",
+            "continent": "OC",
+            "currency": "Pa'anga",
+            "iso_currency_code": "TOP",
+            "phone_prefix": "676",
+            "iso": "TO"
+        },
+        {
+            "id": 780,
+            "name": "Trinidad and Tobago",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "TTD",
+            "phone_prefix": "+1-868",
+            "iso": "TT"
+        },
+        {
+            "id": 788,
+            "name": "Tunisia",
+            "continent": "AF",
+            "currency": "Dinar",
+            "iso_currency_code": "TND",
+            "phone_prefix": "216",
+            "iso": "TN"
+        },
+        {
+            "id": 792,
+            "name": "Turkey",
+            "continent": "EU",
+            "currency": "Lira",
+            "iso_currency_code": "TRY",
+            "phone_prefix": "90",
+            "iso": "TR"
+        },
+        {
+            "id": 795,
+            "name": "Turkmenistan",
+            "continent": "EU",
+            "currency": "Manat",
+            "iso_currency_code": "TMT",
+            "phone_prefix": "993",
+            "iso": "TM"
+        },
+        {
+            "id": 796,
+            "name": "Turks and Caicos Islands",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-649",
+            "iso": "TC"
+        },
+        {
+            "id": 798,
+            "name": "Tuvalu",
+            "continent": "OC",
+            "currency": "Dollar",
+            "iso_currency_code": "AUD",
+            "phone_prefix": "688",
+            "iso": "TV"
+        },
+        {
+            "id": 850,
+            "name": "U.S. Virgin Islands",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "+1-340",
+            "iso": "VI"
+        },
+        {
+            "id": 800,
+            "name": "Uganda",
+            "continent": "AF",
+            "currency": "Shilling",
+            "iso_currency_code": "UGX",
+            "phone_prefix": "256",
+            "iso": "UG"
+        },
+        {
+            "id": 804,
+            "name": "Ukraine",
+            "continent": "EU",
+            "currency": "Hryvnia",
+            "iso_currency_code": "UAH",
+            "phone_prefix": "380",
+            "iso": "UA"
+        },
+        {
+            "id": 784,
+            "name": "United Arab Emirates",
+            "continent": "AS",
+            "currency": "Dirham",
+            "iso_currency_code": "AED",
+            "phone_prefix": "971",
+            "iso": "AE"
+        },
+        {
+            "id": 826,
+            "name": "United Kingdom",
+            "continent": "EU",
+            "currency": "Pound",
+            "iso_currency_code": "GBP",
+            "phone_prefix": "44",
+            "iso": "GB"
+        },
+        {
+            "id": 840,
+            "name": "United States",
+            "continent": "NA",
+            "currency": "Dollar",
+            "iso_currency_code": "USD",
+            "phone_prefix": "1",
+            "iso": "US"
+        },
+        {
+            "id": 581,
+            "name": "United States Minor Outlying Islands",
+            "continent": "OC",
+            "currency": "Dollar ",
+            "iso_currency_code": "USD",
+            "phone_prefix": "",
+            "iso": "UM"
+        },
+        {
+            "id": 858,
+            "name": "Uruguay",
+            "continent": "SA",
+            "currency": "Peso",
+            "iso_currency_code": "UYU",
+            "phone_prefix": "598",
+            "iso": "UY"
+        },
+        {
+            "id": 860,
+            "name": "Uzbekistan",
+            "continent": "EU",
+            "currency": "Som",
+            "iso_currency_code": "UZS",
+            "phone_prefix": "998",
+            "iso": "UZ"
+        },
+        {
+            "id": 548,
+            "name": "Vanuatu",
+            "continent": "OC",
+            "currency": "Vatu",
+            "iso_currency_code": "VUV",
+            "phone_prefix": "678",
+            "iso": "VU"
+        },
+        {
+            "id": 336,
+            "name": "Vatican",
+            "continent": "EU",
+            "currency": "Euro",
+            "iso_currency_code": "EUR",
+            "phone_prefix": "379",
+            "iso": "VA"
+        },
+        {
+            "id": 862,
+            "name": "Venezuela",
+            "continent": "SA",
+            "currency": "Bolivar",
+            "iso_currency_code": "VEF",
+            "phone_prefix": "58",
+            "iso": "VE"
+        },
+        {
+            "id": 704,
+            "name": "Vietnam",
+            "continent": "AS",
+            "currency": "Dong",
+            "iso_currency_code": "VND",
+            "phone_prefix": "84",
+            "iso": "VN"
+        },
+        {
+            "id": 876,
+            "name": "Wallis and Futuna",
+            "continent": "OC",
+            "currency": "Franc",
+            "iso_currency_code": "XPF",
+            "phone_prefix": "681",
+            "iso": "WF"
+        },
+        {
+            "id": 732,
+            "name": "Western Sahara",
+            "continent": "AF",
+            "currency": "Dirham",
+            "iso_currency_code": "MAD",
+            "phone_prefix": "212",
+            "iso": "EH"
+        },
+        {
+            "id": 887,
+            "name": "Yemen",
+            "continent": "AS",
+            "currency": "Rial",
+            "iso_currency_code": "YER",
+            "phone_prefix": "967",
+            "iso": "YE"
+        },
+        {
+            "id": 894,
+            "name": "Zambia",
+            "continent": "AF",
+            "currency": "Kwacha",
+            "iso_currency_code": "ZMK",
+            "phone_prefix": "260",
+            "iso": "ZM"
+        },
+        {
+            "id": 716,
+            "name": "Zimbabwe",
+            "continent": "AF",
+            "currency": "Dollar",
+            "iso_currency_code": "ZWL",
+            "phone_prefix": "263",
+            "iso": "ZW"
+        }
+    ]
+}
