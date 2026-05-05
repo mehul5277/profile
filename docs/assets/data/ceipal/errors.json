@@ -1,0 +1,19 @@
+[
+    {"status": 400, "success": 0, "message": "This mehtod is not allowed from outside of the Career Portal."},
+    {"status": 200, "success": 0, "message": "Postal code not found"},
+    {"status": 400, "success": 0, "message": "Invalid API key"},
+    {"status": 400, "success": 0, "message": "Invalid request method"},
+    {"status": 400, "success": 0, "message": "Missing required parameter: api_key"},
+    {"status": 400, "success": 0, "message": "Missing required parameter: cp_id"},
+    {"status": 400, "success": 0, "message": "Missing required parameter: method"},
+    {"status": 400, "success": 0, "message": "Invalid page number"},
+    {"status": 400, "success": 0, "message": "No job postings found for the given parameters"},
+    {"status": 200, "success": 0, "message": "Postal code not found"},
+    {"status": 200, "success": 0, "message": "Invalid API key"},
+    {"status": 200, "success": 0, "message": "Invalid request method"},
+    {"status": 200, "success": 0, "message": "Missing required parameter: api_key"},
+    {"status": 200, "success": 0, "message": "Missing required parameter: cp_id"},
+    {"status": 200, "success": 0, "message": "Missing required parameter: method"},
+    {"status": 200, "success": 0, "message": "Invalid page number"},
+    {"status": 200, "success": 0, "message": "No job postings found for the given parameters"}
+]

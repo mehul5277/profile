@@ -1,0 +1,334 @@
+{
+    "request": {
+        "requestType": "API",
+        "requestMethod": "GET",
+        "requestUrl": "https://careerapi.Jiexo.com/bm9EUzRvVytnaWEvS05pSTZmWXNtQT09/CareerPortalIndustriesList",
+        "requestParameters": {}
+    },
+    "response": [
+        {
+            "id": 1,
+            "name": "Accounting - Finance"
+        },
+        {
+            "id": 76,
+            "name": "Admin/Clerical"
+        },
+        {
+            "id": 2,
+            "name": "Advertising"
+        },
+        {
+            "id": 3,
+            "name": "Agriculture"
+        },
+        {
+            "id": 66,
+            "name": "Airline - Aviation"
+        },
+        {
+            "id": 4,
+            "name": "Architecture - Building"
+        },
+        {
+            "id": 67,
+            "name": "Art - Photography - Journalism"
+        },
+        {
+            "id": 5,
+            "name": "Automotive - Motor Vehicles - Parts"
+        },
+        {
+            "id": 6,
+            "name": "Banking - Financial Services"
+        },
+        {
+            "id": 68,
+            "name": "Biotechnology"
+        },
+        {
+            "id": 7,
+            "name": "Broadcasting - Radio - TV"
+        },
+        {
+            "id": 69,
+            "name": "Building Materials"
+        },
+        {
+            "id": 8,
+            "name": "Chemical"
+        },
+        {
+            "id": 10,
+            "name": "Computer Hardware"
+        },
+        {
+            "id": 11,
+            "name": "Computer Software"
+        },
+        {
+            "id": 9,
+            "name": "Construction"
+        },
+        {
+            "id": 12,
+            "name": "Consulting"
+        },
+        {
+            "id": 13,
+            "name": "Consumer Products"
+        },
+        {
+            "id": 14,
+            "name": "Credit - Loan - Collections"
+        },
+        {
+            "id": 15,
+            "name": "Defense - Aerospace"
+        },
+        {
+            "id": 16,
+            "name": "Education - Teaching - Administration"
+        },
+        {
+            "id": 17,
+            "name": "Electronics"
+        },
+        {
+            "id": 18,
+            "name": "Employment - Recruiting - Staffing"
+        },
+        {
+            "id": 19,
+            "name": "Energy - Utilities - Gas - Electric"
+        },
+        {
+            "id": 20,
+            "name": "Entertainment"
+        },
+        {
+            "id": 21,
+            "name": "Environmental"
+        },
+        {
+            "id": 22,
+            "name": "Exercise - Fitness"
+        },
+        {
+            "id": 80,
+            "name": "F & A"
+        },
+        {
+            "id": 23,
+            "name": "Fashion - Apparel - Textile"
+        },
+        {
+            "id": 70,
+            "name": "Food"
+        },
+        {
+            "id": 24,
+            "name": "Funeral - Cemetery"
+        },
+        {
+            "id": 25,
+            "name": "Government - Civil Service"
+        },
+        {
+            "id": 74,
+            "name": "Grp T &amp; M"
+        },
+        {
+            "id": 73,
+            "name": "Health Care"
+        },
+        {
+            "id": 26,
+            "name": "Healthcare - Health Services"
+        },
+        {
+            "id": 27,
+            "name": "Homebuilding"
+        },
+        {
+            "id": 28,
+            "name": "Hospitality"
+        },
+        {
+            "id": 71,
+            "name": "Hotel - Resort"
+        },
+        {
+            "id": 29,
+            "name": "HVAC"
+        },
+        {
+            "id": 30,
+            "name": "Import - Export"
+        },
+        {
+            "id": 31,
+            "name": "Industrial"
+        },
+        {
+            "id": 32,
+            "name": "Insurance"
+        },
+        {
+            "id": 33,
+            "name": "Internet - ECommerce"
+        },
+        {
+            "id": 75,
+            "name": "IT"
+        },
+        {
+            "id": 77,
+            "name": "IT-Hourly"
+        },
+        {
+            "id": 78,
+            "name": "IT-Project"
+        },
+        {
+            "id": 34,
+            "name": "Landscaping"
+        },
+        {
+            "id": 35,
+            "name": "Law Enforcement"
+        },
+        {
+            "id": 36,
+            "name": "Legal"
+        },
+        {
+            "id": 37,
+            "name": "Library Science"
+        },
+        {
+            "id": 38,
+            "name": "Managed Care"
+        },
+        {
+            "id": 39,
+            "name": "Manufacturing"
+        },
+        {
+            "id": 81,
+            "name": "Medical"
+        },
+        {
+            "id": 40,
+            "name": "Medical Equipment"
+        },
+        {
+            "id": 41,
+            "name": "Merchandising"
+        },
+        {
+            "id": 42,
+            "name": "Military"
+        },
+        {
+            "id": 43,
+            "name": "Mortgage"
+        },
+        {
+            "id": 44,
+            "name": "Newspaper"
+        },
+        {
+            "id": 45,
+            "name": "Not for Profit - Charitable"
+        },
+        {
+            "id": 46,
+            "name": "Office Supplies - Equipment"
+        },
+        {
+            "id": 47,
+            "name": "Oil Refining - Petroleum - Drilling"
+        },
+        {
+            "id": 48,
+            "name": "Other Great Industries"
+        },
+        {
+            "id": 49,
+            "name": "Packaging"
+        },
+        {
+            "id": 50,
+            "name": "Pharmaceutical"
+        },
+        {
+            "id": 51,
+            "name": "Printing - Publishing"
+        },
+        {
+            "id": 79,
+            "name": "Proj/Mile"
+        },
+        {
+            "id": 52,
+            "name": "Public Relations"
+        },
+        {
+            "id": 53,
+            "name": "Real Estate - Property Mgt"
+        },
+        {
+            "id": 56,
+            "name": "Recreation"
+        },
+        {
+            "id": 54,
+            "name": "Restaurant"
+        },
+        {
+            "id": 55,
+            "name": "Retail"
+        },
+        {
+            "id": 57,
+            "name": "Sales - Marketing"
+        },
+        {
+            "id": 58,
+            "name": "Securities"
+        },
+        {
+            "id": 72,
+            "name": "Security"
+        },
+        {
+            "id": 59,
+            "name": "Semiconductor"
+        },
+        {
+            "id": 60,
+            "name": "Social Services"
+        },
+        {
+            "id": 61,
+            "name": "Telecommunications"
+        },
+        {
+            "id": 62,
+            "name": "Training"
+        },
+        {
+            "id": 63,
+            "name": "Transportation"
+        },
+        {
+            "id": 64,
+            "name": "Travel"
+        },
+        {
+            "id": 65,
+            "name": "Wireless"
+        }
+    ]
+}

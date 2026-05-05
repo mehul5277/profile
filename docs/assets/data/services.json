@@ -1504,7 +1504,7 @@
             "type": "Industry",
             "industry": "Healthcare",
             "description": "We provide software development services tailored to the healthcare industry, including electronic health records (EHR) systems, telemedicine platforms, and healthcare analytics solutions.",
-            "icon": "#healthcare",
+            "icon": "cardiology",
             "link": "/industries/healthcare"
         },
         {

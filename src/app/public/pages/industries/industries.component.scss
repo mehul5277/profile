@@ -1,0 +1,29 @@
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,   /* 0 for outline, 1 for filled */
+    'wght' 400, /* 100 to 700 */
+    'GRAD' 0,   /* -25 to 200 */
+    'opsz' 48;  /* 20 to 48 */
+  
+  /* Standard CSS also applies */
+  color: #5f6368;
+  font-size: 24px;
+}
+
+// .s-20 { font-size: 20px; font-variation-settings: 'opsz' 20; }
+// .s-24 { font-size: 24px; font-variation-settings: 'opsz' 24; }
+// .s-40 { font-size: 40px; font-variation-settings: 'opsz' 40; }
+// .s-48 { font-size: 48px; font-variation-settings: 'opsz' 48; }
+// .s-56 { font-size: 56px; font-variation-settings: 'opsz' 56; }
+// .s-64 { font-size: 64px; font-variation-settings: 'opsz' 64; }
+// .s-72 { font-size: 72px; font-variation-settings: 'opsz' 72; }
+// .s-96 { font-size: 96px; font-variation-settings: 'opsz' 96; }
+// .s-120 { font-size: 120px; font-variation-settings: 'opsz' 120; }
+// .s-144 { font-size: 144px; font-variation-settings: 'opsz' 144; }
+
+// .icon-thin {
+//   // Use quoted axis names to prevent SCSS from treating it as a variable
+//   font-variation-settings: "wght" 100, "opsz" 24;
+//   font-weight: normal; 
+// }
+// .icon-bold { font-variation-settings: 'wght' 700; }

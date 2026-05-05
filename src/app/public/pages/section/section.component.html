@@ -1,3 +1,19 @@
+@if(section === SectionType.FullStack) {
+<section class="text-center">
+    @for (row of chunkArray(techstack, 6); track $index) {
+    <div class="row p-3">
+        @for(c of row; track c) {
+        <div class="col">
+            <svg class="img-thumbnail" width="70" height="70" aria-hidden="true">
+                <use [attr.xlink:href]="c"></use>
+            </svg>
+        </div>
+        }
+    </div>
+    }
+</section>
+}
+
 @if (section === SectionType.TechnologiesSM) {
 <section class="text-center">
     <img alt="Azure" srcset="assets/image/technologies/azure.png 1x, assets/image/technologies/azure.png 2x" src="assets/image/technologies/azure.png" decoding="async" data-nimg="intrinsic">
@@ -8,6 +24,7 @@
     <img alt="PostgreSQL" srcset="assets/image/technologies/postgresql.png 1x, assets/image/technologies/postgresql.png 2x" src="assets/image/technologies/postgresql.png" decoding="async" data-nimg="intrinsic">
 </section>
 }
+
 @if (section === SectionType.TechnologiesMD) {
 <section class="text-center">
     <img alt="Azure" srcset="assets/image/technologies/azure.png 1x" src="assets/image/technologies/azure.png" decoding="async" data-nimg="intrinsic">
