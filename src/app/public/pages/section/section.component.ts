@@ -49,8 +49,10 @@ export class SectionComponent {
     "assets/image/techstack.svg#bootstrap5",
     "assets/image/techstack.svg#sass",
     "assets/image/techstack.svg#typescript",
+    "assets/image/techstack.svg#jira",
     "assets/image/techstack.svg#bitbucket",
     "assets/image/techstack.svg#git",
+    "assets/image/techstack.svg#github",
     "assets/image/techstack.svg#jquery",
     "assets/image/techstack.svg#json",
     "assets/image/techstack.svg#mongodb",
@@ -61,6 +63,8 @@ export class SectionComponent {
     "assets/image/techstack.svg#postgresql",
     "assets/image/techstack.svg#postman",
     "assets/image/techstack.svg#react",
+    "assets/image/techstack.svg#linkedin",
+    "assets/image/techstack.svg#linkedin-c"
   ];
   SectionType = SectionType;
 
