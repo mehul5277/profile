@@ -1,0 +1,10 @@
+{
+    "templates": [
+        {
+            "id": "template-1",
+            "name": "Follow-up Email Template",
+            "description": "Dear {Name},\nI recently applied for the position of {position title}. I understand you're probably busy reviewing applicants, but I wanted to reach out to see if you had any updates on your decision timeline.\nI'm very excited about the opportunity to work at {company} and I believe that my skills, specifically {name a skill that's highly relevant to the position for which you applied}, would make me an ideal match for the position.\nFor your convenience, I've attached my application materials.\nPlease let me know if you need any additional information.\nI can be reached at {phone} or {email}. I look forward to hearing from you.\nBest, {Name}",
+            "image": "assets/image/template1.png"
+        }
+    ]
+}

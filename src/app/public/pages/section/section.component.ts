@@ -63,8 +63,7 @@ export class SectionComponent {
     "assets/image/techstack.svg#postgresql",
     "assets/image/techstack.svg#postman",
     "assets/image/techstack.svg#react",
-    "assets/image/techstack.svg#linkedin",
-    "assets/image/techstack.svg#linkedin-c"
+    "assets/image/techstack.svg#jenkins"
   ];
   SectionType = SectionType;
 
