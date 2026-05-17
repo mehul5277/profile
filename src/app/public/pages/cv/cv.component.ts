@@ -8,7 +8,7 @@ import { IndustriesComponent } from "../industries/industries.component";
 @Component({
   selector: 'app-cv',
   standalone: true,
-  imports: [HttpClientModule, SectionComponent, IndustriesComponent],
+  imports: [HttpClientModule, SectionComponent, IndustriesComponent, JsonPipe],
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.scss'
 })
@@ -59,6 +59,6 @@ export class CVComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.getData("services").subscribe(data => this.services = data.services.slice(0, 60));
+    this.dataService.getData("services").subscribe(data => this.services = data.services.slice(0, 10));
   }
 }

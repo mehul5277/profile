@@ -94,3 +94,45 @@
 .bi {
     fill: #0a66c2;
 }
+
+
+// Ticker styles
+.ticker-wrap {
+  //position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;          /* above navbar */
+  background: #d93a2b;       /* or your preferred color */
+  color: #fff;
+  overflow: hidden;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.t-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Responsive adjustments */
+
