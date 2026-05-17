@@ -4,7 +4,7 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 .custom-title {
-    @include font-size(2.5rem);
+    @include font-size(3rem);
     font-weight: 700;
 
     .custom-title-italic {
