@@ -1,15 +1,14 @@
 <main class="main">
     <div class="container-fluid">
         <!-- hero banner-->
-        <div class="row">
-            <div class="p-4 text-center bg-body-tertiary rounded-3">
+        <div class="row hero-banner">
+            <div class="p-5 text-center">
                 <div class="wow fadeInLeft" data-wow-duration="1s">
                     <img class="d-block mx-auto mb-4 rounded-circle img-thumbnail" [attr.src]="cv.basics.picture" [attr.alt]="cv.basics.displayName">
-                    <div class="display-6 text-body-emphasis">{{cv.basics.displayName}}</div>
-                    <p class="col-lg-8 mx-auto fs-5 text-muted"></p>
-                    <h3 class="fs-3 text-muted">{{cv.basics.headline}}</h3>
-                    <p class="fs-4 text-muted">{{cv.basics.summary}}</p>
-                    <p class="col-lg-8 mx-auto fs-5 text-muted">{{cv.basics.about[0]}}</p>
+                    <h1 class="display-6">{{cv.basics.displayName}}</h1>
+                    <h3 class="fs-3">{{cv.basics.headline}}</h3>
+                    <p class="fs-4">{{cv.basics.summary}}</p>
+                    <p class="col-lg-8 mx-auto fs-5">{{cv.basics.about[0]}}</p>
                 </div>
                 <div class="d-inline-flex gap-2 my-3 wow fadeInUp" data-wow-duration="2s">
                     <a [hidden]="true" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" [attr.href]="linkedIn" target="_blank">
@@ -19,7 +18,7 @@
                         </svg>
                     </a>
                     @if(cv.basics.profiles.length > 0) {
-                    <a class="d-inline-flex align-items-center btn btn-outline-secondary btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
+                    <a class="d-inline-flex align-items-center btn btn-outline-light btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
                         <span>Get in touch</span>
                         <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
                             <use href="assets/image/techstack.svg#linkedin-c"></use>
@@ -32,31 +31,36 @@
                 </div>
             </div>
         </div>
-                <div class="row">
+        <div class="row">
             <div class="ticker-wrap">
                 <div class="ticker-track">
-                    @for(s of services; track s) {
-                    <div class="t-item">
-                        <span class="t-txt">{{s.service}}</span><span class="t-sym">✦</span>
+                    @for(s of tickerItems; track s; let i = $index, isLast = $last) {
+                    <div class="ticker-item ">
+                        <span class="t-txt">{{s.service}}</span>
+                        <span class="t-sym px-3">✦</span>
+                    </div>
+                    }
+                    @for(s of tickerItems; track s; let i = $index, isLast = $last) {
+                    <div class="ticker-item" aria-hidden="true">
+                        <span class="t-txt">{{s.service}}</span>
+                        <span class="t-sym px-3">✦</span>
                     </div>
                     }
                 </div>
             </div>
         </div>
-        <div class="row p-4 p-md-5 mb-4 text-body-emphasis bg-body-secondary rounded-3">
+        <div class="row p-4 p-md-5 mb-4 text-center text-body-emphasis bg-body-secondary rounded-3">
             <div class="col-lg-12">
                 <h1 class="display-4 fw-bold text-muted text-center text-uppercase">Full Stack Development</h1>
+                <p class="fs-5 text-muted">{{cv.basics.about[2]}}</p>
             </div>
-
         </div>
-
-
     </div>
 
     <div class="container">
         <div class="row">
             <!-- Nav Tabs -->
-            <ul class="nav nav-pills nav-tabs-scrollable nav-fill fs-3 fw-bold mb-4" id="myTab" role="tablist">
+            <ul class="nav nav-pills nav-tabs-scrollable nav-fill fs-3 fw-bold mb-4 bg-body-tertiary rounded-3 p-0" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="fullstack-tab" data-bs-toggle="tab" data-bs-target="#fullstack" type="button" role="tab">Full Stack</button>
                 </li>
@@ -101,6 +105,9 @@
                     <app-section [section]="SectionType.Technologies"></app-section>
                 </div>
                 <div class="tab-pane fade" id="ai" role="tabpanel" aria-labelledby="ai-tab">
+                    <h1>Bringing the power of AI into your application</h1>
+                    <p class="fs-5 text-muted">
+                        Integrating large language models into applications, covering prompt crafting, chaining AI queries, and UX considerations for building AI-powered tools.                    </p>
                     <app-section [section]="SectionType.Technologies"></app-section>
                 </div>
                 <div class="tab-pane fade" id="devops" role="tabpanel" aria-labelledby="devops-tab">
