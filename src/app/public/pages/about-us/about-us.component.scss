@@ -19,7 +19,7 @@
 }
 
 .btn-gradient {
-     @include text-trigradient;
+    @include text-trigradient;
 }
 
 slideBtm animation {
@@ -28,6 +28,11 @@ slideBtm animation {
 }
 
 .main-banner-text {
-    animation: 1.5s ease-out forwards slideBtm;
+    animation: 1.5s;
+    animation-name: fadeInLeft;
 }
 
+.btn {
+    animation-name: fadeInUp;
+    animation-duration: 2s;
+}

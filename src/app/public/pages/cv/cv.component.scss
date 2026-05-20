@@ -1,10 +1,5 @@
 .hero-banner {
-    background-image: var(--hero-bg);
-    background-size: cover;
-    /* Scales image to cover the entire row */
-    background-position: center;
-    /* Centers the image */
-    background-repeat: no-repeat;
+    background: var(--hero-bg) no-repeat center / cover;
     color: #fff !important;
     background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
 }
@@ -124,8 +119,9 @@ $marquee-speed: 40s;
     overflow: hidden;
     height: 36px;
     display: flex;
-    align-items: center;
-    white-space: nowrap;
+    padding: 0 4rem;
+    //align-items: center;
+    //white-space: nowrap;
     // mask-image: linear-gradient(to right,
     //         transparent,
     //         black 5rem,

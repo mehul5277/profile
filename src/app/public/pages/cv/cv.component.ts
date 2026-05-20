@@ -64,7 +64,7 @@ export class CVComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getData("services").subscribe(data => {
-      this.services = data.services.slice(0, 6);
+      this.services = data.services.slice(0, 9);
       this.tickerItems = [...this.services];
     });
   }
