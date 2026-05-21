@@ -1,16 +1,21 @@
-<nav class="navbar navbar-expand-lg glass-navbar fixed-top bg-light py-2 mb-4">
+<nav class="navbar navbar-expand-lg glass-navbar fixed-top py-2">
     <div class="container-fluid">
         <!-- Brand on the left -->
         <a class="navbar-brand" href="#">
-            <svg class="brand-logo ms-2" aria-hidden="true">
+            <svg class="brand-logo" aria-hidden="true">
                 <use href="assets/image/techstack.svg#jixo"></use>
             </svg>
         </a>
 
         <!-- Container to group Button and Hamburger together on the right -->
         <div class="d-flex align-items-center ms-auto d-lg-none">
-            <a class="btn btn-outline-success rounded-pill" routerLink="login/register">Start for free</a>
-
+            <!-- <a class="btn btn-outline-success rounded-pill" routerLink="login/register">Start for free</a> -->
+            <a class="d-inline-flex align-items-center btn btn-outline-dark pe-2 rounded-pill" [attr.href]="'https://linkedin.com/in/mehul4ca'" target="_blank">
+                <span>Get in touch</span>
+                <svg class="bi ms-2" width="24" height="24" aria-hidden="true">
+                    <use href="assets/image/techstack.svg#linkedin-c"></use>
+                </svg>
+            </a>
             <button class="navbar-toggler collapsed text-light border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <!-- Default Hamburger (Black on light navs) -->
                 <span class="navbar-toggler-icon"></span>

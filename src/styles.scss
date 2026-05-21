@@ -4,8 +4,7 @@ $enable-shadows: true;
 $prefix: "mo-";
 $enable-dark-mode: true;
 $navbar-padding-y: 1rem;
-$navbar-padding-x: 1.5rem;
-$navbar-toggler-padding-y: 0.25rem;
+
 // Then import Bootstrap
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -14,7 +13,7 @@ body {
     --bs-body-font-family: var(--bs-font-monospace);
     --bs-body-line-height: 1.4;
     --bs-body-bg: var(--bs-gray-100);
-    padding-top: 70px; /* Adjust based on your navbar's height */
+    padding-top: 60px; /* Adjust based on your navbar's height */
 }
 
 [hidden] {
