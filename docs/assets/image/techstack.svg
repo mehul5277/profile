@@ -638,4 +638,41 @@
             </g>
         </g>
     </symbol>
+    <symbol id="jixo" viewBox="0 0 328 110">
+        <g class="layer">
+            <title>Layer 1</title>
+            <g id="glyphGroup_textPair_74a88e5f-afba-4e77-8470-ea5bb56fe41e" transform="matrix(1 0 0 1 0 0) translate(-3.56 -3.23) translate(0.36 0.81) matrix(1.52016 0 0 1.4225 167.283 57.3384)">
+                <g id="svg_3">
+                    <g id="svg_4" transform="matrix(1.3889 0 0 1.3889 -88.1344 0.8)">
+                        <g id="svg_5">
+                            <g id="svg_6" transform="matrix(1 0 0 1 0 0)">
+                                <path d="m112.28,71.94l0,38.71c0,9.82 -7.26,15.73 -15.83,15.73c-8.57,0 -12.69,-7.33 -12.69,-7.33l8.25,-8.66c0,0.82 0.92,4.89 4.12,4.89c3.19,0 3.67,-3.19 3.67,-5.17l0,-38.17l12.48,0z" fill="#1e2653" fill-rule="nonzero" id="svg_7" stroke-dashoffset="0" stroke-miterlimit="4" transform=" translate(-98.0205, -99.1612)" />
+                            </g>
+                        </g>
+                    </g>
+                    <g id="svg_8" transform="matrix(1.3889 0 0 1.3889 -48.9696 -2.2463)">
+                        <g id="svg_9">
+                            <g id="svg_10" transform="matrix(1 0 0 1 0 0)">
+                                <path d="m93.74,121.95l0,-49.91l12.47,0l0,49.91l-12.47,0z" fill="#1e2653" fill-rule="nonzero" id="svg_11" stroke-dashoffset="0" stroke-miterlimit="4" transform=" translate(-99.9753, -96.9997)" />
+                            </g>
+                        </g>
+                    </g>
+                    <g id="svg_12" transform="matrix(1.3889 0 0 1.3889 0.8364 -2.2463)">
+                        <g id="svg_13">
+                            <g id="svg_14" transform="matrix(1 0 0 1 0 0)">
+                                <path d="m125.59,121.95l-15.25,0l-10.36,-14.95l-10.36,14.95l-15.25,0l18.37,-25.39l-16.99,-24.52l15.26,0l8.97,13.57l8.97,-13.57l15.25,0l-16.98,24.52l18.37,25.39z" fill="#1e2653" fill-rule="nonzero" id="svg_15" stroke-dashoffset="0" stroke-miterlimit="4" transform=" translate(-99.9799, -96.9997)" />
+                            </g>
+                        </g>
+                    </g>
+                    <g id="svg_16" transform="matrix(1.3889 0 0 1.3889 70.6 -2.1241)">
+                        <g id="svg_17">
+                            <g id="svg_18" transform="matrix(1 0 0 1 0 0)">
+                                <path d="m126.87,97.05c0,14.5 -12.03,26.26 -26.88,26.26c-14.85,0 -26.88,-11.76 -26.88,-26.26c0,-14.51 12.03,-26.27 26.88,-26.27c14.85,0 26.88,11.76 26.88,26.27zm-12.87,0c0,-7.56 -6.27,-13.69 -14.01,-13.69c-7.74,0 -14.01,6.13 -14.01,13.69c0,7.56 6.27,13.68 14.01,13.68c7.74,0 14.01,-6.12 14.01,-13.68z" fill="#1e2653" fill-rule="nonzero" id="svg_19" stroke-dashoffset="0" stroke-miterlimit="4" transform=" translate(-99.9895, -97.0465)" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </symbol>
 </svg>
