@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
+<nav class="navbar navbar-expand-lg glass-navbar fixed-top bg-light py-2 mb-4">
     <div class="container-fluid">
         <!-- Brand on the left -->
         <a class="navbar-brand" href="#">
-            <svg class="brand-logo ms-2"  aria-hidden="true">
+            <svg class="brand-logo ms-2" aria-hidden="true">
                 <use href="assets/image/techstack.svg#jixo"></use>
             </svg>
         </a>
@@ -91,8 +91,14 @@
                     <a class="nav-link link-underline-opacity-25 link-underline-opacity-100-hover text-decoration-underline" routerLink="">Login</a>
                 </li>
                 <li class="nav-item px-1 d-none d-lg-block d-xl-block">
-                    <a class="btn btn-outline-success rounded-pill d-none" routerLink="login/register">Start for free</a>
-                    <a class="btn btn-outline-success rounded-pill" routerLink="login/register">Get in touch</a>
+                    <!-- <a class="btn btn-outline-success rounded-pill d-none" routerLink="login/register">Start for free</a>
+                    <a class="btn btn-outline-success rounded-pill" routerLink="login/register">Get in touch</a> -->
+                    <a class="d-inline-flex align-items-center btn btn-outline-dark pe-2 rounded-pill" [attr.href]="'https://linkedin.com/in/mehul4ca'" target="_blank">
+                        <span>Get in touch</span>
+                        <svg class="bi ms-2" width="24" height="24" aria-hidden="true">
+                            <use href="assets/image/techstack.svg#linkedin-c"></use>
+                        </svg>
+                    </a>
                 </li>
             </ul>
         </div>

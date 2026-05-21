@@ -30,6 +30,18 @@
 }
 
 .brand-logo {
-    width: 90px;
-    height: 25px;  
+  width: 90px;
+  height: 25px;
+}
+
+.glass-navbar {
+  /* Semi-transparent white or background color for the glass tint */
+  background-color: rgba(250, 250, 252, .8) !important;
+
+  /* The crucial property for the frosted blur effect */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  /* Optional: soften the borders and add a faint highlight */
+  //border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
