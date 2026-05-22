@@ -44,4 +44,9 @@
 
   /* Optional: soften the borders and add a faint highlight */
   //border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  .nav-link {
+    color: var(--nav-color) !important;
+    font-weight: 500;
+  }
 }

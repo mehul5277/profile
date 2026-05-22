@@ -4,7 +4,12 @@
         <div class="row hero-banner">
             <div class="p-4 text-center">
                 <div class="wow fadeInLeft" data-wow-duration="1s">
-                    <img class="d-block mx-auto mb-4 rounded-circle img-thumbnail" [attr.src]="cv.basics.picture" [attr.alt]="cv.basics.displayName">
+                    <div class="glow-wrap d-inline-block position-relative m-3 ">
+                        <img [attr.src]="cv.basics.picture" class="img-thumbnail rounded-circle position-relative" alt="Profile">
+                    </div>
+                    <div [hidden]="true" class="glow-container rounded-circle">
+                        <img [attr.src]="cv.basics.picture" class="img-thumbnail rounded-circle position-relative z-1" alt="Profile">
+                    </div>
                     <h1 class="display-6">{{cv.basics.displayName}}</h1>
                     <h3 class="fs-3">{{cv.basics.headline}}</h3>
                     <p class="fs-4">{{cv.basics.summary}}</p>
