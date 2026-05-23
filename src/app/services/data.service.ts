@@ -11,4 +11,8 @@ export class DataService {
   getData(fileName: string) {
     return this.httpClient.get<any>(`./assets/data/${fileName}.json`);
   }
+
+  fetchHelpTopics() {
+    return this.httpClient.get<any>('./assets/data/bookmark.json');
+  }
 }

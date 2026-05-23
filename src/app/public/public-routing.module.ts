@@ -4,6 +4,7 @@ import { PublicLayoutComponent } from './public-layout/public-layout.component';
 import { CVComponent } from './pages/cv/cv.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { HelpComponent } from './pages/help/help.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     children: [
       { path: '', component: CVComponent },
       { path: 'about-us', component: AboutUsComponent },
-       { path: 'products', component: ProductsComponent }
+      { path: 'products', component: ProductsComponent },
+      { path: 'help', component: HelpComponent },
     ]
   }
 ];

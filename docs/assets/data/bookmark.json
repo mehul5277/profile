@@ -21,7 +21,14 @@
             "https://www.edoardolunardi.dev/blog/building-smooth-scroll-in-2025-with-lenis",
             "https://gsap.com/showcase/?tags=Scroll+Animation",
             "https://codepen.io/ClementRoche/pen/OJqBLod",
-            "https://wpengine.com"
+            "https://wpengine.com",
+            "https://www.uxpin.com",
+            "https://www.invisionapp.com",
+            "https://sherritt.com",
+            "https://russelltobin.com",
+            "https://isotope.metafizzy.co/sorting",
+            "https://wpengine.com/ca",
+            "https://www.youtube.com/watch?v=uw5jVO1eNF8"
         ]
     },
     {
@@ -30,6 +37,31 @@
             "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
             "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
             "https://netbasal.medium.com/"
+        ]
+    },
+    {
+        "stack": "Products",
+        "urls": [
+            "https://njoyn.com/main/index.html",
+            "https://www.notion.so/product/roadmap",
+            "https://www.notion.so/product/roadmap"
+        ]
+    }
+    ,
+    {
+        "stack": "Resume Templates",
+        "urls": [
+            "http://viralpatel.ca",
+            "https://www.figma.com/community/file/1226454418637699136",
+            "https://www.figma.com/community/file/1226454418637699136"
+        ]
+    },
+    {
+        "stack": "Recruiters",
+        "urls": [
+            "https://systematixstg.wpengine.com",
+            "https://www.ampstek.com/careers",
+            "https://jobs.vantixsystems.com"
         ]
     }
 ]

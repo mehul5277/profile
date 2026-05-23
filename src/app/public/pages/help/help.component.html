@@ -1,0 +1,15 @@
+<div class="container-fluid  py-4">
+    <h5 class="display-6">Bookmark</h5>
+    <div class="row">
+        @for (topic of helpTopics; track $index) {
+        <div class="col-4 mb-4">
+            <h3 class="sticky-top">{{ topic.stack }}</h3>
+            <p>{{ topic.description }}</p>
+            <div class="list-group overflow-hidden">
+                @for (url of topic.urls; track $index) {
+                <a class="list-group-item " [href]="url" target="_blank">{{ url }}</a>
+                }
+            </div>
+        </div>}
+    </div>
+</div>
