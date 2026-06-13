@@ -30,7 +30,9 @@
             "https://wpengine.com/ca",
             "https://www.youtube.com/watch?v=uw5jVO1eNF8",
             "https://networkpedia.com",
-            "https://www.irissoftware.com"
+            "https://www.irissoftware.com",
+            "https://www.lynxify.ca",
+            "https://futransolutions.com"
         ]
     },
     {
@@ -42,18 +44,22 @@
         ]
     },
     {
-        "stack": "Products",
+        "stack": "** Product Development",
         "urls": [
-            "https://njoyn.com/main/index.html",
+            "https://njoyn.com",
             "https://www.notion.so/product/roadmap",
-            "https://www.notion.so/product/roadmap"
+            "https://www.wcg-itx.com",
+            "https://www.crelate.com",
+            "https://elementor.com/help/how-to-add-a-calendar-to-elementor",
+            "https://www.encoretechnical.com",
+            "https://www.tracker-rms.com"
         ]
-    }
-    ,
+    },
     {
         "stack": "Resume Templates",
         "urls": [
             "http://viralpatel.ca",
+            "https://www.bevertec.com/blogs/ops-blogs/1255095-the-resume-blue-print--a-guide-included---ontario-public-sector",
             "https://www.figma.com/community/file/1226454418637699136",
             "https://www.figma.com/community/file/1226454418637699136"
         ]
@@ -64,6 +70,36 @@
             "https://systematixstg.wpengine.com",
             "https://www.ampstek.com/careers",
             "https://jobs.vantixsystems.com"
+        ]
+    },
+    {
+        "stack": "Staffing",
+        "urls": [
+            "https://www.eqstaffingsolutions.com",
+            "http://viralpatel.ca"
+        ]
+    },
+    {
+        "stack": "OPS Staffing",
+        "urls": [
+            "https://www.eqstaffingsolutions.com"
+        ]
+    },
+    {
+        "stack": "Profile Inspiration",
+        "urls": [
+            "http://viralpatel.ca",
+            "https://www.milanjovanovic.tech",
+            "https://www.lynxify.ca"
+        ]
+    },
+    {
+        "stack": "Tools",
+        "urls": [
+            "https://www.tldraw.com",
+            "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
+            "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
+            "https://netbasal.medium.com/"
         ]
     }
 ]
