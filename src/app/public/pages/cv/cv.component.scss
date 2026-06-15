@@ -117,7 +117,7 @@ $marquee-speed: 40s;
     /* or your preferred color */
     color: #fff;
     overflow: hidden;
-    height: 36px;
+    //height: 36px;
     display: flex;
     padding: 0 4rem;
     //align-items: center;
@@ -145,7 +145,8 @@ $marquee-speed: 40s;
     align-items: center;
     //gap: 2rem;
     //padding: 0 20px;
-    font-size: 13px;
+    font-size: calc((var(--ticker-font-size-value) - 1) * 1.2vw + 1rem) !important;
+    //font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
