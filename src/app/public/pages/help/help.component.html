@@ -5,7 +5,7 @@
         <div class="col-4 mb-4">
             <h3 class="sticky-top">{{ topic.stack }}</h3>
             <p>{{ topic.description }}</p>
-            <div class="overflow-y-auto" style="max-height: 300px; min-height: 300px;">
+            <div class="list-group-wrapper">
                 <div class="list-group list-group-flush">
                     @for (url of topic.urls; track $index) {
                     <a class="list-group-item text-break" [href]="url" target="_blank">

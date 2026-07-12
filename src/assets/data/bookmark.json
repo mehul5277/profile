@@ -32,7 +32,15 @@
             "https://networkpedia.com",
             "https://www.irissoftware.com",
             "https://www.lynxify.ca",
-            "https://futransolutions.com"
+            "https://futransolutions.com",
+            "https://www.talan.com",
+            "https://outlier.ai/about-us?utm_source=Joveo&utm_medium=paid&pod=coders&domain=tier_3_coder&locale=EN&utm_campaign=Scale+%7C+Joveo+%7C+Coders+%7C+Tier+3+Coders+%7C+en-US+%7C+EN+%7C+04%2F05%2F2026&jClickId=95d1ea67-8557-4b71-9328-91dcf7cc74fd&jcid=95d1ea67-8557-4b71-9328-91dcf7cc74fd",
+            "https://gorillalogic.com",
+            "https://bidaya.ai/contact",
+            "https://www.llmaudit.ai",
+            "https://mcpmanager.ai",
+            "https://zoomd.com/albert-ai-autonomous-ai-campaign-management-platform",
+            "https://usercentrics.com/partner-program-overview"
         ]
     },
     {
@@ -52,29 +60,35 @@
             "https://www.crelate.com",
             "https://elementor.com/help/how-to-add-a-calendar-to-elementor",
             "https://www.encoretechnical.com",
-            "https://www.tracker-rms.com"
+            "https://www.tracker-rms.com",
+            "https://gorillalogic.com",
+            "https://futransolutions.com",
+            "https://www.opensystemstech.com",
+            "https://liveassets.ca",
+            "https://www.spiria.com/en/services/expertise/artificial-intelligence",
+            "https://www.aplin.com"
         ]
     },
     {
-        "stack": "Resume Templates",
+        "stack": "Resume & Email Templates",
         "urls": [
             "http://viralpatel.ca",
             "https://www.bevertec.com/blogs/ops-blogs/1255095-the-resume-blue-print--a-guide-included---ontario-public-sector",
             "https://www.figma.com/community/file/1226454418637699136",
-            "https://www.figma.com/community/file/1226454418637699136"
+            "https://www.figma.com/community/file/1226454418637699136",
+            "https://www.hireitpeople.com/resume-database",
+            "https://www.haired.app/resume-builder?docId=mrbksd1e5kduh",
+            "https://www.indeed.com/career-advice/finding-a-job/follow-up-email-after-application#toc-email-template",
+            "https://www.hireitpeople.com/resume-database/67-quality-assurance-qa-resumes/page/2",
+            "https://himalayas.app/@shrutipundir"
         ]
     },
     {
-        "stack": "Recruiters",
+        "stack": "Recruitment & Staffing",
         "urls": [
             "https://systematixstg.wpengine.com",
             "https://www.ampstek.com/careers",
-            "https://jobs.vantixsystems.com"
-        ]
-    },
-    {
-        "stack": "Staffing",
-        "urls": [
+            "https://jobs.vantixsystems.com",
             "https://www.eqstaffingsolutions.com",
             "http://viralpatel.ca"
         ]
@@ -82,7 +96,8 @@
     {
         "stack": "OPS Staffing",
         "urls": [
-            "https://www.eqstaffingsolutions.com"
+            "https://www.eqstaffingsolutions.com",
+            "https://www.peopletogo.com/jobs"
         ]
     },
     {
@@ -99,7 +114,13 @@
             "https://www.tldraw.com",
             "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
             "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
-            "https://netbasal.medium.com/"
+            "https://netbasal.medium.com"
+        ]
+    },
+    {
+        "stack": "AI",
+        "urls": [
+            "https://python.plainenglish.io/i-tried-7-python-libraries-for-ai-heres-what-actually-worked-9b35618637aa"
         ]
     }
 ]

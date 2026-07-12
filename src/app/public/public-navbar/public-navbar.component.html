@@ -36,6 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/products">Products</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/services">Services</a>
+                </li>
                 <!-- The Mega Menu Nav Item -->
                 <li class="nav-item dropdown has-megamenu">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,6 +47,11 @@
                     <!-- The Mega Menu Content -->
                     <div class="dropdown-menu megamenu rounded-0" aria-labelledby="navbarDropdown">
                         <div class="container-fluid p-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="display-6">Services</h6>
+                                </div>
+                            </div>
                             <div class="row gx-3">
                                 <ng-container *ngFor="let service of services">
                                     <div class="col-md-3 mb-3">

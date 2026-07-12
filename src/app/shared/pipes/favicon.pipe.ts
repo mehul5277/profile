@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+//https://dev.to/derlin/get-favicons-from-any-website-using-a-hidden-google-api-3p1e
 
 @Pipe({
   name: 'favicon',

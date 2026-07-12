@@ -1,0 +1,44 @@
+.animate-in.is-visible {
+    -webkit-animation: fadeUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    animation: fadeUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+// Define the custom card mixin
+@mixin custom-card($bg-color, $text-color, $border-radius: 0.5rem, $shadow: none) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  border: none; // Removes Bootstrap's default border if preferred
+  
+  // Ensure child links and headers match the theme color
+  .card-title, .card-header, .card-footer {
+    color: $text-color;
+  }
+  
+  .ai-step-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;         /* Centers text horizontally */
+  line-height: 40px;          /* MUST match the element height to center vertically */
+  background-color: $text-color; /* Use the same color as the text for contrast */
+  color: $bg-color; /* Use the same color as the background for contrast */
+  }
+
+  a:not(.btn) {
+    color: lighten($text-color, 10%);
+    text-decoration: underline;
+    
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+
+.card {
+    height: 100%;
+    //box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+     @include custom-card(#1e1e24, #f8f9fa, 1rem, 0 0.5rem 1rem rgba(0, 0, 0, 0.3));
+}

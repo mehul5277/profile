@@ -9,3 +9,9 @@
     width: 32px;
     height: auto;
 }
+
+.list-group-wrapper {
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: auto;
+}

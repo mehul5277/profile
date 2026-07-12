@@ -1,0 +1,172 @@
+{
+    "references": [
+        {
+            "title": "OLG",
+            "url": "https://about.olg.ca/winners-and-players/ticket-information/common-number-combinations"
+        },
+        {
+            "title": "Resume Blueprint",
+            "url": "https://www.bevertec.com/blogs/ops-blogs/1255095-the-resume-blue-print--a-guide-included---ontario-public-sector"
+        },
+        {
+            "title": "Figma Resume Template",
+            "url": "https://www.figma.com/community/file/1226454418637699136"
+        },
+        {
+            "title": "Hire IT People Resume Database",
+            "url": "https://www.hireitpeople.com/resume-database"
+        }
+    ],
+    "olg": [
+        {
+            "date": "Tuesday, April 7 2026",
+            "numbers": [
+                3,
+                8,
+                15,
+                19,
+                23,
+                29,
+                37
+            ],
+            "bonus": 4
+        },
+        {
+            "date": "Tuesday, March 3 2026",
+            "numbers": [
+                1,
+                3,
+                4,
+                18,
+                20,
+                23,
+                31
+            ],
+            "bonus": 2
+        }
+    ],
+    "statistics": {
+        "references": [
+            "https://www.lottomaxnumbers.com/statistics"
+        ],
+        "betweenMarch312025ToMarch312026": [
+            {
+                "numbers": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "timesPlayed": 44536
+            },
+            {
+                "numbers": [
+                    7,
+                    14,
+                    21,
+                    28,
+                    35,
+                    42,
+                    49
+                ],
+                "timesPlayed": 34329
+            },
+            {
+                "numbers": [
+                    2,
+                    7,
+                    19,
+                    24,
+                    28,
+                    30,
+                    39
+                ],
+                "timesPlayed": 16709
+            },
+            {
+                "numbers": [
+                    2,
+                    7,
+                    19,
+                    24,
+                    28,
+                    36,
+                    39
+                ],
+                "timesPlayed": 12094
+            },
+            {
+                "numbers": [
+                    5,
+                    9,
+                    13,
+                    21,
+                    36,
+                    41,
+                    48
+                ],
+                "timesPlayed": 8889
+            },
+            {
+                "numbers": [
+                    2,
+                    7,
+                    19,
+                    28,
+                    30,
+                    36,
+                    39
+                ],
+                "timesPlayed": 8333
+            },
+            {
+                "numbers": [
+                    5,
+                    10,
+                    15,
+                    20,
+                    25,
+                    30,
+                    35
+                ],
+                "timesPlayed": 7758
+            },
+            {
+                "numbers": [
+                    1,
+                    4,
+                    16,
+                    27,
+                    31,
+                    38,
+                    46
+                ],
+                "timesPlayed": 7530
+            },
+            {
+                "numbers": [
+                    2,
+                    7,
+                    19,
+                    22,
+                    32,
+                    36,
+                    46
+                ],
+                "timesPlayed": 7178
+            }
+        ],
+        "mostRecentNumbers": [
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50
+        ]
+    }
+}

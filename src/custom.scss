@@ -34,3 +34,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.section-background {
+    background-color: #fff;
+    background-image: radial-gradient(rgba(0, 0, 0, .4) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+}
