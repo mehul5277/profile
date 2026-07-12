@@ -18,7 +18,7 @@ export class CVComponent implements OnInit {
   tickerItems: any | undefined;
   SectionType = SectionType;
   linkedIn = `https://linkedin.com/in/mehul4ca`;
-  cv: any;
+  cv!: any;
   services: any;
 
   /**
