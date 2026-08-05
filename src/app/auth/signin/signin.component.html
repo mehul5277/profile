@@ -1,0 +1,79 @@
+<!--
+https://www.dayforcehcm.com/mydayforce/MyDayforce.aspx 
+ -->
+<div class="mat-title text-center py-2" style="cursor: pointer;" routerLink="homeLink">
+    <svg class="brand-logo" aria-hidden="true">
+        <use href="assets/image/techstack.svg#jixo"></use>
+    </svg>
+</div>
+<div class="login-container card bg-light p-4">
+    <h4 class="card-title py-2">Sign In</h4>
+    <form [formGroup]="form" (ngSubmit)="submit()" autocomplete="off" novalidate>
+        <div class="form-floating mb-3">
+            <input id="login-username" formControlName="username" type="text" class="form-control" placeholder="Username" [class.is-invalid]="form.get('username')?.invalid && (form.get('username')?.touched || form.get('username')?.dirty)" />
+            <label for="login-username">Username</label>
+            @if(form.get('username')?.invalid && (form.get('username')?.touched || form.get('username')?.dirty)) {
+            <div class="invalid-feedback d-block">
+                @if(form.get('username')?.errors?.['required']) {
+                <div>Username is required</div>
+                }
+                @if(form.get('username')?.errors?.['minlength']) {
+                <div>Username must be at least 3 characters</div>
+                }
+            </div>
+            }
+        </div>
+
+        <div class="form-floating mb-3">
+            <input autocomplete="off" id="login-password" type="password" formControlName="password" class="form-control" placeholder="Password" [class.is-invalid]="form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.dirty)" />
+            <label for="login-password">Password</label>
+            @if(form.get('password')?.invalid && (form.get('password')?.touched || form.get('password')?.dirty)) {
+            <div class="invalid-feedback d-block">
+                @if(form.get('password')?.errors?.['required']) {
+                <div>Password is required</div>
+                }
+                @if(form.get('password')?.errors?.['minlength']) {
+                <div>Password must be at least 6 characters</div>
+                }
+            </div>
+            }
+        </div>
+
+        @if(errorMessage) {
+        <div class="invalid-feedback d-block py-2">{{ errorMessage }}</div>
+        }
+
+        <div class="d-grid">
+            <button class="btn btn-primary btn-lg" type="submit" [disabled]="loading || form.invalid">{{ loading ? 'Signing in...' : 'Sign in' }}</button>
+        </div>
+    </form>
+    <div class="hstack text-center mt-3">
+        <div class="col"><a href="">Forgot username?</a></div>
+        <div class="vr"></div>
+        <div class="col"><a href="">Reset password</a></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="loginWith my-3 mx-4">
+                <span (click)="setdefaultCredentials()">or</span>
+            </div>
+            <div id="g_id_signin"></div>
+        </div>
+    </div>
+    <div [hidden]="true" class="hstack text-center mt-3">
+        <div class="col"><a href="">Terms of Use</a></div>
+        <div class="vr"></div>
+        <div class="col"><a href="">Privacy Policy</a></div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="my-3">Don't have an account? <a routerLink="/register">Sign up</a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="vstack text-center small text-muted">
+            <div>© {{ currentYear }} {{ appConfig.brand }}. All rights reserved.</div>
+            <div>By continuing, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy</a>.</div>
+        </div>
+    </div>
+</div>

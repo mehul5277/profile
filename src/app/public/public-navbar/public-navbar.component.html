@@ -99,9 +99,21 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="about-us">About Us</a>
                 </li>
-
+                <ng-template *ngIf="!isAuthenticated; else loggedInTemplate">
+                    <li class="nav-item">
+                        <a class="nav-link link-underline-opacity-25 link-underline-opacity-100-hover text-decoration-underline" routerLink="">Login</a>
+                    </li>
+                </ng-template>
+                <ng-template #loggedInTemplate>
+                    <li class="nav-item">
+                        <a class="nav-link link-underline-opacity-25 link-underline-opacity-100-hover text-decoration-underline" routerLink="">Dashboard</a>
+                    </li>
+                </ng-template>
                 <li class="nav-item">
-                    <a class="nav-link link-underline-opacity-25 link-underline-opacity-100-hover text-decoration-underline" routerLink="">Login</a>
+                    <a class="nav-link" (click)="logout()" href="#">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="auth/sign-in">Login</a>
                 </li>
                 <li class="nav-item px-1 d-none d-lg-block d-xl-block">
                     <!-- <a class="btn btn-outline-success rounded-pill d-none" routerLink="login/register">Start for free</a>

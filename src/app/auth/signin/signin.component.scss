@@ -1,0 +1,60 @@
+.login-container {
+  max-width: 420px;
+  margin: auto;
+  padding: 1.25rem;
+  background: #ffffff05;
+  border-radius: 8px;
+}
+
+.login-container h2 {
+  font-weight: 600;
+}
+
+@mixin href-styles-none($text-color: #007bff) {
+  //display: inline-block;
+  text-decoration: none;
+  //padding: 5px 10px;
+  color: $text-color
+}
+
+a {
+  @include href-styles-none(var(--navbar-background-blue));
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.loginWith:before,
+.loginWith:after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.loginWith {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 14px
+}
+
+.loginWith:before,
+.loginWith:after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #E3E3E3
+}
+
+.loginWith:not(:empty):before {
+  margin-right: .75em
+}
+
+.loginWith:not(:empty):after {
+  margin-left: .75em
+}
+
+.brand-logo {
+  width: 92px;
+  height: 35px;
+}
