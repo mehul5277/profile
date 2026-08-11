@@ -106,16 +106,15 @@ export class SigninComponent {
       return this.returnUrl;
     }
 
-    // try {
-    //   const roles = this.auth.getUserRoles() || [];
-    //   if (roles.includes('admin')) return '/admin';
-    //   if (roles.includes('user')) return '/user';
-    //   if (this.auth.isLoggedIn()) return '/home';
-    // } catch {
-    //   return '/public';
-    // }
-
-    return '/';
+    try {
+      const roles = this.authService.getUserRoles() || [];
+      if (roles.includes('ADMIN')) return '/admin';
+      if (roles.includes('USER')) return '/user';
+      if (this.authService.isLoggedIn()) return '/home';
+    } catch {
+      return '/';
+    }
+    return '/public';
   }
 
   get currentYear(): number {

@@ -3,10 +3,22 @@ import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 
+export interface UserState {
+  token: string | null;
+  role: 'USER' | 'ADMIN' | null;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  // Reactive token state using Angular Signals
+  private authState = signal<UserState>({
+    token: localStorage.getItem('token'),
+    role: localStorage.getItem('role') as 'USER' | 'ADMIN' | null
+  });
+
   //https://stackblitz.com/edit/angular-login-module?file=app%2Fapp.component.ts,app%2Fauth%2Fauth.service.ts
   // Inject the Angular Router service
   private router = inject(Router);
@@ -17,6 +29,14 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
+  }
+
+  getUserRole(): 'USER' | 'ADMIN' | null {
+    return this.authState().role;
+  }
+
+  getUserRoles(): string[] {
+    return ['USER', 'ADMIN'];
   }
 
   login(username: string, password: string) {

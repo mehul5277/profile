@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -12,4 +12,13 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   //https://this-is-angular.github.io/angular-guides/docs/fundamentals/angular-components
   title = 'profile';
+
+  ngOnInit(): void {
+    isDevMode() ? console.log('Running in development mode') : console.log('Running in production mode');
+  }
+
+  isDevelopmentMode(): boolean {
+    console.log('isDevMode:', isDevMode());
+    return isDevMode();
+  }
 }

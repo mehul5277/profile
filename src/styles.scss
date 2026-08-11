@@ -13,7 +13,18 @@ body {
     --bs-body-font-family: var(--bs-font-monospace);
     --bs-body-line-height: 1.4;
     --bs-body-bg: var(--bs-gray-100);
-    padding-top: 69px; /* Adjust based on your navbar's height 70px */
+    //padding-top: 69px; /* Adjust based on your navbar's height 70px */
+}
+.public-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 69px; /* Adjust based on your navbar's height */
+}
+
+.brand-logo {
+  width: 82px;
+  height: 25px;
 }
 
 [hidden] {
