@@ -3,21 +3,30 @@ import { delay, of, throwError } from 'rxjs';
 
 export const MockAuthInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next) => {
   // Hardcoded mock user database
-  const mockUser = {
-    username: 'admin',
-    password: 'password123',
-    token: 'fake-jwt-token-xyz789',
-    roles: ['admin']
-  };
+  const mockUserList = [
+    {
+      username: 'admin',
+      password: 'password123',
+      token: 'fake-jwt-token-xyz789',
+      roles: ['admin']
+    },
+    {
+      username: 'jaina',
+      password: 'jaina123',
+      token: 'fake-jwt-token-xyz789',
+      roles: ['admin']
+    }
+  ];
 
   // Intercept only the login endpoint
   if (req.url.endsWith('/api/login') && req.method === 'POST') {
     const { username, password } = req.body;
 
-    if (username === mockUser.username && password === mockUser.password) {
+    const user = mockUserList.find(u => u.username === username && u.password === password);
+    if (user) {
       const response = {
-        token: mockUser.token,
-        user: { username: mockUser.username, roles: mockUser.roles }
+        token: user.token,
+        user: { username: user.username, roles: user.roles }
       };
       //return next(req.clone({ body: response }));
 
