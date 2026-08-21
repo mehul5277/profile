@@ -1,0 +1,36 @@
+        <div class="row hero-banner">
+            @if(cv) {
+            <div class="p-4 text-center">
+                <div class="wow fadeInLeft" data-wow-duration="1s">
+                    <div class="glow-wrap d-inline-block position-relative m-3 ">
+                        <img [attr.src]="cv.basics.picture" class="img-thumbnail rounded-circle position-relative" alt="Profile">
+                    </div>
+                    <div [hidden]="true" class="glow-container rounded-circle">
+                        <img [attr.src]="cv.basics.picture" class="img-thumbnail rounded-circle position-relative z-1" alt="Profile">
+                    </div>
+                    <h1 class="display-6">{{cv.basics.displayName}}</h1>
+                    <h3 class="fs-3">{{cv.basics.headline}}</h3>
+                    <p class="fs-4">{{cv.basics.summary}}</p>
+                    <p class="col-lg-8 mx-auto fs-5">{{cv.basics.about[0]}}</p>
+                </div>
+                <div class="d-inline-flex gap-2 my-3 wow fadeInUp" data-wow-duration="2s">
+                    <a [hidden]="true" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" [attr.href]="cv.linkedIn" target="_blank">
+                        <span>Get in touch</span>
+                        <svg class="bi ms-2" width="24" height="24" aria-hidden="true">
+                            <use xlink:href="#arrow-right-short"></use>
+                        </svg>
+                    </a>
+                    @if(cv.basics.profiles.length > 0) {
+                    <a class="d-inline-flex align-items-center btn btn-outline-light btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
+                        <span>Get in touch</span>
+                        <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
+                            <use href="assets/image/techstack.svg#linkedin-c"></use>
+                        </svg>
+                    </a>
+                    }
+                    <button [hidden]="true" class="btn btn-outline-secondary btn-lg px-4 rounded-pill glow-button" type="button">
+                        Secondary link
+                    </button>
+                </div>
+            </div>}
+        </div>

@@ -1,9 +1,3 @@
-.hero-banner {
-    background: var(--hero-bg) no-repeat center / cover;
-    color: #fff !important;
-    background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
-}
-
 .nav-tabs-scrollable {
     display: flex;
     flex-wrap: nowrap;
@@ -164,51 +158,3 @@ $marquee-speed: 40s;
 }
 
 
-/* 1. Create the moving glow background */
-.glow-wrap::before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    /* Pulls glow slightly outside image bounds */
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #ff007f, #7f00ff, #00f0ff, #ff007f);
-    background-size: 400%;
-    //filter: blur(10px);
-    z-index: 0;
-    /* Keeps glow at the bottom layer */
-    animation: moveGlow 10s linear infinite;
-}
-
-.glow-wrap .img-thumbnail {
-    position: relative;
-    z-index: 1;
-    /* Ensures image is above the glow */
-    padding: 0px;
-    /* Optional: creates a small gap between image and glow */
-    border: 0;
-    /* Optional: removes default border for a cleaner look */
-}
-
-/* 2. Force the Bootstrap image to honor the stacking layer */
-// .glow-wrap .img-thumbnail {
-//   display: block;
-//   z-index: 1;   /* Forces image to the top layer */
-// }
-
-/* 3. Smooth animation mechanism */
-@keyframes moveGlow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
