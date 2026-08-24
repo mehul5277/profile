@@ -6,11 +6,12 @@ import { SectionComponent, SectionType } from "../section/section.component";
 import { IndustriesComponent } from "../industries/industries.component";
 import { ActivatedRoute } from '@angular/router';
 import { JumbotronComponent } from '../../../shared/components/jumbotron/jumbotron.component';
+import { TickerComponent } from '../../../shared/components/ticker/ticker.component';
 
 @Component({
   selector: 'app-cv',
   standalone: true,
-  imports: [HttpClientModule, SectionComponent, IndustriesComponent, JumbotronComponent],
+  imports: [HttpClientModule, SectionComponent, IndustriesComponent, JumbotronComponent, TickerComponent],
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.scss'
 })

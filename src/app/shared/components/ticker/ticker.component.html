@@ -1,0 +1,18 @@
+<div class="row ticker-container">
+    <div class="ticker-wrap py-2 border border-1 border-dark">
+        <div class="ticker-track">
+            @for(s of tickerItems; track s; let i = $index, isLast = $last) {
+            <div class="ticker-item ">
+                <span class="t-txt">{{s.service}}</span>
+                <span class="t-sym px-3">✦</span>
+            </div>
+            }
+            @for(s of tickerItems; track s; let i = $index, isLast = $last) {
+            <div class="ticker-item" aria-hidden="true">
+                <span class="t-txt">{{s.service}}</span>
+                <span class="t-sym px-3">✦</span>
+            </div>
+            }
+        </div>
+    </div>
+</div>
