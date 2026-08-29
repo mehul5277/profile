@@ -8,13 +8,13 @@ export const MockAuthInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, ne
       username: 'admin',
       password: 'password123',
       token: 'fake-jwt-token-xyz789',
-      roles: ['admin']
+      roles: ['ADMIN']
     },
     {
       username: 'jaina',
       password: 'jaina123',
       token: 'fake-jwt-token-xyz789',
-      roles: ['admin']
+      roles: ['USER']
     }
   ];
 
