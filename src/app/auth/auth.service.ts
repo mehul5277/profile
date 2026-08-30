@@ -36,12 +36,20 @@ export class AuthService {
   }
 
   getUserRoles(): string[] {
-    return ['USER', 'ADMIN'];
+    //return this.authState().role;
+    //return ['USER', 'ADMIN'];
+    const user = localStorage.getItem('user');
+    if (user) {
+      const parsedUser = JSON.parse(user);
+      return parsedUser.roles;
+    }
+    return [];
   }
 
   login(username: string, password: string) {
     return this.http.post('/api/login', { username, password }).pipe(
       tap((response: any) => {
+        console.log('Login successful:', response);
         // Automatically save token and user info on success
         localStorage.setItem('token', response.token);
         localStorage.setItem('user', JSON.stringify(response.user));
@@ -51,9 +59,14 @@ export class AuthService {
   }
 
   logout(): void {
+
+    // Clear the token from local storage
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.currentUser.set(null);
-    this.router.navigate(['auth', 'sign-in']);
+
+    // Redirect to the login page or any other route after logout
+    this.router.navigate(['auth', 'sign-in']);// Adjust the path as needed
+
   }
 }

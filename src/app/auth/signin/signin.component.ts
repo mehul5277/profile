@@ -31,6 +31,19 @@ export class SigninComponent {
     this.returnUrl = q || '/';
   }
 
+  ngOnInit(): void {
+    // // Load the Google Identity Services script dynamically
+    // const script = document.createElement('script');
+    // script.src = 'https://accounts.google.com/gsi/client';
+    // script.async = true;
+    // script.defer = true;
+    // document.body.appendChild(script);  
+
+    this.form.valueChanges.subscribe(() => {
+      this.errorMessage = null; // Clear error message on input change
+    });
+  }
+
   ngAfterViewInit(): void {
 
   }
@@ -68,6 +81,7 @@ export class SigninComponent {
     }
     this.loading = true;
     const { username, password } = this.form.value;
+    debugger;
     this.authService.login(username, password).subscribe({
       next: ((ok) => {
         this.loading = false;
@@ -86,7 +100,7 @@ export class SigninComponent {
           this.errorMessage = 'Network error. Please check your internet connection or server status.';
         } else if (error.status === 401) {
           this.errorMessage = 'Invalid username or password.';
-          this.router.navigate(['/login']); // Redirect to login
+          //this.router.navigate(['/login']); // Redirect to login
         } else if (error.status === 403) {
           this.errorMessage = 'You do not have permission to view this content.';
         } else {
@@ -121,12 +135,15 @@ export class SigninComponent {
     return new Date().getFullYear();
   }
 
+
+
   login(): void {
     this.authService.login('admin', 'password123').subscribe((response: any) => {
       debugger;
       // Store the token in local storage 
       localStorage.setItem('token', response.token);
-      this.router.navigate(['/admin']); // Navigate to the admin dashboard or any other route after successful login
+      this.router.navigate([this.determineRedirect()]); // Navigate to the admin dashboard or any other route after successful login
+      //this.router.navigate(['/admin']); // Navigate to the admin dashboard or any other route after successful login
     })
   }
 

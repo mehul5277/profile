@@ -41,7 +41,7 @@ https://www.dayforcehcm.com/mydayforce/MyDayforce.aspx
         </div>
 
         @if(errorMessage) {
-        <div class="invalid-feedback d-block py-2">{{ errorMessage }}</div>
+        <div class="invalid-feedback d-block mb-3">{{ errorMessage }}</div>
         }
 
         <div class="d-grid">
@@ -68,13 +68,13 @@ https://www.dayforcehcm.com/mydayforce/MyDayforce.aspx
     </div>
     <div class="row">
         <div class="col-12 text-center">
-            <div class="my-3">Don't have an account? <a routerLink="/register">Sign up</a></div>
+            <div>Don't have an account? <a routerLink="/register">Sign up</a></div>
         </div>
     </div>
-    <div class="row">
-        <div class="vstack text-center small text-muted">
-            <div>© {{ currentYear }} {{ appConfig.brand }}. All rights reserved.</div>
-            <div>By continuing, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy</a>.</div>
-        </div>
+</div>
+<div class="row">
+    <div class="vstack text-center small text-muted">
+        <div>© {{ currentYear }} {{ appConfig.brand }}. All rights reserved.</div>
+        <div>By continuing, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy</a>.</div>
     </div>
 </div>
