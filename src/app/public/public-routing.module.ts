@@ -6,6 +6,7 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { HelpComponent } from './pages/help/help.component';
 import { CVResolver } from '../resolvers/cv.resolver';
+import { ResumeComponent } from './pages/resume/resume.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'services', component: ProductsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'resume', component: ResumeComponent },
       { path: 'help', component: HelpComponent },
     ]
   }
