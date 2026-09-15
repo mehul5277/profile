@@ -7,6 +7,7 @@ export interface EnterpriseCV {
 }
 
 export interface ProfileDetails {
+  name: string;
   title: string;
   coreCompetencies: string[];
   education: string;
@@ -22,9 +23,11 @@ export interface SecurityClearanceDetails {
 }
 
 export interface TechnicalSkillsMatrix {
+  webTechnologies: string[];
+  programmingLanguages: string[];
   operatingSystems: string[];
   development: string[];
-  cloudCiCdRepository: string[];
+  cloudTechnologies: string[];
   searchAnalyticsEngine: string[];
   database: string[];
   webServersExtensions: string[];

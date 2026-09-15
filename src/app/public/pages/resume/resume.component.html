@@ -1,13 +1,131 @@
-<div class="container-fluid">
-  <div class="row">
-      <h1>Resume</h1>
-  </div>
+<div class="container-fluid ">
+    <!-- Navigation -->
+    <div class="row bg-body-tertiaryx">
+        <div class="col-12">
+            <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                <a class="navbar-brand" href="#">Profile</a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspySkills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyResume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyContact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    @if(resumeData) {
+    <!-- About Section -->
+    <div class="row" id="about">
+        <div class="col-12">
+            <ng-container [ngTemplateOutlet]="jumbotron" [ngTemplateOutletContext]="{ profile: resumeData.profile }"></ng-container>
+        </div>
+    </div>
+    <!-- Skills Section -->
+    <div class="row" id="skills">
+        <div class="col-12">
+            <ng-container [ngTemplateOutlet]="CompetencyTemplate" [ngTemplateOutletContext]="{CompetencyData: resumeData.profile.coreCompetencies}"></ng-container>
+        </div>
+    </div>
+    <!-- Leadership Section -->
+    <div class="row" id="leadership">
+        <div class="col-12">
+            <ng-container [ngTemplateOutlet]="LeadershipTemplate" [ngTemplateOutletContext]="{LeadershipData: resumeData.leadershipSkills}"></ng-container>
+        </div>
+    </div>
+    <!-- Tech Stack Section -->
+    <div class="row" id="tech-stack">
+        <div class="col-12">
+            <ng-container [ngTemplateOutlet]="TechStackTemplate" [ngTemplateOutletContext]="{StackData: resumeData.technicalSkills, StackKey: 'cloudTechnologies'}"></ng-container>
+        </div>
+    </div>
+
+    } @else {
+    <p>No profile data available.</p>
+    }
 </div>
 
+<ng-template #jumbotron let-profile="profile">
+    <div class="jumbotron">
+        <h1 class="display-4">Hi. I'm {{profile.name}}.</h1>
+        <p class="lead">Microsoft certified senior software consultant with
+            15+ years of professional experience
+            designing, developing & maintaining web & mobile applications.</p>
+        <!-- <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p> -->
+    </div>
+</ng-template>
 
-@if(resumeData) {
-<p>{{resumeData.profile | json}}</p>
+<ng-template #CompetencyTemplate let-competencyData="CompetencyData">
+    <div class="leadership">
+        <h2 class="display-5">Core Competencies</h2>
+        <p class="lead" [hidden]="true">I have led multiple teams and projects, ensuring successful delivery of high-quality software solutions.</p>
+        <ul>
+            @for (competency of competencyData; track $index) {
+            <li class="lead">{{competency}}</li>
+            }
+        </ul>
+    </div>
+</ng-template>
 
-} @else {
-<p>No profile data available.</p>
-}
+<ng-template #LeadershipTemplate let-leadershipData="LeadershipData">
+    <div class="leadership">
+        <h2 class="display-5">Leadership</h2>
+        <p class="lead">I have led multiple teams and projects, ensuring successful delivery of high-quality software solutions.</p>
+        <ul>
+            @for (leadership of leadershipData; track $index) {
+            <li class="lead">{{leadership}}</li>
+            }
+        </ul>
+    </div>
+</ng-template>
+
+<ng-template #TechStackTemplate let-techStackData="StackData" let-techStackKey="StackKey">
+    <div class="technical lead">
+        <h2 class="display-5">Technical Skills</h2>
+        <p [hidden]="true">{{techStackData | json}}</p>
+        <p class="lead" [hidden]="true">I have extensive experience with various programming languages and frameworks.</p>
+
+        <div class="container-fluid-x">
+            <div class="row p-0">
+                @for ( category of techStackData | keyvalue; track $index) {
+                <div class="col-3">
+                    <ul class="list-group p-1">
+                        @if(isArray(category.value)) {
+                        <li class="list-group-item active" aria-current="true">{{category.key | camelCaseToSpaces | titlecase }}</li>
+
+                        @for ( skill of category.value; track $index) {
+                        <li class="list-group-item">{{skill}}</li>
+                        } }
+                    </ul>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</ng-template>
