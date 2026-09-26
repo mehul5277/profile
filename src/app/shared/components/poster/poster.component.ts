@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NgClass } from '../../../../../node_modules/@angular/common/index';
 
 @Component({
   selector: 'app-poster',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './poster.component.html',
   styleUrl: './poster.component.scss'
 })

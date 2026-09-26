@@ -1,0 +1,29 @@
+video[poster] {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Maintain layout dimensions to prevent page jumping (Cumulative Layout Shift) */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Match your video aspect ratio / size */
+    background-color: #000;
+    /* Use a solid background color instead of a flickering image */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth fade-in eliminates the sharp flicker */
+}
+
+/* Reveal the video gracefully once loaded */
+video.is-ready {
+    opacity: 1;
+}
