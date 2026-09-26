@@ -3,12 +3,13 @@ import { MetaDataService } from '../../../services/meta-data.service';
 import { JsonPipe, NgTemplateOutlet, CommonModule, TitleCasePipe } from '@angular/common';
 import { EnterpriseCV } from '../../../shared/models/cv.model';
 import { CamelCaseToSpacesPipe } from '../../../shared/pipes/camel-case-to-spaces.pipe';
+import { PosterComponent } from '../../../shared/components/poster/poster.component';
 
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [JsonPipe, NgTemplateOutlet, CommonModule, CamelCaseToSpacesPipe, TitleCasePipe],
+  imports: [JsonPipe, NgTemplateOutlet, CommonModule, CamelCaseToSpacesPipe, TitleCasePipe, PosterComponent],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss'
 })

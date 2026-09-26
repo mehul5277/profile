@@ -35,7 +35,6 @@
             </nav>
         </div>
     </div>
-
     @if(resumeData) {
     <!-- About Section -->
     <div class="row" id="about">
@@ -58,7 +57,7 @@
     <!-- Tech Stack Section -->
     <div class="row" id="tech-stack">
         <div class="col-12">
-            <ng-container [ngTemplateOutlet]="TechStackTemplate" [ngTemplateOutletContext]="{StackData: resumeData.technicalSkills, StackKey: 'cloudTechnologies'}"></ng-container>
+            <ng-container [ngTemplateOutlet]="TechStackTemplate" [ngTemplateOutletContext]="{StackData: resumeData}"></ng-container>
         </div>
     </div>
 
@@ -105,17 +104,31 @@
     </div>
 </ng-template>
 
-<ng-template #TechStackTemplate let-techStackData="StackData" let-techStackKey="StackKey">
+<ng-template #TechStackTemplate let-techStackData="StackData">
     <div class="technical lead">
         <h2 class="display-5">Technical Skills</h2>
-        <p [hidden]="true">{{techStackData | json}}</p>
-        <p class="lead" [hidden]="true">I have extensive experience with various programming languages and frameworks.</p>
+        <p [hidden]="true">{{techStackData.techStacks | json}}</p>
+        <p class="lead">I have extensive experience with various programming languages and frameworks.</p>
 
         <div class="container-fluid-x">
             <div class="row p-0">
-                @for ( category of techStackData | keyvalue; track $index) {
-                <div class="col-3">
-                    <ul class="list-group p-1">
+                @for ( category of techStackData.techStacks; track $index) {
+
+                <div class="col-3 p-3">
+                    <ul class="list-group px-1 list-group-flush scrollable-list-group">
+                        <li class="list-group-item active sticky-top" aria-current="true">{{category.name | camelCaseToSpaces | titlecase }}</li>
+                        @if(isArray(category.skills)) {
+                        @for ( skill of category.skills; track $index) {
+                        <li class="list-group-item">{{skill}}</li>
+                        }} @else {
+                        <li class="list-group-item">No skills available</li>
+                        }
+
+                    </ul>
+                </div>
+
+                <!-- <div class="col-3 p-3">
+                    <ul class="list-group px-1 list-group-flush scrollable-list-group">
                         @if(isArray(category.value)) {
                         <li class="list-group-item active" aria-current="true">{{category.key | camelCaseToSpaces | titlecase }}</li>
 
@@ -123,7 +136,7 @@
                         <li class="list-group-item">{{skill}}</li>
                         } }
                     </ul>
-                </div>
+                </div> -->
                 }
             </div>
         </div>

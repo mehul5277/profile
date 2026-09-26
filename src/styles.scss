@@ -1,9 +1,11 @@
-// Variable overrides first
+// Variable overrides bootstrap variables before importing Bootstrap's SCSS files
 $primary: #035bda;
 $enable-shadows: true;
 $prefix: "mo-";
 $enable-dark-mode: true;
 $navbar-padding-y: 1rem;
+//$font-family-base: "Roboto", sans-serif;
+
 
 // Then import Bootstrap
 /* You can add global styles to this file, and also import other style files */

@@ -1,7 +1,8 @@
 export interface EnterpriseCV {
   profile: ProfileDetails;
   leadershipSkills: string[];
-  technicalSkills: TechnicalSkillsMatrix;
+  techStacks: techStack[];
+  //technicalSkills: TechnicalSkillsMatrix;
   experience: ProfessionalHistory[];
   achievements: AwardDetails[];
 }
@@ -22,6 +23,10 @@ export interface SecurityClearanceDetails {
   duration: string;
 }
 
+export interface techStack {
+  name: string;
+  skills: string[];
+}
 export interface TechnicalSkillsMatrix {
   webTechnologies: string[];
   programmingLanguages: string[];
