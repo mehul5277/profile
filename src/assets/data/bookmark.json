@@ -44,7 +44,8 @@
             "https://fusionnest.com",
             "https://driverzonegolf.ca/booking",
             "https://www.htmlelements.com/demos/page-templates/admin-template/scheduler",
-            "https://www.creative-tim.com/marketplace"
+            "https://www.creative-tim.com/marketplace",
+            "https://startbootstrap.com/snippets"
         ]
     },
     {
@@ -135,6 +136,15 @@
         "stack": "AI",
         "urls": [
             "https://python.plainenglish.io/i-tried-7-python-libraries-for-ai-heres-what-actually-worked-9b35618637aa"
+        ]
+    },
+    {
+        "stack": "Cloud & Hosting",
+        "urls": [
+            "https://aws.amazon.com",
+            "https://azure.microsoft.com",
+            "https://cloud.google.com",
+            "https://dev.to/nick_thompson/build-your-next-web-app-using-aws-free-tier-services-without-breaking-the-bank-1n5"
         ]
     }
 ]
