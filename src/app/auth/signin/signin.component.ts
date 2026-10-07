@@ -2,20 +2,20 @@ import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgIf } from "../../../../node_modules/@angular/common/index";
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.scss'
 })
 export class SigninComponent {
-
+  isPasswordVisible = false;
   appConfig = {
     brand: "JIXO",
   };
+
   form: FormGroup;
   errorMessage: string | null = null;
   loading = false;
@@ -152,5 +152,9 @@ export class SigninComponent {
       username: 'admin',
       password: 'password123'
     });
+  }
+
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 }

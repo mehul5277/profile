@@ -5,12 +5,14 @@ $prefix: "mo-";
 $enable-dark-mode: true;
 $navbar-padding-y: 1rem;
 //$font-family-base: "Roboto", sans-serif;
-
+$dropdown-spacer: 0px; /* Adjust this value to control the spacing between the navbar and the dropdown */
+$enable-validation-icons: false;
 
 // Then import Bootstrap
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import './assets/css/animate.min.css';
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 body {
     --bs-body-font-family: var(--bs-font-monospace);

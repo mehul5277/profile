@@ -1,14 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DataService } from '../../services/data.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, SlicePipe } from '@angular/common';
 import { AuthService } from '../../auth/auth.service';
 import { ThemeMode, ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-public-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule],
+  imports: [RouterLink, CommonModule, SlicePipe],
   templateUrl: './public-navbar.component.html',
   styleUrl: './public-navbar.component.scss'
 })
@@ -20,14 +20,9 @@ export class PublicNavbarComponent implements OnInit {
   isDropdownOpen = false;  // Theme selector state
 
   services: any;
-  /**
-   *
-   */
-  constructor() {
 
-  }
   ngOnInit(): void {
-    this.dataService.getData("services").subscribe(data => this.services = data.services.slice(0, 12));
+    this.dataService.getData("services").subscribe(data => this.services = data);
   }
 
   logout() {
