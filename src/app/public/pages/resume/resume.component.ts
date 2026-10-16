@@ -18,6 +18,17 @@ export class ResumeComponent implements OnInit {
   resumeData: EnterpriseCV = null as any; // Initialize with null or an empty object
   public isArray = Array.isArray;
 
+  jumbotronData = {
+    title: 'Hi. I\'m <b>Mehul Patel</b>.',
+    description: 'Microsoft certified senior software consultant with 15+ years of professional experience designing, developing & maintaining web & mobile applications.',
+    imageUrl: 'assets/image/dp.jpg', // Replace with your actual image path
+    profiles: [
+      {
+        network: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/your-profile' // Replace with your actual LinkedIn profile URL
+      }
+    ]
+  };
 
   constructor(private metaDataService: MetaDataService
   ) { }
