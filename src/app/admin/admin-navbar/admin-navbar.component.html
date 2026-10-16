@@ -6,22 +6,15 @@
         <use href="assets/image/techstack.svg#jixo"></use>
       </svg>
     </a>
-    <a class="navbar-brand" href="#">Admin</a>
+    <a class="navbar-brand-x nav-link" [routerLink]="['./']"><span class="display-6">Admin</span></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://clarity.microsoft.com/" target="_blank">Clarity</a>
-        </li>
-        <li class="nav-item dropdown">
+
+
+        <li class="nav-item dropdown d-none">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -34,17 +27,44 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-none">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="logout()" href="#">Logout</a>
-        </li>
+
+
       </ul>
+      <ng-container [ngTemplateOutlet]="helpNavbar"></ng-container>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" href="#">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['./help']">
+            <i class="bi bi-question-circle"></i> </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+
+<ng-template #helpNavbar>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://clarity.microsoft.com/') }" href="https://clarity.microsoft.com/" target="_blank">Clarity</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://portal.azure.com') }" aria-current="page" href="https://portal.azure.com" target="_blank">Azure</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/services/') }" href="https://azure.microsoft.com/en-us/services/" target="_blank">Features</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/pricing/') }" href="https://azure.microsoft.com/en-us/pricing/" target="_blank">Pricing</a>
+    </li>
+  </ul>
+</ng-template>

@@ -1,0 +1,10 @@
+<div class="container-fluid">
+    @for (item of CLICommands; track $index) {
+    <div class="row">
+        <div class="col-12">
+            <p class="lead" [innerHTML]="item.description"></p>
+            <p class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle" [innerHTML]="item.command"></p>
+        </div>
+    </div>
+    }
+</div>
