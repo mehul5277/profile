@@ -44,14 +44,25 @@
 
   .nav-link {
     color: var(--nav-color) !important;
-    font-weight: 500;
+    //font-weight: 500;
+
+  }
+
+  .nav-link.active {
+    color: var(--nav-color) !important;
+    font-weight: 600;
+  }
+
+  .nav-link:hover {
+    color: var(--nav-color) !important;
+    //font-weight: 600;
   }
 }
 
 
 .bi {
-    width: 1em;
-    height: 1em;
-    vertical-align: -.125em;
-    fill: currentcolor
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  fill: currentcolor
 }

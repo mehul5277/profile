@@ -42,4 +42,8 @@ export class PublicNavbarComponent implements OnInit {
     this.themeService.setTheme(mode);
     this.isDropdownOpen = false; // Collapse panel on choice
   }
+
+  isActive(route: string): boolean {
+    return window.location.pathname === route || window.location.hash === '#/' + route;
+  }
 }

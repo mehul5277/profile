@@ -29,21 +29,20 @@
             <ul class="navbar-nav me-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="products">Products</a>
+                    <a class="nav-link " [ngClass]="{ 'active' : isActive('products') }" routerLink="products">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="services">Services</a>
+                    <a class="nav-link" [ngClass]="{ 'active' : isActive('services') }" routerLink="services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="resume">Resume</a>
+                    <a class="nav-link" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="about-us">About Us</a>
+                    <a class="nav-link" [ngClass]="{ 'active' : isActive('about-us') }" routerLink="about-us">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="contact">Contact</a>
+                    <a class="nav-link" [ngClass]="{ 'active' : isActive('contact') }" routerLink="contact">Contact</a>
                 </li>
-
             </ul>
             <ul class="navbar-nav">
                 <!-- The Mega Menu Nav Item -->
@@ -249,3 +248,4 @@
             </div>
         </div>
     </div>
+</ng-template>
