@@ -35,14 +35,22 @@
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('services') }" routerLink="services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">Resume</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('about-us') }" routerLink="about-us">About Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('contact') }" routerLink="contact">Contact</a>
                 </li>
+                <!-- Start of Profile Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">Resume</a></li>
+                        <li><a class="dropdown-item" [ngClass]="{ 'active' : isActive('cv') }" routerLink="cv">Curriculum vitae (CV)</a></li>
+                    </ul>
+                </li>
+                <!-- End of Profile Dropdown -->
             </ul>
             <ul class="navbar-nav">
                 <!-- The Mega Menu Nav Item -->
@@ -72,7 +80,7 @@
                                     </div>
                                 </ng-container>
                             </div>
-                            <div [hidden]="true" class="row mt-3">
+                            <div class="row mt-3">
                                 <div class="col-md-12">
                                     <div class="list-unstyled">
                                         <a href="#">Link A</a>
@@ -109,7 +117,7 @@
                             </span>
                         </button>
 
-                        <ul class="dropdown-menu dropdown-menu-end p-1" [class.show]="isDropdownOpen">
+                        <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="static" [class.show]="isDropdownOpen">
                             <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false" (click)="changeTheme('light')">
                                     <svg class="bi me-2 opacity-50" aria-hidden="true">
@@ -167,7 +175,6 @@
                 </ul>
             </ul>
             <ul class="navbar-nav me-2">
-
                 <li class="nav-item d-none">
                     <a class="nav-link" routerLink="brand">UI/UX</a>
                 </li>
@@ -181,8 +188,8 @@
                 <li class="nav-item">
                     <a class="nav-link d-none" href="#">Media</a>
                 </li>
-                <li class="nav-item d-none">
-                    <a class="nav-link" routerLink="contact-us">Contact Us</a>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="admin">Admin</a>
                 </li>
 
                 <ng-template *ngIf="!isAuthenticated; else loggedInTemplate">
@@ -237,7 +244,7 @@
                 </div> -->
                 }
             </div>
-            <div [hidden]="false" class="row mt-3">
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <div class="list-group list-group-horizontal">
                         <a href="#" class="list-group-item">An item</a>
