@@ -8,13 +8,15 @@ import { HelpComponent } from './pages/help/help.component';
 import { CVResolver } from '../resolvers/cv.resolver';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PublicLayoutComponent,
     children: [
-      { path: '', component: CVComponent, resolve: { cvData: CVResolver } },
+      { path: '', component: HomeComponent },
+      { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
       { path: 'services', component: ProductsComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'products', component: ProductsComponent },

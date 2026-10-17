@@ -66,3 +66,30 @@
   vertical-align: -.125em;
   fill: currentcolor
 }
+
+.nav-item.dropdown {
+  .dropdown-item {
+    border-radius: .25rem;
+
+    // &:hover,
+    // &:focus,
+    // &:active {
+    //   color: #fff;
+    //   background-color: var(--nav-color)!important;
+    // }
+
+    &.active {
+      color: #fff;
+      background-color: var(--nav-color);
+    }
+
+    &:active {
+      color: var(--mo-dropdown-link-hover-color);
+      background-color: var(--mo-dropdown-link-hover-bg);
+    }
+  }
+
+  .dropdown-menu {
+    padding: .25rem;
+  }
+}
