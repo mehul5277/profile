@@ -27,13 +27,39 @@
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-
                 <li class="nav-item">
                     <a class="nav-link " [ngClass]="{ 'active' : isActive('products') }" routerLink="products">Products</a>
                 </li>
-                <li class="nav-item">
+                <!-- Start Services Mega Menu -->
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Services</span>
+                    </a>
+                    <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: servicesMenu }"></ng-container>
+                </li>
+                <!-- End Services Mega Menu -->
+
+                <!-- Start Industries Mega Menu-->
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Industries</span>
+                    </a>
+                    <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: IndustriesMenu }"></ng-container>
+                </li>
+                <!-- End Industries Mega Menu-->
+                <li class="nav-item d-none">
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('services') }" routerLink="services">Services</a>
                 </li>
+
+                <!-- Start Industries Mega Menu-->
+                <li class="nav-item dropdown has-megamenu">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>About Us</span>
+                    </a>
+                    <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: AboutusMenu }"></ng-container>
+                </li>
+                <!-- End Industries Mega Menu-->
+
                 <li class="nav-item">
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('about-us') }" routerLink="about-us">About Us</a>
                 </li>
@@ -53,45 +79,7 @@
                 <!-- End of Profile Dropdown -->
             </ul>
             <ul class="navbar-nav">
-                <!-- The Mega Menu Nav Item -->
-                <li class="nav-item dropdown has-megamenu">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>Services</span>
-                    </a>
-                    <!-- The Mega Menu Content -->
-                    <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: services }"></ng-container>
 
-                    <div class="dropdown-menu megamenu rounded-0" aria-labelledby="navbarDropdown">
-                        <div class="container-fluid p-3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h6 class="display-6">Services</h6>
-                                </div>
-                            </div>
-                            <div class="row gx-3">
-                                <ng-container *ngFor="let service of services">
-                                    <div class="col-md-3 mb-3">
-                                        <a class="btn btn-outline-secondary btn-md w-100 text-start" [routerLink]="service.link">
-                                            <span class="vstack fw-400">
-                                                <span>{{service.service}}</span>
-                                                <span>{{service.type}}</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </ng-container>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-md-12">
-                                    <div class="list-unstyled">
-                                        <a href="#">Link A</a>
-                                        <a href="#">Link B</a>
-                                        <a href="#">Link C</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
                 <!-- Other nav items -->
                 <!-- Right side: Theme Dropdown Switcher -->
                 <ul class="navbar-nav me-auto">
@@ -178,7 +166,6 @@
                 <li class="nav-item d-none">
                     <a class="nav-link" routerLink="brand">UI/UX</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link d-none" href="#">Our Approach</a>
                 </li>
@@ -223,7 +210,7 @@
     </div>
 </nav>
 
-<ng-template #megaMenuTemplate let-megaMenuData="megaMenuData">
+<ng-template #megaMenuTemplatex let-megaMenuData="megaMenuData">
     <div class="dropdown-menu megamenu rounded-0" aria-labelledby="navbarDropdown">
         <div class="container-fluid p-3">
             <div class="row">
@@ -255,4 +242,45 @@
             </div>
         </div>
     </div>
+</ng-template>
+
+
+<ng-template #megaMenuTemplate let-megaMenuData="megaMenuData">
+    <div class="dropdown-menu megamenu rounded-0 overflow-y px-5 w-100" aria-labelledby="navbarDropdown">
+        <div class="container-fluid">
+            <div class="row d-none">
+                <div class="col-md-12">
+                    <h6 class="display-6">Services Template</h6>
+                </div>
+            </div>
+            <div class="row">
+                <p class="d-none">{{megaMenuData | json}}</p>
+                @for (c of megaMenuData ; track $index) {
+                <div class="col-3 p-3">
+                    <div class="fw-bold">{{c.category}}</div>
+                    @for (s of c.services ; track $index) {
+                    <ng-container [ngTemplateOutlet]="navLinkStripe" [ngTemplateOutletContext]="{'navLinkStripe' : s}"></ng-container>
+                    }
+                </div>
+                }
+            </div>
+            <div class="row m-3 d-none">
+                <div class="col-md-12">
+                    <div class="list-group list-group-horizontal">
+                        <a href="#" class="list-group-item">An item</a>
+                        <a href="#" class="list-group-item">A second item</a>
+                        <a href="#" class="list-group-item">A third item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
+    <button type="button" class="dropdown-item align-items-center">
+        <i class="bi bi-arrow-bar-right me-2"></i>
+        <span [innerHTML]="navLinkStripe">Dark</span>
+    </button>
 </ng-template>

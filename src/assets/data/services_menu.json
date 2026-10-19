@@ -1,5 +1,15 @@
 [
     {
+        "category": "Digital Engineering",
+        "services": [
+            "API & Application Development",
+            "Cyber Security",
+            "Product Engineering Services",
+            "Quality Engineering & Automation",
+            "UI/UX Engineering & Modernization"
+        ]
+    },
+    {
         "category": "AI & Automation",
         "services": [
             "Responsible AI Consulting",
@@ -19,19 +29,9 @@
         ]
     },
     {
-        "category": "Digital Engineering",
+        "category": "Business Process Operations",
         "services": [
-            "API & Application Development",
-            "Cyber Security",
-            "Product Engineering Services",
-            "Quality Engineering & Automation",
-            "UI/UX Engineering & Modernization"
-        ]
-    },
-    {
-        "category": "Cloud",
-        "services": [
-            "Managed Cloud Services"
+            "Professional Services"
         ]
     },
     {
@@ -60,9 +60,9 @@
         ]
     },
     {
-        "category": "Business Process Operations",
+        "category": "Cloud",
         "services": [
-            "Professional Services"
+            "Managed Cloud Services"
         ]
     }
 ]

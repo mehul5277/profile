@@ -1,0 +1,39 @@
+[
+    {
+        "category": "Financial Services",
+        "services": [
+            "Banking & payments",
+            "Capital markets",
+            "Real estate",
+            "Wealth & asset management"
+        ]
+    },
+    {
+        "category": "Life Sciences & Healthcare",
+        "services": [
+            "Healthcare provider",
+            "Healthcare payer",
+            "Health tech",
+            "Pharmaceutical, biotech & biopharma",
+            "Research & clinical services"
+        ]
+    },
+    {
+        "category": "Insurance",
+        "services": [
+            "Property and Casualty",
+            "Life and Health",
+            "Specialty and Commercial Lines",
+            "Insurance Technology"
+        ]
+    },
+    {
+        "category": "Public & Social Impact",
+        "services": [
+            "Federal Services",
+            "SLED (State, Local, and Education)",
+            "Nonprofit & philanthropy",
+            "Texas DIR (Contracts)"
+        ]
+    }
+]
