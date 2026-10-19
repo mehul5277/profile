@@ -1,0 +1,37 @@
+<div class="p-9 mb-4 bg-subtle-secondary rounded-5">
+    @if(cv) {
+    <div class="container-fluid py-5">
+        <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'btnConfig' :  btnConfig }"></ng-container>
+        <div class="wow fadeInLeft" data-wow-duration="1s">
+            <h1 class="fs-4xl fw-bold">Building Intelligent Solutions </h1>
+            <h1 class="fs-4xl fw-bold">through Digital Engineering</h1>
+            <h1 class="fs-4xl fw-bold">for Business Excellence</h1>
+            <p class="col-md-8 fs-sm">We help forward-thinking enterprises turn technology into competitive advantage; through Data, Cloud, AI and Engineering solutions built for scale and delivered for impact.</p>
+        </div>
+        <div class="d-inline-flex gap-2 my-3 wow fadeInUp" data-wow-duration="2s">
+
+            @if(cv.basics.profiles.length > 0) {
+            <a class="btn btn-outline-light btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
+                <span>Explore Our Services</span>
+                <i class="bi bi-arrow-right m-2"></i>
+            </a>
+            }
+        </div>
+    </div>}
+</div>
+
+<ng-template #buttonTemplate let-btnConfig="btnConfig">
+    <p class="py-2">
+        <a class="d-inline-flex align-items-center btn btn-sm btn-outline-light btn-lg pe-2 rounded-pill me-3 d-none" [attr.href]="cv.basics.profiles[0].url" target="_blank">
+            <span [innerHTML]="btnConfig.text"></span>
+            <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
+                <use href="assets/image/techstack.svg#linkedin-c"></use>
+            </svg>
+        </a>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill glow-button me-1 d-none" type="button" [innerHTML]="btnConfig.text"></button>
+        <a class="btn btn-sm btn-primary px-2 rounded-pill" [attr.href]="cv.linkedIn" target="_blank">
+            <i class="bi bi-shield-fill-check me-2"></i>
+            <span [innerHTML]="btnConfig.text"></span>
+        </a>
+    </p>
+</ng-template>
