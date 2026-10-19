@@ -56,7 +56,7 @@
                     <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>About Us</span>
                     </a>
-                    <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: AboutusMenu }"></ng-container>
+                    <ng-container *ngTemplateOutlet="megaMenuTemplate1; context: { megaMenuData: AboutusMenu }"></ng-container>
                 </li>
                 <!-- End Industries Mega Menu-->
 
@@ -88,19 +88,13 @@
                             <!-- Icon shifts dynamically based on selected theme -->
                             <span class="me-0">
                                 @if (themeService.currentTheme() === 'light') {
-                                <svg class="bi ms-auto" aria-hidden="true">
-                                    <use href="#sun-fill"></use>
-                                </svg>
+                                <i class="bi bi-sun-fill"></i>
                                 }
                                 @else if (themeService.currentTheme() === 'dark') {
-                                <svg class="bi ms-auto" aria-hidden="true">
-                                    <use href="#moon-stars-fill"></use>
-                                </svg>
+                                <i class="bi bi-moon-stars-fill"></i>
                                 }
                                 @else {
-                                <svg class="bi ms-auto" aria-hidden="true">
-                                    <use href="#circle-half"></use>
-                                </svg>
+                                <i class="bi bi-circle-half"></i>
                                 }
                             </span>
                         </button>
@@ -108,55 +102,30 @@
                         <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="static" [class.show]="isDropdownOpen">
                             <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false" (click)="changeTheme('light')">
-                                    <svg class="bi me-2 opacity-50" aria-hidden="true">
-                                        <use href="#sun-fill"></use>
-                                    </svg>
+                                    <i class="bi bi-sun-fill me-2 opacity-50" aria-hidden="true"></i>
                                     <span>Light</span>
                                     @if (themeService.currentTheme() === 'light') {
-                                    <svg class="bi ms-auto" aria-hidden="true">
-                                        <use href="#check2"></use>
-                                    </svg>
+                                    <i class="bi bi-check2 ms-auto" aria-hidden="true"></i>
                                     }
                                 </button>
-                                <!-- <button class="dropdown-item d-flex align-items-center justify-content-between" [class.active]="themeService.currentTheme() === 'light'" (click)="changeTheme('light')">
-                                    <span>☀️ Light</span>
-                                    @if (themeService.currentTheme() === 'light') { <span>✓</span> }
-                                </button> -->
                             </li>
                             <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false" (click)="changeTheme('dark')">
-                                    <svg class="bi me-2 opacity-50" aria-hidden="true">
-                                        <use href="#moon-stars-fill"></use>
-                                    </svg>
+                                    <i class="bi bi-moon-stars-fill me-2 opacity-50" aria-hidden="true"></i>
                                     <span>Dark</span>
                                     @if (themeService.currentTheme() === 'dark') {
-                                    <svg class="bi ms-auto" aria-hidden="true">
-                                        <use href="#check2"></use>
-                                    </svg>
+                                    <i class="bi bi-check2 ms-auto" aria-hidden="true"></i>
                                     }
                                 </button>
-
-                                <!-- <button class="dropdown-item d-flex align-items-center justify-content-between" [class.active]="themeService.currentTheme() === 'dark'" (click)="changeTheme('dark')">
-                                    <span>🌙 Dark</span>
-                                    @if (themeService.currentTheme() === 'dark') { <span>✓</span> }
-                                </button> -->
                             </li>
                             <li>
                                 <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="system" aria-pressed="false" (click)="changeTheme('system')">
-                                    <svg class="bi me-2 opacity-50" aria-hidden="true">
-                                        <use href="#circle-half"></use>
-                                    </svg>
+                                    <i class="bi bi-circle-half me-2 opacity-50" aria-hidden="true"></i>
                                     <span>Auto</span>
                                     @if (themeService.currentTheme() === 'system') {
-                                    <svg class="bi ms-auto" aria-hidden="true">
-                                        <use href="#check2"></use>
-                                    </svg>
+                                    <i class="bi bi-check2 ms-auto" aria-hidden="true"></i>
                                     }
                                 </button>
-                                <!-- <button class="dropdown-item d-flex align-items-center justify-content-between" [class.active]="themeService.currentTheme() === 'system'" (click)="changeTheme('system')">
-                                    <span>💻 System</span>
-                                    @if (themeService.currentTheme() === 'system') { <span>✓</span> }
-                                </button> -->
                             </li>
                         </ul>
                     </li>
@@ -283,4 +252,48 @@
         <i class="bi bi-arrow-bar-right me-2"></i>
         <span [innerHTML]="navLinkStripe">Dark</span>
     </button>
+</ng-template>
+
+
+
+<ng-template #megaMenuTemplate1 let-megaMenuData="megaMenuData">
+    <div class="dropdown-menu megamenu rounded-0 overflow-y p-5 w-100" aria-labelledby="navbarDropdown">
+        <div class="container-fluid">
+            <div class="row">
+                @for (c of megaMenuData ; track $index) {
+                <div class="fw-bold">{{c.category}}</div>
+                <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 list-unstyled">
+                    @for (s of c.services ; track $index) {
+                    <ng-container [ngTemplateOutlet]="navLinkStripe1" [ngTemplateOutletContext]="{'navLinkStripe' : s}"></ng-container>
+                    }
+                </ul>
+
+                }
+            </div>
+            <div class="row m-3 d-none">
+                <div class="col-md-12">
+                    <div class="list-group list-group-horizontal">
+                        <a href="#" class="list-group-item">An item</a>
+                        <a href="#" class="list-group-item">A second item</a>
+                        <a href="#" class="list-group-item">A third item</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #navLinkStripe1 let-navLinkStripe="navLinkStripe">
+    <!-- Grid Item 3 -->
+    <li class="col">
+        <a [routerLink]="navLinkStripe.url" class="d-flex align-items-start text-decoration-none text-dark link-primary-hover">
+            <div class="bg-navy text-white p-3 rounded-3 me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 3rem; height: 3rem;">
+                <i class="bi fs-4" [ngClass]="navLinkStripe.icon"></i>
+            </div>
+            <div>
+                <h5 class="fw-bold mb-1 text-dark" [innerHTML]="navLinkStripe.name">Fully Customizable</h5>
+                <p class="text-muted mb-0" [innerHTML]="navLinkStripe.description">Tweak any setting easily using our simple and intuitive admin dashboard panels.</p>
+            </div>
+        </a>
+    </li>
 </ng-template>
