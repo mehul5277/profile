@@ -1,0 +1,56 @@
+[
+    {
+        "option": "Option 1: Action-Oriented & Execution Focus",
+        "questions": [
+            {
+                "number": 1,
+                "question": "What is our current baseline?"
+            },
+            {
+                "number": 2,
+                "question": "Where are our highest-impact opportunities?"
+            },
+            {
+                "number": 3,
+                "question": "How do we accelerate execution?"
+            }
+        ],
+        "what_the_client_receives": "A comprehensive capability benchmark, a high-yield opportunity matrix, and an immediate 30-60-90 day execution blueprint."
+    },
+    {
+        "option": "Option 2: Strategy & Vision Focus",
+        "questions": [
+            {
+                "number": 1,
+                "question": "How aligned is our technology with our business vision?"
+            },
+            {
+                "number": 2,
+                "question": "What gaps exist between our current state and our future goals?"
+            },
+            {
+                "number": 3,
+                "question": "What is the optimal path to scale?"
+            }
+        ],
+        "what_the_client_receives": "A strategic alignment diagnostic, a capability gap analysis, and a long-term architectural scaling roadmap."
+    },
+    {
+        "option": "Option 3: Risk & Governance Focus",
+        "questions": [
+            {
+                "number": 1,
+                "question": "Where are our primary compliance and security vulnerabilities?"
+            },
+            {
+                "number": 2,
+                "question": "What framework gaps are threatening our deployment?"
+            },
+            {
+                "number": 3,
+                "question": "How do we establish safe, trustworthy operations?"
+            }
+        ],
+        "what_the_client_receives": "A formal governance risk register, an evidence-backed compliance scorecard, and a risk-mitigated deployment playbook."
+    }
+]
