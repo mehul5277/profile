@@ -4,3 +4,17 @@
     background-color: #212529;
     color: white;
 }
+
+.bi-heart-fill {
+    color: hsl(10, 94%, 44%);
+    display: inline-block;
+    /* Required for transform scaling to work correctly */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Enlarge the heart by 25% on hover */
+.bi-heart-fill:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+    /* Optional: changes cursor to a hand pointer */
+}
