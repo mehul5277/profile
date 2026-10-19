@@ -1,0 +1,68 @@
+[
+    {
+        "category": "AI & Automation",
+        "services": [
+            "Responsible AI Consulting",
+            "GenAI and Autonomous Agents Services",
+            "AIOps Autonomous Operations",
+            "AI Governance, Ethics & Compliance Consulting",
+            "AI and Machine Learning"
+        ]
+    },
+    {
+        "category": "Data",
+        "services": [
+            "Data Strategy & Analytics",
+            "Data Engineering",
+            "Advanced Analytics & Business Intelligence",
+            "Data Governance & Compliance"
+        ]
+    },
+    {
+        "category": "Digital Engineering",
+        "services": [
+            "API & Application Development",
+            "Cyber Security",
+            "Product Engineering Services",
+            "Quality Engineering & Automation",
+            "UI/UX Engineering & Modernization"
+        ]
+    },
+    {
+        "category": "Cloud",
+        "services": [
+            "Managed Cloud Services"
+        ]
+    },
+    {
+        "category": "AWS",
+        "services": [
+            "Cloud Migration",
+            "AWS Managed Services",
+            "Data Engineering & Analytics",
+            "DevOps Automation",
+            "Well-Architected Review",
+            "Cloud Security",
+            "Serverless Computing",
+            "AWS AI",
+            "Small and Medium Business Services",
+            "Amazon EC2"
+        ]
+    },
+    {
+        "category": "Microsoft",
+        "services": [
+            "Microsoft 365 Services",
+            "Microsoft Dynamics 365 Services",
+            "Power Platform Services",
+            "Azure Services",
+            "Copilot & Copilot Studio Services"
+        ]
+    },
+    {
+        "category": "Business Process Operations",
+        "services": [
+            "Professional Services"
+        ]
+    }
+]
