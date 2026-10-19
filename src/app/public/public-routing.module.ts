@@ -15,7 +15,7 @@ const routes: Routes = [
     path: '',
     component: PublicLayoutComponent,
     children: [
-      { path: '', component: HomeComponent },
+      { path: '', component: HomeComponent , resolve: { cvData: CVResolver } },
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
       { path: 'services', component: ProductsComponent },
       { path: 'about-us', component: AboutUsComponent },

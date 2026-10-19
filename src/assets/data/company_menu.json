@@ -1,0 +1,37 @@
+[
+    {
+        "category": "Company Info",
+        "services": [
+            {
+                "name": "About us",
+                "url": "about-us",
+                "icon": "bi-building-fill",
+                "description": "Our mission, corporate core values, and global operational reach as a trusted engineering partner."
+            },
+            {
+                "name": "Partnerships",
+                "url": "about-us",
+                "icon": "bi-handshake-fill",
+                "description": "Strategic enterprise alliances with industry-leading providers including AWS, Microsoft, and Salesforce."
+            },
+            {
+                "name": "Leadership",
+                "url": "about-us",
+                "icon": "bi-people-fill",
+                "description": "The executive management team driving our digital innovation roadmap and business growth."
+            },
+            {
+                "name": "Careers",
+                "url": "about-us",
+                "icon": "bi-briefcase-fill",
+                "description": "Open technical tracks and cultural advantages of joining our global delivery teams."
+            },
+            {
+                "name": "CSR & Sustainability",
+                "url": "about-us",
+                "icon": "bi-globe-americas",
+                "description": "Corporate frameworks focused on carbon footprint reduction and localized social impact initiatives."
+            }
+        ]
+    }
+]

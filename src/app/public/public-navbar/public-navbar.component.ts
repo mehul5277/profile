@@ -19,10 +19,14 @@ export class PublicNavbarComponent implements OnInit {
   isNavOpen = false;       // Mobile burger menu state
   isDropdownOpen = false;  // Theme selector state
 
-  services: any;
+  servicesMenu: Array<any> = [];
+  IndustriesMenu: Array<any> = [];
+  AboutusMenu: Array<any> = [];
 
   ngOnInit(): void {
-    this.dataService.getData("services").subscribe(data => this.services = data);
+    this.dataService.getData("services_menu").subscribe(data => this.servicesMenu = data);
+    this.dataService.getData("industries_menu").subscribe(data => this.IndustriesMenu = data);
+    this.dataService.getData("company_menu").subscribe(data => this.AboutusMenu = data);
   }
 
   logout() {
