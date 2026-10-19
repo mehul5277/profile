@@ -54,11 +54,14 @@
     }
 }
 
-.p-9 {
-    padding: 2rem;
-}
-
 .bg-subtle-secondary {
     --bs-bg: var(--bs-secondary-bg-subtle);
     background-color: var(--bs-bg);
+}
+
+/* Target only the Bootstrap 'md' window range */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .jumbotron-md-full {
+        min-height: 100vh;
+    }
 }

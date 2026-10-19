@@ -1,10 +1,14 @@
-<div class="p-9 mb-4 bg-subtle-secondary rounded-5">
+<div class="jumbotron-md-full p-md-5 mb-4 bg-subtle-secondary bg-midnight grid-midnight">
     @if(cv) {
     <div class="container-fluid py-5">
         <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'btnConfig' :  btnConfig }"></ng-container>
         <div class="wow fadeInLeft" data-wow-duration="1s">
-            <h1 class="fs-4xl fw-bold">Building Intelligent Solutions </h1>
-            <h1 class="fs-4xl fw-bold">through Digital Engineering</h1>
+            <h1 class="fs-4xl fw-bold">Building Intelligent</h1>
+            <h1 class="fs-4xl fw-bold">Solutions through</h1>
+            <app-typewriter [strings]="typewriterList" [shuffle]="false" [typeSpeed]="100" [backDelay]="1000" [loop]="true" [contentType]="'text'">
+                <span><span style="white-space:pre" class="typing display-4 fw-bold text-primary"></span>&nbsp;</span>
+                <span class="typed-cursor">|</span>
+            </app-typewriter>
             <h1 class="fs-4xl fw-bold">for Business Excellence</h1>
             <p class="col-md-8 fs-sm">We help forward-thinking enterprises turn technology into competitive advantage; through Data, Cloud, AI and Engineering solutions built for scale and delivered for impact.</p>
         </div>
@@ -14,6 +18,10 @@
             <a class="btn btn-outline-light btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
                 <span>Explore Our Services</span>
                 <i class="bi bi-arrow-right m-2"></i>
+            </a>
+            <a class="btn btn-outline-light btn-lg pe-2 rounded-pill" [attr.href]="cv.basics.profiles[0].url" target="_blank">
+                <span>Talk to an Expert</span>
+                <i class="bi bi-robot m-2"></i>
             </a>
             }
         </div>
