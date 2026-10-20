@@ -22,10 +22,37 @@
 .dropdown.has-megamenu {
   position: static;
 
+  /* Only trigger hover effects on desktop layouts */
+  @media (min-width: 992px) {
+    &:hover .megamenu {
+      // display: inline;
+      // margin-top: 0;
+      // opacity: 1;
+      //visibility: visible;
+      //animation: fadeIn 0.25s ease-in-out;
+    }
+  }
+
   /* Allows the megamenu to be full width */
   .megamenu {
-    padding: 0px;
+    //rounded-0 overflow-y px-5  w-100
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0;
+    //padding: 0px;
     border: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -84,4 +111,8 @@
   .dropdown-menu {
     padding: .25rem;
   }
+}
+
+#debug {
+  display: none;
 }
