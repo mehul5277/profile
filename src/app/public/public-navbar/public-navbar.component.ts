@@ -6,6 +6,20 @@ import { AuthService } from '../../auth/auth.service';
 import { ThemeMode, ThemeService } from '../../services/theme.service';
 import { PreventCloseDirective } from '../../shared/directives/prevent-close.directive';
 
+
+interface MegaMenuData {
+  category: string;
+  services: Array<Service>;
+}
+
+interface Service {
+  name: string;
+  url: string;
+  icon: any;
+  descriptionx: string;
+}
+
+
 @Component({
   selector: 'app-public-navbar',
   standalone: true,
@@ -22,12 +36,25 @@ export class PublicNavbarComponent implements OnInit {
 
   servicesMenu: Array<any> = [];
   IndustriesMenu: Array<any> = [];
-  AboutusMenu: Array<any> = [];
+  AboutusMenu: Array<MegaMenuData> = [];
 
+  activeCategory: any;
   ngOnInit(): void {
-    this.dataService.getData("services_menu").subscribe(data => this.servicesMenu = data);
+    this.dataService.getData("services_menu").subscribe(data => {
+      this.servicesMenu = data;
+      // Automatically set the first category as active on load
+      if (this.servicesMenu.length > 0) {
+        this.activeCategory = this.servicesMenu[0].category;
+      }
+    });
     this.dataService.getData("industries_menu").subscribe(data => this.IndustriesMenu = data);
     this.dataService.getData("company_menu").subscribe(data => this.AboutusMenu = data);
+
+
+  }
+
+  selectCategory(categoryName: string): void {
+    this.activeCategory = categoryName;
   }
 
   logout() {
