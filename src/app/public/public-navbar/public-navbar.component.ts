@@ -4,11 +4,12 @@ import { DataService } from '../../services/data.service';
 import { CommonModule, SlicePipe } from '@angular/common';
 import { AuthService } from '../../auth/auth.service';
 import { ThemeMode, ThemeService } from '../../services/theme.service';
+import { PreventCloseDirective } from '../../shared/directives/prevent-close.directive';
 
 @Component({
   selector: 'app-public-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule, SlicePipe],
+  imports: [RouterLink, CommonModule, SlicePipe, PreventCloseDirective],
   templateUrl: './public-navbar.component.html',
   styleUrl: './public-navbar.component.scss'
 })
