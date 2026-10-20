@@ -23,15 +23,15 @@
   position: static;
 
   /* Only trigger hover effects on desktop layouts */
-  @media (min-width: 992px) {
-    &:hover .megamenu {
-      // display: inline;
-      // margin-top: 0;
-      // opacity: 1;
-      //visibility: visible;
-      //animation: fadeIn 0.25s ease-in-out;
-    }
-  }
+  // @media (min-width: 992px) {
+  //   &:hover .megamenu {
+  //     display: inline;
+  //     margin-top: 0;
+  //     opacity: 1;
+  //     visibility: visible;
+  //     animation: fadeIn 0.25s ease-in-out;
+  //   }
+  // }
 
   /* Allows the megamenu to be full width */
   .megamenu {
@@ -41,6 +41,8 @@
     border-radius: 0;
     //padding: 0px;
     border: none;
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
   }
 }
 
