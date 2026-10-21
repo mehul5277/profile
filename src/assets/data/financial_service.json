@@ -1,0 +1,52 @@
+[
+    {
+        "section": "Our Financial Services Expertise",
+        "segments": [
+            {
+                "title": "Banking and Payments",
+                "description": "Retail and commercial banks face a dual challenge: modernizing legacy core systems while competing with digital-native challengers on customer experience. We help banking organizations move their data and operations to cloud infrastructure, build real-time fraud detection and AML monitoring, automate KYC and onboarding processes, and create the data foundations that support personalized customer engagement at scale. For payments businesses, we build the real-time processing infrastructure and analytics capabilities that the velocity and volume of modern payments demands."
+            },
+            {
+                "title": "Capital Markets",
+                "description": "Capital markets organizations operate in an environment where speed, accuracy, and regulatory discipline are simultaneously non-negotiable. We help buy-side and sell-side firms automate reconciliation and post-trade processing, build risk data platforms that give front office and risk teams a unified view of exposure, modernize reporting infrastructure to meet evolving regulatory requirements, and deploy AI-assisted research and analysis workflows that improve analyst productivity without compromising the judgment that drives performance."
+            },
+            {
+                "title": "Wealth and Asset Management",
+                "description": "Trust and performance are the foundation of every wealth management relationship. Your clients expect an experience that is as intelligent as the capital you manage for them. We help wealth and asset management firms build client data platforms that give relationship managers a 360-degree view of each client, automate compliance monitoring and regulatory reporting, develop AI-assisted portfolio analytics, and create the digital advisor tools that make your people more effective rather than attempting to replace them."
+            },
+            {
+                "title": "Real Estate",
+                "description": "Real estate decision-making is data-intensive and historically slow. Market conditions, asset performance, tenant behavior, financing cost, and sustainability obligations all require concurrent analysis across large, often fragmented data estates. We help real estate organizations build the data infrastructure that makes faster, better-informed investment and operational decisions possible, automate lease management and compliance workflows, and deploy analytics that surface portfolio insights your team cannot derive manually."
+            }
+        ]
+    },
+    {
+        "section": "Solutions Built for Financial Services",
+        "segments": [
+            {
+                "title": "Automated Financial Document Summarization",
+                "description": "Our AI extracts key data from financial documents, reducing manual review time, human error, and operational load in fast-paced, high-volume financial environments."
+            },
+            {
+                "title": "Financial Fraud Detection Engine",
+                "description": "Our AI monitors transactions in real time, identifying suspicious patterns and anomalous behavior early to minimize fraud risk and protect financial assets across all channels."
+            },
+            {
+                "title": "Rule-Based Loan or Claim Evaluation",
+                "description": "We apply automated decision rules to accelerate loan and claim evaluations while ensuring full compliance with your internal policies, credit risk frameworks, and regulatory standards."
+            },
+            {
+                "title": "Claims Cost Prediction",
+                "description": "Our predictive models estimate future claim costs using historical and real-time data, enabling more accurate financial planning, reserving strategies, and payout decisions."
+            },
+            {
+                "title": "Crash Risk Severity Analysis",
+                "description": "We use predictive analytics to assess crash and incident severity, helping financial and lending teams make safer asset decisions and improve risk-adjusted underwriting."
+            },
+            {
+                "title": "Operational Cost Optimization",
+                "description": "We identify inefficiencies across financial operations and reduce costs using process intelligence, workflow analytics, and AI-powered identification of automation opportunities."
+            }
+        ]
+    }
+]

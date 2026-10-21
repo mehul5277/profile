@@ -1,0 +1,61 @@
+// Ticker styles
+$marquee-speed: 40s;
+
+.ticker-wrap {
+    width: 100%;
+
+    color: #fff;
+    overflow: hidden;
+    //height: 36px;
+    display: flex;
+    padding: 0 4rem;
+
+
+    padding: 10px 0;;
+
+}
+
+.ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker-scroll $marquee-speed linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.ticker-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    width: auto;
+    overflow: hidden;
+    animation-name: marquee-to-left;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    .uc_logo_marquee_holder {
+        height: 80px;
+        background-color: var(--e-global-color-0f48b67);
+        border-radius: 0px;
+        padding: 0px 0px 0px 0px;
+        border-style: none;
+    }
+
+    img {
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
