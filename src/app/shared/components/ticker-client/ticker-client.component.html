@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row ticker-container">
+        <div class="ticker-wrap border border-1 border-dark">
+            <div class="ticker-track">
+                <ng-container [ngTemplateOutlet]="tickerTemplate" [ngTemplateOutletContext]="{ data : tickerItems}"></ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #tickerTemplate let-data="data">
+    @for(d of data; track $index) {
+    <div class="ticker-item">
+        <div class="uc_logo_marquee_holder" style="margin-right: 10px; width: 159px;">
+            <img decoding="async" [attr.src]="d" alt="AWS" class="ue_img_marquee">
+        </div>
+    </div>
+    }
+    @for(d of data; track $index) {
+    <div class="ticker-item">
+        <div class="uc_logo_marquee_holder" style="margin-right: 10px; width: 159px;">
+            <img decoding="async" [attr.src]="d" alt="AWS" class="ue_img_marquee">
+        </div>
+    </div>
+    }
+</ng-template>
