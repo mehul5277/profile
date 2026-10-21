@@ -10,6 +10,7 @@ import { ResumeComponent } from './pages/resume/resume.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IndustriesComponent } from './pages/industries/industries.component';
+import { ServicePageComponent } from './pages/service-page/service-page.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,7 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
-      { path: 'services', component: ProductsComponent },
+      { path: 'service/:id', component: ServicePageComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'industries', component: IndustriesComponent },

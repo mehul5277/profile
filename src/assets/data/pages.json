@@ -1,0 +1,157 @@
+[
+    {
+        "id": 1,
+        "page": "data",
+        "jumbotron": {
+            "backdrop": "",
+            "title": "Data Foundations Built for Measurable Business Impact",
+            "description": "Design governed, scalable data platforms that turn strategy into trusted insights, operational efficiency, and AI-ready capabilities.",
+            "buttons": {
+                "label": "Start Conversation",
+                "url": "",
+                "icon": ""
+            }
+        },
+        "overview": {
+            "title": "Overview",
+            "description": "Our data services empower organizations to move from data silos to connected intelligence. From foundational data strategy and architecture to advanced analytics and predictive insights, we enable real-time business outcomes. Our team helps design robust data pipelines, improve data quality, and support regulatory requirements while boosting agility and operational intelligence. We work across structured and unstructured data to unlock business value through visualization, forecasting, and AI readiness. Our approach ensures secure data governance while making data accessible across the enterprise."
+        },
+        "metrics": [
+            {
+                "value": "40+",
+                "label": "Enterprise Data Transformation Engagements Delivered"
+            },
+            {
+                "value": "25+",
+                "label": "Modern Data Platforms Built to Support AI & Advanced Analytics"
+            },
+            {
+                "value": "30%",
+                "label": "Average Improvement in Reporting & Decision Turnaround"
+            },
+            {
+                "value": "85%",
+                "label": "Client Retention Across Data & AI Engagements"
+            }
+        ],
+        "sections": [
+            {
+                "title": "Service Offerings",
+                "services": [
+                    {
+                        "name": "Data Strategy & Analytics",
+                        "description": "Align data architecture and processes to your business goals for strategic insights and operational clarity."
+                    },
+                    {
+                        "name": "Data Engineering",
+                        "description": "Build high-quality data pipelines using ETL, ELT, and real-time stream processing for scalable architecture."
+                    },
+                    {
+                        "name": "Advanced Analytics & Business Intelligence",
+                        "description": "Visualize, predict, and optimize outcomes with machine learning-powered dashboards and analytics models."
+                    },
+                    {
+                        "name": "Data Governance & Compliance",
+                        "description": "Ensure data integrity, security, lineage, and regulatory compliance through automated policy enforcement and monitoring."
+                    }
+                ]
+            }
+        ],
+        "Expertise": {
+            "title": "Expertise",
+            "items": [
+                {
+                    "technology": "Tableau",
+                    "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.",
+                    "link_text": "Read More"
+                },
+                {
+                    "technology": "Power BI",
+                    "description": "Elevate your data visualization game with our specialized Power BI services. Leverage our expertise to transform raw data into actionable insights, driving informed business decisions effortlessly.",
+                    "link_text": "Read More"
+                },
+                {
+                    "technology": "Snowflake",
+                    "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise.",
+                    "link_text": "Read More"
+                }
+            ]
+        },
+        "banner": [
+            {
+                "headline": "Strengthen your data foundation to support scalable, governed AI across your organization",
+                "call_to_action": {
+                    "text": "Request Assessment",
+                    "type": "button"
+                }
+            }
+        ],
+        "prisum": [
+            {
+                "heading": "Turn Insights into Intelligent Business Growth",
+                "subheading": "We help businesses create future-ready intelligence by turning data into decisions.",
+                "features": [
+                    {
+                        "text": "Real-time dashboards and reporting",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Unified master data architecture",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Data lakehouse modernization solutions",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Business-aligned data architecture",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Data observability and monitoring",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Enterprise data compliance solutions",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Custom analytics use case development",
+                        "icon": "checkbox"
+                    },
+                    {
+                        "text": "Scalable data pipeline solutions",
+                        "icon": "checkbox"
+                    }
+                ]
+            }
+        ],
+        "prisum1": [
+            {
+                "title": "Why Partner With Us",
+                "benefits": [
+                    {
+                        "icon": "line-chart",
+                        "heading": "Outcome-Driven Execution",
+                        "description": "We deliver measurable improvements in agility, forecasting, and decision speed."
+                    },
+                    {
+                        "icon": "handshake",
+                        "heading": "Business-Centric Approach",
+                        "description": "We align data solutions with core business KPIs and digital transformation goals."
+                    },
+                    {
+                        "icon": "code",
+                        "heading": "Deep Data Expertise",
+                        "description": "Proven capability across analytics, data lakes, governance, and compliance frameworks."
+                    },
+                    {
+                        "icon": "hourglass-structure",
+                        "heading": "Scalable Engagement Models",
+                        "description": "Flexible delivery to support short-term sprints or enterprise-scale transformation."
+                    }
+                ]
+            }
+        ]
+    }
+]
