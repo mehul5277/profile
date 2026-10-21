@@ -36,7 +36,7 @@
                         <span>Services</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
-                        <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: servicesMenu }"></ng-container>
+                        <ng-container [ngTemplateOutlet]="megaMenuTemplate" [ngTemplateOutletContext]=" { megaMenuData: servicesMenu }"></ng-container>
                     </div>
                 </li>
 
@@ -56,7 +56,7 @@
                         <span>Industries</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
-                        <ng-container *ngTemplateOutlet="megaMenuTemplate; context: { megaMenuData: IndustriesMenu }"></ng-container>
+                        <ng-container *ngTemplateOutlet="industriesMenuTemplate; context: { megaMenuData: IndustriesMenu }"></ng-container>
                     </div>
                 </li>
                 <li class="nav-item d-none">
@@ -206,13 +206,6 @@
     </div>
 </ng-template>
 
-<ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
-    <button [routerLink]="navLinkStripe.url" class="dropdown-item align-items-center hstack">
-        <i class="bi bi-arrow-bar-right me-2"></i>
-        <div class="text-wrap" [innerHTML]="navLinkStripe">Dark</div>
-    </button>
-</ng-template>
-
 <ng-template #megaMenuTemplate1 let-megaMenuData="megaMenuData">
     <div class="container-fluid">
         <p id="debug" class="p-3 bg-info">MegaMenuTemplate1</p>
@@ -237,22 +230,6 @@
             </div>
         </div>
     </div>
-</ng-template>
-
-<ng-template #navLinkStripe1 let-navLinkStripe="navLinkStripe">
-    <!-- Grid Item 3 -->
-    <li class="col">
-        <a [routerLink]="navLinkStripe.url" class="d-flex align-items-start text-decoration-none text-dark link-primary-hover">
-            <div class="bg-navy text-white p-3 rounded-3 me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 3rem; height: 3rem;">
-                <i class="bi fs-4" [ngClass]="navLinkStripe.icon"></i>
-            </div>
-            <div>
-                <h5 class="fw-bold mb-1 text-dark" [innerHTML]="navLinkStripe.name">Fully Customizable</h5>
-                <p class="text-muted mb-0" [innerHTML]="navLinkStripe.description">Tweak any setting easily using our simple and intuitive admin dashboard panels.</p>
-            </div>
-        </a>
-    </li>
-
 </ng-template>
 
 <ng-template #megaMenuTemplate2 let-megaMenuData="megaMenuData">
@@ -321,4 +298,54 @@
     </div>
 
 
+</ng-template>
+
+<ng-template #industriesMenuTemplate let-megaMenuData="megaMenuData">
+    <div class="container-fluid">
+        <p id="debug" class="p-3 bg-info">MegaMenuTemplate</p>
+        <p id="debug">{{megaMenuData | json}}</p>
+        <div class="row">
+            @for (c of megaMenuData ; track $index) {
+            <div class="col-3 p-3">
+                <div class="fw-bold">{{c.category}}</div>
+                @for (s of c.services ; track $index) {
+                <ng-container [ngTemplateOutlet]="navLinkStripe1" [ngTemplateOutletContext]="{'navLinkStripe' : s}"></ng-container>
+                }
+            </div>
+            }
+        </div>
+        <div class="row m-3">
+            <div class="col-md-12">
+                <div class="list-group list-group-horizontal">
+                    <a href="#" class="list-group-item">An item</a>
+                    <a href="#" class="list-group-item">A second item</a>
+                    <a href="#" class="list-group-item">A third item</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
+    <button [routerLink]="navLinkStripe.url" class="dropdown-item align-items-center hstack">
+        <i class="bi bi-arrow-bar-right me-2"></i>
+        <div class="text-wrap" [innerHTML]="navLinkStripe">Dark</div>
+    </button>
+</ng-template>
+
+<ng-template #navLinkStripe1 let-navLinkStripe="navLinkStripe">
+    <!-- Grid Item 3 -->
+    <li class="col py-2 service-item nav-links">
+        <a [routerLink]="navLinkStripe.url" class="d-flex align-items-start nav-link">
+            <div class="bg-navy text-white p-3 rounded-3 me-3 d-inline-flex align-items-center justify-content-center flex-shrink-0" style="width: 3rem; height: 3rem;">
+                <i class="bi fs-4" [ngClass]="navLinkStripe.icon"></i>
+
+            </div>
+            <div>
+                <div class="mb-1 text-dark" [innerHTML]="navLinkStripe.name">Fully Customizable</div>
+                <p class="d-none text-muted mb-0" [innerHTML]="navLinkStripe.description">Tweak any setting easily using our simple and intuitive admin dashboard panels.</p>
+            </div>
+        </a>
+    </li>
 </ng-template>

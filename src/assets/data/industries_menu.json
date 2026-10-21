@@ -1,39 +1,124 @@
 [
-    {
-        "category": "Financial Services",
-        "services": [
-            "Banking & payments",
-            "Capital markets",
-            "Real estate",
-            "Wealth & asset management"
-        ]
-    },
-    {
-        "category": "Life Sciences & Healthcare",
-        "services": [
-            "Healthcare provider",
-            "Healthcare payer",
-            "Health tech",
-            "Pharmaceutical, biotech & biopharma",
-            "Research & clinical services"
-        ]
-    },
-    {
-        "category": "Insurance",
-        "services": [
-            "Property and Casualty",
-            "Life and Health",
-            "Specialty and Commercial Lines",
-            "Insurance Technology"
-        ]
-    },
-    {
-        "category": "Public & Social Impact",
-        "services": [
-            "Federal Services",
-            "SLED (State, Local, and Education)",
-            "Nonprofit & philanthropy",
-            "Texas DIR (Contracts)"
-        ]
-    }
+  {
+    "category": "Financial Services",
+    "services": [
+      {
+        "name": "Banking & payments",
+        "url": "industries",
+        "icon": "bi-credit-card-2-front-fill",
+        "description": "Modernizing legacy transactional platforms for seamless, high-velocity core banking and payments."
+      },
+      {
+        "name": "Capital markets",
+        "url": "industries",
+        "icon": "bi-graph-up-arrow",
+        "description": "Optimizing electronic algorithmic trading configurations and cloud-native investment settlement cycles."
+      },
+      {
+        "name": "Real estate",
+        "url": "industries",
+        "icon": "bi-house-door-fill",
+        "description": "Deploying structural spatial analytics software platforms to manage diversified real property assets."
+      },
+      {
+        "name": "Wealth & asset management",
+        "url": "industries",
+        "icon": "bi-pie-chart-fill",
+        "description": "Automating proactive risk analytics vectors and algorithmic investment advisory tracking setups."
+      }
+    ]
+  },
+  {
+    "category": "Life Sciences & Healthcare",
+    "services": [
+      {
+        "name": "Healthcare provider",
+        "url": "industries",
+        "icon": "bi-hospital-fill",
+        "description": "Modernizing integrated electronic health records to elevate systemic patient care delivery."
+      },
+      {
+        "name": "Healthcare payer",
+        "url": "industries",
+        "icon": "bi-file-medical-fill",
+        "description": "Automating complex insurance billing workflows to minimize administrative processing backlogs."
+      },
+      {
+        "name": "Health tech",
+        "url": "industries",
+        "icon": "bi-heart-pulse-fill",
+        "description": "Engineering secure, scalable telemedicine software applications and remote monitoring endpoints."
+      },
+      {
+        "name": "Pharmaceutical, biotech & biopharma",
+        "url": "industries",
+        "icon": "bi-capsule-solid",
+        "description": "Accelerating pharmaceutical R&D workflows through sophisticated laboratory machine learning algorithms."
+      },
+      {
+        "name": "Research & clinical services",
+        "url": "industries",
+        "icon": "bi-search-heart-fill",
+        "description": "Structuring safe, compliant clinical trail data analytics systems to ensure secure study results."
+      }
+    ]
+  },
+  {
+    "category": "Insurance",
+    "services": [
+      {
+        "name": "Property and Casualty",
+        "url": "industriesinsurance",
+        "icon": "bi-umbrella-fill",
+        "description": "Integrating predictive spatial analytics data vectors to refine complex actuarial exposure thresholds."
+      },
+      {
+        "name": "Life and Health",
+        "url": "industriesinsurance",
+        "icon": "bi-person-heart",
+        "description": "Deploying machine-driven policy risk profiling tools to accelerate enterprise underwriting timelines."
+      },
+      {
+        "name": "Specialty and Commercial Lines",
+        "url": "industriesinsurance",
+        "icon": "bi-shield-shaded",
+        "description": "Developing customized structural policy frameworks focused on volatile enterprise operational risk liabilities."
+      },
+      {
+        "name": "Insurance Technology",
+        "url": "industriesinsurance",
+        "icon": "bi-cpu",
+        "description": "Embedding cognitive data parsing engines directly into core legacy insurance carrier platforms."
+      }
+    ]
+  },
+  {
+    "category": "Public & Social Impact",
+    "services": [
+      {
+        "name": "Federal Services",
+        "url": "industries",
+        "icon": "bi-bank",
+        "description": "Architecting secure, compliant technical systems satisfying strict federal data safety standards."
+      },
+      {
+        "name": "SLED (State, Local, and Education)",
+        "url": "futransolutions.com",
+        "icon": "bi-mortarboard-fill",
+        "description": "Modernizing legacy localized municipal networks and student information databases."
+      },
+      {
+        "name": "Nonprofit & philanthropy",
+        "url": "futransolutions.com",
+        "icon": "bi-heart-fill",
+        "description": "Deploying cloud-native donor analytics software to optimize charitable fund tracking pipelines."
+      },
+      {
+        "name": "Texas DIR (Contracts)",
+        "url": "futransolutions.com",
+        "icon": "bi-file-earmark-text-fill",
+        "description": "Providing streamlined, pre-vetted cooperative purchasing paths for eligible public agencies."
+      }
+    ]
+  }
 ]
