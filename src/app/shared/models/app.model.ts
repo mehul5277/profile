@@ -32,3 +32,14 @@ export interface FieldConfig {
     options?: { value: string; label: string }[]; // Used only for dropdowns
     errorMessages?: { [key: string]: string };     // Validation text mappings
 }
+
+
+export interface JumbotronConfig {
+    buttons?: Array<JumbotronBtn>
+}
+
+interface JumbotronBtn {
+  text: string;
+  url: string;
+  icon: string;
+}

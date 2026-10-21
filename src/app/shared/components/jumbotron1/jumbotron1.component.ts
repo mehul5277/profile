@@ -1,11 +1,10 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TypewriterComponent } from '../typewriter/typewriter.component';
+import { JumbotronConfig } from './../../models/app.model';
 
-export interface buttonConfig {
-  text: string;
-  url: string;
-  icon: string;
+export interface JumbotronConfig1 extends JumbotronConfig {
+
 }
 
 @Component({
@@ -16,8 +15,8 @@ export interface buttonConfig {
   styleUrl: './jumbotron1.component.scss'
 })
 export class Jumbotron1Component {
-  typewriterList:Array<string> = ['Digital Engineering', 'Artificial Intelligence', 'Data Engineering', 'Cloud Computing'];
-  @Input({ required: false }) cv!: any;
+  typewriterList: Array<string> = ['Digital Engineering', 'Artificial Intelligence', 'Data Engineering', 'Cloud Computing'];
+  @Input({ required: false }) jumbotronConfig!: any;
   @Input({ required: false }) btnConfig = {
     text: "Trusted Partner · Startup to Enterprise",
     url: "url",
