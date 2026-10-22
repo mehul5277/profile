@@ -3,13 +3,14 @@ import { DataService } from '../../../services/data.service';
 import { SectionComponent, SectionType } from "../section/section.component";
 import { IndustriesComponent } from "../industries/industries.component";
 import { ActivatedRoute } from '@angular/router';
-import { JumbotronComponent } from '../../../shared/components/jumbotron/jumbotron.component';
+
 import { TickerComponent } from '../../../shared/components/ticker/ticker.component';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-cv',
   standalone: true,
-  imports: [SectionComponent, IndustriesComponent, JumbotronComponent, TickerComponent],
+  imports: [SectionComponent, IndustriesComponent,  TickerComponent, NgTemplateOutlet],
   templateUrl: './cv.component.html',
   styleUrl: './cv.component.scss'
 })

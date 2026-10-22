@@ -39,7 +39,7 @@ export interface JumbotronConfig {
 }
 
 interface JumbotronBtn {
-  text: string;
-  url: string;
-  icon: string;
+    text: string;
+    url: string;
+    icon: string;
 }
