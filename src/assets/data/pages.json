@@ -3,11 +3,11 @@
         "id": 1,
         "page": "data",
         "jumbotron": {
-            "backdrop": "",
+            "backdrop": "bg-midnight grid-midnight",
             "title": "Data Foundations Built for Measurable Business Impact",
-            "description": "Design governed, scalable data platforms that turn strategy into trusted insights, operational efficiency, and AI-ready capabilities.",
-            "buttons": {
-                "label": "Start Conversation",
+            "leadText": "Design governed, scalable data platforms that turn strategy into trusted insights, operational efficiency, and AI-ready capabilities.",
+            "button": {
+                "text": "Start Conversation",
                 "url": "",
                 "icon": ""
             }

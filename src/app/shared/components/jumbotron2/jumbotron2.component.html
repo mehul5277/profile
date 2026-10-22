@@ -1,1 +1,8 @@
-<p>jumbotron2 works!</p>
+<div [ngClass]="jumbotron2Config().backdrop">
+    <div class="container p-5">
+        <p class="lead small" [innerHTML]="jumbotron2Config().subject | uppercase"></p>
+        <h1 class="display-5 fw-bold" [innerHTML]="jumbotron2Config().title"></h1>
+        <p class="col-md-8 fs-5 lead" [innerHTML]="jumbotron2Config().leadText"></p>
+        <button class="btn btn-primary btn-lg" type="button" [innerHTML]="jumbotron2Config().button.text">Example button</button>
+    </div>
+</div>

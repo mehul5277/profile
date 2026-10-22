@@ -228,39 +228,15 @@
 </ng-template>
 
 <ng-template #megaMenuTemplate2 let-megaMenuData="megaMenuData">
-    <div class="container-fluid d-none">
-        <p id="debug" class="p-3 bg-info">MegaMenuTemplate2</p>
-        <p id="debug" class="p-3 bg-info">{{megaMenuData | json}}</p>
-        <div class="row">
-            <div class="col-12 p-3">
-                <div class="hstack align-items-start">
-                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button appPreventClose class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-                        <button appPreventClose class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-                        <button appPreventClose class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
-                        <button appPreventClose class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-                        <button appPreventClose class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
-                    </div>
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab" tabindex="0">Home</div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabindex="0">Profile</div>
-                        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">disable</div>
-                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">message</div>
-                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabindex="0">setting</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid my-4">
+    <div class="container-fluid py-4">
         <!-- Horizontal Container for Side-by-Side Split Layout -->
         <div class="row">
             <div class="col-md-3 col-12">
                 <ul class="nav nav-pills flex-column" role="tablist" aria-orientation="vertical">
                     @for(item of megaMenuData; track $index ) {
                     <li class="nav-item">
-                        <a appPreventClose class="nav-link" [class.active]="activeCategory === item.category" (mouseenter)="selectCategory(item.category)" type="button" role="tab">
-                            {{ item.category }}
+                        <a appPreventClose class="nav-link bg-primary-subtle p-3 mb-3" [class.active]="activeCategory === item.category" (mouseenter)="selectCategory(item.category)" type="button" role="tab">
+                            <div>{{ item.category }}</div>
                         </a>
                     </li>
                     }
@@ -269,30 +245,49 @@
 
             <!-- Right Column: Content Window (Takes up the remaining space) -->
             <div class=" col-md-9 col-12">
-                <div class="tab-content border p-4 rounded shadow-sm bg-light flex-grow-1">
-                    <div *ngFor="let item of megaMenuData" class="tab-pane fade" [class.show]="activeCategory === item.category" [class.active]="activeCategory === item.category" role="tabpanel">
-                        <h4 class="mb-4 pb-2 border-bottom text-primary" [innerHTML]="item.category"></h4>
+                <div class="tab-content  rounded flex-grow-1">
+                    @for( item of megaMenuData; track $index) {
+                    <div class="tab-pane fade" [class.show]="activeCategory === item.category" [class.active]="activeCategory === item.category" role="tabpanel">
                         <!-- Services Grid Layout for Clean Scanning -->
                         <div class="row g-3">
-                            <div class="col-md-6" *ngFor="let service of item.services">
-                                <div class="p-3 bg-white border rounded h-100 d-flex align-items-center shadow-xs">
-                                    <span class="badge bg-primary-subtle text-primary rounded-circle me-3 px-2 py-2">
-                                        <!-- Inline SVG checkmark icon if you aren't using Bootstrap Icons font -->
-                                        <svg xmlns="http://w3.org" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
-                                        </svg>
-                                    </span>
-                                    <span class="fw-medium text-secondary">{{ service }}</span>
-                                </div>
+                            @for(service of item.services; track $index) {
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <button type="button" class="btn btn-light w-100  shadow-sm d-flex align-items-center" [routerLink]="service.url" routerLinkActive="active">
+                                    <span class="me-3 px-2 py-2"><i class="bi" [ngClass]="service.icon"></i></span>
+                                    <span [innerHTML]="service.name"></span>
+                                </button>
+                            </div>
+                            }
+                            <div class="col-md-4 d-none">
+                                <ul class="nav nav-pills">
+                                    @for(service of item.services; track $index) {
+                                    <li class="nav-item dropdown-itemx p-3 col-md-6">
+                                        <a class="nav-link" aria-current="page" [routerLink]="service.url">
+                                            <span class="me-3 px-2 py-2">
+                                                <i [ngClass]="service.icon"></i>
+                                            </span>
+                                            <span [innerHTML]="service.name">Active</span>
+                                        </a>
+                                    </li>
+                                    <!-- <a class="nav-link active p-3" aria-current="page" href="#" [innerHTML]="service.name"></a>
+                                    <div class="p-3 bg-white border rounded h-100 d-flex align-items-center shadow-xs">
+                                        <span class="badge bg-primary-subtle text-primary rounded-circle me-3 px-2 py-2">
+                                            <svg xmlns="http://w3.org" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+                                            </svg>
+                                        </span>
+                                        <span class="fw-medium text-secondary" [innerHTML]="service.name"></span>
+                                    </div> -->
+                                    }
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
-
-
 </ng-template>
 
 <ng-template #industriesMenuTemplate let-megaMenuData="megaMenuData">
