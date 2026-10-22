@@ -23,6 +23,7 @@ const routes: Routes = [
       { path: 'service/:id', component: ServicePageComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'company', component: CompanyPageComponent },
+      { path: 'company/:id', component: CompanyPageComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'industries', component: IndustriesComponent },
       { path: 'resume', component: ResumeComponent },

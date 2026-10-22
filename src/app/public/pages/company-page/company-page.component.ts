@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-page',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './company-page.component.scss'
 })
 export class CompanyPageComponent {
-  linkedIn = `https://linkedin.com/in/mehul5277`;
+  id = input<string>();
+  private router = inject(Router);
+  linkedIn = `https://www.linkedin.com/in/mehul4ca`;
 }
