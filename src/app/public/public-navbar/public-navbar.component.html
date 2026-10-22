@@ -28,11 +28,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link " [ngClass]="{ 'active' : isActive('products') }" routerLink="products">Products</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="products">Products</a>
                 </li>
+
                 <!-- Services Mega Menu -->
                 <li class="nav-item dropdown has-megamenu">
-                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('service') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Services</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
@@ -42,7 +43,7 @@
 
                 <!-- Services Mega Menu -->
                 <li class="nav-item dropdown has-megamenu">
-                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('service') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Services2</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
@@ -52,20 +53,17 @@
 
                 <!-- Industries Mega Menu-->
                 <li class="nav-item dropdown has-megamenu">
-                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('industries') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Industries</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
                         <ng-container *ngTemplateOutlet="industriesMenuTemplate; context: { megaMenuData: IndustriesMenu }"></ng-container>
                     </div>
                 </li>
-                <li class="nav-item d-none">
-                    <a class="nav-link" [ngClass]="{ 'active' : isActive('services') }" routerLink="services">Services</a>
-                </li>
 
                 <!-- Company Mega Menu-->
                 <li class="nav-item dropdown has-megamenu">
-                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('company') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span>Company</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
@@ -75,7 +73,7 @@
 
                 <!-- Contact Menu -->
                 <li class="nav-item">
-                    <a class="nav-link" [ngClass]="{ 'active' : isActive('contact') }" routerLink="contact">Contact</a>
+                    <a class="nav-link" routerLinkActive="active" routerLink="contact">Contact</a>
                 </li>
 
                 <!-- Profile Dropdown -->
@@ -84,8 +82,18 @@
                         Profile
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">Resume</a></li>
-                        <li><a class="dropdown-item" [ngClass]="{ 'active' : isActive('cv') }" routerLink="cv">Curriculum vitae (CV)</a></li>
+                        <li>
+                            <a class="dropdown-item hstack" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">
+                                <i class="bi bi-file-text fs-5 me-2"></i>
+                                <span>Resume</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item hstack" [ngClass]="{ 'active' : isActive('cv') }" routerLink="cv">
+                                <i class="bi bi-file-medical fs-5 me-2"></i>
+                                <span>Curriculum vitae (CV)</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -145,9 +153,10 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="admin">Admin</a>
                 </li>
+
                 <ng-template *ngIf="!isAuthenticated; else loggedInTemplate">
                     <li class="nav-item">
-                        <a class="nav-link link-underline-opacity-25 link-underline-opacity-100-hover text-decoration-underline" routerLink="">Login</a>
+                        <a class="nav-link" routerLinkActive="active" routerLink="auth/sign-in">Login</a>
                     </li>
                 </ng-template>
                 <ng-template #loggedInTemplate>
@@ -155,15 +164,10 @@
                         <a class="nav-link" (click)="logout()" href="#">Logout</a>
                     </li>
                 </ng-template>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" (click)="logout()" href="#">Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="auth/sign-in">Login</a>
-                </li> -->
+
                 <li class="nav-item px-1 d-none d-lg-block d-xl-block">
-                    <!-- <a class="btn btn-outline-success rounded-pill d-none" routerLink="login/register">Start for free</a>
-                    <a class="btn btn-outline-success rounded-pill" routerLink="login/register">Get in touch</a> -->
+                    <!-- <a class="btn btn-outline-success rounded-pill me-md-2" routerLink="login/register">Start for free</a>
+                    <a class="btn btn-outline-success rounded-pill me-md-2" routerLink="login/register">Book a demo</a> -->
                     <a class="d-inline-flex align-items-center btn btn-outline-dark pe-2 rounded-pill" [attr.href]="'https://linkedin.com/in/mehul4ca'" target="_blank">
                         <span>Get in touch</span>
                         <svg class="ms-2" width="24" height="24" aria-hidden="true">
@@ -315,7 +319,6 @@
         </div>
     </div>
 </ng-template>
-
 
 <ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
     <button [routerLink]="navLinkStripe.url" class="dropdown-item align-items-center hstack">

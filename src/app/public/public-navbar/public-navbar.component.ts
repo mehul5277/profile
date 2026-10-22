@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { CommonModule, SlicePipe } from '@angular/common';
 import { AuthService } from '../../auth/auth.service';
@@ -21,7 +21,7 @@ interface Service {
 @Component({
   selector: 'app-public-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule, SlicePipe, PreventCloseDirective],
+  imports: [RouterLink, CommonModule, SlicePipe, PreventCloseDirective, RouterLinkActive],
   templateUrl: './public-navbar.component.html',
   styleUrl: './public-navbar.component.scss'
 })
@@ -80,6 +80,6 @@ export class PublicNavbarComponent implements OnInit {
   }
 
   isActive(route: string): boolean {
-    return window.location.pathname === route || window.location.hash === '#/' + route;
+    return window.location.pathname === route || window.location.hash === '#/' + route || window.location.hash.startsWith(`#/${route}`);
   }
 }
