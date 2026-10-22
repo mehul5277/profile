@@ -5,41 +5,46 @@
             {
                 "name": "API & Application Development",
                 "url": [
-                    "service", "API & Application Development"
+                    "service",
+                    "API & Application Development"
                 ],
-                "icon": "bi-code-slash",
+                "icon": "fs-2 bi bi-code-slash",
                 "short_description": "Architecting modern interface layers and scalable software systems for seamless digital interactions."
             },
             {
                 "name": "Cyber Security",
                 "url": [
-                    "service", "Cyber Security"
+                    "service",
+                    "Cyber Security"
                 ],
-                "icon": "bi-shield-lock-fill",
+                "icon": "fs-2 bi bi-shield-lock-fill",
                 "short_description": "Defending network architecture and corporate software endpoints against advanced vector risks."
             },
             {
                 "name": "Product Engineering Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-box-seam-fill",
+                "icon": "fs-2 bi bi-box-seam-fill",
                 "short_description": "Guiding complex hardware or software initiatives smoothly from blueprint design through production deployment."
             },
             {
                 "name": "Quality Engineering & Automation",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-check-circle-fill",
+                "icon": "fs-2 bi bi-check-circle-fill",
                 "short_description": "Integrating continuous programmatic validations to verify software stability before production."
             },
             {
                 "name": "UI/UX Engineering & Modernization",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-window-fullscreen",
+                "icon": "fs-2 bi bi-window-fullscreen",
                 "short_description": "Refining user layout journeys and visual interfaces to maximize customer platform engagement."
             }
         ]
@@ -50,41 +55,46 @@
             {
                 "name": "Responsible AI Consulting",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-shield-check",
+                "icon": "fs-2 bi bi-shield-check",
                 "short_description": "Advising businesses on deploying fair, unbiased, transparent, and auditable artificial intelligence frameworks."
             },
             {
                 "name": "GenAI and Autonomous Agents Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-robot",
+                "icon": "fs-2 bi bi-robot",
                 "short_description": "Designing and building domain-specific AI agents capable of multi-step reasoning and contextual decision making."
             },
             {
                 "name": "AIOps Autonomous Operations",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-cpu-fill",
+                "icon": "fs-2 bi bi-cpu-fill",
                 "short_description": "Automating IT operations with AI that continuously monitors telemetry, predicts anomalies, and self-heals incidents."
             },
             {
                 "name": "AI Governance, Ethics & Compliance Consulting",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-gavel",
+                "icon": "fs-2 bi bi-hammer",
                 "short_description": "Aligning enterprise AI implementations with global regulatory benchmarks and ethical guidelines."
             },
             {
                 "name": "AI and Machine Learning",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-brain",
+                "icon": "fs-2 bi bi-cpu fs-3",
                 "short_description": "Developing predictive models and intelligent algorithms to uncover patterns and drive automation."
             }
         ]
@@ -95,33 +105,37 @@
             {
                 "name": "Data Strategy & Analytics",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-compass-fill",
+                "icon": "fs-2 bi bi-compass-fill",
                 "short_description": "Defining corporate roadmap blueprints to manage, extract, and capitalize value from core enterprise datasets."
             },
             {
                 "name": "Data Engineering",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-database-fill-gear",
+                "icon": "fs-2 bi bi-database-fill-gear",
                 "short_description": "Constructing stable pipelines, architectures, and storage repositories for raw and structured records."
             },
             {
                 "name": "Advanced Analytics & Business Intelligence",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-bar-chart-line-fill",
+                "icon": "fs-2 bi bi-bar-chart-line-fill",
                 "short_description": "Synthesizing historic metrics into active reporting visuals and interactive discovery dashboards."
             },
             {
                 "name": "Data Governance & Compliance",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-lock-fill",
+                "icon": "fs-2 bi bi-lock-fill",
                 "short_description": "Enforcing safety thresholds, access limitations, and privacy compliance across all business layers."
             }
         ]
@@ -132,7 +146,7 @@
             {
                 "name": "Professional Services",
                 "url": "https://futransolutions.comprofessional-staffing-services/",
-                "icon": "bi-person-workspace",
+                "icon": "fs-2 bi bi-person-workspace",
                 "short_description": "Providing specialized tactical consulting resources to optimize day-to-day corporate workflows."
             }
         ]
@@ -143,81 +157,91 @@
             {
                 "name": "Cloud Migration",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-cloud-arrow-up-fill",
+                "icon": "fs-2 bi bi-cloud-arrow-up-fill",
                 "short_description": "Shifting on-premise infrastructure workloads into flexible Amazon Web Services environments."
             },
             {
                 "name": "AWS Managed Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-sliders",
+                "icon": "fs-2 bi bi-sliders",
                 "short_description": "Providing day-to-day administrative oversight and architecture scaling on the AWS cloud ecosystem."
             },
             {
                 "name": "Data Engineering & Analytics",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-server",
+                "icon": "fs-2 bi bi-server",
                 "short_description": "Building cloud-native pipeline models using Amazon Redshift, Glue, and related storage arrays."
             },
             {
                 "name": "DevOps Automation",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-terminal-fill",
+                "icon": "fs-2 bi bi-terminal-fill",
                 "short_description": "Streamlining deployment delivery rhythms through continuous programmatic pipeline environments."
             },
             {
                 "name": "Well-Architected Review",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-clipboard2-check-fill",
+                "icon": "fs-2 bi bi-clipboard2-check-fill",
                 "short_description": "Auditing infrastructure configurations against structural security, efficiency, and cost principles."
             },
             {
                 "name": "Cloud Security",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-eye-fill",
+                "icon": "fs-2 bi bi-eye-fill",
                 "short_description": "Hardening software identities, resource permissions, and boundary access configurations across cloud systems."
             },
             {
                 "name": "Serverless Computing",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-lightning-charge-fill",
+                "icon": "fs-2 bi bi-lightning-charge-fill",
                 "short_description": "Deploying lightweight operational code routines using automated runtime systems like AWS Lambda."
             },
             {
                 "name": "AWS AI",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-gpu-card",
+                "icon": "fs-2 bi bi-gpu-card",
                 "short_description": "Embedding cognitive functionality using prepackaged machine resources like SageMaker and Bedrock."
             },
             {
                 "name": "Small and Medium Business Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-shop-window",
+                "icon": "fs-2 bi bi-shop-window",
                 "short_description": "Crafting right-sized cloud solutions focused on budget limits and expansion needs."
             },
             {
                 "name": "Amazon EC2",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-display-fill",
+                "icon": "fs-2 bi bi-display-fill",
                 "short_description": "Configuring, launching, and managing adaptable compute runtime machines in the cloud."
             }
         ]
@@ -228,41 +252,46 @@
             {
                 "name": "Microsoft 365 Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-windows",
+                "icon": "fs-2 bi bi-windows",
                 "short_description": "Deploying, customizing, and securing corporate collaboration, email, and document sharing frameworks."
             },
             {
                 "name": "Microsoft Dynamics 365 Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-people-fill",
+                "icon": "fs-2 bi bi-people-fill",
                 "short_description": "Implementing unified enterprise CRM and operational management solutions for corporate groups."
             },
             {
                 "name": "Power Platform Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-lightning-fill",
+                "icon": "fs-2 bi bi-lightning-fill",
                 "short_description": "Constructing low-code applications and business process automation pathways."
             },
             {
                 "name": "Azure Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-cloud-fill",
+                "icon": "fs-2 bi bi-cloud-fill",
                 "short_description": "Architecting hybrid infrastructure, microservice deployments, and core data systems on Azure."
             },
             {
                 "name": "Copilot & Copilot Studio Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-chat-square-dots-fill",
+                "icon": "fs-2 bi bi-chat-square-dots-fill",
                 "short_description": "Building custom generative conversational assistance bots to increase workplace productivity."
             }
         ]
@@ -273,9 +302,10 @@
             {
                 "name": "Managed Cloud Services",
                 "url": [
-                    "service", ""
+                    "service",
+                    ""
                 ],
-                "icon": "bi-cloud-gear-fill",
+                "icon": "fs-2 bi bi-cloud",
                 "short_description": "Providing continuous operational management and performance optimization for multicloud systems."
             }
         ]

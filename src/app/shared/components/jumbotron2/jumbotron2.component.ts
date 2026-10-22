@@ -2,18 +2,18 @@ import { Component, input, Input } from '@angular/core';
 import { NgClass, UpperCasePipe } from '@angular/common';
 
 export interface Jumbotron2Config {
-  backdrop: string
-  subject: string
-  title: string
-  subTitle: string
-  leadText: string
-  button: Button
+  backdrop: string;
+  subject: string;
+  title: string;
+  subTitle: string;
+  leadText: string;
+  button: Button;
 }
 
 export interface Button {
-  text: string
-  url: string | Array<string>
-  icon: string
+  text: string;
+  url: string | Array<string>;
+  icon: string;
 }
 
 @Component({
