@@ -1,7 +1,0 @@
-Government agency environment
-Requirements analysis
-ETL design
-SQL architecture
-Reporting solutions
-Technical recommendations
-Data model design
