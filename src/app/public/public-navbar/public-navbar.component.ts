@@ -34,7 +34,7 @@ export class PublicNavbarComponent implements OnInit {
 
   servicesMenu: Array<MegaMenuData> = [];
   IndustriesMenu: Array<any> = [];
-  AboutusMenu: Array<MegaMenuData> = [];
+  CompanyMenu: Array<MegaMenuData> = [];
 
   activeCategory: any;
   ngOnInit(): void {
@@ -52,7 +52,7 @@ export class PublicNavbarComponent implements OnInit {
       }
     });
     this.dataService.getData("industries_menu").subscribe(data => this.IndustriesMenu = data);
-    this.dataService.getData("company_menu").subscribe(data => this.AboutusMenu = data);
+    this.dataService.getData("company_menu").subscribe(data => this.CompanyMenu = data);
 
 
   }

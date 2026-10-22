@@ -11,6 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { IndustriesComponent } from './pages/industries/industries.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
+import { CompanyPageComponent } from './pages/company-page/company-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
       { path: 'service/:id', component: ServicePageComponent },
       { path: 'about-us', component: AboutUsComponent },
+      { path: 'company', component: CompanyPageComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'industries', component: IndustriesComponent },
       { path: 'resume', component: ResumeComponent },
