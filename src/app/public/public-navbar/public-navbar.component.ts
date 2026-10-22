@@ -6,7 +6,6 @@ import { AuthService } from '../../auth/auth.service';
 import { ThemeMode, ThemeService } from '../../services/theme.service';
 import { PreventCloseDirective } from '../../shared/directives/prevent-close.directive';
 
-
 interface MegaMenuData {
   category: string;
   services: Array<Service>;
@@ -14,11 +13,10 @@ interface MegaMenuData {
 
 interface Service {
   name: string;
-  url: string;
+  url: string | Array<string>;
   icon: any;
-  descriptionx: string;
+  description: string;
 }
-
 
 @Component({
   selector: 'app-public-navbar',
@@ -34,13 +32,19 @@ export class PublicNavbarComponent implements OnInit {
   isNavOpen = false;       // Mobile burger menu state
   isDropdownOpen = false;  // Theme selector state
 
-  servicesMenu: Array<any> = [];
+  servicesMenu: Array<MegaMenuData> = [];
   IndustriesMenu: Array<any> = [];
   AboutusMenu: Array<MegaMenuData> = [];
 
   activeCategory: any;
   ngOnInit(): void {
     this.dataService.getData("services_menu").subscribe(data => {
+      data.forEach((item: any) => {
+        item.services.forEach((service: any) => {
+          service.url = ["service", service.name];
+        });
+      });
+
       this.servicesMenu = data;
       // Automatically set the first category as active on load
       if (this.servicesMenu.length > 0) {

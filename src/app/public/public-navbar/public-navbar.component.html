@@ -326,7 +326,7 @@
 <ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
     <button [routerLink]="navLinkStripe.url" class="dropdown-item align-items-center hstack">
         <i class="bi bi-arrow-bar-right me-2"></i>
-        <div class="text-wrap" [innerHTML]="navLinkStripe">Dark</div>
+        <div class="text-wrap" [innerHTML]="navLinkStripe.name"></div>
     </button>
 </ng-template>
 
