@@ -1,34 +1,51 @@
 [
     {
-        "category": "Company Info",
+        "category": "Who we are",
         "services": [
             {
                 "name": "About us",
-                "url": "about-us",
+                "url": "company",
                 "icon": "bi-building-fill",
                 "description": "Our mission, corporate core values, and global operational reach as a trusted engineering partner."
             },
             {
-                "name": "Partnerships",
-                "url": ["service", "partnerships"],
-                "icon": "bi-handshake-fill",
-                "description": "Strategic enterprise alliances with industry-leading providers including AWS, Microsoft, and Salesforce."
-            },
-            {
                 "name": "Leadership",
-                "url":  ["service", "leadership"],
+                "url": [
+                    "company",
+                    "leadership"
+                ],
                 "icon": "bi-people-fill",
                 "description": "The executive management team driving our digital innovation roadmap and business growth."
             },
             {
+                "name": "Partnerships",
+                "url": [
+                    "company",
+                    "partnerships"
+                ],
+                "icon": "bi-handshake-fill",
+                "description": "Strategic enterprise alliances with industry-leading providers including AWS, Microsoft, and Salesforce."
+            }
+        ]
+    },
+    {
+        "category": "Join Us",
+        "services": [
+            {
                 "name": "Careers",
-                "url": ["service", "careers"],
+                "url": [
+                    "service",
+                    "careers"
+                ],
                 "icon": "bi-briefcase-fill",
                 "description": "Open technical tracks and cultural advantages of joining our global delivery teams."
             },
             {
                 "name": "CSR & Sustainability",
-                "url": ["service", "sustainability"],
+                "url": [
+                    "service",
+                    "CSR & Sustainability"
+                ],
                 "icon": "bi-globe-americas",
                 "description": "Corporate frameworks focused on carbon footprint reduction and localized social impact initiatives."
             }

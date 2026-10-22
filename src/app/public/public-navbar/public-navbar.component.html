@@ -63,13 +63,13 @@
                     <a class="nav-link" [ngClass]="{ 'active' : isActive('services') }" routerLink="services">Services</a>
                 </li>
 
-                <!-- AboutUs Mega Menu-->
+                <!-- Company Mega Menu-->
                 <li class="nav-item dropdown has-megamenu">
                     <a class="nav-link dropdown-toggle" [ngClass]="{ 'active' : isActive('services') }" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>About Us</span>
+                        <span>Company</span>
                     </a>
                     <div class="dropdown-menu megamenu" aria-labelledby="navbarDropdown">
-                        <ng-container *ngTemplateOutlet="megaMenuTemplate1; context: { megaMenuData: AboutusMenu }"></ng-container>
+                        <ng-container *ngTemplateOutlet="megaMenuTemplate1; context: { megaMenuData: CompanyMenu }"></ng-container>
                     </div>
                 </li>
 
@@ -208,12 +208,11 @@
         <div class="row">
             @for (c of megaMenuData ; track $index) {
             <div class="fw-bold">{{c.category}}</div>
-            <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 list-unstyled">
+            <ul class="row row-cols-1 row-cols-md-2 row-cols-lg-3  list-unstyled">
                 @for (s of c.services ; track $index) {
                 <ng-container [ngTemplateOutlet]="navLinkStripe1" [ngTemplateOutletContext]="{'navLinkStripe' : s}"></ng-container>
                 }
             </ul>
-
             }
         </div>
         <div class="row m-3 d-none">
@@ -326,7 +325,7 @@
 <ng-template #navLinkStripe let-navLinkStripe="navLinkStripe">
     <button [routerLink]="navLinkStripe.url" class="dropdown-item align-items-center hstack">
         <i class="bi bi-arrow-bar-right me-2"></i>
-        <div class="text-wrap" [innerHTML]="navLinkStripe">Dark</div>
+        <div class="text-wrap" [innerHTML]="navLinkStripe.name"></div>
     </button>
 </ng-template>
 

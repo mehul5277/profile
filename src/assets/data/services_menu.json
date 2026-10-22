@@ -2,67 +2,282 @@
     {
         "category": "Digital Engineering",
         "services": [
-            "API & Application Development",
-            "Cyber Security",
-            "Product Engineering Services",
-            "Quality Engineering & Automation",
-            "UI/UX Engineering & Modernization"
+            {
+                "name": "API & Application Development",
+                "url": [
+                    "service", "API & Application Development"
+                ],
+                "icon": "bi-code-slash",
+                "short_description": "Architecting modern interface layers and scalable software systems for seamless digital interactions."
+            },
+            {
+                "name": "Cyber Security",
+                "url": [
+                    "service", "Cyber Security"
+                ],
+                "icon": "bi-shield-lock-fill",
+                "short_description": "Defending network architecture and corporate software endpoints against advanced vector risks."
+            },
+            {
+                "name": "Product Engineering Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-box-seam-fill",
+                "short_description": "Guiding complex hardware or software initiatives smoothly from blueprint design through production deployment."
+            },
+            {
+                "name": "Quality Engineering & Automation",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-check-circle-fill",
+                "short_description": "Integrating continuous programmatic validations to verify software stability before production."
+            },
+            {
+                "name": "UI/UX Engineering & Modernization",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-window-fullscreen",
+                "short_description": "Refining user layout journeys and visual interfaces to maximize customer platform engagement."
+            }
         ]
     },
     {
         "category": "AI & Automation",
         "services": [
-            "Responsible AI Consulting",
-            "GenAI and Autonomous Agents Services",
-            "AIOps Autonomous Operations",
-            "AI Governance, Ethics & Compliance Consulting",
-            "AI and Machine Learning"
+            {
+                "name": "Responsible AI Consulting",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-shield-check",
+                "short_description": "Advising businesses on deploying fair, unbiased, transparent, and auditable artificial intelligence frameworks."
+            },
+            {
+                "name": "GenAI and Autonomous Agents Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-robot",
+                "short_description": "Designing and building domain-specific AI agents capable of multi-step reasoning and contextual decision making."
+            },
+            {
+                "name": "AIOps Autonomous Operations",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-cpu-fill",
+                "short_description": "Automating IT operations with AI that continuously monitors telemetry, predicts anomalies, and self-heals incidents."
+            },
+            {
+                "name": "AI Governance, Ethics & Compliance Consulting",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-gavel",
+                "short_description": "Aligning enterprise AI implementations with global regulatory benchmarks and ethical guidelines."
+            },
+            {
+                "name": "AI and Machine Learning",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-brain",
+                "short_description": "Developing predictive models and intelligent algorithms to uncover patterns and drive automation."
+            }
         ]
     },
     {
         "category": "Data",
         "services": [
-            "Data Strategy & Analytics",
-            "Data Engineering",
-            "Advanced Analytics & Business Intelligence",
-            "Data Governance & Compliance"
+            {
+                "name": "Data Strategy & Analytics",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-compass-fill",
+                "short_description": "Defining corporate roadmap blueprints to manage, extract, and capitalize value from core enterprise datasets."
+            },
+            {
+                "name": "Data Engineering",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-database-fill-gear",
+                "short_description": "Constructing stable pipelines, architectures, and storage repositories for raw and structured records."
+            },
+            {
+                "name": "Advanced Analytics & Business Intelligence",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-bar-chart-line-fill",
+                "short_description": "Synthesizing historic metrics into active reporting visuals and interactive discovery dashboards."
+            },
+            {
+                "name": "Data Governance & Compliance",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-lock-fill",
+                "short_description": "Enforcing safety thresholds, access limitations, and privacy compliance across all business layers."
+            }
         ]
     },
     {
         "category": "Business Process Operations",
         "services": [
-            "Professional Services"
+            {
+                "name": "Professional Services",
+                "url": "https://futransolutions.comprofessional-staffing-services/",
+                "icon": "bi-person-workspace",
+                "short_description": "Providing specialized tactical consulting resources to optimize day-to-day corporate workflows."
+            }
         ]
     },
     {
         "category": "AWS",
         "services": [
-            "Cloud Migration",
-            "AWS Managed Services",
-            "Data Engineering & Analytics",
-            "DevOps Automation",
-            "Well-Architected Review",
-            "Cloud Security",
-            "Serverless Computing",
-            "AWS AI",
-            "Small and Medium Business Services",
-            "Amazon EC2"
+            {
+                "name": "Cloud Migration",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-cloud-arrow-up-fill",
+                "short_description": "Shifting on-premise infrastructure workloads into flexible Amazon Web Services environments."
+            },
+            {
+                "name": "AWS Managed Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-sliders",
+                "short_description": "Providing day-to-day administrative oversight and architecture scaling on the AWS cloud ecosystem."
+            },
+            {
+                "name": "Data Engineering & Analytics",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-server",
+                "short_description": "Building cloud-native pipeline models using Amazon Redshift, Glue, and related storage arrays."
+            },
+            {
+                "name": "DevOps Automation",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-terminal-fill",
+                "short_description": "Streamlining deployment delivery rhythms through continuous programmatic pipeline environments."
+            },
+            {
+                "name": "Well-Architected Review",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-clipboard2-check-fill",
+                "short_description": "Auditing infrastructure configurations against structural security, efficiency, and cost principles."
+            },
+            {
+                "name": "Cloud Security",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-eye-fill",
+                "short_description": "Hardening software identities, resource permissions, and boundary access configurations across cloud systems."
+            },
+            {
+                "name": "Serverless Computing",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-lightning-charge-fill",
+                "short_description": "Deploying lightweight operational code routines using automated runtime systems like AWS Lambda."
+            },
+            {
+                "name": "AWS AI",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-gpu-card",
+                "short_description": "Embedding cognitive functionality using prepackaged machine resources like SageMaker and Bedrock."
+            },
+            {
+                "name": "Small and Medium Business Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-shop-window",
+                "short_description": "Crafting right-sized cloud solutions focused on budget limits and expansion needs."
+            },
+            {
+                "name": "Amazon EC2",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-display-fill",
+                "short_description": "Configuring, launching, and managing adaptable compute runtime machines in the cloud."
+            }
         ]
     },
     {
         "category": "Microsoft",
         "services": [
-            "Microsoft 365 Services",
-            "Microsoft Dynamics 365 Services",
-            "Power Platform Services",
-            "Azure Services",
-            "Copilot & Copilot Studio Services"
+            {
+                "name": "Microsoft 365 Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-windows",
+                "short_description": "Deploying, customizing, and securing corporate collaboration, email, and document sharing frameworks."
+            },
+            {
+                "name": "Microsoft Dynamics 365 Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-people-fill",
+                "short_description": "Implementing unified enterprise CRM and operational management solutions for corporate groups."
+            },
+            {
+                "name": "Power Platform Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-lightning-fill",
+                "short_description": "Constructing low-code applications and business process automation pathways."
+            },
+            {
+                "name": "Azure Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-cloud-fill",
+                "short_description": "Architecting hybrid infrastructure, microservice deployments, and core data systems on Azure."
+            },
+            {
+                "name": "Copilot & Copilot Studio Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-chat-square-dots-fill",
+                "short_description": "Building custom generative conversational assistance bots to increase workplace productivity."
+            }
         ]
     },
     {
         "category": "Cloud",
         "services": [
-            "Managed Cloud Services"
+            {
+                "name": "Managed Cloud Services",
+                "url": [
+                    "service", ""
+                ],
+                "icon": "bi-cloud-gear-fill",
+                "short_description": "Providing continuous operational management and performance optimization for multicloud systems."
+            }
         ]
     }
 ]

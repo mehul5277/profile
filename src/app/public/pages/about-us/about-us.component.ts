@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './about-us.component.scss'
 })
 export class AboutUsComponent {
-  linkedIn = `https://linkedin.com/in/mehul5277`;
+ 
 }
