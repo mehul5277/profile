@@ -163,5 +163,11 @@
             "https://www.youtube.com/watch?v=6xORsaw1jlc",
             "https://www.youtube.com/watch?v=9XUjFZQ3d0I"
         ]
+    },
+    {
+        "stack": "tiktok",
+        "urls" :[ 
+            "https://vt.tiktok.com/ZS9U3qMKNApwH-EfTyk"
+        ]
     }
 ]

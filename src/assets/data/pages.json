@@ -14,26 +14,26 @@
         },
         "overview": {
             "title": "Overview",
-            "description": "Our data services empower organizations to move from data silos to connected intelligence. From foundational data strategy and architecture to advanced analytics and predictive insights, we enable real-time business outcomes. Our team helps design robust data pipelines, improve data quality, and support regulatory requirements while boosting agility and operational intelligence. We work across structured and unstructured data to unlock business value through visualization, forecasting, and AI readiness. Our approach ensures secure data governance while making data accessible across the enterprise."
+            "description": "Our data services empower organizations to move from data silos to connected intelligence. From foundational data strategy and architecture to advanced analytics and predictive insights, we enable real-time business outcomes. Our team helps design robust data pipelines, improve data quality, and support regulatory requirements while boosting agility and operational intelligence. We work across structured and unstructured data to unlock business value through visualization, forecasting, and AI readiness. Our approach ensures secure data governance while making data accessible across the enterprise.",
+            "metrics": [
+                {
+                    "value": "40+",
+                    "label": "Enterprise Data Transformation Engagements Delivered"
+                },
+                {
+                    "value": "25+",
+                    "label": "Modern Data Platforms Built to Support AI & Advanced Analytics"
+                },
+                {
+                    "value": "30%",
+                    "label": "Average Improvement in Reporting & Decision Turnaround"
+                },
+                {
+                    "value": "85%",
+                    "label": "Client Retention Across Data & AI Engagements"
+                }
+            ]
         },
-        "metrics": [
-            {
-                "value": "40+",
-                "label": "Enterprise Data Transformation Engagements Delivered"
-            },
-            {
-                "value": "25+",
-                "label": "Modern Data Platforms Built to Support AI & Advanced Analytics"
-            },
-            {
-                "value": "30%",
-                "label": "Average Improvement in Reporting & Decision Turnaround"
-            },
-            {
-                "value": "85%",
-                "label": "Client Retention Across Data & AI Engagements"
-            }
-        ],
         "sections": [
             {
                 "title": "Service Offerings",
@@ -61,16 +61,19 @@
             "title": "Expertise",
             "items": [
                 {
+                    "icon": "./../../../../assets/image/technologies/tableau-software.jpg",
                     "technology": "Tableau",
                     "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.",
                     "link_text": "Read More"
                 },
                 {
+                    "icon": "./../../../../assets/image/technologies/Power_BI_Logo.png",
                     "technology": "Power BI",
                     "description": "Elevate your data visualization game with our specialized Power BI services. Leverage our expertise to transform raw data into actionable insights, driving informed business decisions effortlessly.",
                     "link_text": "Read More"
                 },
                 {
+                    "icon": "./../../../../assets/image/technologies/snowflake-logo.png",
                     "technology": "Snowflake",
                     "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise.",
                     "link_text": "Read More"
