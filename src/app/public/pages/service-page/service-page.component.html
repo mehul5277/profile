@@ -1,2 +1,87 @@
 <app-jumbotron2 [jumbotron2Config]="jumbotronConfig"></app-jumbotron2>
-<p class="p-3 bg-info d-none" [innerHTML]="serviceData | json"></p>
+
+<div [ngClass]="{'bg-primary-subtle' : true}">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 fs-5 lead">
+                <p class="fs-2 fw-bold" [innerHTML]="Overview.title"></p>
+                <p [innerHTML]="Overview.description"></p>
+            </div>
+            <div class="col-md-6">
+                <div class="container fs-5">
+                    <div class="row row-cols-2">
+                        @for(m of Overview.metrics; track $index) {
+                        <div class="col-6 vstack border-bottom border-black p-3">
+                            <div class="fw-bold display-6" [innerHTML]="m.value">a</div>
+                            <div [innerHTML]="m.label">a</div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none">
+            <p class="lead small"></p>
+            <h1 class="display-5 fw-bold"></h1>
+            <p class="col-md-8 fs-5 lead" [innerHTML]="Overview | json"></p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <!-- service offering -->
+    <div class="row">
+        <p class="col-12 fs-2 fw-bold" [innerHTML]="ServiceOffering.title"></p>
+    </div>
+    <div class="row pb-3">
+        @for(so of ServiceOffering.services; track $index) {
+        <div class="col-md-3">
+            <div class="card h-100 p-md-2x bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fs-5 fw-bold" [innerHTML]="so.name">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                    <div class="card-text fs-5 lead" [innerHTML]="so.description"></div>
+                    <a href="#" class="card-link d-none">Card link</a>
+                    <a href="#" class="card-link d-none">Another link</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- experties -->
+    <div class="row">
+        <p class="col-12 fs-2 fw-bold" [innerHTML]="Expertise.title"></p>
+    </div>
+    <div class="row pb-3">
+        @for(e of Expertise.items; track $index) {
+        <div class="col-md-4">
+            <div class="card p-4 shadow-sm h-100" style=" background-color: #ffffff;">
+                <div class="card-body p-0 ">
+                    <!-- Header Row: Logo Placeholder & Title -->
+                    <div class="d-flex align-items-center mb-4">
+                        <!-- Replace src with your actual Tableau logo image filepath -->
+                        <img [attr.src]="e.icon" alt="Tableau Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
+                        <h2 class="card-title fw-bold m-0" style="color: #000000; font-family: sans-serif;" [innerHTML]="e.technology">Tableau</h2>
+                    </div>
+                    <!-- Body Text -->
+                    <p class="card-text lh-base mb-4" style="color: #4a4a4a; font-size: 1.05rem; font-family: sans-serif;" [innerHTML]="e.description">
+                        Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.
+                    </p>
+                </div>
+                <div class="card-footer p-0 bg-transparent border-0">
+                    <!-- Action Link -->
+                    <a href="#" class="icon-link text-decoration-none fw-bold d-inline-flex align-items-center">
+                        Read More
+                        <span class="ms-2 fs-4"> <i class="bi bi-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    <p class="p-3 bg-info">Expertise</p>
+    <p class="p-3" [innerHTML]="Expertise | json"></p>
+
+    <p class="p-3 bg-info d-none" [innerHTML]="serviceData | json"></p>
+</div>
