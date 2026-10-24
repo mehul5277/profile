@@ -131,25 +131,25 @@
         ],
         "prisum1": [
             {
-                "title": "Why Partner With Us",
+                "heading": "Why Partner With Us",
                 "benefits": [
                     {
-                        "icon": "line-chart",
+                        "icon": "bi bi-graph-up",
                         "heading": "Outcome-Driven Execution",
                         "description": "We deliver measurable improvements in agility, forecasting, and decision speed."
                     },
                     {
-                        "icon": "handshake",
+                        "icon": "bi bi-briefcase",
                         "heading": "Business-Centric Approach",
                         "description": "We align data solutions with core business KPIs and digital transformation goals."
                     },
                     {
-                        "icon": "code",
+                        "icon": "bi bi-code-slash",
                         "heading": "Deep Data Expertise",
                         "description": "Proven capability across analytics, data lakes, governance, and compliance frameworks."
                     },
                     {
-                        "icon": "hourglass-structure",
+                        "icon": "bi bi-hourglass",
                         "heading": "Scalable Engagement Models",
                         "description": "Flexible delivery to support short-term sprints or enterprise-scale transformation."
                     }
