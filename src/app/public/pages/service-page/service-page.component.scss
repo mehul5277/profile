@@ -1,0 +1,29 @@
+.card-text {
+    color: #182244 !important;
+}
+
+.full-screen-jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../../../../assets/image/girl-student.png);
+    background-size: cover;
+    /* Ensures the image covers the entire area */
+    background-position: center;
+    /* Centers the image within the container */
+    background-repeat: no-repeat;
+
+    /* Forces full viewport height */
+    height: 100vh;
+    min-height: 500px;
+    /* Prevents the container from breaking */
+}
+
+.bg-girl-contain {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./../../../../assets/image/girl-student.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+
+    /* Forces full viewport height */
+    height: 400px;
+    min-height: 400px;
+    /* Prevents the container from breaking on very small screens */
+}

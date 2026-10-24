@@ -33,6 +33,12 @@ export class ServicePageComponent {
 
   get Expertise() { return this.serviceData[0].Expertise; }
 
+  get Banner() { return this.serviceData[0].banner[0]; }
+
+  get Prisum() { return this.serviceData[0].prisum[0]; }
+
+  get Prisum1() { return this.serviceData[0].prisum1[0]; }
+
   goToUser(userId: number) {
     this.router.navigate(['/user', userId]);
   }
