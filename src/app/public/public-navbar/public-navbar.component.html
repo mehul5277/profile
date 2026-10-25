@@ -257,7 +257,6 @@
                             @for(service of item.services; track $index) {
                             <div class="col-12 col-md-6 col-lg-6">
                                 <button type="button" class="btn btn-light w-100  shadow-sm d-flex align-items-center" [routerLink]="service.url" routerLinkActive="active">
-                                    {{service.url}}
                                     <span class="me-3 px-2 py-2"><i class="bi" [ngClass]="service.icon"></i></span>
                                     <span [innerHTML]="service.name"></span>
                                 </button>
