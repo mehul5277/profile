@@ -19,7 +19,7 @@ export class DataPageComponent {
   serviceData: any = {};
 
   ngOnInit() {
-    this.dataService.getData("pages").subscribe((data: any) => this.serviceData = data[0]);
+    this.dataService.fetchPageData("pages").subscribe((data: any) => this.serviceData = data[0]);
   }
 
   get jumbotronConfig() {
