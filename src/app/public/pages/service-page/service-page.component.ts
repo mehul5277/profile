@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { JsonPipe, NgClass } from '@angular/common';
 import { Jumbotron2Component } from '../../../shared/components/jumbotron2/jumbotron2.component';
@@ -7,7 +7,7 @@ import { Jumbotron2Component } from '../../../shared/components/jumbotron2/jumbo
 @Component({
   selector: 'app-service-page',
   standalone: true,
-  imports: [JsonPipe, Jumbotron2Component, NgClass, RouterLink],
+  imports: [JsonPipe, Jumbotron2Component, NgClass],
   templateUrl: './service-page.component.html',
   styleUrl: './service-page.component.scss'
 })
@@ -16,28 +16,27 @@ export class ServicePageComponent {
   private router = inject(Router);
   private dataService = inject(DataService);
 
-  serviceData: Array<any> = [];
+  serviceData: any = {};
 
   ngOnInit() {
-
-    this.dataService.getData("pages").subscribe((data: any) => this.serviceData = data);
+    this.dataService.getData("pages").subscribe((data: any) => this.serviceData = data[0]);
   }
 
   get jumbotronConfig() {
-    return Object.assign({}, { subject: this.id() }, this.serviceData[0].jumbotron);
+    return Object.assign({}, { subject: this.id() }, this.serviceData.jumbotron);
   }
 
-  get Overview() { return this.serviceData[0].overview; }
+  get Overview() { return this.serviceData.overview; }
 
-  get ServiceOffering() { return this.serviceData[0].sections.filter((o: any) => o.title == "Service Offerings")[0]; }
+  get ServiceOffering() { return this.serviceData.sections.filter((o: any) => o.title == "Service Offerings")[0]; }
 
-  get Expertise() { return this.serviceData[0].Expertise; }
+  get Expertise() { return this.serviceData.Expertise; }
 
-  get Banner() { return this.serviceData[0].banner[0]; }
+  get Banner() { return this.serviceData.banner[0]; }
 
-  get Prisum() { return this.serviceData[0].prisum[0]; }
+  get Prisum() { return this.serviceData.prisum[0]; }
 
-  get Prisum1() { return this.serviceData[0].prisum1[0]; }
+  get Prisum1() { return this.serviceData.prisum1[0]; }
 
   goToUser(userId: number) {
     this.router.navigate(['/user', userId]);
