@@ -12,6 +12,10 @@ export class DataService {
     return this.httpClient.get<any>(`./assets/data/${fileName}.json`);
   }
 
+   fetchPageData(fileName: string) {
+    return this.httpClient.get<any>(`./assets/data/pages/${fileName}.json`);
+  }
+
   fetchHelpTopics() {
     return this.httpClient.get<any>('./assets/data/bookmark.json');
   }
