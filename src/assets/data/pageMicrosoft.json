@@ -1,0 +1,79 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "Microsoft Services Provider - Futran Solutions",
+    "url": "https://futransolutions.com/services/microsoft/",
+    "heading": "Enterprise Microsoft Transformation That Pays for Itself",
+    "subtitle": "For regulated businesses in financial services, insurance, and healthcare, we turn Microsoft 365, Azure, Dynamics, Power Platform, and Copilot into a connected operating system that reduces cost, accelerates decisions, and scales with your organization.",
+    "overview": "Most enterprises already have Microsoft licenses. Most are using less than 40 percent of what they are paying for. The gap between what your Microsoft investment costs and what it actually delivers is not a technology problem. It is an integration, governance, and adoption problem. Productivity tools operate in silos. Data sits in formats that AI cannot read. Copilot is deployed without governance, creating compliance exposure. Azure environments grow without cost controls. Business applications run in parallel with no shared data layer. We close that gap. Futran Solutions works with financial services, insurance, and healthcare organizations to architect Microsoft environments where every product works in concert.",
+    "key_metrics": [
+        {
+            "value": "400",
+            "description": "Enterprise Microsoft environments designed, deployed, and optimized across financial services, insurance, and healthcare."
+        },
+        {
+            "value": "Upto 45%",
+            "description": "Reduction in manual process hours achieved through integrated automation across Microsoft 365, Power Platform, and Dynamics 365."
+        },
+        {
+            "value": "3x",
+            "description": "Faster access to enterprise knowledge and decision support through Copilot implementations built on governed data architectures."
+        },
+        {
+            "value": "70%",
+            "description": "Average automation coverage across core business processes in client environments after full Microsoft Power Platform deployment."
+        },
+        {
+            "value": "90%",
+            "description": "Governance and compliance coverage maintained across Microsoft-powered environments in regulated industries."
+        },
+        {
+            "value": "Upto 30%",
+            "description": "Reduction in total cost of ownership achieved through Azure architecture optimization and licensing realignment."
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "Microsoft 365 Services",
+            "description": "Restructure Microsoft 365 environments so that Teams, SharePoint, OneDrive, Outlook, and Copilot operate as a single governed workspace, recovering time and enabling IT control and auditability.",
+            "link": "url?id=6"
+        },
+        {
+            "name": "Microsoft Dynamics 365 Services",
+            "description": "Implement Dynamics 365 to unify commercial operations into one system where sales, service, finance, and operations share a single source of truth.",
+            "link": "https://futransolutions.com/services/microsoft/microsoft-dynamics-365-services/"
+        },
+        {
+            "name": "Microsoft Power Platform Services",
+            "description": "Eliminate manual inefficiencies through low-code applications, automated workflows, and AI-assisted analytics, all built within your existing Microsoft governance boundaries.",
+            "link": "url?id=8"
+        },
+        {
+            "name": "Microsoft Azure Services",
+            "description": "Build Azure environments that are secure by design, end-to-end observable, and architected for regulated workloads and production AI use cases.",
+            "link": "https://futransolutions.com/services/microsoft/azure-services/"
+        },
+        {
+            "name": "Microsoft Copilot & Copilot Studio Services",
+            "description": "Move organizations from Copilot pilot to enterprise-wide deployment addressing data readiness, permissions architecture, and role-based enablement, including domain-specific AI agents built on Copilot Studio.",
+            "link": "https://futransolutions.com/services/microsoft/microsoft-copilot-copilot-studio-services"
+        }
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Regulated Industry Expertise",
+            "description": "Deploying Microsoft technologies in financial services, insurance, and healthcare since 2010 with governance, audit readiness, and compliance controls built in from day one."
+        },
+        {
+            "title": "Certified Practitioners",
+            "description": "Practitioners hold active certifications across Azure, Dynamics, Power Platform, and Microsoft 365 supported by a dedicated AI delivery hub."
+        },
+        {
+            "title": "Named Microsoft Partner",
+            "description": "Leveraging partnership status for licensing, roadmap alignment, and direct access to Microsoft engineering resources."
+        },
+        {
+            "title": "Outcome-Driven Success",
+            "description": "Measuring success in business outcomes rather than technology milestones."
+        }
+    ]
+}

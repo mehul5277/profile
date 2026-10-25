@@ -1,0 +1,114 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "App & API Integration Company in USA - Futran Solutions",
+    "url": "https://futransolutions.com/services/digital-engineering/",
+    "heading": "Empower Innovation with Digital Engineering",
+    "subtitle": "Driving modern business experiences with secure and scalable engineering",
+    "overview": "Digital engineering today requires secure, scalable, and API-first systems built for continuous evolution. We design and modernize enterprise applications using cloud-native architecture, DevSecOps practices, and human-centered design. Our teams deliver resilient platforms across web, mobile, and distributed environments, integrating cybersecurity, quality engineering, and advanced technologies such as blockchain where required. By reducing technical debt and embedding automation across the development lifecycle, we enable faster product delivery, stronger security posture, and sustained engineering performance.",
+    "key_metrics": [
+        {
+            "value": "300+",
+            "description": "Enterprise applications designed, modernized, or re-architected across industries"
+        },
+        {
+            "value": "Upto 3x",
+            "description": "Acceleration in release cycles through DevSecOps and automated CI/CD pipelines"
+        },
+        {
+            "value": "65-70%",
+            "description": "Average automation coverage across modern digital product environments."
+        },
+        {
+            "value": "35%",
+            "description": "Improvement in user engagement and experience performance following UI/UX modernization initiatives"
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "API & Application Development",
+            "description": "Scalable APIs and cloud-native applications built using modular, extensible, and event-driven architectures for seamless integration."
+        },
+        {
+            "name": "Cyber Security Engineering",
+            "description": "End-to-end protection embedded in every digital layer to prevent breaches, ensure compliance, and enhance resilience."
+        },
+        {
+            "name": "Blockchain Engineering Services",
+            "description": "Distributed, immutable, and secure blockchain-based platforms tailored for decentralized operations and transactional transparency."
+        },
+        {
+            "name": "Quality Engineering & Automation",
+            "description": "Continuous testing, performance validation, and test automation integrated within CI/CD for faster, error-free delivery."
+        },
+        {
+            "name": "UI/UX Engineering & Modernization",
+            "description": "Human-centered design frameworks with responsive interfaces and adaptive user experiences across web and mobile channels."
+        }
+    ],
+    "expertise": [
+        {
+            "platform": "Amazon Web Services",
+            "description": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank."
+        },
+        {
+            "platform": "Microsoft Azure",
+            "description": "Elevate your data visualization game with our specialized Power BI services. Leverage our expertise to transform raw data into actionable insights, driving informed business decisions effortlessly."
+        },
+        {
+            "platform": "Power APP",
+            "description": "Futran Solutions is a leading Salesforce managed services provider, delivering cutting-edge transformative and high-quality customization solutions."
+        },
+        {
+            "platform": "Cyber Security",
+            "description": "We offer comprehensive cybersecurity solutions and services to help safeguard your business from cyber threats."
+        },
+        {
+            "platform": "Salesforce",
+            "description": "Implement Salesforce solutions that align customer data, automate engagement workflows, and strengthen revenue and service operations."
+        },
+        {
+            "platform": "Duck Creek",
+            "description": "Modernize Duck Creek systems to support intelligent underwriting, policy lifecycle management, and data driven insurance operations."
+        },
+        {
+            "platform": "UI Path",
+            "description": "Design and deploy UiPath solutions that support intelligent workflows, orchestration, governance, and scalable digital operations."
+        },
+        {
+            "platform": "Automation Anywhere",
+            "description": "Implement Automation Anywhere solutions to streamline complex processes, improve operational accuracy, and enable secure enterprise wide automation."
+        },
+        {
+            "platform": "Servicenow",
+            "description": "Implement ServiceNow platforms to standardize service management, automate workflows, and improve operational visibility across business functions."
+        }
+    ],
+    "modern_architecture_highlights": [
+        "Secure APIs for seamless integration",
+        "Zero-trust architecture for cyber defense",
+        "Scalable microservices-based applications",
+        "Responsive UI frameworks for omni-device access",
+        "Distributed ledger solutions for transparency",
+        "Continuous quality testing for faster releases",
+        "Tokenized systems for decentralized trust",
+        "Human-centered design for product adoption"
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Modern Tech Architecture",
+            "description": "We implement cutting-edge digital frameworks that support scalability, performance, and cloud-native integration."
+        },
+        {
+            "title": "User-Centric Development",
+            "description": "Our UX experts create experiences that enhance usability, retention, and satisfaction."
+        },
+        {
+            "title": "Security-First Design",
+            "description": "Cybersecurity is embedded into every layer—from design to deployment—for enterprise-wide protection."
+        },
+        {
+            "title": "Agile Delivery Model",
+            "description": "We combine speed and precision to launch, test, and optimize digital solutions quickly and efficiently."
+        }
+    ]
+}

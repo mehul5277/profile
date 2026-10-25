@@ -1,0 +1,177 @@
+[
+    {
+        "id": "services",
+        "page": "Services - IT Solutions - Futran Solutions",
+        "jumbotron": {
+            "backdrop": "",
+            "title": "Enterprise Expertise Across Leading Technology Ecosystems",
+            "leadText": "We combine architectural depth, platform specialization, and disciplined delivery to design integrated cloud, data, and AI environments that meet enterprise standards for performance, security, scalability, and long-term adaptability.",
+            "button": {
+                "text": "Explore Expertise",
+                "url": "url?id=5",
+                "icon": ""
+            }
+        },
+        "overview": {
+            "title": "Service Offerings",
+            "description": "Explore our comprehensive suite of enterprise-grade technology services.",
+            "metrics": []
+        },
+        "sections": [
+            {
+                "title": "Service Offerings",
+                "services": [
+                    {
+                        "name": "Data",
+                        "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth."
+                    },
+                    {
+                        "name": "AI & Automation",
+                        "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization."
+                    },
+                    {
+                        "name": "Cloud",
+                        "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys."
+                    },
+                    {
+                        "name": "Digital Engineering",
+                        "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience."
+                    },
+                    {
+                        "name": "Business Services",
+                        "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement."
+                    }
+                ]
+            }
+        ],
+        "Expertise": {
+            "title": "The Industry Leading Platforms",
+            "items": [
+                {
+                    "icon": "",
+                    "technology": "Automation Anywhere",
+                    "description": "Implement Automation Anywhere solutions to streamline complex processes, improve operational accuracy, and enable secure enterprise wide automation.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "UiPath",
+                    "description": "Design and deploy UiPath solutions that support intelligent workflows, orchestration, governance, and scalable digital operations.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "Databricks",
+                    "description": "Design scalable Databricks environments that integrate data engineering, advanced analytics, and machine learning within governed cloud native architectures.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "Snowflake",
+                    "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "ServiceNow",
+                    "description": "Implement ServiceNow platforms to standardize service management, automate workflows, and improve operational visibility across business functions.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "Duck Creek",
+                    "description": "Modernize Duck Creek systems to support intelligent underwriting, policy lifecycle management, and data driven insurance operations.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "Tableau",
+                    "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.",
+                    "link_text": "Read More"
+                },
+                {
+                    "icon": "",
+                    "technology": "Salesforce",
+                    "description": "Implement Salesforce solutions that align customer data, automate engagement workflows, and strengthen revenue and service operations.",
+                    "link_text": "Read More"
+                }
+            ]
+        },
+        "banner": [
+            {
+                "headline": "Request a structured consultation to evaluate how our platform expertise can accelerate your cloud, data, and AI initiatives with measurable, enterprise-ready outcomes",
+                "call_to_action": {
+                    "text": "Get In Touch",
+                    "type": "button"
+                }
+            }
+        ],
+        "prisum": [
+            {
+                "heading": "Our Amazon Web Services",
+                "subheading": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank.",
+                "features": [
+                    {
+                        "text": "DevOps Automation",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Cloud Migration",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Managed Services",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Cloud Security",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Well-Architected",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Serverless Computing",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Data Engineering & Analytics",
+                        "icon": ""
+                    },
+                    {
+                        "text": "Generative AI on AWS",
+                        "icon": ""
+                    }
+                ]
+            }
+        ],
+        "prisum1": [
+            {
+                "heading": "Our Microsoft Services",
+                "benefits": [
+                    {
+                        "icon": "",
+                        "heading": "Microsoft 365 Services",
+                        "description": "Restructure Microsoft 365 environments so that Teams, SharePoint, OneDrive, Outlook, and Copilot operate as a single governed workspace."
+                    },
+                    {
+                        "icon": "",
+                        "heading": "Microsoft Dynamics 365 Services",
+                        "description": "Implement Dynamics 365 to unify commercial operations into one system where sales, service, finance, and operations share a single source of truth."
+                    },
+                    {
+                        "icon": "",
+                        "heading": "Microsoft Power Platform Services",
+                        "description": "Eliminate manual inefficiencies through low-code applications, automated workflows, and AI-assisted analytics."
+                    },
+                    {
+                        "icon": "",
+                        "heading": "Microsoft Azure Services",
+                        "description": "Build Azure environments that are secure by design, end-to-end observable, and architected for regulated workloads."
+                    }
+                ]
+            }
+        ]
+    }
+]
