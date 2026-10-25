@@ -1,0 +1,84 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "Best Azure Data & Cloud-Based Services Provider - Futran Solutions",
+    "url": "https://futransolutions.com/services/cloud-services/",
+    "heading": "Cloud Services for Scalable Business Transformation",
+    "subtitle": "Build agile, secure, and future-ready enterprises with intelligent cloud architecture and strategy",
+    "overview": "Cloud is no longer just infrastructure. It is the foundation for resilient operations, scalable innovation, and AI-ready enterprise platforms. We help organizations modernize legacy workloads, design secure hybrid and multi-cloud architectures, and implement governance frameworks that balance performance, cost, and risk. Our structured approach addresses cloud sprawl, operational inefficiencies, and technical debt while enabling cloud-native development, workload optimization, and sustainable FinOps practices. The result is a cloud environment built for resilience, agility, and long-term business value.",
+    "key_metrics": [
+        {
+            "value": "250+",
+            "description": "Workloads migrated, modernized, or optimized across hybrid and multi-cloud environments"
+        },
+        {
+            "value": "99.9%+",
+            "description": "Sustained application and infrastructure availability across modernized cloud platforms"
+        },
+        {
+            "value": "3x",
+            "description": "Faster deployment cycles enabled through cloud-native engineering and automation"
+        },
+        {
+            "value": "35-45%",
+            "description": "Improvement in infrastructure performance and scalability following cloud modernization"
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "Cloud Enablement & Migration",
+            "description": "Assessment, planning, and transformation of enterprise infrastructure into scalable cloud-ready environments with minimal business disruption"
+        },
+        {
+            "name": "Cloud Advisory & Multi-Cloud Strategy",
+            "description": "Design and execution of custom-fit hybrid and multi-cloud models for cost, agility, and compliance balance"
+        },
+        {
+            "name": "Cloud Native Development & Integration",
+            "description": "Development and deployment of microservices-based architectures integrated across platforms for better performance and flexibility"
+        },
+        {
+            "name": "Cloud Operations & Security",
+            "description": "Automated operations with advanced security controls, monitoring, and governance tailored for cloud-native environments"
+        }
+    ],
+    "expertise": [
+        {
+            "platform": "Amazon Web Services",
+            "description": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank."
+        },
+        {
+            "platform": "Microsoft Azure",
+            "description": "Maximize the capabilities of Microsoft solutions, streamline your applications portfolio, enhance IT infrastructure and more, leveraging our full spectrum of Microsoft services."
+        },
+        {
+            "platform": "Salesforce",
+            "description": "Implement Salesforce solutions that align customer data, automate engagement workflows, and strengthen revenue and service operations."
+        },
+        {
+            "platform": "Snowflake",
+            "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise."
+        },
+        {
+            "platform": "Servicenow",
+            "description": "Implement ServiceNow platforms to standardize service management, automate workflows, and improve operational visibility across business functions."
+        }
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Business-Aligned Cloud Strategy",
+            "description": "We deliver cloud outcomes aligned with your business objectives, not just technology roadmaps."
+        },
+        {
+            "title": "Security-First Architecture",
+            "description": "Security is built into every step—from assessment to deployment and operational management."
+        },
+        {
+            "title": "Proven Transformation Experience",
+            "description": "A strong track record of successful cloud initiatives across industries and enterprise use cases."
+        },
+        {
+            "title": "Scalable, Future-Proof Solutions",
+            "description": "We create cloud solutions that scale with your business and support emerging technology adoption."
+        }
+    ]
+}

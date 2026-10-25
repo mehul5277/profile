@@ -1,0 +1,80 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "AI & Automation Services in USA | Futran Solutions",
+    "url": "https://futransolutions.com/services/ai-automation/",
+    "heading": "AI & Automation for Smarter Operations",
+    "subtitle": "Automate, optimize, and elevate business performance through AI and intelligent automation.",
+    "overview": "Artificial Intelligence and automation are reshaping how businesses operate, scale, and innovate. By integrating intelligent technologies like machine learning, agentic AI, and natural language processing, we enable organizations to automate complex workflows, streamline decision-making, and personalize user experiences at scale.",
+    "key_metrics": [
+        {
+            "percentage": "40%",
+            "description": "Increase in operational productivity across production AI deployments"
+        },
+        {
+            "percentage": "45%",
+            "description": "Reduction in manual effort through intelligent automation workflows"
+        },
+        {
+            "percentage": "30–40%",
+            "description": "Faster incident resolution enabled by AI driven operations"
+        },
+        {
+            "percentage": "100%",
+            "description": "AI deployments designed with embedded governance and compliance controls"
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "GenAI & LLM",
+            "description": "Create scalable content, conversations, and predictions using generative AI and large language models across use cases."
+        },
+        {
+            "name": "Natural Language Processing (NLP)",
+            "description": "Extract insights, understand user intent, and process unstructured data using advanced NLP techniques."
+        },
+        {
+            "name": "Machine Learning & MLOps",
+            "description": "Build, deploy, and scale intelligent models with integrated machine learning workflows and operational best practices."
+        },
+        {
+            "name": "Agentic AI",
+            "description": "Enable autonomous decision-making systems with multi-agent frameworks and goal-directed reasoning architectures."
+        },
+        {
+            "name": "Intelligent Process Automation",
+            "description": "Automate complex, multi-step business workflows using AI-enhanced bots, pattern recognition, and adaptive triggers."
+        }
+    ],
+    "expertise": [
+        {
+            "platform": "UiPath",
+            "description": "Design and deploy UiPath solutions that support intelligent workflows, orchestration, governance, and scalable digital operations."
+        },
+        {
+            "platform": "Automation Anywhere",
+            "description": "Implement Automation Anywhere solutions to streamline complex processes, improve operational accuracy, and enable secure enterprise wide automation."
+        },
+        {
+            "platform": "Power Automate",
+            "description": "We empower Power Automate users with our expertise in delivering seamless integration solutions, tailored connectors, and advanced automation strategies."
+        }
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Scalable AI Frameworks",
+            "description": "We deploy production-ready AI at scale with safety, interpretability, and business alignment."
+        },
+        {
+            "title": "Automation Experience Across Domains",
+            "description": "Broad industry expertise in intelligent automation from finance to healthcare and logistics."
+        },
+        {
+            "title": "Rapid Deployment Models",
+            "description": "Accelerators and reusable components ensure faster time-to-market for intelligent solutions."
+        },
+        {
+            "title": "Secure and Responsible AI",
+            "description": "We embed transparency, security, and governance across AI development and deployment lifecycles."
+        }
+    ]
+}

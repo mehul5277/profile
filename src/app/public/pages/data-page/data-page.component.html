@@ -1,0 +1,157 @@
+<app-jumbotron2 [jumbotron2Config]="jumbotronConfig"></app-jumbotron2>
+<!-- Overview -->
+<div [ngClass]="{'bg-primary-subtle' : true}">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-7 fs-5">
+                <p class="fs-2 fw-bold" [innerHTML]="Overview.title"></p>
+                <p class="card-text fs-5 lh-base" [innerHTML]="Overview.description"></p>
+            </div>
+            <div class="col-md-5">
+                <div class="container fs-5">
+                    <div class="row row-cols-2">
+                        @for(m of Overview.metrics; track $index) {
+                        <div class="col-6 vstack border-bottom border-black p-3">
+                            <div class="fw-bold display-6" [innerHTML]="m.value">a</div>
+                            <div [innerHTML]="m.label">a</div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none">
+            <p class="lead small"></p>
+            <h1 class="display-5 fw-bold"></h1>
+            <p class="col-md-8 fs-5 lead" [innerHTML]="Overview | json"></p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <!-- Service Offering -->
+    <div class="row">
+        <p class="col-12 fs-2 fw-bold" [innerHTML]="ServiceOffering.title"></p>
+    </div>
+    <div class="row pb-3">
+        @for(so of ServiceOffering.services; track $index) {
+        <div class="col-md-3">
+            <div class="card p-4 shadow-md h-100">
+                <div class="card-body p-0">
+                    <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                    <div class="card-text fs-5 lh-base" [innerHTML]="so.description"></div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    <!-- Experties -->
+    <div class="row">
+        <p class="col-12 fs-2 fw-bold" [innerHTML]="Expertise.title"></p>
+    </div>
+    <div class="row pb-3">
+        @for(e of Expertise.items; track $index) {
+        <div class="col-md-4">
+            <div class="card p-4 shadow-md h-100" style=" background-color: #ffffff;">
+                <div class="card-body p-0 ">
+                    <!-- Header Row: Logo Placeholder & Title -->
+                    <div class="d-flex align-items-center mb-4">
+                        <img [attr.src]="e.icon" alt="Tableau Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
+                        <h2 class="card-title fw-bold m-0" [innerHTML]="e.technology">Tableau</h2>
+                    </div>
+                    <!-- Body Text -->
+                    <p class="card-text fs-5 lh-base mb-2" [innerHTML]="e.description"></p>
+                </div>
+                <div class="card-footer p-0 bg-transparent border-0 ">
+                    <!-- Action Link -->
+                    <a href="#" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
+                        <span>Read More</span>
+                        <span class="ms-2 fs-4"> <i class="bi bi-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+</div>
+<!-- banner -->
+<div [ngClass]="'bg-midnight grid-midnight bg-girl-contain'">
+    <div class="container p-5">
+        <div class="col-md-8">
+            <p class="lead small" [innerHTML]="">SUBJECT</p>
+            <h1 class="display-6 fw-bold" [innerHTML]="Banner.headline">Title</h1>
+            <p class="col-md-8 fs-5 lead d-none" [innerHTML]="">Subtitle</p>
+            <p class="col-md-8 fs-5 d-none" [innerHTML]="">Description</p>
+            <button class="btn btn-primary btn-lg mt-4" type="button" [innerHTML]="Banner.call_to_action.text">Example button</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Prisum -->
+<div [ngClass]="{'bg-primary-subtle' : false}">
+    <div class="container py-5">
+        <div class="row pb-4">
+            <div class="col-md-12 fs-5">
+                <p class="display-6 fw-bold" [innerHTML]="Prisum.heading"></p>
+                <p class="card-text fs-5 lh-base" [innerHTML]="Prisum.subheading"></p>
+            </div>
+        </div>
+        <div class="row">
+            @for(m of Prisum.features; track $index) {
+            <div class="col-md-3 hstack py-2">
+                <i class="bi bi-check2-square pe-2 fs-2"></i>
+                <div class="fs-5" [innerHTML]="m.text">a</div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Prisum1 -->
+<div [ngClass]="{'bg-primary-subtle' : true}">
+    <div class="container py-5">
+        <div class="row pb-4">
+            <div class="col-md-12 fs-5">
+                <p class="display-6 fw-bold" [innerHTML]="Prisum1.heading"></p>
+            </div>
+        </div>
+        <div class="row gy-4">
+            @for(m of Prisum1.benefits; track $index) {
+            <div class="col-md-6 hstack">
+                <i class=" fs-2 p-4" [ngClass]="m.icon"></i>
+                <div>
+                    <p class="fs-4 fw-bold m-0" [innerHTML]="m.heading"></p>
+                    <div class="fs-5" [innerHTML]="m.description">a</div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- POC -->
+<div class="d-none">
+    <p class="p-3 bg-info d-none" [innerHTML]="Prisum1 | json"></p>
+    <div class="jumbotron jumbotron-fluid full-screen-jumbotron text-white d-flex align-items-center m-0 bg-info">
+        <div class="container text-center">
+            <h1 class="display-3">Full Screen Hero</h1>
+            <p class="lead">This jumbotron completely fills the width and height of the screen.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        </div>
+    </div>
+
+    <div class="container-lg my-4">
+        <div class="p-5 mb-4 bg-dark text-white rounded-3">
+            <h1>Learn to Create Websites</h1>
+            <p class="lead">In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank" class="text-white">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
+            <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-light btn-lg">Start learning today</a></p>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Vestibulum id metus ac nisl bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet sagittis. In tincidunt orci sit amet elementum vestibulum. Vivamus fermentum in arcu in aliquam. Quisque aliquam porta odio in fringilla. Vivamus nisl leo, blandit at bibendum eu, tristique eget risus. Integer aliquet quam ut elit suscipit, id interdum neque porttitor. Integer faucibus ligula.</p>
+        <p>Quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Ut tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio. Phasellus auctor velit at lacus blandit, commodo iaculis justo viverra. Etiam vitae est arcu. Mauris vel congue dolor. Aliquam eget mi mi. Fusce quam tortor, commodo ac dui quis, bibendum viverra erat. Maecenas mattis lectus enim, quis tincidunt dui molestie euismod. Curabitur et diam tristique, accumsan nunc eu, hendrerit tellus.</p>
+    </div>
+</div>

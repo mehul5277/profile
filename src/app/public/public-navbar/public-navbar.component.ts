@@ -41,7 +41,9 @@ export class PublicNavbarComponent implements OnInit {
     this.dataService.getData("services_menu").subscribe(data => {
       data.forEach((item: any) => {
         item.services.forEach((service: any) => {
-          service.url = ["service", service.name];
+          //debugger;
+          if (service.url)
+            service.url.push(service.name);
         });
       });
 

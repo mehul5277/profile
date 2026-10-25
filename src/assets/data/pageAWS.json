@@ -1,0 +1,115 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "AWS Cloud Services & Solutions | Futran Solutions",
+    "url": "https://futransolutions.com/services/aws-cloud/",
+    "heading": "AWS Cloud Services",
+    "subtitle": "Your Cloud Investment Should Be Working Harder Than It Is",
+    "overview": "Futran Solutions is an AWS Advanced Tier Services Partner and AWS Managed Service Provider. We help organizations across financial services, insurance, healthcare, and other regulated and high-growth sectors build AWS environments that are secure, cost-governed, and ready for the AI workloads that matter to their business.",
+    "key_metrics": [
+        {
+            "designation": "AWS MSP",
+            "description": "Managed Service Provider status — one of fewer than 150 firms globally to hold this designation"
+        },
+        {
+            "percentage": "35%",
+            "description": "Average reduction in AWS infrastructure cost achieved through architecture optimization and FinOps governance"
+        },
+        {
+            "count": "50+",
+            "description": "Production AI workloads deployed on AWS across SageMaker, Bedrock, and custom ML pipelines"
+        },
+        {
+            "availability": "99.9%",
+            "description": "Availability maintained across AWS managed environments under our 24x7 operations model"
+        },
+        {
+            "timeframe": "60 days",
+            "description": "Typical time from AWS assessment to production-ready cloud environment for a mid-market organization"
+        },
+        {
+            "count": "9",
+            "description": "AWS competency validations and delivery designations earned across infrastructure, AI, security, and SMB workloads"
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "Cloud Migration",
+            "description": "Migrate on-premises infrastructure, legacy applications, and data platforms using a structured wave methodology designed to eliminate downtime for business-critical systems.",
+            "link": "https://futransolutions.com/services/aws-cloud/cloud-migration/"
+        },
+        {
+            "name": "Data Engineering & Analytics",
+            "description": "Build AWS data platforms using Redshift, Glue, Lake Formation, S3, and Databricks on AWS that give organizations a governed, scalable foundation for analytics and AI.",
+            "link": "https://futransolutions.com/services/aws-cloud/data-engineering-and-analytics/"
+        },
+        {
+            "name": "AWS Managed Services",
+            "description": "Provide 24×7 monitoring, defined SLAs, monthly cost reviews, proactive security posture management, and a named team to operate your AWS environment to a formally validated standard.",
+            "link": "https://futransolutions.com/services/aws-cloud/managed-services/"
+        },
+        {
+            "name": "DevOps Automation",
+            "description": "Implement AWS DevOps environments covering CI/CD pipeline design, infrastructure as code using Terraform and CloudFormation, container orchestration, and GitOps practices.",
+            "link": "url?id=9"
+        },
+        {
+            "name": "Cloud Security",
+            "description": "Implement AWS security architectures aligned with the AWS Well-Architected Framework security pillar, CIS AWS Benchmarks, and industry compliance requirements.",
+            "link": "https://futransolutions.com/services/aws-cloud/cloud-security/"
+        },
+        {
+            "name": "Well-Architected Reviews",
+            "description": "Conduct formal Well-Architected Reviews and deliver prioritized remediation roadmaps across the six pillars of operational excellence, security, reliability, performance efficiency, and cost optimization.",
+            "link": "url?id=11"
+        },
+        {
+            "name": "Serverless Computing",
+            "description": "Design and build serverless architectures using AWS Lambda, API Gateway, Step Functions, and EventBridge that are event-driven, cost-efficient, and observable at production scale.",
+            "link": "https://futransolutions.com/services/aws-cloud/serverless-computing/"
+        },
+        {
+            "name": "AWS AI Services",
+            "description": "Design AI workloads connected to real enterprise data and governed for production deployment using Bedrock, SageMaker, Textract, and Lex.",
+            "link": "https://futransolutions.com/services/aws-cloud/aws-ai-services/"
+        }
+    ],
+    "credentials": [
+        "AWS Well-Architected Partner Program",
+        "AWS WAF Delivery",
+        "AWS Amazon RDS Delivery",
+        "AWS Lambda Delivery",
+        "AWS CloudFormation Delivery",
+        "AWS Amazon EC2 for Windows Server Delivery",
+        "AWS AI Services Competency",
+        "AWS Managed Service Provider",
+        "AWS SMB Services Competency",
+        "AWS Microsoft Workloads Services",
+        "AWS Advanced Tier Services"
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Validated Delivery Depth, Not Just Credentials",
+            "description": "Holds AWS MSP status, AWS AI Services Competency, and Advanced Tier Services Partner designation backed by documented delivery evidence reviewed by AWS."
+        },
+        {
+            "title": "Architecture Built for Production AI from Day One",
+            "description": "Builds AWS environments with AI readiness as a first-order design requirement, supported by over 50 deployed production AI workloads."
+        },
+        {
+            "title": "FinOps Discipline Built into Every Engagement",
+            "description": "Embeds cost governance, tagging standards, Reserved Instance planning, and monthly cost reviews to drive a measured 35 percent average cost reduction."
+        },
+        {
+            "title": "Industry Experience That Translates to Faster Delivery",
+            "description": "Deep delivery experience in financial services, insurance, and healthcare, knowing specific regulatory frameworks, data models, and audit trail expectations."
+        },
+        {
+            "title": "A Delivery Hub With Real Capacity",
+            "description": "Offers engineering depth to staff and sustain complex, multi-workload AWS programs without capacity constraints."
+        },
+        {
+            "title": "Connected to Your Full Technology Ecosystem",
+            "description": "Spans AWS, Microsoft Azure, and major data and application platforms to design integrations that avoid handoff issues."
+        }
+    ]
+}

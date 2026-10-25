@@ -1,0 +1,86 @@
+{
+    "company": "Futran Solutions",
+    "page_title": "Top data analytics company in USA - Futran Solutions",
+    "url": "https://futransolutions.com/services/data/",
+    "heading": "Data Foundations Built for Measurable Business Impact",
+    "subtitle": "Design governed, scalable data platforms that turn strategy into trusted insights, operational efficiency, and AI-ready capabilities.",
+    "overview": "Our data services empower organizations to move from data silos to connected intelligence. From foundational data strategy and architecture to advanced analytics and predictive insights, we enable real-time business outcomes. Our team helps design robust data pipelines, improve data quality, and support regulatory requirements while boosting agility and operational intelligence. We work across structured and unstructured data to unlock business value through visualization, forecasting, and AI readiness. Our approach ensures secure data governance while making data accessible across the enterprise.",
+    "key_metrics": [
+        {
+            "value": "40+",
+            "description": "Enterprise Data Transformation Engagements Delivered"
+        },
+        {
+            "value": "25+",
+            "description": "Modern Data Platforms Built to Support AI & Advanced Analytics"
+        },
+        {
+            "value": "30%",
+            "description": "Average Improvement in Reporting & Decision Turnaround"
+        },
+        {
+            "value": "85%",
+            "description": "Client Retention Across Data & AI Engagements"
+        }
+    ],
+    "service_offerings": [
+        {
+            "name": "Data Strategy & Analytics",
+            "description": "Align data architecture and processes to your business goals for strategic insights and operational clarity."
+        },
+        {
+            "name": "Data Engineering",
+            "description": "Build high-quality data pipelines using ETL, ELT, and real-time stream processing for scalable architecture."
+        },
+        {
+            "name": "Advanced Analytics & Business Intelligence",
+            "description": "Visualize, predict, and optimize outcomes with machine learning-powered dashboards and analytics models."
+        },
+        {
+            "name": "Data Governance & Compliance",
+            "description": "Ensure data integrity, security, lineage, and regulatory compliance through automated policy enforcement and monitoring."
+        }
+    ],
+    "expertise": [
+        {
+            "platform": "Tableau",
+            "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency."
+        },
+        {
+            "platform": "Power BI",
+            "description": "Elevate your data visualization game with our specialized Power BI services. Leverage our expertise to transform raw data into actionable insights, driving informed business decisions effortlessly."
+        },
+        {
+            "platform": "Snowflake",
+            "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise."
+        }
+    ],
+    "growth_highlights": [
+        "Real-time dashboards and reporting",
+        "Unified master data architecture",
+        "Data lakehouse modernization solutions",
+        "Business-aligned data architecture",
+        "Data observability and monitoring",
+        "Enterprise data compliance solutions",
+        "Custom analytics use case development",
+        "Scalable data pipeline solutions"
+    ],
+    "why_partner_with_us": [
+        {
+            "title": "Outcome-Driven Execution",
+            "description": "We deliver measurable improvements in agility, forecasting, and decision speed."
+        },
+        {
+            "title": "Deep Data Expertise",
+            "description": "Proven capability across analytics, data lakes, governance, and compliance frameworks."
+        },
+        {
+            "title": "Business-Centric Approach",
+            "description": "We align data solutions with core business KPIs and digital transformation goals."
+        },
+        {
+            "title": "Scalable Engagement Models",
+            "description": "Flexible delivery to support short-term sprints or enterprise-scale transformation."
+        }
+    ]
+}
