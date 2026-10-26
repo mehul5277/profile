@@ -3,7 +3,7 @@
         "id": "services",
         "page": "Services - IT Solutions - Futran Solutions",
         "jumbotron": {
-            "backdrop": "",
+            "backdrop": "bg-midnight grid-midnight",
             "title": "Enterprise Expertise Across Leading Technology Ecosystems",
             "leadText": "We combine architectural depth, platform specialization, and disciplined delivery to design integrated cloud, data, and AI environments that meet enterprise standards for performance, security, scalability, and long-term adaptability.",
             "button": {
@@ -22,22 +22,27 @@
                 "title": "Service Offerings",
                 "services": [
                     {
+                        "icon": "bi bi-database",
                         "name": "Data",
                         "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth."
                     },
                     {
+                        "icon": "bi bi-cpu",
                         "name": "AI & Automation",
                         "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization."
                     },
                     {
+                        "icon": "bi bi-cloud",
                         "name": "Cloud",
                         "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys."
                     },
                     {
+                        "icon": "bi bi-code-slash",
                         "name": "Digital Engineering",
                         "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience."
                     },
                     {
+                        "icon" : "bi bi-buildings",
                         "name": "Business Services",
                         "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement."
                     }

@@ -17,9 +17,10 @@ export class ServicePageComponent {
   private dataService = inject(DataService);
 
   serviceData: any = {};
+  serviceData_V1: any = {};
 
   ngOnInit() {
-    this.dataService.fetchPageData("pages").subscribe((data: any) => this.serviceData = data[0]);
+    this.dataService.fetchPageData("pageService").subscribe((data: any) => this.serviceData = data[0]);
   }
 
   get jumbotronConfig() {

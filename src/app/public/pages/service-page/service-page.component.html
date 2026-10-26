@@ -1,6 +1,6 @@
 <app-jumbotron2 [jumbotron2Config]="jumbotronConfig"></app-jumbotron2>
 <!-- Overview -->
-<div [ngClass]="{'bg-primary-subtle' : true}">
+<div class="d-none" [ngClass]="{'bg-primary-subtle' : true}">
     <div class="container py-5">
         <div class="row">
             <div class="col-md-7 fs-5">
@@ -28,19 +28,30 @@
         </div>
     </div>
 </div>
-<div class="container my-5">
+<div class="container-fluid my-5">
     <!-- Service Offering -->
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="ServiceOffering.title"></p>
     </div>
-    <div class="row pb-3">
+    <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(so of ServiceOffering.services; track $index) {
-        <div class="col-md-3">
+        <div class="col">
             <div class="card p-4 shadow-md h-100">
-                <div class="card-body p-0">
-                    <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4>
+                <div class="card-body p-0 mb-2">
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="pe-2 fs-2" [ngClass]="so.icon"></i>
+                        <h3 class="card-title fw-bold m-0" [innerHTML]="so.name">Tableau</h3>
+                    </div>
+                    <!-- <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4> -->
                     <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
                     <div class="card-text fs-5 lh-base" [innerHTML]="so.description"></div>
+                </div>
+                <div class="card-footer p-0 bg-transparent border-0 ">
+                    <!-- Action Link -->
+                    <a href="#" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
+                        <span>Read More</span>
+                        <span class="ms-2 fs-4"> <i class="bi bi-arrow-right"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
