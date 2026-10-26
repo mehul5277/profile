@@ -29,7 +29,8 @@ export class ServicePageComponent {
 
   get Overview() { return this.serviceData.overview; }
 
-  get ServiceOffering() { return this.serviceData.sections.filter((o: any) => o.title == "Service Offerings")[0]; }
+  get ServiceOffering() { return this.serviceData.sections[0]; }
+  get Section() { return this.serviceData.sections; }
 
   get Expertise() { return this.serviceData.Expertise; }
 

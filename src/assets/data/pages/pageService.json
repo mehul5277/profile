@@ -19,7 +19,7 @@
         },
         "sections": [
             {
-                "title": "Service Offerings",
+                "section": "Service Offerings",
                 "services": [
                     {
                         "icon": "bi bi-database",
@@ -42,9 +42,49 @@
                         "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience."
                     },
                     {
-                        "icon" : "bi bi-buildings",
+                        "icon": "bi bi-buildings",
                         "name": "Business Services",
                         "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement."
+                    }
+                ]
+            },
+            {
+                "section": "Our Amazon Web Services",
+                "description": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank.",
+                "services": [
+                    {
+                        "icon" : "bi bi-gear",
+                        "name": "DevOps Automation",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "icon" : "bi bi-cloud-arrow-up",
+                        "name": "Cloud Migration",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Managed Services",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Cloud Security",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Well-Architected",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Serverless Computing",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Data Engineering & Analytics",
+                        "url": "https://futransolutions.com/services/"
+                    },
+                    {
+                        "name": "Generative AI on AWS",
+                        "url": "https://futransolutions.com/services/"
                     }
                 ]
             }
