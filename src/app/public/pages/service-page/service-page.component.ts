@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { JsonPipe, NgClass } from '@angular/common';
 import { Jumbotron2Component } from '../../../shared/components/jumbotron2/jumbotron2.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-service-page',
   standalone: true,
-  imports: [JsonPipe, Jumbotron2Component, NgClass],
+  imports: [JsonPipe, Jumbotron2Component, NgClass, MatIconModule],
   templateUrl: './service-page.component.html',
   styleUrl: './service-page.component.scss'
 })
