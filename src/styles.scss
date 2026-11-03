@@ -5,7 +5,8 @@ $prefix: "mo-";
 $enable-dark-mode: true;
 $navbar-padding-y: 1rem;
 //$font-family-base: "Roboto", sans-serif;
-$dropdown-spacer: 0px; /* Adjust this value to control the spacing between the navbar and the dropdown */
+$dropdown-spacer: 0px;
+/* Adjust this value to control the spacing between the navbar and the dropdown */
 $enable-validation-icons: false;
 
 // Then import Bootstrap
@@ -51,4 +52,39 @@ small {
 .grid-midnight {
     background-image: linear-gradient(90deg, oklch(100% 0 0/.05) 1px, #0000 1px), linear-gradient(oklch(100% 0 0/.05) 1px, #0000 1px);
     background-size: 56px 56px
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: 0.01rem !important;
+}
+
+.mat-icon.md-18 {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.mat-icon.md-24 {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.mat-icon.md-36 {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+}
+
+.mat-icon.md-48 {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
 }
