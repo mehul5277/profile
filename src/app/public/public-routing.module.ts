@@ -22,6 +22,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
       { path: 'data/:id', component: DataPageComponent },
+      { path: 'service', component: ServicePageComponent },
       { path: 'service/:id', component: ServicePageComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'company', component: CompanyPageComponent },

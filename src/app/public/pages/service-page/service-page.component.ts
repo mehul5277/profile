@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { JsonPipe, NgClass } from '@angular/common';
 import { Jumbotron2Component } from '../../../shared/components/jumbotron2/jumbotron2.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-service-page',
   standalone: true,
-  imports: [JsonPipe, Jumbotron2Component, NgClass],
+  imports: [JsonPipe, Jumbotron2Component, NgClass, MatIconModule],
   templateUrl: './service-page.component.html',
   styleUrl: './service-page.component.scss'
 })
@@ -17,9 +18,10 @@ export class ServicePageComponent {
   private dataService = inject(DataService);
 
   serviceData: any = {};
+  serviceData_V1: any = {};
 
   ngOnInit() {
-    this.dataService.fetchPageData("pages").subscribe((data: any) => this.serviceData = data[0]);
+    this.dataService.fetchPageData("pageService").subscribe((data: any) => this.serviceData = data[0]);
   }
 
   get jumbotronConfig() {
@@ -28,7 +30,8 @@ export class ServicePageComponent {
 
   get Overview() { return this.serviceData.overview; }
 
-  get ServiceOffering() { return this.serviceData.sections.filter((o: any) => o.title == "Service Offerings")[0]; }
+  get ServiceOffering() { return this.serviceData.sections[0]; }
+  get Section() { return this.serviceData.sections; }
 
   get Expertise() { return this.serviceData.Expertise; }
 

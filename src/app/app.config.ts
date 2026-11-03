@@ -4,6 +4,7 @@ import { provideRouter, withComponentInputBinding, withHashLocation } from '@ang
 import { routes } from './app.routes';
 import { HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { MockAuthInterceptor } from './auth/interceptors/mock-auth.interceptor';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +13,7 @@ export const appConfig: ApplicationConfig = {
     //importProvidersFrom(HttpClientModule),
     provideHttpClient(
       withInterceptors([MockAuthInterceptor])
-    )
+    ),
+    provideAnimationsAsync()
   ]
 };
