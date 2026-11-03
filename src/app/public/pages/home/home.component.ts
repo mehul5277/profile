@@ -2,11 +2,12 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Jumbotron1Component, JumbotronConfig1 } from '../../../shared/components/jumbotron1/jumbotron1.component';
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
+import { PollComponent } from '../../../shared/components/poll/poll.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Jumbotron1Component, TickerClientComponent],
+  imports: [Jumbotron1Component, TickerClientComponent, PollComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
