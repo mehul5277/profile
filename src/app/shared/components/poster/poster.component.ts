@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgClass } from '../../../../../node_modules/@angular/common/index';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-poster',

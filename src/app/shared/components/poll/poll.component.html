@@ -1,0 +1,58 @@
+<div class="container my-5" style="max-width: 500px;">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+
+            <!-- Header -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="badge bg-danger text-uppercase px-2 py-1">Live Poll</span>
+                <small class="text-muted">{{ totalVotes }} votes</small>
+            </div>
+
+            <!-- Question -->
+            <h4 class="card-title fw-bold mb-4">{{ question }}</h4>
+
+            <!-- Voting Options / Results View -->
+            <div class="d-grid gap-3">
+                @for (option of options; track $index) {
+                <div>
+
+                    <!-- Before Voting: Clickable Buttons -->
+                    @if(!hasVoted) {
+                    <button class="btn btn-outline-secondary w-100 py-3 text-start fw-semibold shadow-none" (click)="vote(option.id)">
+                        {{ option.text }}
+                    </button>
+                    }
+                    <!-- After Voting: Results Progress Bars -->
+                    @if(hasVoted) {
+                    <div class="p-3 border rounded bg-light">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="fw-semibold" [class.text-primary]="selectedOptionId === option.id">
+                                {{ option.text }}
+                                @if(selectedOptionId === option.id) {
+                                <span class="badge bg-primary ms-2">Your Vote</span>
+                                }
+                            </span>
+                            <span class="fw-bold">{{ getPercentage(option.votes) }}%</span>
+                        </div>
+                        <div class="progress" style="height: 10px;">
+                            <div class="progress-bar" [class.bg-primary]="selectedOptionId === option.id" [class.bg-secondary]="selectedOptionId !== option.id" role="progressbar" [style.width.%]="getPercentage(option.votes)" [attr.aria-valuenow]="getPercentage(option.votes)" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        <small class="text-muted mt-1 d-block">{{ option.votes }} votes</small>
+                    </div>
+                    }
+
+                </div>
+                }
+            </div>
+
+            <!-- Footer feedback -->
+            @if(hasVoted){
+            <div class="alert alert-success mt-4 mb-0 text-center py-2" role="alert">
+                Thank you for participating in this poll!
+            </div>
+            }
+
+        </div>
+    </div>
+</div>

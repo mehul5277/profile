@@ -4,11 +4,13 @@
   padding: 1.75rem;
   background: #ffffff05;
   //border-radius: 8px;
+
+  h2 {
+    font-weight: 600;
+  }
 }
 
-.login-container h2 {
-  font-weight: 600;
-}
+
 
 @mixin href-styles-none($text-color: #007bff) {
   //display: inline-block;
@@ -60,7 +62,8 @@ a {
 }
 
 
-.form-control.show-password, .show-password {
+.form-control.show-password,
+.show-password {
   border-color: yellow;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-eye%22%20viewBox%3D%220%200%2016%2016%22%3E%0A%20%20%3Cpath%20d%3D%22M16%208s-3-5.5-8-5.5S0%208%200%208s3%205.5%208%205.5S16%208%2016%208M1.173%208a13%2013%200%200%201%201.66-2.043C4.12%204.668%205.88%203.5%208%203.5s3.879%201.168%205.168%202.457A13%2013%200%200%201%2014.828%208q-.086.13-.195.288c-.335.48-.83%201.12-1.465%201.755C11.879%2011.332%2010.119%2012.5%208%2012.5s-3.879-1.168-5.168-2.457A13%2013%200%200%201%201.172%208z%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M8%205.5a2.5%202.5%200%201%200%200%205%202.5%202.5%200%200%200%200-5M4.5%208a3.5%203.5%200%201%201%207%200%203.5%203.5%200%200%201-7%200%22%2F%3E%0A%3C%2Fsvg%3E);
@@ -79,6 +82,6 @@ a {
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
-.input-group > .invalid-feedback {
+.input-group>.invalid-feedback {
   display: block;
 }
