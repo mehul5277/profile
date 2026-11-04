@@ -41,7 +41,12 @@
             <div class="card p-4 shadow-md h-100">
                 <div class="card-body p-0 mb-2">
                     <div class="vstack align-items-left mb-2">
+                        @if(so.image) {
+                        <img [attr.src]="so.image" alt="Service Offering Image" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
+                        }
+                        @if(so.icon) {
                         <mat-icon class="md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="so.icon">database</mat-icon>
+                        }
                     </div>
                     <h5 class="card-title fw-bold" [innerHTML]="so.name">Tableau</h5>
                     <!-- <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4> -->
@@ -62,6 +67,7 @@
     }
 
     <!-- Service Offering -->
+    @if(false) {
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="ServiceOffering.section"></p>
     </div>
@@ -71,7 +77,12 @@
             <div class="card p-4 shadow-md h-100">
                 <div class="card-body p-0 mb-2">
                     <div class="d-flex align-items-center mb-4">
+                        @if(so.image) {xxxx
+                        <img [attr.src]="so.image" alt="Service Offering Image" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
+                        }
+                        @if(so.icon) {
                         <i class="pe-2 fs-2" [ngClass]="so.icon"></i>
+                        }
                         <h3 class="card-title fw-bold m-0" [innerHTML]="so.name">Tableau</h3>
                     </div>
                     <!-- <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4> -->
@@ -89,12 +100,12 @@
         </div>
         }
     </div>
-
+    }
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="ServiceOffering.title"></p>
     </div>
 
-    <!-- Experties -->
+    <!-- Experties: The Industry Leading Platforms -->
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="Expertise.title"></p>
     </div>
@@ -105,7 +116,7 @@
                 <div class="card-body p-0 ">
                     <!-- Header Row: Logo Placeholder & Title -->
                     <div class="d-flex align-items-center mb-4">
-                        <img [attr.src]="e.icon" alt="Tableau Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
+                        <img [attr.src]="e.image" alt="Technology Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
                         <h2 class="card-title fw-bold m-0" [innerHTML]="e.technology">Tableau</h2>
                     </div>
                     <!-- Body Text -->

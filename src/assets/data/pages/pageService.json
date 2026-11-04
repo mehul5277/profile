@@ -53,44 +53,75 @@
                 "description": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank.",
                 "services": [
                     {
-                        "icon" : "settings_b_roll",
+                        "icon": "settings_b_roll",
                         "name": "DevOps Automation",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "cloud_upload",
+                        "icon": "cloud_upload",
                         "name": "Cloud Migration",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "manufacturing",
+                        "icon": "manufacturing",
                         "name": "Managed Services",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "cloud_lock",
+                        "icon": "cloud_lock",
                         "name": "Cloud Security",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "network_intelligence",
+                        "icon": "network_intelligence",
                         "name": "Well-Architected",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "cloud_sync",
+                        "icon": "cloud_sync",
                         "name": "Serverless Computing",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "analytics",
+                        "icon": "analytics",
                         "name": "Data Engineering & Analytics",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
                     },
                     {
-                        "icon" : "smart_toy",
+                        "icon": "smart_toy",
                         "name": "Generative AI on AWS",
-                        "url": "https://futransolutions.com/services/"
+                        "url": ""
+                    }
+                ]
+            },
+            {
+                "section": "Our Microsoft Services",
+                "description": "Maximize the capabilities of Microsoft solutions, streamline your applications portfolio, enhance IT infrastructure and more, leveraging our full spectrum of Microsoft services.",
+                "services": [
+                    {
+                        "image": "assets/image/technologies/MicrosoftTeams-image-53.png",
+                        "name": "Microsoft 365 Services",
+                        "url": ""
+                    },
+                    {
+                        "image": "assets/image/technologies/MicrosoftTeams-image-56.png",
+                        "name": "Microsoft Dynamics 365 Services",
+                        "url": ""
+                    },
+                    {
+                        "image": "assets/image/technologies/MicrosoftTeams-image-54.png",
+                        "name": "Microsoft Power Platform Services",
+                        "url": ""
+                    },
+                    {
+                        "image": "assets/image/technologies/MicrosoftTeams-image-52.png",
+                        "name": "Microsoft Azure Services",
+                        "url": ""
+                    },
+                    {
+                        "image": "assets/image/technologies/Copilot.svg",
+                        "name": "Microsoft Copilot Services",
+                        "url": ""
                     }
                 ]
             }
@@ -99,49 +130,49 @@
             "title": "The Industry Leading Platforms",
             "items": [
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Automation Anywhere",
                     "description": "Implement Automation Anywhere solutions to streamline complex processes, improve operational accuracy, and enable secure enterprise wide automation.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "UiPath",
                     "description": "Design and deploy UiPath solutions that support intelligent workflows, orchestration, governance, and scalable digital operations.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Databricks",
                     "description": "Design scalable Databricks environments that integrate data engineering, advanced analytics, and machine learning within governed cloud native architectures.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Snowflake",
                     "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "ServiceNow",
                     "description": "Implement ServiceNow platforms to standardize service management, automate workflows, and improve operational visibility across business functions.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Duck Creek",
                     "description": "Modernize Duck Creek systems to support intelligent underwriting, policy lifecycle management, and data driven insurance operations.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Tableau",
                     "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.",
                     "link_text": "Read More"
                 },
                 {
-                    "icon": "",
+                    "image": "",
                     "technology": "Salesforce",
                     "description": "Implement Salesforce solutions that align customer data, automate engagement workflows, and strengthen revenue and service operations.",
                     "link_text": "Read More"
