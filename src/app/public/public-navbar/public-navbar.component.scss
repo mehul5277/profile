@@ -75,16 +75,20 @@
     color: var(--nav-color) !important;
     //font-weight: 500;
 
-  }
+    &.active {
+      color: var(--nav-color) !important;
+      font-weight: 600;
+    }
 
-  .nav-link.active {
-    color: var(--nav-color) !important;
-    font-weight: 600;
-  }
+    &:active {
+      color: var(--mo-dropdown-link-hover-color);
+      background-color: var(--mo-dropdown-link-hover-bg);
+    }
 
-  .nav-link:hover {
-    color: var(--nav-color) !important;
-    //font-weight: 600;
+    &:hover {
+      color: var(--nav-color) !important;
+      font-weight: 600;
+    }
   }
 }
 
@@ -121,6 +125,7 @@
 
 .active-link {
   font-weight: bold;
-  color: #3b82f6; /* Accent color for active route link */
+  color: #3b82f6;
+  /* Accent color for active route link */
   border-bottom: 2px solid #3b82f6;
 }

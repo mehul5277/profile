@@ -71,6 +71,14 @@
         ]
     },
     {
+        "stack": "Branding & Marketing",
+        "urls": [
+            "https://unsplash.com",
+            "https://pixabay.com",
+            "https://www.pexels.com"
+        ]
+    },
+    {
         "stack": "** Product Development",
         "urls": [
             "https://njoyn.com",
@@ -165,7 +173,7 @@
     },
     {
         "stack": "tiktok",
-        "urls" :[ 
+        "urls": [
             "https://vt.tiktok.com/ZS9U3qMKNApwH-EfTyk"
         ]
     }

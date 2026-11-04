@@ -27,7 +27,7 @@
         <!-- Collapsible content -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item d-none">
+                <li class="nav-item">
                     <a class="nav-link" routerLinkActive="active" routerLink="products">Products</a>
                 </li>
 
@@ -86,13 +86,13 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item hstack" [ngClass]="{ 'active' : isActive('resume') }" routerLink="resume">
+                            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="resume">
                                 <i class="bi bi-file-text fs-5 me-2"></i>
                                 <span>Resume</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item hstack" [ngClass]="{ 'active' : isActive('cv') }" routerLink="cv">
+                            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="cv">
                                 <i class="bi bi-file-medical fs-5 me-2"></i>
                                 <span>Curriculum vitae (CV)</span>
                             </a>
