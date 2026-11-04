@@ -1,7 +1,7 @@
 {
     "company": "Futran Solutions",
     "page_title": "AWS Cloud Services & Solutions | Futran Solutions",
-    "url": "https://futransolutions.com/services/aws-cloud/",
+    "url": "https://jixo.com/services/aws-cloud/",
     "heading": "AWS Cloud Services",
     "subtitle": "Your Cloud Investment Should Be Working Harder Than It Is",
     "overview": "Futran Solutions is an AWS Advanced Tier Services Partner and AWS Managed Service Provider. We help organizations across financial services, insurance, healthcare, and other regulated and high-growth sectors build AWS environments that are secure, cost-governed, and ready for the AI workloads that matter to their business.",
@@ -35,17 +35,17 @@
         {
             "name": "Cloud Migration",
             "description": "Migrate on-premises infrastructure, legacy applications, and data platforms using a structured wave methodology designed to eliminate downtime for business-critical systems.",
-            "link": "https://futransolutions.com/services/aws-cloud/cloud-migration/"
+            "link": "https://jixo.com/services/aws-cloud/cloud-migration/"
         },
         {
             "name": "Data Engineering & Analytics",
             "description": "Build AWS data platforms using Redshift, Glue, Lake Formation, S3, and Databricks on AWS that give organizations a governed, scalable foundation for analytics and AI.",
-            "link": "https://futransolutions.com/services/aws-cloud/data-engineering-and-analytics/"
+            "link": "https://jixo.com/services/aws-cloud/data-engineering-and-analytics/"
         },
         {
             "name": "AWS Managed Services",
             "description": "Provide 24×7 monitoring, defined SLAs, monthly cost reviews, proactive security posture management, and a named team to operate your AWS environment to a formally validated standard.",
-            "link": "https://futransolutions.com/services/aws-cloud/managed-services/"
+            "link": "https://jixo.com/services/aws-cloud/managed-services/"
         },
         {
             "name": "DevOps Automation",
@@ -55,7 +55,7 @@
         {
             "name": "Cloud Security",
             "description": "Implement AWS security architectures aligned with the AWS Well-Architected Framework security pillar, CIS AWS Benchmarks, and industry compliance requirements.",
-            "link": "https://futransolutions.com/services/aws-cloud/cloud-security/"
+            "link": "https://jixo.com/services/aws-cloud/cloud-security/"
         },
         {
             "name": "Well-Architected Reviews",
@@ -65,12 +65,12 @@
         {
             "name": "Serverless Computing",
             "description": "Design and build serverless architectures using AWS Lambda, API Gateway, Step Functions, and EventBridge that are event-driven, cost-efficient, and observable at production scale.",
-            "link": "https://futransolutions.com/services/aws-cloud/serverless-computing/"
+            "link": "https://jixo.com/services/aws-cloud/serverless-computing/"
         },
         {
             "name": "AWS AI Services",
             "description": "Design AI workloads connected to real enterprise data and governed for production deployment using Bedrock, SageMaker, Textract, and Lex.",
-            "link": "https://futransolutions.com/services/aws-cloud/aws-ai-services/"
+            "link": "https://jixo.com/services/aws-cloud/aws-ai-services/"
         }
     ],
     "credentials": [
