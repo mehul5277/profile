@@ -22,27 +22,27 @@
                 "section": "Service Offerings",
                 "services": [
                     {
-                        "icon": "bi bi-database",
+                        "icon": "database",
                         "name": "Data",
                         "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth."
                     },
                     {
-                        "icon": "bi bi-cpu",
+                        "icon": "memory",
                         "name": "AI & Automation",
                         "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization."
                     },
                     {
-                        "icon": "bi bi-cloud",
+                        "icon": "cloud",
                         "name": "Cloud",
                         "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys."
                     },
                     {
-                        "icon": "bi bi-code-slash",
+                        "icon": "code_xml",
                         "name": "Digital Engineering",
                         "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience."
                     },
                     {
-                        "icon": "bi bi-buildings",
+                        "icon": "headset_mic",
                         "name": "Business Services",
                         "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement."
                     }
@@ -53,37 +53,42 @@
                 "description": "We have a fantastic team of AWS certified professionals who can help you with things like migrating servers or data or optimizing your current workloads for better performance and reliability without breaking the bank.",
                 "services": [
                     {
-                        "icon" : "bi bi-gear",
+                        "icon" : "settings_b_roll",
                         "name": "DevOps Automation",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
-                        "icon" : "bi bi-cloud-arrow-up",
+                        "icon" : "cloud_upload",
                         "name": "Cloud Migration",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
-                        "icon" : "home",
+                        "icon" : "manufacturing",
                         "name": "Managed Services",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
+                        "icon" : "cloud_lock",
                         "name": "Cloud Security",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
+                        "icon" : "network_intelligence",
                         "name": "Well-Architected",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
+                        "icon" : "cloud_sync",
                         "name": "Serverless Computing",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
+                        "icon" : "analytics",
                         "name": "Data Engineering & Analytics",
                         "url": "https://futransolutions.com/services/"
                     },
                     {
+                        "icon" : "smart_toy",
                         "name": "Generative AI on AWS",
                         "url": "https://futransolutions.com/services/"
                     }
