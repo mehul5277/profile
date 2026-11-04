@@ -40,10 +40,10 @@
         <div class="col">
             <div class="card p-4 shadow-md h-100">
                 <div class="card-body p-0 mb-2">
-                    <div class="d-flex align-items-center mb-4">
-                        <mat-icon class="md-48" aria-hidden="false" aria-label="Example home icon" fontIcon="precision_manufacturing"></mat-icon>
-                        <h3 class="card-title fw-bold m-0" [innerHTML]="so.name">Tableau</h3>
+                    <div class="vstack align-items-left mb-2">
+                        <mat-icon class="md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="so.icon">database</mat-icon>
                     </div>
+                    <h5 class="card-title fw-bold" [innerHTML]="so.name">Tableau</h5>
                     <!-- <h4 class="card-title fw-bold mb-4" [innerHTML]="so.name">Card title</h4> -->
                     <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
                     <div class="card-text fs-5 lh-base" [innerHTML]="so.description"></div>
@@ -59,7 +59,6 @@
         </div>
         }
     </div>
-    <p class="p-3" [innerHTML]="s | json"></p>
     }
 
     <!-- Service Offering -->
