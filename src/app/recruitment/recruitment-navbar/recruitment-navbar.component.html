@@ -60,14 +60,19 @@
             {{dropdown.name}}
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            @for(agent of dropdown.dropdown; track $index) {
+            @for(d of dropdown.dropdown; track $index) {
             <li>
-                <a class="dropdown-item hstack" routerLinkActive="active" [routerLink]="[agent.url]">
-                    <mat-icon class="md-36 me-2" aria-hidden="false" aria-label="Example home icon">{{agent.icon}}</mat-icon>
+                <a class="dropdown-item hstack" routerLinkActive="active" [routerLink]="[d.url]">
+                    <mat-icon class="md-36 me-2" aria-hidden="false" aria-label="Example home icon">{{d.icon}}</mat-icon>
+                    @if(d.description) {
                     <div class="vstack">
-                        <span>{{agent.name}}</span>
-                        <span class="description fw-light "> {{agent.description}} </span>
+                        <span>{{d.name}}</span>
+                        <span class="description"> {{d.description}} </span>
                     </div>
+                    }
+                    @else {
+                    <span>{{d.name}}</span>
+                    }
                 </a>
             </li>
             }
