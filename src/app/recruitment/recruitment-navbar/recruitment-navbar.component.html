@@ -20,7 +20,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 custom-nav-links">
+                    <ng-container [ngTemplateOutlet]="dropdownTemplate" [ngTemplateOutletContext]="{ dropdown: platformDD }"></ng-container>
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
@@ -49,3 +52,25 @@
 
     </div>
 </nav>
+
+
+<ng-template #dropdownTemplate let-dropdown="dropdown">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{dropdown.name}}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            @for(agent of dropdown.dropdown; track $index) {
+            <li>
+                <a class="dropdown-item hstack" routerLinkActive="active" [routerLink]="[agent.url]">
+                    <mat-icon class="md-36 me-2" aria-hidden="false" aria-label="Example home icon">{{agent.icon}}</mat-icon>
+                    <div class="vstack">
+                        <span>{{agent.name}}</span>
+                        <span class="description fw-light "> {{agent.description}} </span>
+                    </div>
+                </a>
+            </li>
+            }
+        </ul>
+    </li>
+</ng-template>
