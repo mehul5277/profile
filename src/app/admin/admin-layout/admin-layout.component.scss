@@ -1,3 +1,11 @@
 main::backdrop {
     background-color: rgba(188, 35, 35, 0.5);
 }
+
+.admin-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 68px;
+    /* Adjust based on your navbar's height */
+}
