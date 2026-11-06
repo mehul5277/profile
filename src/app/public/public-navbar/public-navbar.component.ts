@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DataService } from '../../services/data.service';
-import { CommonModule, SlicePipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../auth/auth.service';
 import { ThemeMode, ThemeService } from '../../services/theme.service';
 import { PreventCloseDirective } from '../../shared/directives/prevent-close.directive';
+import { MatIconModule } from '@angular/material/icon';
 
 interface MegaMenuData {
   category: string;
@@ -21,7 +22,7 @@ interface Service {
 @Component({
   selector: 'app-public-navbar',
   standalone: true,
-  imports: [RouterLink, CommonModule, SlicePipe, PreventCloseDirective, RouterLinkActive],
+  imports: [RouterLink, CommonModule, MatIconModule, PreventCloseDirective, RouterLinkActive],
   templateUrl: './public-navbar.component.html',
   styleUrl: './public-navbar.component.scss'
 })
