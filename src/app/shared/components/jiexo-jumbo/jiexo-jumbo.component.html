@@ -12,7 +12,7 @@
             <h1 class="fs-4xl fw-bold">{{ jumbotronConfig.subtitle }}</h1>
             <p class=" fs-sm" [innerHTML]="jumbotronConfig.description">We help forward-thinking enterprises turn technology into competitive advantage; through Data, Cloud, AI and Engineering solutions built for scale and delivered for impact.</p>
         </div>
-        <div class="d-inline-flex gap-2 my-3 wow fadeInUp" data-wow-duration="2s">
+        <div class="d-grid gap-2 d-sm-flex py-3 wow fadeInUp" data-wow-duration="2s">
             @for(button of jumbotronConfig.buttons; track $index) {
             <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'context' :  button }"></ng-container>
             }
@@ -21,19 +21,18 @@
 </div>
 
 <ng-template #buttonTemplate let-context="context">
-    <p>
-        <a class="d-inline-flex align-items-center btn btn-sm btn-outline-light pe-2 rounded-pill me-3 d-none" [attr.href]="context.url" target="_blank">
-            <span [innerHTML]="context.text"></span>
-            <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
-                <use href="assets/image/techstack.svg#linkedin-c"></use>
-            </svg>
-        </a>
-        <button class="btn btn-sm btn-outline-secondary rounded-pill glow-button me-1 d-none" type="button" [innerHTML]="context.text"></button>
-        <a class="btn btn-lg  btn-outline-light pe-2 rounded-pill" [attr.href]="context.url" target="_blank">
-            <span [innerHTML]="context.text"></span>
-            <i [ngClass]="context.icon"></i>
-        </a>
-    </p>
+    <a class="d-inline-flex align-items-center btn btn-sm btn-outline-light pe-2 rounded-pill me-3 d-none" [attr.href]="context.url" target="_blank">
+        <span [innerHTML]="context.text"></span>
+        <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
+            <use href="assets/image/techstack.svg#linkedin-c"></use>
+        </svg>
+    </a>
+    <button class="btn btn-sm btn-outline-secondary rounded-pill glow-button me-1 d-none" type="button" [innerHTML]="context.text"></button>
+
+    <a class="btn btn-lg  btn-outline-light pe-2 rounded-pill" [attr.href]="context.url" target="_blank">
+        <span [innerHTML]="context.text"></span>
+        <i [ngClass]="context.icon"></i>
+    </a>
 </ng-template>
 
 <ng-template #badgeTemplate let-context="context">
