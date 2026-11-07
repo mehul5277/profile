@@ -1,10 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
 import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
-import { JumbotronConfig1 } from '../../../shared/components/jumbotron1/jumbotron1.component';
 
 @Component({
   selector: 'app-home',
@@ -25,16 +23,6 @@ export class HomeComponent implements OnInit {
         "url": "https://linkedin.com/in/mehul4ca"
       }
     ]
-  }
-
-  config: JumbotronConfig1 = {
-    buttons:
-    {
-      "text": "Get Started",
-      "url": "https://example.com",
-      "icon": "ArrowRightIcon"
-    }
-
   }
 
   ngOnInit() {
