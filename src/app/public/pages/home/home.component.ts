@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
 import { PollComponent } from '../../../shared/components/poll/poll.component';
-import { JiexoJumboComponent } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
+import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
 
 @Component({
   selector: 'app-home',
@@ -16,16 +16,18 @@ export class HomeComponent implements OnInit {
   private route = inject(ActivatedRoute);
   cv!: any;
 
-  jumboConfig: any = {
+  jumboConfig: JiexoJumboConfig = {
     "title": "Building Intelligent Solutions through",
     "subtitle": "for Business Excellence",
     "typewriterList": ["Digital Engineering", "Artificial Intelligence", "Data Engineering", "Cloud Computing"],
     "description": "We help forward-thinking enterprises turn technology into competitive advantage through Data, Cloud, AI and Digital Engineering solutions built for scale and delivered for impact.",
-    "badges": {
-      "text": "Trusted Partner · Startup to Enterprise",
-      "url": "https://linkedin.com/in/mehul4ca",
-      "icon": "bi bi-shield-fill-check me-2"
-    },
+    "badges": [
+      {
+        "text": "Trusted Partner · Startup to Enterprise",
+        "url": "https://linkedin.com/in/mehul4ca",
+        "icon": "bi bi-shield-fill-check me-2"
+      }
+    ],
     "buttons": [
       {
         "icon": "bi bi-arrow-right m-2",
