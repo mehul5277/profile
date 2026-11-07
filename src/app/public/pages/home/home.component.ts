@@ -4,11 +4,12 @@ import { TickerClientComponent } from '../../../shared/components/ticker-client/
 import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
 import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
+import { Card1Component } from '../../../shared/components/card-1/card-1.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -71,7 +72,7 @@ export class HomeComponent implements OnInit {
     "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth.",
     "buttons": [{
       "type": ActionType.LINK,
-      "text": "Explore Data Services",
+      "text": "Explore Data",
       "url": "/service",
       "icon": "bi bi-play-circle"
     }]
@@ -93,7 +94,7 @@ export class HomeComponent implements OnInit {
     "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys.",
     "buttons": [{
       "type": ActionType.LINK,
-      "text": "Explore Cloud Services",
+      "text": "Explore Cloud",
       "url": "/service",
       "icon": "bi bi-play-circle"
     }]
@@ -104,7 +105,7 @@ export class HomeComponent implements OnInit {
     "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience.",
     "buttons": [{
       "type": ActionType.LINK,
-      "text": "Explore Engineering Services",
+      "text": "Explore Engineering",
       "url": "/service",
       "icon": "bi bi-play-circle"
     }]
@@ -115,7 +116,7 @@ export class HomeComponent implements OnInit {
     "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement.",
     "buttons": [{
       "type": ActionType.LINK,
-      "text": "Explore Business Services",
+      "text": "Explore Business",
       "url": "/service",
       "icon": "bi bi-play-circle"
     }]

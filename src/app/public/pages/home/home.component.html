@@ -40,9 +40,7 @@
     <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(service of businessServices; track $index) {
         <div class="col-md-4 ">
-            <div class="card h-100">
-                <app-hero [heroConfig]="service"></app-hero>
-            </div>
+            <app-card-1 [cardConfig]="service"></app-card-1>
         </div>
         }
     </div>

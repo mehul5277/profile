@@ -1,3 +1,4 @@
+<!-- Hero -->
 <div class="container-fluid my-4">
     <div class="p-5 mb-4 bg-dark text-white rounded-3">
         @for(badge of heroConfig.badges; track $index) {
@@ -26,7 +27,6 @@
 </div>
 
 <ng-template #buttonTemplate let-context="context">
-
     @if(context.type === ActionType.LINK) {
     <!-- Action Link -->
     <a [routerLink]="context.url" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
@@ -39,7 +39,6 @@
     @if(context.type === ActionType.BUTTON) {
     <a [routerLink]="context.url" class="btn btn-light btn-lg " [innerHTML]="context.text">Start learning today</a>
     }
-
 
     <a class="btn btn-lg  btn-outline-light me-2 d-none" [attr.href]="context.url" target="_blank">
         <span class="me-2" [innerHTML]="context.text"></span>
