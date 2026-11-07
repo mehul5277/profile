@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
 import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
+import { HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -44,6 +45,30 @@ export class HomeComponent implements OnInit {
     ]
   }
 
+
+  heroConfig: HeroConfig = {
+    "badges": [
+      {
+        "text": "What We Do",
+        "icon": "bi bi-shield-fill-check me-2"
+      }
+    ],
+    "title": "Innovative Services Driving",
+    "subtitle": "Business Success",
+    "description": "End-to-end technology services built for businesses at every stage of growth.",
+    "buttons": [
+      {
+        "text": "All Services",
+        "url": "/service",
+        "icon": "bi bi-play-circle"
+      }
+    ],
+    "footers": [
+      {
+        "text": "© 2024 Our Company. All rights reserved."
+      }
+    ]
+  };
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
