@@ -1,0 +1,46 @@
+<!-- jiexo-jumbo -1 -->
+<div class="jumbotron-md-full p-md-5 bg-subtle-secondary bg-midnight grid-midnight">
+    @if(jumbotronConfig) {
+    <div class="container-fluid py-5">
+        <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  jumbotronConfig.badges }"></ng-container>
+        <div class="wow fadeInLeft col-md-8" data-wow-duration="1s">
+            <h1 class="fs-4xl fw-bold">{{ jumbotronConfig.title }}</h1>
+            <app-typewriter [strings]="jumbotronConfig.typewriterList" [shuffle]="false" [typeSpeed]="100" [backDelay]="1000" [loop]="true" [contentType]="'text'">
+                <span><span style="white-space:pre" class="typing display-4 fw-bold text-primary"></span>&nbsp;</span>
+                <span class="typed-cursor">|</span>
+            </app-typewriter>
+            <h1 class="fs-4xl fw-bold">{{ jumbotronConfig.subtitle }}</h1>
+            <p class=" fs-sm" [innerHTML]="jumbotronConfig.description">We help forward-thinking enterprises turn technology into competitive advantage; through Data, Cloud, AI and Engineering solutions built for scale and delivered for impact.</p>
+        </div>
+        <div class="d-inline-flex gap-2 my-3 wow fadeInUp" data-wow-duration="2s">
+            @for(button of jumbotronConfig.buttons; track $index) {
+            <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'context' :  button }"></ng-container>
+            }
+        </div>
+    </div>}
+</div>
+
+<ng-template #buttonTemplate let-context="context">
+    <p>
+        <a class="d-inline-flex align-items-center btn btn-sm btn-outline-light pe-2 rounded-pill me-3 d-none" [attr.href]="context.url" target="_blank">
+            <span [innerHTML]="context.text"></span>
+            <svg class="bi ms-2" width="32" height="32" aria-hidden="true">
+                <use href="assets/image/techstack.svg#linkedin-c"></use>
+            </svg>
+        </a>
+        <button class="btn btn-sm btn-outline-secondary rounded-pill glow-button me-1 d-none" type="button" [innerHTML]="context.text"></button>
+        <a class="btn btn-lg  btn-outline-light pe-2 rounded-pill" [attr.href]="context.url" target="_blank">
+            <span [innerHTML]="context.text"></span>
+            <i [ngClass]="context.icon"></i>
+        </a>
+    </p>
+</ng-template>
+
+<ng-template #badgeTemplate let-context="context">
+    <p class="py-2">
+        <a class="btn btn-sm btn-primary px-2 rounded-pill" [attr.href]="context.url" target="_blank">
+            <i class="bi bi-shield-fill-check me-2"></i>
+            <span [innerHTML]="context.text"></span>
+        </a>
+    </p>
+</ng-template>

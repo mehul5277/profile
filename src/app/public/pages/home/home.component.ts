@@ -1,13 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Jumbotron1Component, JumbotronConfig1 } from '../../../shared/components/jumbotron1/jumbotron1.component';
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
 import { PollComponent } from '../../../shared/components/poll/poll.component';
+import { JiexoJumboComponent } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [Jumbotron1Component, TickerClientComponent, PollComponent],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -17,23 +17,31 @@ export class HomeComponent implements OnInit {
   cv!: any;
 
   jumboConfig: any = {
-    "profiles": [
+    "title": "Building Intelligent Solutions through",
+    "subtitle": "for Business Excellence",
+    "typewriterList": ["Digital Engineering", "Artificial Intelligence", "Data Engineering", "Cloud Computing"],
+    "description": "We help forward-thinking enterprises turn technology into competitive advantage through Data, Cloud, AI and Digital Engineering solutions built for scale and delivered for impact.",
+    "badges": {
+      "text": "Trusted Partner · Startup to Enterprise",
+      "url": "https://linkedin.com/in/mehul4ca",
+      "icon": "bi bi-shield-fill-check me-2"
+    },
+    "buttons": [
       {
+        "icon": "bi bi-arrow-right m-2",
+        "text": "Explore Our Services",
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/mehul4ca"
+      },
+      {
+        "icon": "bi bi-robot m-2",
+        "text": "Talk to an Expert",
         "network": "LinkedIn",
         "url": "https://linkedin.com/in/mehul4ca"
       }
     ]
   }
 
-  config: JumbotronConfig1 = {
-    buttons: [
-      {
-        "text": "Get Started",
-        "url": "https://example.com",
-        "icon": "ArrowRightIcon"
-      }
-    ]
-  }
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
