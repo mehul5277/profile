@@ -1,0 +1,44 @@
+<div class="container-fluid my-4">
+    <div class="p-5 mb-4 bg-dark text-white rounded-3">
+        @for(badge of heroConfig.badges; track $index) {
+        <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
+        }
+        <h1 [innerHTML]="heroConfig.title">Title</h1>
+        <h1 class="text-primary" [innerHTML]="heroConfig.subtitle">Sub-Title</h1>
+        <p class="lead" [innerHTML]="heroConfig.description">Description</p>
+        <div class="d-grid gap-2 d-sm-flex wow fadeInUp justify-content-end" data-wow-duration="2s">
+            @for(button of heroConfig.buttons; track $index) {
+            <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'context' :  button }"></ng-container>
+            }
+        </div>
+    </div>
+    @for(footer of heroConfig.footers; track $index) {
+    <p [innerHTML]="footer.text"></p>
+    }
+</div>
+
+<div class="jumbotron jumbotron-fluid full-screen-jumbotron text-white d-flex align-items-center m-0 bg-info d-none">
+    <div class="container text-center">
+        <h1 class="display-3">Full Screen Hero</h1>
+        <p class="lead">This jumbotron completely fills the width and height of the screen.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+    </div>
+</div>
+
+<ng-template #buttonTemplate let-context="context">
+    <a [routerLink]="context.url" target="_blank" class="btn btn-light btn-lg" [innerHTML]="context.text">Start learning today</a>
+
+    <a class="btn btn-lg  btn-outline-light me-2 d-none" [attr.href]="context.url" target="_blank">
+        <span class="me-2" [innerHTML]="context.text"></span>
+        <i [ngClass]="context.icon"></i>
+    </a>
+</ng-template>
+
+<ng-template #badgeTemplate let-context="context">
+    <p class="py-2">
+        <a class="btn btn-md btn-outline-light badgex rounded-pill">
+            <i [ngClass]="context.icon"></i>
+            <span [innerHTML]="context.text"></span>
+        </a>
+    </p>
+</ng-template>
