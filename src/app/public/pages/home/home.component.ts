@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { TickerClientComponent } from '../../../shared/components/ticker-client/ticker-client.component';
 import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
-import { HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
+import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
 
 @Component({
   selector: 'app-home',
@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
     "description": "End-to-end technology services built for businesses at every stage of growth.",
     "buttons": [
       {
+        "type": ActionType.LINK,
         "text": "All Services",
         "url": "/service",
         "icon": "bi bi-play-circle"
