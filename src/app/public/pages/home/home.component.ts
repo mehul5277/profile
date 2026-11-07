@@ -49,8 +49,8 @@ export class HomeComponent implements OnInit {
   heroConfig: HeroConfig = {
     "badges": [
       {
-        "text": "What We Do",
-        "icon": "bi bi-shield-fill-check me-2"
+        "text": "WHAT WE DO",
+        //"icon": "bi bi-shield-fill-check me-2"
       }
     ],
     "title": "Innovative Services Driving",

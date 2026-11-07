@@ -5,7 +5,7 @@ import { AdminRoutingModule } from '../../../admin/admin-routing.module';
 
 interface BadgeInfo {
   text: string;
-  icon: string;
+  icon?: string;
 }
 
 interface ButtonInfo {

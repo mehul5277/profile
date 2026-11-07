@@ -37,7 +37,7 @@
 <ng-template #badgeTemplate let-context="context">
     <p class="py-2">
         <a class="btn btn-md btn-outline-light badgex rounded-pill">
-            <i class="bi bi-shield-fill-check me-2"></i>
+            <i [ngClass]="context.icon"></i>
             <span [innerHTML]="context.text"></span>
         </a>
     </p>
