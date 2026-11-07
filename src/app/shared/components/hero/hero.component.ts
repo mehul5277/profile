@@ -2,6 +2,12 @@ import { NgClass, NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AdminRoutingModule } from '../../../admin/admin-routing.module';
 
+export enum ActionType {
+  LINK,     // 0
+  BUTTON,   // 1
+  HREF,   // 2
+  URL,  // 3
+}
 
 interface BadgeInfo {
   text: string;
@@ -9,6 +15,7 @@ interface BadgeInfo {
 }
 
 interface ButtonInfo {
+  type: ActionType;
   icon: string;
   text: string;
   url: string;
@@ -17,7 +24,6 @@ interface ButtonInfo {
 interface FooterInfo {
   text: string;
 }
-
 
 export interface HeroConfig {
   title: string;
@@ -37,4 +43,5 @@ export interface HeroConfig {
 })
 export class HeroComponent {
   @Input({ required: false }) heroConfig!: HeroConfig;
+  ActionType = ActionType;
 }
