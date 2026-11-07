@@ -27,7 +27,7 @@ interface FooterInfo {
 
 export interface HeroConfig {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   buttons: Array<ButtonInfo>;
   badges?: Array<BadgeInfo>;

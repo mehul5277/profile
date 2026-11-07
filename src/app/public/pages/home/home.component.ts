@@ -47,31 +47,86 @@ export class HomeComponent implements OnInit {
 
 
   heroConfig: HeroConfig = {
-    "badges": [
-      {
-        "text": "WHAT WE DO",
-        //"icon": "bi bi-shield-fill-check me-2"
-      }
-    ],
+    "badges": [{
+      "text": "WHAT WE DO"
+    }],
     "title": "Innovative Services Driving",
     "subtitle": "Business Success",
     "description": "End-to-end technology services built for businesses at every stage of growth.",
-    "buttons": [
-      {
-        "type": ActionType.LINK,
-        "text": "All Services",
-        "url": "/service",
-        "icon": "bi bi-play-circle"
-      }
-    ],
-    "footers": [
-      {
-        "text": "© 2024 Our Company. All rights reserved."
-      }
-    ]
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "All Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }],
+    "footers": [{
+      "text": "© 2024 Our Company. All rights reserved."
+    }]
+  };
+
+  businessServices: Array<HeroConfig> = [];
+
+  column1: HeroConfig = {
+    "title": "Data",
+    "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Data Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  column2: HeroConfig = {
+    "title": "AI & Automation",
+    "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore AI",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  column3: HeroConfig = {
+    "title": "Cloud",
+    "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Cloud Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  column4: HeroConfig = {
+    "title": "Digital Engineering",
+    "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Engineering Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  column5: HeroConfig = {
+    "title": "Business Services",
+    "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Business Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
   };
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
+    this.businessServices.push(this.column1);
+    this.businessServices.push(this.column2);
+    this.businessServices.push(this.column3);
+    this.businessServices.push(this.column4);
+    this.businessServices.push(this.column5);
   }
 }
