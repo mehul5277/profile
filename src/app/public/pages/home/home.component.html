@@ -36,7 +36,7 @@
 
 <app-hero [heroConfig]="heroConfig"></app-hero>
 <div class="container-fluid py-5">
-    <h2 class="text-center mb-5">Our Business Services</h2>
+    <app-card-1 [cardConfig]="businessSection"></app-card-1>
     <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(service of businessServices; track $index) {
         <div class="col-md-4 ">
@@ -45,6 +45,18 @@
         }
     </div>
 </div>
+
+<div class="container-fluid container-ai">
+    <app-card-1 [cardConfig]="aiSection"></app-card-1>
+    <div class="row pb-3 g-4">
+        @for(service of aiServices; track $index) {
+        <div class="col-md-6 ">
+            <app-card-1 [cardConfig]="service"></app-card-1>
+        </div>
+        }
+    </div>
+</div>
+
 
 <div class="container py-5">
     <!-- Responsive row-cols grid using an unstyled list -->

@@ -26,6 +26,7 @@ interface FooterInfo {
 }
 
 export interface HeroConfig {
+  icon?: string;
   title: string;
   subtitle?: string;
   description: string;

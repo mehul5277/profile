@@ -4,7 +4,7 @@ import { TickerClientComponent } from '../../../shared/components/ticker-client/
 import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
 import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
-import { Card1Component } from '../../../shared/components/card-1/card-1.component';
+import { Card1Component, CardConfig, CardType } from '../../../shared/components/card-1/card-1.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,8 @@ import { Card1Component } from '../../../shared/components/card-1/card-1.compone
 export class HomeComponent implements OnInit {
   typewriterList: Array<string> = ['Digital Engineering', 'Data and AI', 'Cloud'];
   private route = inject(ActivatedRoute);
+  businessServices: Array<CardConfig> = [];
+  aiServices: Array<CardConfig> = [];
   cv!: any;
 
   jumboConfig: JiexoJumboConfig = {
@@ -46,7 +48,6 @@ export class HomeComponent implements OnInit {
     ]
   }
 
-
   heroConfig: HeroConfig = {
     "badges": [{
       "text": "WHAT WE DO"
@@ -65,9 +66,83 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  businessServices: Array<HeroConfig> = [];
+  aiSection: CardConfig = {
+    "type": CardType.CARD,
+    "title": "Intelligence That",
+    "subtitle": "Takes Initiative",
+    "description": "We have entered a new era of AI where systems no longer wait for commands. Agentic AI understands objectives, adapts in real-time, and takes independent actions to solve problems and seize opportunities. At Futran Solutions, we develop AI agents designed to think ahead, enabling your business to lead.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "All Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
 
-  column1: HeroConfig = {
+  aiService1: CardConfig = {
+    "type": CardType.CARD,
+    "title": "GenAI and Autonomous Agents Services",
+    "description": "Design and deploy intelligent agents that reason, plan, and execute complex multi-step tasks autonomously across your business.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService2: CardConfig = {
+    "type": CardType.CARD,
+    "title": "Microsoft Copilot & Copilot Studio Services",
+    "description": "Build, customize and deploy Microsoft Copilots that integrate deeply with your enterprise workflows, data, and productivity tools.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService3: CardConfig = {
+    "type": CardType.CARD,
+    "title": "AIOps Autonomous Operations",
+    "description": "Automate IT operations with AI that continuously monitors, predicts anomalies and self-heals incidents before they impact your business.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService4: CardConfig = {
+    "type": CardType.CARD,
+    "title": "AI Governance, Ethics & Compliance Consulting",
+    "description": "Build trustworthy AI; risk audits, bias detection, regulatory alignment (EU AI Act, GDPR), and enterprise AI policy governance frameworks.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  businessSection: CardConfig = {
+    "type": CardType.CARD,
+    "title": "Innovative Services Driving",
+    "subtitle": "Business Success",
+    "description": "End-to-end technology services built for businesses at every stage of growth.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "All Services",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  column1: CardConfig = {
+    "type": CardType.CARD,
+    "icon": "database",
     "title": "Data",
     "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth.",
     "buttons": [{
@@ -78,7 +153,9 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  column2: HeroConfig = {
+  column2: CardConfig = {
+    "type": CardType.CARD,
+    "icon": "memory",
     "title": "AI & Automation",
     "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization.",
     "buttons": [{
@@ -89,7 +166,9 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  column3: HeroConfig = {
+  column3: CardConfig = {
+    "type": CardType.CARD,
+    "icon": "cloud",
     "title": "Cloud",
     "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys.",
     "buttons": [{
@@ -100,7 +179,9 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  column4: HeroConfig = {
+  column4: CardConfig = {
+    "type": CardType.CARD,
+    "icon": "code_xml",
     "title": "Digital Engineering",
     "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience.",
     "buttons": [{
@@ -111,7 +192,9 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  column5: HeroConfig = {
+  column5: CardConfig = {
+    "type": CardType.CARD,
+    "icon": "headset_mic",
     "title": "Business Services",
     "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement.",
     "buttons": [{
@@ -129,5 +212,10 @@ export class HomeComponent implements OnInit {
     this.businessServices.push(this.column3);
     this.businessServices.push(this.column4);
     this.businessServices.push(this.column5);
+
+    this.aiServices.push(this.aiService1);
+    this.aiServices.push(this.aiService2);
+    this.aiServices.push(this.aiService3);
+    this.aiServices.push(this.aiService4);
   }
 }
