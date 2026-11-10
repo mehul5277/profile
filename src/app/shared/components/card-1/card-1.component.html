@@ -1,18 +1,19 @@
-<!-- Hero -->
-<div class="card h-100 p-2 mb-4">
-    @if(cardConfig.badges){
-    <div class="card-header">
+<!-- Hero 'border border-0' : !cardConfig.border, 'h-100' : cardConfig.border -->
+<div class="card p-2 mb-4" [ngClass]="cardConfig.css">
+    <div class="card-header bg-transparent border border-0">
         @for(badge of cardConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
         }
     </div>
-    }
-    <div class="card-body">
-        <h1 [innerHTML]="cardConfig.title">Title</h1>
-        <h1 class="text-primary" [innerHTML]="cardConfig.subtitle">Sub-Title</h1>
-        <p class="lead" [innerHTML]="cardConfig.description">Description</p>
+    <div class="card-body py-0">
+        @if(cardConfig.icon) {
+        <mat-icon class="md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="cardConfig.icon">database</mat-icon>
+        }
+        <h2 class="card-title fw-bolder" [innerHTML]="cardConfig.title">Title</h2>
+        <h2 class="card-subtitle fw-bold" [innerHTML]="cardConfig.subtitle">Sub-Title</h2>
+        <p class="lead py-2x" [innerHTML]="cardConfig.description">Description</p>
     </div>
-    <div class="card-footer bg-transparent border border-0 d-grid gap-2 d-sm-flex  justify-content-end" data-wow-duration="2s">
+    <div class="card-footer bg-transparent border border-0 d-grid gap-2 d-sm-flex  justify-content-start" data-wow-duration="2s">
         @for(button of cardConfig.buttons; track $index) {
         <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'context' :  button }"></ng-container>
         }
@@ -21,7 +22,6 @@
 @for(footer of cardConfig.footers; track $index) {
 <p [innerHTML]="footer.text"></p>
 }
-
 
 <div class="jumbotron jumbotron-fluid full-screen-jumbotron text-white d-flex align-items-center m-0 bg-info d-none">
     <div class="container text-center">
@@ -40,8 +40,8 @@
 </ng-template>
 
 <ng-template #badgeTemplate let-context="context">
-    <p class="py-2">
-        <a class="btn btn-md btn-outline-light badgex rounded-pill">
+    <p class="pt-3">
+        <a class="btn btn-md btn-outline rounded-pill">
             <i [ngClass]="context.icon"></i>
             <span [innerHTML]="context.text"></span>
         </a>
