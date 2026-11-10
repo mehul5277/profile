@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
         "url": "https://linkedin.com/in/mehul4ca"
       },
       {
-        "icon": "bi bi-robot m-2",
+        "icon": "bi bi-headset m-2",
         "text": "Talk to an Expert",
         "network": "LinkedIn",
         "url": "https://linkedin.com/in/mehul4ca"
