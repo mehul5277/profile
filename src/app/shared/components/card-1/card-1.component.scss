@@ -3,7 +3,7 @@
 }
 
 .card-secondary {
-    background-color: rgba(10, 116, 10, 0.074);
+    //background-color: rgba(10, 116, 10, 0.074);
     height: 100%;
 
     .card-subtitle,
@@ -20,7 +20,8 @@
     }
 }
 
-.card-aix {
+.card-ai {
+
     background-color: #060D1A;
     color: #ffffff;
     height: 100%;
@@ -32,12 +33,22 @@
 
     .rounded-pill {
         border: 1px #38BDF9 solid;
-        ;
     }
 
     .lead {
         color: #FFFFFF94
     }
+}
 
+.card-secondary.card-ai {
+    background-color: #FFFFFF08;
+    border: 1px #FFFFFF14 solid;
+}
 
+.card-secondary.card-ai:hover {
+    border: 1px #38BDF9 solid;
+
+    .icon-link {
+        color: #38BDF8;
+    }
 }

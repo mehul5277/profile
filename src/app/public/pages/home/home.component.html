@@ -2,7 +2,7 @@
 
 <app-ticker-client></app-ticker-client>
 
-<section id="clients" class="clients section-bg">
+<section id="clients" class="clients section-bg d-none">
     <div class="container">
         <div class="row" data-aos="zoom-in">
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
@@ -32,7 +32,7 @@
     </div>
 </section>
 
-<app-hero [heroConfig]="heroConfig"></app-hero>
+<!-- <app-hero [heroConfig]="heroConfig"></app-hero> -->
 
 <div class="container-fluid py-5">
     <app-card-1 [cardConfig]="businessSection"></app-card-1>
@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid container-ai">
     <app-card-1 [cardConfig]="aiSection"></app-card-1>
     <div class="row pb-3 g-4">
         @for(service of aiServices; track $index) {
