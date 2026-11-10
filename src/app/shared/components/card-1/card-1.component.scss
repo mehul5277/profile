@@ -28,11 +28,11 @@
 
     .card-subtitle,
     .rounded-pill {
-        color: #38BDF8;
+        color: #38BDF8 !important;
     }
 
     .rounded-pill {
-        border: 1px #38BDF9 solid;
+        border: 1px #38BDF9 solid !important
     }
 
     .lead {
@@ -44,7 +44,8 @@
     background-color: #FFFFFF08;
     border: 1px #FFFFFF14 solid;
 
-    .icon-link, .icon {
+    .icon-link,
+    .icon {
         color: #38BDF8;
     }
 }

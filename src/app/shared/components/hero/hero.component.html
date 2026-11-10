@@ -1,5 +1,5 @@
 <!-- Hero -->
-<div class="container-fluid my-4">
+<div class="container-fluid-x my-4">
     <div class="p-5 mb-4 bg-dark text-white rounded-3">
         @for(badge of heroConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>

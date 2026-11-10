@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
         "url": "https://linkedin.com/in/mehul4ca"
       },
       {
-        "icon": "bi bi-robot m-2",
+        "icon": "bi bi-headset m-2",
         "text": "Talk to an Expert",
         "network": "LinkedIn",
         "url": "https://linkedin.com/in/mehul4ca"
@@ -230,6 +230,33 @@ export class HomeComponent implements OnInit {
     }]
   };
   //#endregion
+
+  recognitionSection: CardConfig = {
+    badges: [{
+      "text": "Recognition"
+    }],
+    "icon": "verified_user",
+    "css": "card-primary",
+    "type": CardType.CARD,
+    "title": "Recognized for Excellence & Innovation",
+    "subtitle": "",
+    "description": "Our commitment to AI-driven transformation is endorsed by leading global organizations; recognized across quality, security, culture, and technology excellence.",
+  };
+
+  buildSection: HeroConfig = {
+    badges: [{
+      "text": "Ready to Transform Your Business?"
+    }],
+    "title": "Let's Build Something",
+    "subtitle": "Extraordinary Together",
+    "description": "From AI strategy to cloud migration, from automation to digital engineering. Our team of experts is ready to help your business lead in the intelligence era. Let’s start with a conversation.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Our Services",
+      "url": "/contact",
+      "icon": "bi bi-play-circle"
+    }]
+  };
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];

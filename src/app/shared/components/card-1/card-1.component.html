@@ -1,5 +1,5 @@
 <!-- Hero 'border border-0' : !cardConfig.border, 'h-100' : cardConfig.border -->
-<div class="card p-2 mb-4" [ngClass]="cardConfig.css">
+<div class="card p-2 mb-4x" [ngClass]="cardConfig.css">
     <div class="card-header bg-transparent border border-0">
         @for(badge of cardConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
@@ -10,7 +10,7 @@
         <mat-icon class="icon md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="cardConfig.icon">database</mat-icon>
         }
         <h2 class="card-title fw-bolder" [innerHTML]="cardConfig.title">Title</h2>
-        <h2 class="card-subtitle fw-bold" [innerHTML]="cardConfig.subtitle">Sub-Title</h2>
+        <h2 class="card-subtitle fw-bold text-primary" [innerHTML]="cardConfig.subtitle">Sub-Title</h2>
         <p class="lead py-2x" [innerHTML]="cardConfig.description">Description</p>
     </div>
     <div class="card-footer bg-transparent border border-0 d-grid gap-2 d-sm-flex  justify-content-start" data-wow-duration="2s">
