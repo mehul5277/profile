@@ -43,6 +43,10 @@
 .card-secondary.card-ai {
     background-color: #FFFFFF08;
     border: 1px #FFFFFF14 solid;
+
+    .icon-link, .icon {
+        color: #38BDF8;
+    }
 }
 
 .card-secondary.card-ai:hover {
