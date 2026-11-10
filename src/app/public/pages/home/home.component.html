@@ -35,7 +35,9 @@
 <!-- <app-hero [heroConfig]="heroConfig"></app-hero> -->
 
 <div class="container-fluid py-4">
-    <app-card-1 [cardConfig]="businessSection"></app-card-1>
+    <div class="row">
+        <app-card-1 [cardConfig]="businessSection"></app-card-1>
+    </div>
     <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(service of businessServices; track $index) {
         <div class="col-md-4 ">
@@ -55,9 +57,13 @@
         }
     </div>
 
-    <app-hero [heroConfig]="buildSection"></app-hero>
+
 </div>
 
+<div class="container-fluid">
+    <app-card-1 [cardConfig]="recognitionSection"></app-card-1>
+    <app-hero [heroConfig]="buildSection"></app-hero>
+</div>
 
 
 

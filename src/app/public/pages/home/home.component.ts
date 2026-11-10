@@ -231,6 +231,18 @@ export class HomeComponent implements OnInit {
   };
   //#endregion
 
+  recognitionSection: CardConfig = {
+    badges: [{
+      "text": "Recognition"
+    }],
+    "icon": "verified_user",
+    "css": "card-primary",
+    "type": CardType.CARD,
+    "title": "Recognized for Excellence & Innovation",
+    "subtitle": "",
+    "description": "Our commitment to AI-driven transformation is endorsed by leading global organizations; recognized across quality, security, culture, and technology excellence.",
+  };
+
   buildSection: HeroConfig = {
     badges: [{
       "text": "Ready to Transform Your Business?"
