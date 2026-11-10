@@ -231,6 +231,21 @@ export class HomeComponent implements OnInit {
   };
   //#endregion
 
+  buildSection: HeroConfig = {
+    badges: [{
+      "text": "Ready to Transform Your Business?"
+    }],
+    "title": "Let's Build Something",
+    "subtitle": "Extraordinary Together",
+    "description": "From AI strategy to cloud migration, from automation to digital engineering. Our team of experts is ready to help your business lead in the intelligence era. Let’s start with a conversation.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Our Services",
+      "url": "/contact",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
     this.businessServices.push(this.column1);
