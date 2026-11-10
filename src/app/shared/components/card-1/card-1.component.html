@@ -1,17 +1,17 @@
-<!-- Hero -->
-<div class="card p-2 mb-4">
-    @if(cardConfig.badges) {
-    <div class="card-header">
+<!-- Hero 'border border-0' : !cardConfig.border, 'h-100' : cardConfig.border -->
+<div class="card p-2 mb-4" [ngClass]="cardConfig.css">
+    <div class="card-header bg-transparent border border-0">
         @for(badge of cardConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
         }
     </div>
-    }
-    <div class="card-body">
+    <div class="card-body py-0">
+        @if(cardConfig.icon) {
         <mat-icon class="md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="cardConfig.icon">database</mat-icon>
+        }
         <h2 class="card-title fw-bolder" [innerHTML]="cardConfig.title">Title</h2>
         <h2 class="card-subtitle fw-bold" [innerHTML]="cardConfig.subtitle">Sub-Title</h2>
-        <p class="lead py-2" [innerHTML]="cardConfig.description">Description</p>
+        <p class="lead py-2x" [innerHTML]="cardConfig.description">Description</p>
     </div>
     <div class="card-footer bg-transparent border border-0 d-grid gap-2 d-sm-flex  justify-content-start" data-wow-duration="2s">
         @for(button of cardConfig.buttons; track $index) {
@@ -40,7 +40,7 @@
 </ng-template>
 
 <ng-template #badgeTemplate let-context="context">
-    <p class="py-2">
+    <p class="pt-3">
         <a class="btn btn-md btn-outline rounded-pill">
             <i [ngClass]="context.icon"></i>
             <span [innerHTML]="context.text"></span>

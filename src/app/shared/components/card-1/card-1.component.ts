@@ -12,7 +12,9 @@ export enum CardType {
 }
 
 export interface CardConfig extends HeroConfig {
-  type: CardType
+  type: CardType;
+  border?: boolean | true;
+  css?: string;
 };
 
 @Component({

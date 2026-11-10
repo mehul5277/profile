@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   aiServices: Array<CardConfig> = [];
   cv!: any;
 
+  //#region jumbotron
+
   jumboConfig: JiexoJumboConfig = {
     "title": "Building Intelligent Solutions through",
     "subtitle": "for Business Excellence",
@@ -48,6 +50,9 @@ export class HomeComponent implements OnInit {
     ]
   }
 
+  //#endregion
+
+  //#region Hero
   heroConfig: HeroConfig = {
     "badges": [{
       "text": "WHAT WE DO"
@@ -65,8 +70,15 @@ export class HomeComponent implements OnInit {
       "text": "© 2024 Our Company. All rights reserved."
     }]
   };
+  //#endregion
 
+  //#region AI section
   aiSection: CardConfig = {
+    badges: [{
+      "text": "Agentic AI"
+
+    }],
+    "css": "card-primary card-ai",
     "type": CardType.CARD,
     "title": "Intelligence That",
     "subtitle": "Takes Initiative",
@@ -80,6 +92,7 @@ export class HomeComponent implements OnInit {
   };
 
   aiService1: CardConfig = {
+    "css": "card-secondary card-ai",
     "type": CardType.CARD,
     "title": "GenAI and Autonomous Agents Services",
     "description": "Design and deploy intelligent agents that reason, plan, and execute complex multi-step tasks autonomously across your business.",
@@ -92,6 +105,7 @@ export class HomeComponent implements OnInit {
   };
 
   aiService2: CardConfig = {
+    "css": "card-secondary card-ai",
     "type": CardType.CARD,
     "title": "Microsoft Copilot & Copilot Studio Services",
     "description": "Build, customize and deploy Microsoft Copilots that integrate deeply with your enterprise workflows, data, and productivity tools.",
@@ -104,6 +118,7 @@ export class HomeComponent implements OnInit {
   };
 
   aiService3: CardConfig = {
+    "css": "card-secondary card-ai",
     "type": CardType.CARD,
     "title": "AIOps Autonomous Operations",
     "description": "Automate IT operations with AI that continuously monitors, predicts anomalies and self-heals incidents before they impact your business.",
@@ -116,6 +131,7 @@ export class HomeComponent implements OnInit {
   };
 
   aiService4: CardConfig = {
+    "css": "card-secondary card-ai",
     "type": CardType.CARD,
     "title": "AI Governance, Ethics & Compliance Consulting",
     "description": "Build trustworthy AI; risk audits, bias detection, regulatory alignment (EU AI Act, GDPR), and enterprise AI policy governance frameworks.",
@@ -127,7 +143,11 @@ export class HomeComponent implements OnInit {
     }]
   };
 
+  //#endregion
+
+  //#region Business Section
   businessSection: CardConfig = {
+    "css": "card-primary",
     "type": CardType.CARD,
     "title": "Innovative Services Driving",
     "subtitle": "Business Success",
@@ -141,6 +161,7 @@ export class HomeComponent implements OnInit {
   };
 
   column1: CardConfig = {
+    "css": "card-secondary",
     "type": CardType.CARD,
     "icon": "database",
     "title": "Data",
@@ -154,6 +175,7 @@ export class HomeComponent implements OnInit {
   };
 
   column2: CardConfig = {
+    "css": "card-secondary",
     "type": CardType.CARD,
     "icon": "memory",
     "title": "AI & Automation",
@@ -167,6 +189,7 @@ export class HomeComponent implements OnInit {
   };
 
   column3: CardConfig = {
+    "css": "card-secondary",
     "type": CardType.CARD,
     "icon": "cloud",
     "title": "Cloud",
@@ -180,6 +203,7 @@ export class HomeComponent implements OnInit {
   };
 
   column4: CardConfig = {
+    "css": "card-secondary",
     "type": CardType.CARD,
     "icon": "code_xml",
     "title": "Digital Engineering",
@@ -193,6 +217,7 @@ export class HomeComponent implements OnInit {
   };
 
   column5: CardConfig = {
+    "css": "card-secondary",
     "type": CardType.CARD,
     "icon": "headset_mic",
     "title": "Business Services",
@@ -204,6 +229,7 @@ export class HomeComponent implements OnInit {
       "icon": "bi bi-play-circle"
     }]
   };
+  //#endregion
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
