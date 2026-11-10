@@ -30,7 +30,7 @@ export interface HeroConfig {
   title: string;
   subtitle?: string;
   description: string;
-  buttons: Array<ButtonInfo>;
+  buttons?: Array<ButtonInfo>;
   badges?: Array<BadgeInfo>;
   footers?: Array<FooterInfo>;
 }
