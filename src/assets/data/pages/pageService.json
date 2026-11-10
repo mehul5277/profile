@@ -130,49 +130,49 @@
             "title": "The Industry Leading Platforms",
             "items": [
                 {
-                    "image": "",
+                    "image": "./assets/img/Automation-anywhere_300x300-e1788535214396.png",
                     "technology": "Automation Anywhere",
                     "description": "Implement Automation Anywhere solutions to streamline complex processes, improve operational accuracy, and enable secure enterprise wide automation.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/UiPath_300x300.png",
                     "technology": "UiPath",
                     "description": "Design and deploy UiPath solutions that support intelligent workflows, orchestration, governance, and scalable digital operations.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/databricks_300x300-e1788534998404.png",
                     "technology": "Databricks",
                     "description": "Design scalable Databricks environments that integrate data engineering, advanced analytics, and machine learning within governed cloud native architectures.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/snowflake_300x300-e1788535115882.png",
                     "technology": "Snowflake",
                     "description": "Architect secure Snowflake environments that support real time analytics, controlled data sharing, and AI ready data strategies across the enterprise.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/servicenow_300x300-e1788535063368.png",
                     "technology": "ServiceNow",
                     "description": "Implement ServiceNow platforms to standardize service management, automate workflows, and improve operational visibility across business functions.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/Duck-creek_300x300-e1788535034176.png",
                     "technology": "Duck Creek",
                     "description": "Modernize Duck Creek systems to support intelligent underwriting, policy lifecycle management, and data driven insurance operations.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/Tableau_Logo-2048x424.png",
                     "technology": "Tableau",
                     "description": "Build secure Tableau environments that enable self service analytics while maintaining data quality, access controls, and reporting consistency.",
                     "link_text": "Read More"
                 },
                 {
-                    "image": "",
+                    "image": "./assets/img/Salesforce.com_logo.svg-1-2048x1433.png",
                     "technology": "Salesforce",
                     "description": "Implement Salesforce solutions that align customer data, automate engagement workflows, and strengthen revenue and service operations.",
                     "link_text": "Read More"

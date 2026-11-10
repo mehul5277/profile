@@ -74,15 +74,15 @@
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="Expertise.title"></p>
     </div>
-    <div class="row pb-3">
+    <div class="row pb-3 g-4">
         @for(e of Expertise.items; track $index) {
         <div class="col-md-4">
             <div class="card p-4 shadow-md h-100" style=" background-color: #ffffff;">
                 <div class="card-body p-0 ">
                     <!-- Header Row: Logo Placeholder & Title -->
                     <div class="d-flex align-items-center mb-4">
-                        <img [attr.src]="e.image" alt="Technology Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
-                        <h2 class="card-title fw-bold m-0" [innerHTML]="e.technology">Tableau</h2>
+                        <img [attr.src]="e.image" alt="Technology Logo" class="me-3" style="width: 160px; height: 160px; object-fit: contain;">
+                        <h2 class="card-title fw-bold m-0 d-none" [innerHTML]="e.technology">Tableau</h2>
                     </div>
                     <!-- Body Text -->
                     <p class="card-text fs-5 lh-base mb-2" [innerHTML]="e.description"></p>
