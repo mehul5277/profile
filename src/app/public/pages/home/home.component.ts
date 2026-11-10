@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
     "type": CardType.CARD,
     "title": "Intelligence That",
     "subtitle": "Takes Initiative",
-    "description": "We have entered a new era of AI where systems no longer wait for commands. Agentic AI understands objectives, adapts in real-time, and takes independent actions to solve problems and seize opportunities. At Futran Solutions, we develop AI agents designed to think ahead, enabling your business to lead.",
+    "description": "We have entered a new era of AI where systems no longer wait for commands. Agentic AI understands objectives, adapts in real-time, and takes independent actions to solve problems and seize opportunities. At JIXO Solutions, we develop AI agents designed to think ahead, enabling your business to lead.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "All Services",
