@@ -75,8 +75,7 @@ export class HomeComponent implements OnInit {
   //#region AI section
   aiSection: CardConfig = {
     badges: [{
-      "text": "Agentic AI"
-
+      "text": "AGENTIC AI"
     }],
     "css": "card-primary card-ai",
     "type": CardType.CARD,
@@ -93,6 +92,7 @@ export class HomeComponent implements OnInit {
 
   aiService1: CardConfig = {
     "css": "card-secondary card-ai",
+    "icon": "robot_2",
     "type": CardType.CARD,
     "title": "GenAI and Autonomous Agents Services",
     "description": "Design and deploy intelligent agents that reason, plan, and execute complex multi-step tasks autonomously across your business.",
@@ -106,6 +106,7 @@ export class HomeComponent implements OnInit {
 
   aiService2: CardConfig = {
     "css": "card-secondary card-ai",
+    "icon": "business_messages",
     "type": CardType.CARD,
     "title": "Microsoft Copilot & Copilot Studio Services",
     "description": "Build, customize and deploy Microsoft Copilots that integrate deeply with your enterprise workflows, data, and productivity tools.",
@@ -119,6 +120,7 @@ export class HomeComponent implements OnInit {
 
   aiService3: CardConfig = {
     "css": "card-secondary card-ai",
+    "icon": "motion_photos_auto",
     "type": CardType.CARD,
     "title": "AIOps Autonomous Operations",
     "description": "Automate IT operations with AI that continuously monitors, predicts anomalies and self-heals incidents before they impact your business.",
@@ -132,9 +134,10 @@ export class HomeComponent implements OnInit {
 
   aiService4: CardConfig = {
     "css": "card-secondary card-ai",
+    "icon": "verified",
     "type": CardType.CARD,
     "title": "AI Governance, Ethics & Compliance Consulting",
-    "description": "Build trustworthy AI; risk audits, bias detection, regulatory alignment (EU AI Act, GDPR), and enterprise AI policy governance frameworks.",
+    "description": "Build trustworthy AI risk audits, bias detection, regulatory alignment, and enterprise AI policy governance frameworks.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Learn more",
