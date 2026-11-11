@@ -15,7 +15,24 @@
         "overview": {
             "title": "Service Offerings",
             "description": "Explore our comprehensive suite of enterprise-grade technology services.",
-            "metrics": []
+            "metrics": [
+                {
+                    "value": "40%",
+                    "title": "Increase in operational productivity across production AI deployments"
+                },
+                {
+                    "value": "45%",
+                    "title": "Reduction in manual effort through intelligent automation workflows"
+                },
+                {
+                    "value": "35-45%",
+                    "title": "Faster incident resolution enabled by AI driven operations"
+                },
+                {
+                    "value": "100%",
+                    "title": "AI deployments designed with embedded governance and compliance controls"
+                }
+            ]
         },
         "sections": [
             {
