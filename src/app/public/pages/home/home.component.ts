@@ -255,6 +255,9 @@ export class HomeComponent implements OnInit {
       "text": "Explore Our Services",
       "url": "/contact",
       "icon": "bi bi-play-circle"
+    }],
+    "footers": [{
+      "text": "15+ Years of Expertise"
     }]
   };
 

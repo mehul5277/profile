@@ -3,7 +3,7 @@ import { authGuard } from './guards/auth.guard';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
-     { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule), canActivate: [authGuard] },
+     { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
      //{ path: '', redirectTo: 'home', pathMatch: 'full' },
      //{ path: 'home', loadChildren: () => import('./public/public.module').then(m => m.PublicModule), canActivate: [authGuard] },
      { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [authGuard] },

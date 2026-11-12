@@ -1,4 +1,4 @@
-import { NgClass, NgTemplateOutlet } from '@angular/common';
+import { JsonPipe, NgClass, NgTemplateOutlet } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AdminRoutingModule } from '../../../admin/admin-routing.module';
 
@@ -38,7 +38,7 @@ export interface HeroConfig {
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgTemplateOutlet, NgClass, AdminRoutingModule],
+  imports: [NgTemplateOutlet, NgClass, AdminRoutingModule, JsonPipe],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
