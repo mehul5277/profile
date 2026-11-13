@@ -16,6 +16,7 @@ bootstrapApplication(AppComponent, appConfig)
 
 
 if (environment.production) {
+  Clarity.init(clarityId);
   Clarity.event("custom-production-event");
   window.console.log = () => { };
 }

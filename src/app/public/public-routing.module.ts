@@ -13,6 +13,8 @@ import { IndustriesComponent } from './pages/industries/industries.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { CompanyPageComponent } from './pages/company-page/company-page.component';
 import { DataPageComponent } from './pages/data-page/data-page.component';
+import { authGuard } from '../guards/auth.guard';
+import { SubLeaseComponent } from './pages/sub-lease/sub-lease.component';
 
 const routes: Routes = [
   {
@@ -20,18 +22,19 @@ const routes: Routes = [
     component: PublicLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver } },
-      { path: 'data/:id', component: DataPageComponent },
-      { path: 'service', component: ServicePageComponent },
-      { path: 'service/:id', component: ServicePageComponent },
-      { path: 'about-us', component: AboutUsComponent },
-      { path: 'company', component: CompanyPageComponent },
-      { path: 'company/:id', component: CompanyPageComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'industries', component: IndustriesComponent },
-      { path: 'resume', component: ResumeComponent },
-      { path: 'contact', component: ContactComponent },
-      { path: 'help', component: HelpComponent },
+      { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver }, canActivate: [authGuard] },
+      { path: 'data/:id', component: DataPageComponent, canActivate: [authGuard] },
+      { path: 'service', component: ServicePageComponent, canActivate: [authGuard] },
+      { path: 'service/:id', component: ServicePageComponent, canActivate: [authGuard] },
+      { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard] },
+      { path: 'company', component: CompanyPageComponent, canActivate: [authGuard] },
+      { path: 'company/:id', component: CompanyPageComponent, canActivate: [authGuard] },
+      { path: 'products', component: ProductsComponent, canActivate: [authGuard] },
+      { path: 'industries', component: IndustriesComponent, canActivate: [authGuard] },
+      { path: 'resume', component: ResumeComponent, canActivate: [authGuard] },
+      { path: 'contact', component: ContactComponent, canActivate: [authGuard] },
+      { path: 'help', component: HelpComponent, canActivate: [authGuard] },
+      { path: 'sublease', component: SubLeaseComponent, canActivate: [authGuard] },
     ]
   }
 ];

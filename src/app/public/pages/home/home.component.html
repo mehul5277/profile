@@ -34,11 +34,9 @@
 
 <!-- <app-hero [heroConfig]="heroConfig"></app-hero> -->
 
-<div class="container-fluid py-4">
-    <div class="row">
-        <app-card-1 [cardConfig]="businessSection"></app-card-1>
-    </div>
-    <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+<div class="container-fluid">
+    <app-card-1 [cardConfig]="businessSection"></app-card-1>
+    <div class="row py-4 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(service of businessServices; track $index) {
         <div class="col-md-4 ">
             <app-card-1 [cardConfig]="service"></app-card-1>
@@ -47,7 +45,7 @@
     </div>
 </div>
 
-<div class="container-fluid container-ai py-4">
+<div class="container-fluid container-ai glow-purple py-4">
     <app-card-1 [cardConfig]="aiSection"></app-card-1>
     <div class="row pb-3 g-4">
         @for(service of aiServices; track $index) {
@@ -56,8 +54,17 @@
         </div>
         }
     </div>
+</div>
 
-
+<div class="container-fluid  py-4">
+    <app-card-1 [cardConfig]="innovationSectiom"></app-card-1>
+    <div class="row pb-3 g-4">
+        @for(column of innovationColumns; track $index) {
+        <div class="col-md-3 ">
+            <app-card-1 [cardConfig]="column"></app-card-1>
+        </div>
+        }
+    </div>
 </div>
 
 <div class="container-fluid">

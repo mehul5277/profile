@@ -1,19 +1,20 @@
 <app-jumbotron2 [jumbotron2Config]="jumbotronConfig"></app-jumbotron2>
 <!-- Overview -->
-<div class="d-none" [ngClass]="{'bg-primary-subtle' : true}">
-    <div class="container py-5">
+<div [ngClass]="{'bg-primary-subtle' : true}">
+    <div class="container pt-5 pb-2">
         <div class="row">
-            <div class="col-md-7 fs-5">
-                <p class="fs-2 fw-bold" [innerHTML]="Overview.title"></p>
-                <p class="card-text fs-5 lh-base" [innerHTML]="Overview.description"></p>
+            <div class="col-md-7">
+                <h3 class="fs-2 fw-bold" [innerHTML]="Overview.title"></h3>
+                <p class="card-text fs-5 pb-4" [innerHTML]="Overview.description"></p>
             </div>
             <div class="col-md-5">
-                <div class="container fs-5">
-                    <div class="row row-cols-2">
+                <div class="container">
+                    <div class="row">
                         @for(m of Overview.metrics; track $index) {
-                        <div class="col-6 vstack border-bottom border-black p-3">
+                        <div class="col-md-6 col-sm-12 vstack my-3">
                             <div class="fw-bold display-6" [innerHTML]="m.value">a</div>
-                            <div [innerHTML]="m.label">a</div>
+                            <div [innerHTML]="m.title" class="pb-2">a</div>
+                            <hr class="mt-auto">
                         </div>
                         }
                     </div>
@@ -28,11 +29,12 @@
         </div>
     </div>
 </div>
-<div class="container-fluid my-5">
+<div class="container-fluid my-5 pb-4">
     <!-- Sections -->
     @for(s of Section; track $index) {
-    <div class="row">
-        <p class="col-12 fs-2 fw-bold" [innerHTML]="s.section"></p>
+    <div class="row py-5 mt-4" [ngClass]="{'bg-primary-subtlex' : true}">
+        <h3 class="col-12 fs-2 fw-bold" [innerHTML]="s.section"></h3>
+        <p class=" fs-5" [innerHTML]="Overview.description"></p>
     </div>
 
     <div class="row pb-3 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
@@ -55,7 +57,7 @@
                 </div>
                 <div class="card-footer p-0 bg-transparent border-0 ">
                     <!-- Action Link -->
-                    <a href="#" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
+                    <a [routerLink]="[ './../../service' , so.name]" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
                         <span>Read More</span>
                         <span class="ms-2 fs-4"> <i class="bi bi-arrow-right"></i></span>
                     </a>
@@ -74,22 +76,22 @@
     <div class="row">
         <p class="col-12 fs-2 fw-bold" [innerHTML]="Expertise.title"></p>
     </div>
-    <div class="row pb-3">
+    <div class="row pb-3 g-4">
         @for(e of Expertise.items; track $index) {
         <div class="col-md-4">
             <div class="card p-4 shadow-md h-100" style=" background-color: #ffffff;">
                 <div class="card-body p-0 ">
                     <!-- Header Row: Logo Placeholder & Title -->
                     <div class="d-flex align-items-center mb-4">
-                        <img [attr.src]="e.image" alt="Technology Logo" class="me-3" style="width: 60px; height: 60px; object-fit: contain;">
-                        <h2 class="card-title fw-bold m-0" [innerHTML]="e.technology">Tableau</h2>
+                        <img [attr.src]="e.image" alt="Technology Logo" class="me-3" style="width: 160px; height: 160px; object-fit: contain;">
+                        <h2 class="card-title fw-bold m-0 d-none" [innerHTML]="e.technology">Tableau</h2>
                     </div>
                     <!-- Body Text -->
                     <p class="card-text fs-5 lh-base mb-2" [innerHTML]="e.description"></p>
                 </div>
                 <div class="card-footer p-0 bg-transparent border-0 ">
                     <!-- Action Link -->
-                    <a href="#" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
+                    <a [routerLink]="[ './../../service' , e.technology]" class="icon-link text-decoration-none fw-bold d-flex align-items-center">
                         <span>Read More</span>
                         <span class="ms-2 fs-4"> <i class="bi bi-arrow-right"></i></span>
                     </a>
