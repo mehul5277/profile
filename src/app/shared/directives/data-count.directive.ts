@@ -6,16 +6,16 @@ import { Directive, Input, ElementRef, Renderer2, NgZone, AfterViewInit, OnDestr
 })
 export class DataCountDirective implements AfterViewInit, OnDestroy {
 
-  // Target number to animate to
   @Input('appDataCount') endValue: number = 0;
-  
-  // Starting number (defaults to 0)
   @Input() startValue: number = 0;
-  
-  // Animation duration in milliseconds (defaults to 1500ms)
   @Input() duration: number = 1500;
+  
+  // Custom prefix and suffix inputs
+  @Input() prefix: string = '';
+  @Input() suffix: string = '';
 
   private observer!: IntersectionObserver;
+  private numberFormatter = new Intl.NumberFormat('en-US');
 
   constructor(
     private el: ElementRef<HTMLElement>,
@@ -24,7 +24,6 @@ export class DataCountDirective implements AfterViewInit, OnDestroy {
   ) {}
 
   ngAfterViewInit() {
-    // Run all performance-heavy browser APIs outside Angular change detection zone
     this.ngZone.runOutsideAngular(() => {
       this.setupIntersectionObserver();
     });
@@ -32,22 +31,40 @@ export class DataCountDirective implements AfterViewInit, OnDestroy {
 
   private setupIntersectionObserver() {
     const options = {
-      root: null, // Entire browser viewport
-      threshold: 1.0 // Only triggers when the element is 100% visible
+      root: null, 
+      threshold: 0.1 
     };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          this.animateValue();
-          
-          // Stop watching this element once the animation starts
+          this.triggerRevealAndAnimation();
           this.observer.unobserve(this.el.nativeElement);
         }
       });
     }, options);
 
     this.observer.observe(this.el.nativeElement);
+  }
+
+  private triggerRevealAndAnimation() {
+    const parentContainer = this.el.nativeElement.parentElement;
+    
+    if (parentContainer && parentContainer.classList.contains('text')) {
+      parentContainer.animate(
+        [
+          { opacity: 0, transform: 'translateY(20px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ], 
+        {
+          duration: 600,
+          easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+          fill: 'forwards'
+        }
+      );
+    }
+
+    this.animateValue();
   }
 
   private animateValue() {
@@ -59,11 +76,16 @@ export class DataCountDirective implements AfterViewInit, OnDestroy {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / this.duration, 1);
       
-      // Update DOM node text safely
+      const currentRawValue = Math.floor(progress * (end - start) + start);
+      const formattedValue = this.numberFormatter.format(currentRawValue);
+
+      // Concatenate the prefix, formatted number, and suffix together
+      const finalDisplayString = `${this.prefix}${formattedValue}${this.suffix}`;
+
       this.render.setProperty(
         this.el.nativeElement,
         'innerHTML',
-        Math.floor(progress * (end - start) + start).toString()
+        finalDisplayString
       );
 
       if (progress < 1) {
@@ -80,4 +102,3 @@ export class DataCountDirective implements AfterViewInit, OnDestroy {
     }
   }
 }
-
