@@ -11,6 +11,10 @@
     --dropback-bg-1: url('./assets/image/dropback/banner-bg-1.png');
     --font-family: 'Poppins', sans-serif;
     --ticker-font-size-value: 1;
+
+    --grad-tri: linear-gradient(100deg, #4f86f0, #7c3aed 45%, #b0289b);
+    --grad-warm: linear-gradient(100deg, #f5a623, #fb7a16 50%, #f04a3c);
+    --grad-blue: linear-gradient(100deg, #12b6c9, #2e86f5 50%, #5a63ee);
 }
 
 
@@ -56,4 +60,28 @@
         padding: 0.75rem 0;
 
     }
+}
+
+.glow-purple {
+    .card:first-child {
+        background: transparent !important;
+    }
+
+    inset: 0;
+    background: radial-gradient(520px 340px at 25% 100%, rgba(124, 58, 237, .25), transparent 70%),
+    radial-gradient(520px 340px at 78% 0, rgba(251, 122, 22, .18), transparent 70%);
+    //pointer-events: none;
+}
+
+.card:hover {
+    border: 1px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box, var(--grad-tri) border-box;
+    box-shadow: var(--shadow-soft);
+}
+
+.grad-text {
+    background: var(--grad-tri);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

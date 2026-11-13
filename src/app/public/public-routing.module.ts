@@ -14,6 +14,7 @@ import { ServicePageComponent } from './pages/service-page/service-page.componen
 import { CompanyPageComponent } from './pages/company-page/company-page.component';
 import { DataPageComponent } from './pages/data-page/data-page.component';
 import { authGuard } from '../guards/auth.guard';
+import { SubLeaseComponent } from './pages/sub-lease/sub-lease.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'resume', component: ResumeComponent, canActivate: [authGuard] },
       { path: 'contact', component: ContactComponent, canActivate: [authGuard] },
       { path: 'help', component: HelpComponent, canActivate: [authGuard] },
+      { path: 'sublease', component: SubLeaseComponent, canActivate: [authGuard] },
     ]
   }
 ];

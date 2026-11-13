@@ -1,5 +1,5 @@
 <!-- Hero 'border border-0' : !cardConfig.border, 'h-100' : cardConfig.border -->
-<div class="card p-2 mb-4x" [ngClass]="cardConfig.css">
+<div class="card p-2 mb-4x card-glow" [ngClass]="cardConfig.css">
     <div class="card-header bg-transparent border border-0">
         @for(badge of cardConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>

@@ -1,0 +1,31 @@
+<p>sub-lease works!</p>
+<!-- Animates immediately if visible on page load -->
+
+<div class="bg" style="min-height: 100vh; padding: 40px; display: flex; flex-direction: column; gap: 40px; justify-content: center; align-items: center;">
+
+    <!-- Immediate Counters (Visible on Load) -->
+    <div class="text" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="large-number" [appDataCount]="2021" [duration]="1500">0</div>
+        <span>Launch Year</span>
+    </div>
+
+    <div class="text" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="large-number" [appDataCount]="16" [duration]="1500">0</div>
+        <span>Core Modules</span>
+    </div>
+
+    <!-- Large Spacer to Force Scrolling -->
+    <div style="height: 80vh;"></div>
+
+    <!-- Scroll-Triggered Counters -->
+    <div class="text" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="large-number" [appDataCount]="2300" [duration]="1500">0</div>
+        <span>Active Users</span>
+    </div>
+
+    <div class="text" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div class="large-number" [appDataCount]="3" [duration]="1500">0</div>
+        <span>Global Servers</span>
+    </div>
+
+</div>

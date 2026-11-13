@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   cv!: any;
 
   //#region jumbotron
-
   jumboConfig: JiexoJumboConfig = {
     "title": "Building Intelligent Solutions through",
     "subtitle": "for Business Excellence",
@@ -52,97 +51,8 @@ export class HomeComponent implements OnInit {
 
   //#endregion
 
-  //#region Hero
-  heroConfig: HeroConfig = {
-    "badges": [{
-      "text": "WHAT WE DO"
-    }],
-    "title": "Innovative Services Driving",
-    "subtitle": "Business Success",
-    "description": "End-to-end technology services built for businesses at every stage of growth.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "All Services",
-      "url": "/service",
-      "icon": "bi bi-play-circle"
-    }],
-    "footers": [{
-      "text": "© 2024 Our Company. All rights reserved."
-    }]
-  };
-  //#endregion
+  //#region Business
 
-  //#region AI section
-  aiSection: CardConfig = {
-    badges: [{
-      "text": "AGENTIC AI"
-    }],
-    "css": "card-primary card-ai",
-    "type": CardType.CARD,
-    "title": "Intelligence That",
-    "subtitle": "Takes Initiative",
-    "description": "We have entered a new era of AI where systems no longer wait for commands. Agentic AI understands objectives, adapts in real-time, and takes independent actions to solve problems and seize opportunities. At JIXO Solutions, we develop AI agents designed to think ahead, enabling your business to lead."
-  };
-
-  aiService1: CardConfig = {
-    "css": "card-secondary card-ai",
-    "icon": "robot_2",
-    "type": CardType.CARD,
-    "title": "GenAI and Autonomous Agents Services",
-    "description": "Design and deploy intelligent agents that reason, plan, and execute complex multi-step tasks autonomously across your business.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "Learn more",
-      "url": "/service",
-      "icon": "bi bi-play-circle"
-    }]
-  };
-
-  aiService2: CardConfig = {
-    "css": "card-secondary card-ai",
-    "icon": "business_messages",
-    "type": CardType.CARD,
-    "title": "Microsoft Copilot & Copilot Studio Services",
-    "description": "Build, customize and deploy Microsoft Copilots that integrate deeply with your enterprise workflows, data, and productivity tools.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "Learn more",
-      "url": "/service",
-      "icon": "bi bi-play-circle"
-    }]
-  };
-
-  aiService3: CardConfig = {
-    "css": "card-secondary card-ai",
-    "icon": "motion_photos_auto",
-    "type": CardType.CARD,
-    "title": "AIOps Autonomous Operations",
-    "description": "Automate IT operations with AI that continuously monitors, predicts anomalies and self-heals incidents before they impact your business.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "Learn more",
-      "url": "/service",
-      "icon": "bi bi-play-circle"
-    }]
-  };
-
-  aiService4: CardConfig = {
-    "css": "card-secondary card-ai",
-    "icon": "verified",
-    "type": CardType.CARD,
-    "title": "AI Governance, Ethics & Compliance Consulting",
-    "description": "Build trustworthy AI risk audits, bias detection, regulatory alignment, and enterprise AI policy governance frameworks.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "Learn more",
-      "url": "/service",
-      "icon": "bi bi-play-circle"
-    }]
-  };
-
-  //#endregion
-
-  //#region Business Section
   businessSection: CardConfig = {
     badges: [{
       "text": "WHAT WE DO"
@@ -231,6 +141,97 @@ export class HomeComponent implements OnInit {
   };
   //#endregion
 
+  //#region Hero
+  // heroConfig: HeroConfig = {
+  //   "badges": [{
+  //     "text": "WHAT WE DO"
+  //   }],
+  //   "title": "Innovative Services Driving",
+  //   "subtitle": "Business Success",
+  //   "description": "End-to-end technology services built for businesses at every stage of growth.",
+  //   "buttons": [{
+  //     "type": ActionType.LINK,
+  //     "text": "All Services",
+  //     "url": "/service",
+  //     "icon": "bi bi-play-circle"
+  //   }],
+  //   "footers": [{
+  //     "text": "© 2024 Our Company. All rights reserved."
+  //   }]
+  // };
+  //#endregion
+
+  //#region AI section
+  aiSection: CardConfig = {
+    badges: [{
+      "text": "AGENTIC AI"
+    }],
+    "css": "card-primary card-ai",
+    "type": CardType.CARD,
+    "title": "Intelligence That",
+    "subtitle": "Takes Initiative",
+    "description": "We have entered a new era of AI where systems no longer wait for commands. Agentic AI understands objectives, adapts in real-time, and takes independent actions to solve problems and seize opportunities. At JIXO Solutions, we develop AI agents designed to think ahead, enabling your business to lead."
+  };
+
+  aiService1: CardConfig = {
+    "css": "card-secondary card-ai",
+    "icon": "robot_2",
+    "type": CardType.CARD,
+    "title": "GenAI and Autonomous Agents Services",
+    "description": "Design and deploy intelligent agents that reason, plan, and execute complex multi-step tasks autonomously across your business.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService2: CardConfig = {
+    "css": "card-secondary card-ai",
+    "icon": "business_messages",
+    "type": CardType.CARD,
+    "title": "Microsoft Copilot & Copilot Studio Services",
+    "description": "Build, customize and deploy Microsoft Copilots that integrate deeply with your enterprise workflows, data, and productivity tools.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService3: CardConfig = {
+    "css": "card-secondary card-ai",
+    "icon": "motion_photos_auto",
+    "type": CardType.CARD,
+    "title": "AIOps Autonomous Operations",
+    "description": "Automate IT operations with AI that continuously monitors, predicts anomalies and self-heals incidents before they impact your business.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  aiService4: CardConfig = {
+    "css": "card-secondary card-ai",
+    "icon": "verified",
+    "type": CardType.CARD,
+    "title": "AI Governance, Ethics & Compliance Consulting",
+    "description": "Build trustworthy AI risk audits, bias detection, regulatory alignment, and enterprise AI policy governance frameworks.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn more",
+      "url": "/service",
+      "icon": "bi bi-play-circle"
+    }]
+  };
+
+  //#endregion
+
+  //#region recognitionSection
   recognitionSection: CardConfig = {
     badges: [{
       "text": "Recognition"
@@ -242,7 +243,9 @@ export class HomeComponent implements OnInit {
     "subtitle": "",
     "description": "Our commitment to AI-driven transformation is endorsed by leading global organizations; recognized across quality, security, culture, and technology excellence.",
   };
+  //#endregion
 
+  //#region build
   buildSection: HeroConfig = {
     badges: [{
       "text": "Ready to Transform Your Business?"
@@ -260,6 +263,70 @@ export class HomeComponent implements OnInit {
       "text": "15+ Years of Expertise"
     }]
   };
+  //#endregion
+
+  //#region inovation "title": "Continuous innovation + operational excellence",
+
+  innovationSectiom: CardConfig = {
+    "css": "card-primary",
+    "type": CardType.CARD,
+    "title": "Continuous innovation",
+    "subtitle": "Operational excellence",
+    "description": ""
+  };
+  innovationColumns: Array<CardConfig> = [{
+    "css": "card-secondary",
+    "icon": "counter_1",
+    "type": CardType.CARD,
+    "title": "Simplify digital transformation",
+    "description": "JIXO Consult helps you drive innovation and simplify digital transformation with strategic visioning, architecture design, and organizational change management.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Discover JIXO Consult",
+      "url": "https://www.kyndryl.com/ca/en/consulting.html",
+      "icon": "bi bi-play-circle"
+    }]
+  },
+  {
+    "css": "card-secondary",
+    "icon": "counter_2",
+    "type": CardType.CARD,
+    "title": "Overcome business challenges",
+    "description": "Our services combine deep industry expertise with modern skills and advanced technology to help you overcome business challenges and uncover new opportunities for growth.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore our services",
+      "url": "url?id=26",
+      "icon": "bi bi-play-circle"
+    }]
+  },
+  {
+    "css": "card-secondary",
+    "icon": "counter_3",
+    "type": CardType.CARD,
+    "title": "Orchestrate and innovate",
+    "description": "JIXO Bridge is an open integration platform designed to help orchestrate and innovate across your IT environment, enabling continuous learning and quicker time to value.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Learn about JIXO Bridge",
+      "url": "url?id=27",
+      "icon": "bi bi-play-circle"
+    }]
+  },
+  {
+    "css": "card-secondary",
+    "icon": "counter_4",
+    "type": CardType.CARD,
+    "title": "Enable hybrid IT with strategic partners",
+    "description": "Be confident that you're making the right technology investments with global alliance partnerships that enable today’s complex hybrid ecosystems.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore our partners",
+      "url": "https://www.kyndryl.com/ca/en/about-us/alliances.html",
+      "icon": "bi bi-play-circle"
+    }]
+  }];
+
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
