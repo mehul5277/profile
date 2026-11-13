@@ -15,6 +15,12 @@
     --grad-tri: linear-gradient(100deg, #4f86f0, #7c3aed 45%, #b0289b);
     --grad-warm: linear-gradient(100deg, #f5a623, #fb7a16 50%, #f04a3c);
     --grad-blue: linear-gradient(100deg, #12b6c9, #2e86f5 50%, #5a63ee);
+
+    --logo-xs: 120px;
+    --logo-sm: 150px;
+    --logo-md: 180px;
+    --logo-lg: 220px;
+    --logo-xl: 260px;
 }
 
 
@@ -84,4 +90,34 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.company-logo {
+    width: 100%;
+    height: auto;
+    max-width: var(--logo-xs);
+}
+
+@media (min-width: 576px) {
+    .company-logo {
+        max-width: var(--logo-sm);
+    }
+}
+
+@media (min-width: 768px) {
+    .company-logo {
+        max-width: var(--logo-md);
+    }
+}
+
+@media (min-width: 992px) {
+    .company-logo {
+        max-width: var(--logo-lg);
+    }
+}
+
+@media (min-width: 1200px) {
+    .company-logo {
+        max-width: var(--logo-xl);
+    }
 }
