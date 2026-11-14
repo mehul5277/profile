@@ -9,6 +9,7 @@ export const routes: Routes = [
      { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [authGuard] },
      { path: 'agency', loadChildren: () => import('./recruitment/recruitment.module').then(m => m.RecruitmentModule), canActivate: [authGuard] },
      { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+     { path: 'inventory', loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule), canActivate: [authGuard] },
      // Wildcard Route for 404 errors (Must be placed last)
      { path: '**', component: PageNotFoundComponent }
 ];
