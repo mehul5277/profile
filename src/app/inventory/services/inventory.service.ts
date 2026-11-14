@@ -19,15 +19,14 @@ export class InventoryService {
   private stateSubject = new BehaviorSubject<InventoryState>(this.initialState);
   public state$: Observable<InventoryState> = this.stateSubject.asObservable();
 
-  constructor() {}
+  constructor() { }
 
-  // Computed Observable for Balance Stock View
+  // Computed Balance Observable
   public getBalanceStock$(): Observable<BalanceItem[]> {
     return this.state$.pipe(
       map(state => {
         const productMap = new Map<string, { product: string; code: string; purchases: number; sales: number }>();
 
-        // Aggregate Stock-In (Purchases)
         state.stockInList.forEach(item => {
           if (!productMap.has(item.code)) {
             productMap.set(item.code, { product: item.product, code: item.code, purchases: 0, sales: 0 });
@@ -35,7 +34,6 @@ export class InventoryService {
           productMap.get(item.code)!.purchases += item.qty;
         });
 
-        // Aggregate Stock-Out (Sales)
         state.stockOutList.forEach(item => {
           if (!productMap.has(item.code)) {
             productMap.set(item.code, { product: item.product, code: item.code, purchases: 0, sales: 0 });
@@ -43,7 +41,6 @@ export class InventoryService {
           productMap.get(item.code)!.sales += item.qty;
         });
 
-        // Map to Balance View array
         let index = 1;
         const balanceList: BalanceItem[] = [];
         productMap.forEach(val => {
@@ -62,28 +59,45 @@ export class InventoryService {
     );
   }
 
-  // Actions to mutate state
+  // Stock-In Actions (Add, Update, Delete)
   public addStockIn(item: Omit<StockInItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
-    const newItem: StockInItem = {
-      ...item,
-      srNo: currentState.stockInList.length + 1
-    };
-    this.stateSubject.next({
-      ...currentState,
-      stockInList: [...currentState.stockInList, newItem]
-    });
+    const newItem: StockInItem = { ...item, srNo: currentState.stockInList.length + 1 };
+    this.stateSubject.next({ ...currentState, stockInList: [...currentState.stockInList, newItem] });
   }
 
+  public updateStockIn(srNo: number, updatedItem: Omit<StockInItem, 'srNo'>): void {
+    const currentState = this.stateSubject.value;
+    const stockInList = currentState.stockInList.map(item => item.srNo === srNo ? { ...updatedItem, srNo } : item);
+    this.stateSubject.next({ ...currentState, stockInList });
+  }
+
+  public deleteStockIn(srNo: number): void {
+    const currentState = this.stateSubject.value;
+    const stockInList = currentState.stockInList
+      .filter(item => item.srNo !== srNo)
+      .map((item, index) => ({ ...item, srNo: index + 1 }));
+    this.stateSubject.next({ ...currentState, stockInList });
+  }
+
+  // Stock-Out Actions (Add, Update, Delete)
   public addStockOut(item: Omit<StockOutItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
-    const newItem: StockOutItem = {
-      ...item,
-      srNo: currentState.stockOutList.length + 1
-    };
-    this.stateSubject.next({
-      ...currentState,
-      stockOutList: [...currentState.stockOutList, newItem]
-    });
+    const newItem: StockOutItem = { ...item, srNo: currentState.stockOutList.length + 1 };
+    this.stateSubject.next({ ...currentState, stockOutList: [...currentState.stockOutList, newItem] });
+  }
+
+  public updateStockOut(srNo: number, updatedItem: Omit<StockOutItem, 'srNo'>): void {
+    const currentState = this.stateSubject.value;
+    const stockOutList = currentState.stockOutList.map(item => item.srNo === srNo ? { ...updatedItem, srNo } : item);
+    this.stateSubject.next({ ...currentState, stockOutList });
+  }
+
+  public deleteStockOut(srNo: number): void {
+    const currentState = this.stateSubject.value;
+    const stockOutList = currentState.stockOutList
+      .filter(item => item.srNo !== srNo)
+      .map((item, index) => ({ ...item, srNo: index + 1 }));
+    this.stateSubject.next({ ...currentState, stockOutList });
   }
 }

@@ -1,13 +1,41 @@
 <div class="container py-4">
     <h2 class="mb-4 text-center fw-bold text-primary">Inventory Management System</h2>
 
+    <!-- Search & Date Filter Bar -->
+    <div class="card shadow-sm border-secondary mb-4">
+        <div class="card-body">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-5">
+                    <label class="form-label fw-semibold small text-muted">Search Product</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" [formControl]="searchControl" placeholder="Filter by name or code...">
+                        <button *ngIf="searchControl.value" class="btn btn-outline-secondary" type="button" (click)="searchControl.setValue('')">Clear</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold small text-muted">From Date</label>
+                    <input type="date" class="form-control" [formControl]="startDateControl">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label fw-semibold small text-muted">To Date</label>
+                    <input type="date" class="form-control" [formControl]="endDateControl">
+                </div>
+                <div class="col-md-1 d-flex align-items-end">
+                    <button class="btn btn-outline-danger w-100" title="Reset Filters" (click)="resetFilters()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row g-4">
         <!-- Forms Column -->
         <div class="col-lg-5">
-
-            <!-- Stock In Form Card -->
+            <!-- Stock In Form -->
             <div class="card shadow-sm mb-4 border-success">
-                <div class="card-header bg-success text-white fw-bold">Add Stock-In</div>
+                <div class="card-header bg-success text-white fw-bold d-flex justify-content-between align-items-center">
+                    <span>{{ editingStockInSrNo !== null ? 'Edit Stock-In #' + editingStockInSrNo : 'Add Stock-In' }}</span>
+                    <span *ngIf="editingStockInSrNo !== null" class="badge bg-warning text-dark">Editing Mode</span>
+                </div>
                 <div class="card-body">
                     <form [formGroup]="stockInForm" (ngSubmit)="onStockInSubmit()">
                         <div class="mb-3">
@@ -26,14 +54,22 @@
                             <label class="form-label">Quantity</label>
                             <input type="number" class="form-control" formControlName="qty" placeholder="0">
                         </div>
-                        <button type="submit" class="btn btn-success w-100" [disabled]="stockInForm.invalid">Save Stock-In</button>
+                        <button type="submit" class="btn btn-success w-100" [disabled]="stockInForm.invalid">
+                            {{ editingStockInSrNo !== null ? 'Update Stock-In' : 'Save Stock-In' }}
+                        </button>
+                        <button *ngIf="editingStockInSrNo !== null" type="button" class="btn btn-secondary w-100 mt-2" (click)="cancelEditStockIn()">
+                            Cancel Edit
+                        </button>
                     </form>
                 </div>
             </div>
 
-            <!-- Stock Out Form Card -->
+            <!-- Stock Out Form -->
             <div class="card shadow-sm border-danger">
-                <div class="card-header bg-danger text-white fw-bold">Add Stock-Out</div>
+                <div class="card-header bg-danger text-white fw-bold d-flex justify-content-between align-items-center">
+                    <span>{{ editingStockOutSrNo !== null ? 'Edit Stock-Out #' + editingStockOutSrNo : 'Add Stock-Out' }}</span>
+                    <span *ngIf="editingStockOutSrNo !== null" class="badge bg-warning text-dark">Editing Mode</span>
+                </div>
                 <div class="card-body">
                     <form [formGroup]="stockOutForm" (ngSubmit)="onStockOutSubmit()">
                         <div class="mb-3">
@@ -52,19 +88,26 @@
                             <label class="form-label">Quantity</label>
                             <input type="number" class="form-control" formControlName="qty" placeholder="0">
                         </div>
-                        <button type="submit" class="btn btn-danger w-100" [disabled]="stockOutForm.invalid">Save Stock-Out</button>
+                        <button type="submit" class="btn btn-danger w-100" [disabled]="stockOutForm.invalid">
+                            {{ editingStockOutSrNo !== null ? 'Update Stock-Out' : 'Save Stock-Out' }}
+                        </button>
+                        <button *ngIf="editingStockOutSrNo !== null" type="button" class="btn btn-secondary w-100 mt-2" (click)="cancelEditStockOut()">
+                            Cancel Edit
+                        </button>
                     </form>
                 </div>
             </div>
-
         </div>
 
-        <!-- Tables Column (Stock-In, Stock-Out, Balance) -->
+        <!-- Tables Column -->
         <div class="col-lg-7">
 
             <!-- Balance Stock Table -->
             <div class="card shadow-sm mb-4 border-primary">
-                <div class="card-header bg-primary text-white fw-bold">Balance-In-Stock View</div>
+                <div class="card-header bg-primary text-white fw-bold d-flex justify-content-between align-items-center">
+                    <span>Balance-In-Stock View</span>
+                    <button class="btn btn-sm btn-light text-primary fw-semibold" (click)="exportBalance()">Export Balance CSV</button>
+                </div>
                 <div class="card-body p-0 table-responsive">
                     <table class="table table-striped table-hover mb-0 text-center align-middle">
                         <thead class="table-dark">
@@ -75,11 +118,11 @@
                                 <th>Purchases</th>
                                 <th>Sales</th>
                                 <th>Stock</th>
-                                <th>Alert</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of balanceStock$ | async">
+                            <tr *ngFor="let item of filteredBalance$ | async">
                                 <td>{{ item.srNo }}</td>
                                 <td>{{ item.product }}</td>
                                 <td>{{ item.code }}</td>
@@ -88,8 +131,11 @@
                                 <td class="fw-bold">{{ item.stock }}</td>
                                 <td>
                                     <span class="badge" [ngClass]="item.stock <= 5 ? 'bg-danger' : 'bg-success'">
-                                        {{ item.stock <= 5 ? 'Low Stock' : 'In Stock' }} </span>
+                                        {{ item.stock <= 5 ? 'Low' : 'OK' }} </span>
                                 </td>
+                            </tr>
+                            <tr *ngIf="(filteredBalance$ | async)?.length === 0">
+                                <td colspan="7" class="text-muted py-3">No inventory items found.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -98,55 +144,93 @@
 
             <!-- Stock-In History Table -->
             <div class="card shadow-sm mb-4">
-                <div class="card-header bg-success-subtle text-success fw-bold">Stock-In History</div>
-                <div class="card-body p-0 table-responsive" style="max-height: 200px;">
-                    <table class="table table-sm mb-0 text-center">
+                <div class="card-header bg-success-subtle text-success fw-bold d-flex justify-content-between align-items-center">
+                    <span>Stock-In History</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-success text-white" (click)="exportStockIn()">Export CSV</button>
+                        <small class="text-muted">Page {{ stockInPage }} / {{ stockInTotalPages || 1 }}</small>
+                    </div>
+                </div>
+                <div class="card-body p-0 table-responsive">
+                    <table class="table table-sm mb-0 text-center align-middle">
                         <thead>
-                            <tr>
+                            <tr class="table-light">
                                 <th>#</th>
                                 <th>Date</th>
                                 <th>Product</th>
                                 <th>Code</th>
                                 <th>Qty</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of (state$ | async)?.stockInList">
+                            <tr *ngFor="let item of paginatedStockIn" [class.table-warning]="editingStockInSrNo === item.srNo">
                                 <td>{{ item.srNo }}</td>
                                 <td>{{ item.date }}</td>
                                 <td>{{ item.product }}</td>
                                 <td>{{ item.code }}</td>
                                 <td>{{ item.qty }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary py-0 px-1 me-1" (click)="editStockIn(item)">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger py-0 px-1" (click)="deleteStockIn(item.srNo)">Del</button>
+                                </td>
+                            </tr>
+                            <tr *ngIf="paginatedStockIn.length === 0">
+                                <td colspan="6" class="text-muted py-2">No records found.</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer bg-white d-flex justify-content-between align-items-center py-2" *ngIf="stockInTotalPages > 1">
+                    <button class="btn btn-outline-secondary btn-sm" [disabled]="stockInPage === 1" (click)="stockInPage = stockInPage - 1">Previous</button>
+                    <span class="small text-muted">Page {{ stockInPage }} / {{ stockInTotalPages }}</span>
+                    <button class="btn btn-outline-secondary btn-sm" [disabled]="stockInPage >= stockInTotalPages" (click)="stockInPage = stockInPage + 1">Next</button>
                 </div>
             </div>
 
             <!-- Stock-Out History Table -->
             <div class="card shadow-sm">
-                <div class="card-header bg-danger-subtle text-danger fw-bold">Stock-Out History</div>
-                <div class="card-body p-0 table-responsive" style="max-height: 200px;">
-                    <table class="table table-sm mb-0 text-center">
+                <div class="card-header bg-danger-subtle text-danger fw-bold d-flex justify-content-between align-items-center">
+                    <span>Stock-Out History</span>
+                    <div class="d-flex align-items-center gap-2">
+                        <button class="btn btn-sm btn-danger text-white" (click)="exportStockOut()">Export CSV</button>
+                        <small class="text-muted">Page {{ stockOutPage }} / {{ stockOutTotalPages || 1 }}</small>
+                    </div>
+                </div>
+                <div class="card-body p-0 table-responsive">
+                    <table class="table table-sm mb-0 text-center align-middle">
                         <thead>
-                            <tr>
+                            <tr class="table-light">
                                 <th>#</th>
                                 <th>Date</th>
                                 <th>Product</th>
                                 <th>Code</th>
                                 <th>Qty</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of (state$ | async)?.stockOutList">
+                            <tr *ngFor="let item of paginatedStockOut" [class.table-warning]="editingStockOutSrNo === item.srNo">
                                 <td>{{ item.srNo }}</td>
                                 <td>{{ item.date }}</td>
                                 <td>{{ item.product }}</td>
                                 <td>{{ item.code }}</td>
                                 <td>{{ item.qty }}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary py-0 px-1 me-1" (click)="editStockOut(item)">Edit</button>
+                                    <button class="btn btn-sm btn-outline-danger py-0 px-1" (click)="deleteStockOut(item.srNo)">Del</button>
+                                </td>
+                            </tr>
+                            <tr *ngIf="paginatedStockOut.length === 0">
+                                <td colspan="6" class="text-muted py-2">No records found.</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer bg-white d-flex justify-content-between align-items-center py-2" *ngIf="stockOutTotalPages > 1">
+                    <button class="btn btn-outline-secondary btn-sm" [disabled]="stockOutPage === 1" (click)="stockOutPage = stockOutPage - 1">Previous</button>
+                    <span class="small text-muted">Page {{ stockOutPage }} / {{ stockOutTotalPages }}</span>
+                    <button class="btn btn-outline-secondary btn-sm" [disabled]="stockOutPage >= stockOutTotalPages" (click)="stockOutPage = stockOutPage + 1">Next</button>
                 </div>
             </div>
 
