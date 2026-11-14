@@ -6,6 +6,7 @@ import { BalanceItem, InventoryState, StockInItem, StockOutItem } from './../met
   providedIn: 'root'
 })
 export class InventoryService {
+
   private readonly initialState: InventoryState = {
     stockInList: [
       { srNo: 1, date: '2026-02-15', product: 'iPhone 16', code: 'M001', qty: 60 },

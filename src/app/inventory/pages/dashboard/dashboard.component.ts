@@ -5,16 +5,17 @@ import { combineLatest, map, Observable, startWith } from 'rxjs';
 import { InventoryService } from './../../services/inventory.service';
 import { BalanceItem, StockInItem, StockOutItem } from './../../metadata/inventory.model';
 import { DownloadService } from '../../services/download.service';
+import { ProductPipe } from '../../pipes/product.pipe';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ProductPipe],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
- stockInForm!: FormGroup;
+  stockInForm!: FormGroup;
   stockOutForm!: FormGroup;
 
   searchControl = this.fb.control('');
@@ -23,14 +24,12 @@ export class DashboardComponent implements OnInit {
 
   state$ = this.inventoryService.state$;
   balanceStock$: Observable<BalanceItem[]> = this.inventoryService.getBalanceStock$();
-  filteredBalance$!: Observable<BalanceItem[]>;
 
   // Editing trackers
   editingStockInSrNo: number | null = null;
   editingStockOutSrNo: number | null = null;
 
   // Export caches
-  private currentBalanceList: BalanceItem[] = [];
   private currentStockInList: StockInItem[] = [];
   private currentStockOutList: StockOutItem[] = [];
 
@@ -47,7 +46,7 @@ export class DashboardComponent implements OnInit {
     private fb: FormBuilder,
     private inventoryService: InventoryService,
     private downloadService: DownloadService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const today = new Date().toISOString().split('T')[0];
@@ -70,14 +69,7 @@ export class DashboardComponent implements OnInit {
     const startDate$ = this.startDateControl.valueChanges.pipe(startWith(''));
     const endDate$ = this.endDateControl.valueChanges.pipe(startWith(''));
 
-    this.filteredBalance$ = combineLatest([this.balanceStock$, query$]).pipe(
-      map(([items, query]) => {
-        const filtered = !query ? items : items.filter(i => i.product.toLowerCase().includes(query) || i.code.toLowerCase().includes(query));
-        this.currentBalanceList = filtered;
-        return filtered;
-      })
-    );
-
+    // Stock-In History Subscription & Pagination
     combineLatest([this.state$.pipe(map(s => s.stockInList)), query$, startDate$, endDate$]).pipe(
       map(([items, query, startDate, endDate]) => {
         return items.filter(item => {
@@ -95,6 +87,7 @@ export class DashboardComponent implements OnInit {
       this.paginatedStockIn = filtered.slice(startIndex, startIndex + this.pageSize);
     });
 
+    // Stock-Out History Subscription & Pagination
     combineLatest([this.state$.pipe(map(s => s.stockOutList)), query$, startDate$, endDate$]).pipe(
       map(([items, query, startDate, endDate]) => {
         return items.filter(item => {
@@ -136,7 +129,6 @@ export class DashboardComponent implements OnInit {
     this.stockOutForm.patchValue({ date: today, product: '', code: '', qty: 1 });
   }
 
-  // Submit handlers (Add or Update)
   onStockInSubmit(): void {
     if (this.stockInForm.valid) {
       if (this.editingStockInSrNo !== null) {
@@ -179,9 +171,13 @@ export class DashboardComponent implements OnInit {
 
   // Export handlers
   exportBalance(): void {
-    const headers = ['Sr.No', 'Product', 'Code', 'Purchases', 'Sales', 'Stock'];
-    const rows = this.currentBalanceList.map(item => [item.srNo, `"${item.product}"`, `"${item.code}"`, item.purchases, item.sales, item.stock]);
-    this.downloadService.exportToCSV('inventory-balance.csv', headers, rows);
+    this.balanceStock$.subscribe(items => {
+      const query = (this.searchControl.value || '').toLowerCase().trim();
+      const filtered = !query ? items : items.filter(i => i.product.toLowerCase().includes(query) || i.code.toLowerCase().includes(query));
+      const headers = ['Sr.No', 'Product', 'Code', 'Purchases', 'Sales', 'Stock'];
+      const rows = filtered.map(item => [item.srNo, `"${item.product}"`, `"${item.code}"`, item.purchases, item.sales, item.stock]);
+      this.downloadService.exportToCSV('inventory-balance.csv', headers, rows);
+    }).unsubscribe();
   }
 
   exportStockIn(): void {
