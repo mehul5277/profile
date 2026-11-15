@@ -1,0 +1,9 @@
+    /* Ensure the billboard fills the exact viewport height */
+    .billboard-hero {
+        height: 100vh;
+        min-height: 500px;
+        /* Replace with your background image URL */
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url('https://unsplash.com') no-repeat center center;
+        background-size: cover;
+    }
