@@ -1,0 +1,47 @@
+<section class="h-100" [ngClass]="[heightClass, themeClasses, backgroundColor]"  [attr.aria-label]="config.imageAltText || config.headline">
+    <!-- Background Video -->
+    <video *ngIf="config.videoBackgroundUrl" autoPlay loop muted playsInline class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: 0;" [src]="config.videoBackgroundUrl"></video>
+
+    <!-- Background Image (Fallback when no video present) -->
+    <div *ngIf="config.backgroundImageUrl && !config.videoBackgroundUrl" class="position-absolute top-0 start-0 w-100 h-100 bg-cover bg-center" style="z-index: 0; background-size: cover; background-position: center;" [style.backgroundImage]="'url(' + config.backgroundImageUrl + ')'" role="img" [attr.aria-label]="config.imageAltText || ''"></div>
+
+    <!-- Dynamic Overlay Darkener -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-black pointer-events-none" [style.opacity]="overlayOpacity"></div>
+
+    <!-- Content Container -->
+    <div class="position-relative container px-3 px-md-4 d-flex flex-column" [ngClass]="alignmentClass">
+
+        <!-- Tagline -->
+        <span *ngIf="config.tagline" class="text-uppercase fw-semibold mb-3 small" [ngClass]="taglineColor" style="letter-spacing: 0.15em;">
+            {{ config.tagline }}
+        </span>
+
+        <!-- Headline (SEO semantic toggling) -->
+        <h1 *ngIf="config.isPriorityHeading" class="display-4 md-display-3 fw-black mb-4">
+            {{ config.headline }}
+        </h1>
+        <h2 *ngIf="!config.isPriorityHeading" class="display-4 md-display-3 fw-black tracking-tight mb-4">
+            {{ config.headline }}
+        </h2>
+
+        <!-- Subtitle -->
+        <p class="lead fw-light mb-5" [ngClass]="subtitleColor">
+            {{ config.subtitle }}
+        </p>
+
+        <!-- Call To Actions -->
+        <div *ngIf="config.primaryCta || config.secondaryCta" class="d-flex justify-content-center flex-wrap gap-3">
+
+            <!-- Primary Button -->
+            <a *ngIf="config.primaryCta" [href]="config.primaryCta.url" [target]="config.primaryCta.target || '_self'" [attr.rel]="config.primaryCta.target === '_blank' ? 'noopener noreferrer' : null" (click)="onHandleClick('primary')" class="btn btn-primary btn-lg px-4 py-3 fw-medium shadow-sm transition-transform">
+                {{ config.primaryCta.label }}
+            </a>
+
+            <!-- Secondary Button -->
+            <a *ngIf="config.secondaryCta" [href]="config.secondaryCta.url" [target]="config.secondaryCta.target || '_self'" [attr.rel]="config.secondaryCta.target === '_blank' ? 'noopener noreferrer' : null" (click)="onHandleClick('secondary')" class="btn btn-lg px-4 py-3 fw-medium transition-transform" [ngClass]="theme === 'light' ? 'btn-outline-secondary' : 'btn-outline-light bg-white bg-opacity-10 backdrop-blur'">
+                {{ config.secondaryCta.label }}
+            </a>
+        </div>
+
+    </div>
+</section>
