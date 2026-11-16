@@ -1,0 +1,68 @@
+
+
+/* Region Particles */
+.particles-banner {
+    position: relative;
+    color: #fff;
+    background-color: #060D1A;
+    overflow: hidden;
+}
+
+.js-particles {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.panel {
+   z-index: 100;
+}
+
+.particles-banner .container {
+    //z-index: 2;
+    position: relative;
+    height: 70vh;
+}
+
+.particles-pink {
+    background: #9c4995;
+    background: linear-gradient(90deg, rgb(156, 73, 92) 0%, rgb(158, 9, 38) 100%);
+}
+
+.particles-purple {
+    background: #4C499C;
+    background: linear-gradient(90deg, rgba(76, 73, 156, 1) 0%, rgba(134, 66, 153, 1) 100%);
+}
+
+.particles-blue {
+    background: #499C9C;
+    background: linear-gradient(90deg, rgba(73, 156, 156, 1) 0%, rgba(66, 134, 153, 1) 100%);
+}
+
+.particles-primary {
+    background: #00319c;
+}
+
+.particles-green {
+    background: #499C4C;
+    background: linear-gradient(90deg, rgba(73, 156, 76, 1) 0%, rgba(66, 153, 66, 1) 100%);
+}
+
+.particles-yellow {
+    background: #9C9C49;
+    background: linear-gradient(90deg, rgba(156, 156, 73, 1) 0%, rgba(153, 153, 66, 1) 100%);
+}
+
+.particles-orange {
+    background: #D17A29;
+    background: linear-gradient(90deg, rgba(209, 122, 41, 1) 0%, rgba(218, 153, 66, 1) 100%);
+}
+
+.particles-default {
+    background: var(--red-to-pink-to-purple-horizontal-gradient);
+}

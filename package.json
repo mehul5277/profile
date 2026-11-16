@@ -25,6 +25,7 @@
     "bootstrap-icons": "^1.13.1",
     "crypto-js": "^4.2.0",
     "material-symbols": "^0.48.2",
+    "particles.js": "^2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "typed.js": "^3.0.0",

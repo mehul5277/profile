@@ -1,0 +1,54 @@
+<section class="billboard-hero text-white text-center d-nonex">
+    <!-- Background Video Loop -->
+    <!-- Replace the src URL with your own hosted MP4 file -->
+    <video class="video-background d-none" autoplay loop muted playsinline poster="https://unsplash.com">
+        <source src="https://xyz.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Overlay Layer -->
+    <div class="video-overlay"></div>
+
+    <!-- Foreground Content Layer -->
+    <div class="billboard-content d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+
+                    <!-- Tagline / Kicker -->
+                    <h6 class="text-uppercase tracking-wider text-primary fw-bold mb-3" style="letter-spacing: 2px;">
+                        {{billboardCofig.tagline}}
+                    </h6>
+
+                    <!-- Main Headline -->
+                    <!-- <h1 class="display-1 fw-extrabold mb-4 text-uppercase">
+                        Motion **Captivates**
+                    </h1> -->
+                    <svg class="company-logo" aria-hidden="true">
+                        <use href="assets/image/techstack.svg#jixo"></use>
+                    </svg>
+
+                    <!-- Main Headline -->
+                    <h1 class="display-1x fw-extrabold mb-4 text-uppercasex" style="letter-spacing: 2px;">
+                        {{billboardCofig.headline}}
+                    </h1>
+                    <!-- Subtitle -->
+                    <p class="lead fs-4 mb-5 text-light opacity-90">
+                        {{billboardCofig.headline}}
+                    </p>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="d-sm-flex justify-content-center gap-3">
+                        <a href="#get-started" class="btn btn-primary btn-lg px-5 py-3 fw-bold text-uppercase mb-3 mb-sm-0">
+                            Explore Features
+                        </a>
+                        <a href="#watch-more" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase">
+                            Learn More
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+<!-- Fullpage Billboard Section -->
+
+<div class="particles-banner h-100">
+    <div [class]="[styleClass, 'js-particles']" id="particles-js"></div>
+    <div class="h-100 d-flex align-items-center text-center panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <!-- Tagline / Kicker -->
+                    <h6 class="text-uppercase tracking-wider fw-bold mb-3" style="letter-spacing: 2px; color:#38BDF8">
+                        {{billboardCofig.tagline}}
+                    </h6>
+
+                    <svg class="company-logo" aria-hidden="true">
+                        <use href="assets/image/techstack.svg#jixo"></use>
+                    </svg>
+
+                    <!-- Main Headline -->
+                    <h1 class="display-1x fw-extrabold mb-4 text-uppercasex" style="letter-spacing: 2px;">
+                        {{billboardCofig.headline}}
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="lead fs-4 mb-5 text-light opacity-90">
+                        {{billboardCofig.subtitle}}
+                    </p>
+
+                    <!-- Call to Action Buttons -->
+                    <!-- <div class="d-sm-flex justify-content-center gap-3 d-none">
+                        <a href="#get-started" class="btn btn-primary btn-lg px-5 py-3 fw-bold text-uppercase mb-3 mb-sm-0">
+                            Explore Features
+                        </a>
+                        <a href="#watch-more" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase">
+                            Learn More
+                        </a>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
