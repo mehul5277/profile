@@ -38,7 +38,8 @@
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "src/assets/js/wow.min.js",
-              "src/assets/js/wow.init.js"
+              "src/assets/js/wow.init.js",
+              "node_modules/particles.js/particles.js"
             ],
             "browser": "src/main.ts",
             "stylePreprocessorOptions": {

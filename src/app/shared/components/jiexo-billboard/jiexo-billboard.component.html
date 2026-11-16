@@ -1,35 +1,45 @@
-<!-- Fullpage Billboard Hero Section -->
-<section class="billboard-hero d-flex align-items-center text-white text-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
+<!-- Fullpage Billboard Section -->
 
-                <!-- Tagline / Kicker -->
-                <h6 class="text-uppercase tracking-wider text-primary fw-bold mb-3" style="letter-spacing: 2px;">
-                    Introducing the Future
-                </h6>
+<div class="particles-banner h-100">
+    <div [class]="[styleClass, 'js-particles']" id="particles-js"></div>
+    <div class="h-100 d-flex align-items-center text-center panel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
 
-                <!-- Main Headline -->
-                <h1 class="display-1 fw-extrabold mb-4 text-uppercase">
-                    Make a **Bold** Statement
-                </h1>
+                    <!-- Tagline / Kicker -->
+                    <h6 class="text-uppercase tracking-wider fw-bold mb-3" style="letter-spacing: 2px; color:#38BDF8">
+                        {{billboardCofig.tagline}}
+                    </h6>
 
-                <!-- Subtitle -->
-                <p class="lead fs-4 mb-5 text-light opacity-90">
-                    A premium full-page billboard layout built completely with Bootstrap 5. Crafted for maximum visual impact, high conversion rates, and seamless responsiveness.
-                </p>
+                    <svg class="company-logo" aria-hidden="true">
+                        <use href="assets/image/techstack.svg#jixo"></use>
+                    </svg>
 
-                <!-- Call to Action Buttons -->
-                <div class="d-sm-flex justify-content-center gap-3">
-                    <a href="#get-started" class="btn btn-primary btn-lg px-5 py-3 fw-bold text-uppercase mb-3 mb-sm-0">
-                        Get Started Now
-                    </a>
-                    <a href="#learn-more" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase">
-                        Live Demo
-                    </a>
+                    <!-- Main Headline -->
+                    <h1 class="display-1x fw-extrabold mb-4 text-uppercasex" style="letter-spacing: 2px;">
+                        {{billboardCofig.headline}}
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="lead fs-4 mb-5 text-light opacity-90">
+                        {{billboardCofig.subtitle}}
+                    </p>
+
+                    <!-- Call to Action Buttons -->
+                    <!-- <div class="d-sm-flex justify-content-center gap-3 d-none">
+                        <a href="#get-started" class="btn btn-primary btn-lg px-5 py-3 fw-bold text-uppercase mb-3 mb-sm-0">
+                            Explore Features
+                        </a>
+                        <a href="#watch-more" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold text-uppercase">
+                            Learn More
+                        </a>
+                    </div> -->
+
                 </div>
-
             </div>
         </div>
     </div>
-</section>
+</div>
+
+

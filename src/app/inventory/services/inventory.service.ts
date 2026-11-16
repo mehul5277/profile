@@ -6,8 +6,9 @@ import { BalanceItem, InventoryState, StockInItem, StockOutItem } from './../met
   providedIn: 'root'
 })
 export class InventoryService {
+  private readonly STORAGE_KEY = 'inventory_system_state';
 
-  private readonly initialState: InventoryState = {
+  private readonly defaultState: InventoryState = {
     stockInList: [
       { srNo: 1, date: '2026-02-15', product: 'iPhone 16', code: 'M001', qty: 60 },
       { srNo: 2, date: '2026-02-19', product: 'iPhone 17 Pro Max', code: 'M002', qty: 90 }
@@ -17,10 +18,38 @@ export class InventoryService {
     ]
   };
 
-  private stateSubject = new BehaviorSubject<InventoryState>(this.initialState);
+  private stateSubject = new BehaviorSubject<InventoryState>(this.loadStateFromStorage());
   public state$: Observable<InventoryState> = this.stateSubject.asObservable();
 
   constructor() { }
+
+  // Load from localStorage or fallback to default state
+  private loadStateFromStorage(): InventoryState {
+    try {
+      const savedData = localStorage.getItem(this.STORAGE_KEY);
+      if (savedData) {
+        return JSON.parse(savedData);
+      }
+    } catch (e) {
+      console.error('Failed to load inventory state from localStorage', e);
+    }
+    return this.defaultState;
+  }
+
+  // Save state changes to localStorage
+  private saveStateToStorage(state: InventoryState): void {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.error('Failed to save inventory state to localStorage', e);
+    }
+  }
+
+  // Wrapper to update state and persist
+  private updateState(newState: InventoryState): void {
+    this.stateSubject.next(newState);
+    this.saveStateToStorage(newState);
+  }
 
   // Computed Balance Observable
   public getBalanceStock$(): Observable<BalanceItem[]> {
@@ -60,17 +89,17 @@ export class InventoryService {
     );
   }
 
-  // Stock-In Actions (Add, Update, Delete)
+  // Stock-In Actions (Persisted)
   public addStockIn(item: Omit<StockInItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
     const newItem: StockInItem = { ...item, srNo: currentState.stockInList.length + 1 };
-    this.stateSubject.next({ ...currentState, stockInList: [...currentState.stockInList, newItem] });
+    this.updateState({ ...currentState, stockInList: [...currentState.stockInList, newItem] });
   }
 
   public updateStockIn(srNo: number, updatedItem: Omit<StockInItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
     const stockInList = currentState.stockInList.map(item => item.srNo === srNo ? { ...updatedItem, srNo } : item);
-    this.stateSubject.next({ ...currentState, stockInList });
+    this.updateState({ ...currentState, stockInList });
   }
 
   public deleteStockIn(srNo: number): void {
@@ -78,20 +107,20 @@ export class InventoryService {
     const stockInList = currentState.stockInList
       .filter(item => item.srNo !== srNo)
       .map((item, index) => ({ ...item, srNo: index + 1 }));
-    this.stateSubject.next({ ...currentState, stockInList });
+    this.updateState({ ...currentState, stockInList });
   }
 
-  // Stock-Out Actions (Add, Update, Delete)
+  // Stock-Out Actions (Persisted)
   public addStockOut(item: Omit<StockOutItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
     const newItem: StockOutItem = { ...item, srNo: currentState.stockOutList.length + 1 };
-    this.stateSubject.next({ ...currentState, stockOutList: [...currentState.stockOutList, newItem] });
+    this.updateState({ ...currentState, stockOutList: [...currentState.stockOutList, newItem] });
   }
 
   public updateStockOut(srNo: number, updatedItem: Omit<StockOutItem, 'srNo'>): void {
     const currentState = this.stateSubject.value;
     const stockOutList = currentState.stockOutList.map(item => item.srNo === srNo ? { ...updatedItem, srNo } : item);
-    this.stateSubject.next({ ...currentState, stockOutList });
+    this.updateState({ ...currentState, stockOutList });
   }
 
   public deleteStockOut(srNo: number): void {
@@ -99,6 +128,6 @@ export class InventoryService {
     const stockOutList = currentState.stockOutList
       .filter(item => item.srNo !== srNo)
       .map((item, index) => ({ ...item, srNo: index + 1 }));
-    this.stateSubject.next({ ...currentState, stockOutList });
+    this.updateState({ ...currentState, stockOutList });
   }
 }
