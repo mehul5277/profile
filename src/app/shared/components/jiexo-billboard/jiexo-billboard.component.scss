@@ -1,10 +1,8 @@
-
-
 /* Region Particles */
 .particles-banner {
     position: relative;
     color: #fff;
-    background-color: #060D1A;
+    background: #060D1A;
     overflow: hidden;
 }
 
@@ -20,7 +18,7 @@
 }
 
 .panel {
-   z-index: 100;
+    z-index: 100;
 }
 
 .particles-banner .container {
@@ -30,7 +28,7 @@
 }
 
 .particles-pink {
-    background: #9c4995;
+    background: #9c4995 !important;
     background: linear-gradient(90deg, rgb(156, 73, 92) 0%, rgb(158, 9, 38) 100%);
 }
 
@@ -64,5 +62,6 @@
 }
 
 .particles-default {
-    background: var(--red-to-pink-to-purple-horizontal-gradient);
+    background: #060D1A;
+    background: linear-gradient(to bottom, #060D1A 0%, #000000 100%);
 }

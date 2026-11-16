@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 declare let particlesJS: any;
 
@@ -11,12 +10,21 @@ export interface BillboardConfig {
 @Component({
   selector: 'app-jiexo-billboard',
   standalone: true,
-  imports: [NgClass],
   templateUrl: './jiexo-billboard.component.html',
   styleUrl: './jiexo-billboard.component.scss'
 })
 export class JiexoBillboardComponent {
-  @Input() styleClass: string = 'particles-pink';
+private _styleClass: string = 'particles-default';
+
+@Input()
+set styleClass(value: string | undefined | null) {
+  // If the parent sends undefined, null, or empty string, fallback to pink
+  this._styleClass = value ? value : 'particles-default';
+}
+
+get styleClass(): string {
+  return this._styleClass;
+}
   DefaultParticlesConfig = {
     "particles": {
       "number": {
