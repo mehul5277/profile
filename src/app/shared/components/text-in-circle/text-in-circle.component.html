@@ -1,70 +1,69 @@
-<p>text-in-circle works!</p>
 <div class="generator-container">
-  <h2>Text in Circle Generator</h2>
+    <h2>Text in Circle Generator</h2>
 
-  <!-- Input Form Controls -->
-  <form [formGroup]="form" class="generator-form">
-    <div class="form-group">
-      <label>Top Text:</label>
-      <input type="text" formControlName="topText" />
+    <!-- Input Form Controls -->
+    <form [formGroup]="form" class="generator-form">
+        <div class="form-group">
+            <label>Top Text:</label>
+            <input type="text" formControlName="topText" />
+        </div>
+
+        <div class="form-group">
+            <label>Middle Text:</label>
+            <input type="text" formControlName="middleText" />
+        </div>
+
+        <div class="form-group">
+            <label>Bottom Text:</label>
+            <input type="text" formControlName="bottomText" />
+        </div>
+
+        <div class="form-row">
+            <label>Font:</label>
+            <label><input type="radio" formControlName="fontFamily" value="Arial" /> Arial</label>
+            <label><input type="radio" formControlName="fontFamily" value="Times New Roman" /> Times</label>
+        </div>
+
+        <div class="form-row">
+            <label>
+                <input type="checkbox" formControlName="isAllCaps" /> All caps
+            </label>
+        </div>
+    </form>
+
+    <!-- Live Preview Canvas / SVG Area -->
+    <div class="preview-container">
+        <svg viewBox="0 0 400 400" width="100%" height="100%" [style.font-family]="fontFamily">
+            <!-- Outer Border Circle -->
+            <circle cx="200" cy="200" r="180" stroke="black" stroke-width="4" fill="none" />
+            <circle cx="200" cy="200" r="172" stroke="black" stroke-width="1.5" fill="none" />
+
+            <!-- Define SVG Paths for Curved Text -->
+            <defs>
+                <!-- Path curving upwards for Top Text -->
+                <path id="topPath" d="M 50,200 A 150,150 0 1,1 350,200" />
+                <!-- Path curving downwards for Bottom Text -->
+                <path id="bottomPath" d="M 350,200 A 150,150 0 0,1 50,200" />
+            </defs>
+
+            <!-- Top Curved Text -->
+            <text font-size="22" font-weight="bold" fill="black">
+                <textPath href="#topPath" startOffset="50%" text-anchor="middle">
+                    {{ isAllCaps ? topText.toUpperCase() : topText }}
+                </textPath>
+            </text>
+
+            <!-- Bottom Curved Text -->
+            <text font-size="20" font-weight="bold" fill="black">
+                <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
+                    {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
+                </textPath>
+            </text>
+
+            <!-- Center Middle Text -->
+            <text x="200" y="205" font-size="28" font-weight="bold" text-anchor="middle" fill="black">
+                {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+            </text>
+        </svg>
     </div>
-
-    <div class="form-group">
-      <label>Middle Text:</label>
-      <input type="text" formControlName="middleText" />
-    </div>
-
-    <div class="form-group">
-      <label>Bottom Text:</label>
-      <input type="text" formControlName="bottomText" />
-    </div>
-
-    <div class="form-row">
-      <label>Font:</label>
-      <label><input type="radio" formControlName="fontFamily" value="Arial" /> Arial</label>
-      <label><input type="radio" formControlName="fontFamily" value="Times New Roman" /> Times</label>
-    </div>
-
-    <div class="form-row">
-      <label>
-        <input type="checkbox" formControlName="isAllCaps" /> All caps
-      </label>
-    </div>
-  </form>
-
-  <!-- Live Preview Canvas / SVG Area -->
-  <div class="preview-container">
-    <svg viewBox="0 0 400 400" width="100%" height="100%" [style.font-family]="fontFamily">
-      <!-- Outer Border Circle -->
-      <circle cx="200" cy="200" r="180" stroke="black" stroke-width="4" fill="none" />
-      <circle cx="200" cy="200" r="172" stroke="black" stroke-width="1.5" fill="none" />
-
-      <!-- Define SVG Paths for Curved Text -->
-      <defs>
-        <!-- Path curving upwards for Top Text -->
-        <path id="topPath" d="M 50,200 A 150,150 0 1,1 350,200" />
-        <!-- Path curving downwards for Bottom Text -->
-        <path id="bottomPath" d="M 350,200 A 150,150 0 0,1 50,200" />
-      </defs>
-
-      <!-- Top Curved Text -->
-      <text font-size="22" font-weight="bold" fill="black">
-        <textPath href="#topPath" startOffset="50%" text-anchor="middle">
-          {{ isAllCaps ? topText.toUpperCase() : topText }}
-        </textPath>
-      </text>
-
-      <!-- Bottom Curved Text -->
-      <text font-size="20" font-weight="bold" fill="black">
-        <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
-          {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
-        </textPath>
-      </text>
-
-      <!-- Center Middle Text -->
-      <text x="200" y="205" font-size="28" font-weight="bold" text-anchor="middle" fill="black">
-        {{ isAllCaps ? middleText.toUpperCase() : middleText }}
-      </text>
-    </svg>
-  </div>
 </div>
