@@ -4,6 +4,15 @@
     <!-- Input Form Controls -->
     <form [formGroup]="form" class="generator-form">
         <div class="form-group">
+            <label for="selectedFrame">Select Misc Frame:</label>
+            <select id="selectedFrame" formControlName="selectedFrame" class="frame-select">
+                @for (frame of miscFrames; track frame.id) {
+                <option [value]="frame.id">{{ frame.label }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
             <label for="topText">Top Text:</label>
             <input id="topText" type="text" formControlName="topText" />
         </div>
@@ -31,18 +40,53 @@
         </div>
     </form>
 
-    <!-- Exact Concentric Ring Layout -->
+    <!-- SVG Preview with Switchable Frame Styles -->
     <div class="preview-container" #svgContainer>
-        <svg viewBox="0 0 400 400" width="100%" height="100%" [style.font-family]="fontFamily">
-            <!-- Outer Circle and Inner Ring Circle -->
+        <svg viewBox="0 0 400 400" width="100%" height="100%" [style.font-family]="fontFamily" [attr.class]="'frame-style-' + selectedFrame">
+
+            <!-- Switchable Frame Artwork (Text Layout Stays Identical) -->
+            @switch (selectedFrame) {
+            <!-- 1. Classic Double Circle -->
+            @case ('classic-double') {
             <circle cx="200" cy="200" r="180" stroke="black" stroke-width="4" fill="none" />
             <circle cx="200" cy="200" r="126" stroke="black" stroke-width="3" fill="none" />
+            }
 
-            <!-- Curved Text Paths Centered Between the Two Rings -->
+            <!-- 2. Scalloped Stamp Seal -->
+            @case ('scalloped-seal') {
+            <path [attr.d]="getScallopedPath(200, 200, 194, 178, 36)" stroke="black" stroke-width="3.5" fill="none" />
+            <circle cx="200" cy="200" r="126" stroke="black" stroke-width="2.5" stroke-dasharray="4 3" fill="none" />
+            }
+
+            <!-- 3. Twisted Rope Border -->
+            @case ('rope-ring') {
+            <circle cx="200" cy="200" r="184" stroke="black" stroke-width="2" fill="none" />
+            <circle cx="200" cy="200" r="179" stroke="black" stroke-width="6" stroke-dasharray="8 5" stroke-linecap="round" fill="none" />
+            <circle cx="200" cy="200" r="174" stroke="black" stroke-width="2" fill="none" />
+            <circle cx="200" cy="200" r="126" stroke="black" stroke-width="3" fill="none" />
+            }
+
+            <!-- 4. Dotted Wreath Crest -->
+            @case ('dotted-crest') {
+            <circle cx="200" cy="200" r="183" stroke="black" stroke-width="2.5" fill="none" />
+            <circle cx="200" cy="200" r="176" stroke="black" stroke-width="4" stroke-dasharray="1 9" stroke-linecap="round" fill="none" />
+            <circle cx="200" cy="200" r="126" stroke="black" stroke-width="3" fill="none" />
+            <!-- Left & Right Accent Stars inside inner circle -->
+            <text x="96" y="207" font-size="16" text-anchor="middle" fill="black">★</text>
+            <text x="304" y="207" font-size="16" text-anchor="middle" fill="black">★</text>
+            }
+
+            <!-- 5. Octagon Emblem -->
+            @case ('octagon-emblem') {
+            <polygon points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24" stroke="black" stroke-width="4.5" fill="none" />
+            <polygon points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33" stroke="black" stroke-width="1.5" fill="none" />
+            <circle cx="200" cy="200" r="126" stroke="black" stroke-width="3" fill="none" />
+            }
+            }
+
+            <!-- Unchanged Curved Text Paths -->
             <defs>
-                <!-- Top arc: radius 144 (sits nicely above the r=126 inner ring) -->
                 <path id="topPath" d="M 56,200 A 144,144 0 1,1 344,200" />
-                <!-- Bottom arc: radius 164 (baseline sits near the outer ring so upright text stays inside the track) -->
                 <path id="bottomPath" d="M 36,200 A 164,164 0 0,0 364,200" />
             </defs>
 

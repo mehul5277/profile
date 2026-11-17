@@ -2,6 +2,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
+export interface FrameOption {
+  id: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-text-in-circle',
   standalone: true,
@@ -13,11 +18,20 @@ export class TextInCircleComponent {
   form: FormGroup;
   @ViewChild('svgContainer', { static: false }) svgContainer!: ElementRef;
 
+  miscFrames: FrameOption[] = [
+    { id: 'classic-double', label: 'Classic Double Circle' },
+    { id: 'scalloped-seal', label: 'Scalloped Stamp Seal' },
+    { id: 'rope-ring', label: 'Twisted Rope Border' },
+    { id: 'dotted-crest', label: 'Dotted Wreath Crest' },
+    { id: 'octagon-emblem', label: 'Octagon Frame' }
+  ];
+
   get topText(): string { return this.form.get('topText')?.value || ''; }
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
+  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'classic-double'; }
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -25,8 +39,31 @@ export class TextInCircleComponent {
       middleText: ['WILSON'],
       bottomText: ['EST. 2020'],
       fontFamily: ['Arial'],
-      isAllCaps: [false]
+      isAllCaps: [false],
+      selectedFrame: ['classic-double']
     });
+  }
+
+  // Generates a smooth wavy/scalloped SVG path around (200, 200)
+  getScallopedPath(cx: number, cy: number, outerR: number, innerR: number, points: number): string {
+    const step = (Math.PI * 2) / points;
+    let d = '';
+    for (let i = 0; i < points; i++) {
+      const a1 = i * step;
+      const a2 = a1 + step / 2;
+      const a3 = a1 + step;
+
+      const x1 = cx + innerR * Math.cos(a1);
+      const y1 = cy + innerR * Math.sin(a1);
+      const cxCtrl = cx + outerR * Math.cos(a2);
+      const cyCtrl = cy + outerR * Math.sin(a2);
+      const x2 = cx + innerR * Math.cos(a3);
+      const y2 = cy + innerR * Math.sin(a3);
+
+      d += i === 0 ? `M ${x1.toFixed(1)},${y1.toFixed(1)} ` : '';
+      d += `Q ${cxCtrl.toFixed(1)},${cyCtrl.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)} `;
+    }
+    return d + 'Z';
   }
 
   downloadSvg(): void {
@@ -41,7 +78,7 @@ export class TextInCircleComponent {
     }
 
     const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
-    this.triggerDownload(blob, 'text-in-circle.svg');
+    this.triggerDownload(blob, `text-in-circle-${this.selectedFrame}.svg`);
   }
 
   downloadPng(): void {
@@ -69,7 +106,7 @@ export class TextInCircleComponent {
 
         canvas.toBlob((blob) => {
           if (blob) {
-            this.triggerDownload(blob, 'text-in-circle.png');
+            this.triggerDownload(blob, `text-in-circle-${this.selectedFrame}.png`);
           }
           window.URL.revokeObjectURL(url);
         }, 'image/png');
