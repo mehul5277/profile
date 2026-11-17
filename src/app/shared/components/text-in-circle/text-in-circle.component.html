@@ -119,22 +119,30 @@
         </div>
       </div>
 
-      <!-- Scaling & Spacing -->
+      <!-- Inner & Outer Text Scaling -->
       <div class="form-row">
         <div class="form-group half">
-          <label for="middleScale">Middle Text Scale: {{ middleScale }}x</label>
-          <input id="middleScale" type="range" min="0.5" max="1.8" step="0.1" formControlName="middleScale" />
+          <label for="outerTextScale">Outer Text Scale: {{ outerTextScale }}x</label>
+          <input id="outerTextScale" type="range" min="0.6" max="1.4" step="0.05" formControlName="outerTextScale" />
         </div>
 
+        <div class="form-group half">
+          <label for="middleScale">Inner Text Scale: {{ middleScale }}x</label>
+          <input id="middleScale" type="range" min="0.5" max="1.8" step="0.05" formControlName="middleScale" />
+        </div>
+      </div>
+
+      <!-- Badge Scale & Letter Spacing -->
+      <div class="form-row">
         <div class="form-group half">
           <label for="overallScale">Badge Scale: {{ overallScale }}x</label>
           <input id="overallScale" type="range" min="0.6" max="1.15" step="0.05" formControlName="overallScale" />
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="letterSpacing">Letter Spacing: {{ letterSpacing }}px</label>
-        <input id="letterSpacing" type="range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
+        <div class="form-group half">
+          <label for="letterSpacing">Letter Spacing: {{ letterSpacing }}px</label>
+          <input id="letterSpacing" type="range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
+        </div>
       </div>
     </div>
   </form>
@@ -151,7 +159,7 @@
       <!-- Global Scale Group Centered at (200, 200) -->
       <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'" class="badge-root">
         
-        <!-- Frame Artwork Layer (Outer Background Fill + Outer Border + Inner Background Fill + Inner Border) -->
+        <!-- Frame Artwork Layer -->
         <g class="frame-layer">
           @switch (selectedFrame) {
             @case ('classic-double') {
@@ -270,28 +278,40 @@
           }
         </g>
 
-        <!-- Curved Text Paths -->
+        <!-- Dynamically Adjusted Curved Text Paths for Outer Text Scaling -->
         <defs>
-          <path id="topPath" d="M 56,200 A 144,144 0 1,1 344,200" />
-          <path id="bottomPath" d="M 36,200 A 164,164 0 0,0 364,200" />
+          <path
+            id="topPath"
+            [attr.d]="'M ' + (200 - topArcRadius) + ',200 A ' + topArcRadius + ',' + topArcRadius + ' 0 1,1 ' + (200 + topArcRadius) + ',200'" />
+          <path
+            id="bottomPath"
+            [attr.d]="'M ' + (200 - bottomArcRadius) + ',200 A ' + bottomArcRadius + ',' + bottomArcRadius + ' 0 0,0 ' + (200 + bottomArcRadius) + ',200'" />
         </defs>
 
         <!-- Outer Curved Text Layer -->
         <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
-          <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+          <text
+            [attr.font-size]="30 * outerTextScale"
+            font-weight="bold"
+            [attr.letter-spacing]="letterSpacing"
+            [attr.fill]="fontColor">
             <textPath href="#topPath" startOffset="50%" text-anchor="middle">
               {{ isAllCaps ? topText.toUpperCase() : topText }}
             </textPath>
           </text>
 
-          <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+          <text
+            [attr.font-size]="30 * outerTextScale"
+            font-weight="bold"
+            [attr.letter-spacing]="letterSpacing"
+            [attr.fill]="fontColor">
             <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
               {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
             </textPath>
           </text>
         </g>
 
-        <!-- Center Middle Text Layer -->
+        <!-- Center / Inner Middle Text Layer -->
         <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
           <text
             x="200"

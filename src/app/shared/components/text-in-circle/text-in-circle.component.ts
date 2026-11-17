@@ -63,9 +63,19 @@ export class TextInCircleComponent {
 
   // Scaling & Independent Animation Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
+  get outerTextScale(): number { return this.form.get('outerTextScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
   get outerTextAnimation(): string { return this.form.get('outerTextAnimation')?.value || 'none'; }
   get centerTextAnimation(): string { return this.form.get('centerTextAnimation')?.value || 'none'; }
+
+  // Dynamic Arc Radii so scaled outer text stays vertically centered inside the ring track
+  get topArcRadius(): number {
+    return 153 - (30 * this.outerTextScale) * 0.3;
+  }
+
+  get bottomArcRadius(): number {
+    return 153 + (30 * this.outerTextScale) * 0.36;
+  }
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -83,6 +93,7 @@ export class TextInCircleComponent {
       fontColor: ['#000000'],
       letterSpacing: [2],
       overallScale: [1],
+      outerTextScale: [1],
       middleScale: [1],
       outerTextAnimation: ['none'],
       centerTextAnimation: ['none']
