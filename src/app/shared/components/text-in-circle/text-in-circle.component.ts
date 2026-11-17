@@ -13,28 +13,22 @@ export class TextInCircleComponent {
   form: FormGroup;
   @ViewChild('svgContainer', { static: false }) svgContainer!: ElementRef;
 
-  // Template getters for clean binding
   get topText(): string { return this.form.get('topText')?.value || ''; }
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
-  get middleScale(): number { return this.form.get('middleScale')?.value || 1; }
-  get frameColor(): string { return this.form.get('frameColor')?.value || '#000000'; }
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      topText: ['SARAH • BRAD • AMY'],
+      topText: ['SARAH • BRAD ★ AMY'],
       middleText: ['WILSON'],
       bottomText: ['EST. 2020'],
       fontFamily: ['Arial'],
-      isAllCaps: [false],
-      middleScale: [1],
-      frameColor: ['#000000']
+      isAllCaps: [false]
     });
   }
 
-  // Export vector SVG file
   downloadSvg(): void {
     const svgElement = this.svgContainer.nativeElement.querySelector('svg');
     if (!svgElement) return;
@@ -42,7 +36,6 @@ export class TextInCircleComponent {
     const serializer = new XMLSerializer();
     let source = serializer.serializeToString(svgElement);
 
-    // Ensure XML namespace is present
     if (!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)) {
       source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
     }
@@ -51,7 +44,6 @@ export class TextInCircleComponent {
     this.triggerDownload(blob, 'text-in-circle.svg');
   }
 
-  // Export high-res raster PNG file
   downloadPng(): void {
     const svgElement = this.svgContainer.nativeElement.querySelector('svg');
     if (!svgElement) return;
@@ -60,8 +52,8 @@ export class TextInCircleComponent {
     const svgString = serializer.serializeToString(svgElement);
 
     const canvas = document.createElement('canvas');
-    canvas.width = 1000;
-    canvas.height = 1000;
+    canvas.width = 800;
+    canvas.height = 800;
     const ctx = canvas.getContext('2d');
 
     const img = new Image();
@@ -89,12 +81,12 @@ export class TextInCircleComponent {
 
   private triggerDownload(blob: Blob, filename: string): void {
     const url = window.URL.createObjectURL(blob);
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = filename;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
   }
 }

@@ -4,18 +4,18 @@
     <!-- Input Form Controls -->
     <form [formGroup]="form" class="generator-form">
         <div class="form-group">
-            <label>Top Text:</label>
-            <input type="text" formControlName="topText" />
+            <label for="topText">Top Text:</label>
+            <input id="topText" type="text" formControlName="topText" />
         </div>
 
         <div class="form-group">
-            <label>Middle Text:</label>
-            <input type="text" formControlName="middleText" />
+            <label for="middleText">Middle Text:</label>
+            <input id="middleText" type="text" formControlName="middleText" />
         </div>
 
         <div class="form-group">
-            <label>Bottom Text:</label>
-            <input type="text" formControlName="bottomText" />
+            <label for="bottomText">Bottom Text:</label>
+            <input id="bottomText" type="text" formControlName="bottomText" />
         </div>
 
         <div class="form-row">
@@ -31,39 +31,45 @@
         </div>
     </form>
 
-    <!-- Live Preview Canvas / SVG Area -->
-    <div class="preview-container">
+    <!-- Exact Concentric Ring Layout -->
+    <div class="preview-container" #svgContainer>
         <svg viewBox="0 0 400 400" width="100%" height="100%" [style.font-family]="fontFamily">
-            <!-- Outer Border Circle -->
+            <!-- Outer Circle and Inner Ring Circle -->
             <circle cx="200" cy="200" r="180" stroke="black" stroke-width="4" fill="none" />
-            <circle cx="200" cy="200" r="172" stroke="black" stroke-width="1.5" fill="none" />
+            <circle cx="200" cy="200" r="126" stroke="black" stroke-width="3" fill="none" />
 
-            <!-- Define SVG Paths for Curved Text -->
+            <!-- Curved Text Paths Centered Between the Two Rings -->
             <defs>
-                <!-- Path curving upwards for Top Text -->
-                <path id="topPath" d="M 50,200 A 150,150 0 1,1 350,200" />
-                <!-- Path curving downwards for Bottom Text -->
-                <path id="bottomPath" d="M 350,200 A 150,150 0 0,1 50,200" />
+                <!-- Top arc: radius 144 (sits nicely above the r=126 inner ring) -->
+                <path id="topPath" d="M 56,200 A 144,144 0 1,1 344,200" />
+                <!-- Bottom arc: radius 164 (baseline sits near the outer ring so upright text stays inside the track) -->
+                <path id="bottomPath" d="M 36,200 A 164,164 0 0,0 364,200" />
             </defs>
 
             <!-- Top Curved Text -->
-            <text font-size="22" font-weight="bold" fill="black">
+            <text font-size="30" font-weight="bold" letter-spacing="2" fill="black">
                 <textPath href="#topPath" startOffset="50%" text-anchor="middle">
                     {{ isAllCaps ? topText.toUpperCase() : topText }}
                 </textPath>
             </text>
 
             <!-- Bottom Curved Text -->
-            <text font-size="20" font-weight="bold" fill="black">
+            <text font-size="30" font-weight="bold" letter-spacing="2" fill="black">
                 <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
                     {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
                 </textPath>
             </text>
 
             <!-- Center Middle Text -->
-            <text x="200" y="205" font-size="28" font-weight="bold" text-anchor="middle" fill="black">
+            <text x="200" y="212" font-size="34" font-weight="bold" letter-spacing="1.5" text-anchor="middle" fill="black">
                 {{ isAllCaps ? middleText.toUpperCase() : middleText }}
             </text>
         </svg>
+    </div>
+
+    <!-- Download Buttons -->
+    <div class="download-actions">
+        <button type="button" (click)="downloadSvg()">Download SVG</button>
+        <button type="button" (click)="downloadPng()">Download PNG</button>
     </div>
 </div>
