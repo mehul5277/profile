@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <!-- Frame Selection & Independent Text Animations -->
+    <!-- Frame Selection & Circle Border/Background Controls -->
     <div class="section-box">
       <div class="form-group">
         <label for="selectedFrame">Misc Frame:</label>
@@ -31,6 +31,41 @@
         </select>
       </div>
 
+      <!-- Border Thickness Scaling -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="outerBorderWidth">Outer Border: {{ outerBorderWidth }}px</label>
+          <input id="outerBorderWidth" type="range" min="0" max="14" step="0.5" formControlName="outerBorderWidth" />
+        </div>
+
+        <div class="form-group half">
+          <label for="innerBorderWidth">Inner Border: {{ innerBorderWidth }}px</label>
+          <input id="innerBorderWidth" type="range" min="0" max="14" step="0.5" formControlName="innerBorderWidth" />
+        </div>
+      </div>
+
+      <!-- Inner & Outer Background Colors -->
+      <div class="form-row">
+        <div class="form-group half">
+          <label for="outerBgColor">Outer Ring BG:</label>
+          <div class="color-picker-wrap">
+            <input id="outerBgColor" type="color" formControlName="outerBgColor" />
+            <span>{{ outerBgColor }}</span>
+          </div>
+        </div>
+
+        <div class="form-group half">
+          <label for="innerBgColor">Inner Circle BG:</label>
+          <div class="color-picker-wrap">
+            <input id="innerBgColor" type="color" formControlName="innerBgColor" />
+            <span>{{ innerBgColor }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Independent Text Animations -->
+    <div class="section-box">
       <div class="form-row">
         <div class="form-group half">
           <label for="outerTextAnimation">Outer Text Animation:</label>
@@ -66,9 +101,9 @@
         </label>
       </div>
 
-      <div class="form-row color-row">
+      <div class="form-row">
         <div class="form-group half">
-          <label for="frameColor">Frame Color:</label>
+          <label for="frameColor">Border Color:</label>
           <div class="color-picker-wrap">
             <input id="frameColor" type="color" formControlName="frameColor" />
             <span>{{ frameColor }}</span>
@@ -116,50 +151,99 @@
       <!-- Global Scale Group Centered at (200, 200) -->
       <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'" class="badge-root">
         
-        <!-- Frame Artwork Layer -->
+        <!-- Frame Artwork Layer (Outer Background Fill + Outer Border + Inner Background Fill + Inner Border) -->
         <g class="frame-layer">
           @switch (selectedFrame) {
             @case ('classic-double') {
-              <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" stroke-width="4" fill="none" />
-              <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" stroke-width="3" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="180"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="outerBorderWidth"
+                [attr.fill]="outerBgColor" />
+              <circle
+                cx="200"
+                cy="200"
+                r="126"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="innerBorderWidth"
+                [attr.fill]="innerBgColor" />
             }
 
             @case ('scalloped-seal') {
               <path
                 [attr.d]="getScallopedPath(200, 200, 194, 178, 36)"
                 [attr.stroke]="frameColor"
-                stroke-width="3.5"
-                fill="none" />
-              <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" stroke-width="2.5" stroke-dasharray="4 3" fill="none" />
+                [attr.stroke-width]="outerBorderWidth"
+                [attr.fill]="outerBgColor" />
+              <circle
+                cx="200"
+                cy="200"
+                r="126"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="innerBorderWidth"
+                stroke-dasharray="4 3"
+                [attr.fill]="innerBgColor" />
             }
 
             @case ('rope-ring') {
-              <circle cx="200" cy="200" r="184" [attr.stroke]="frameColor" stroke-width="2" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="184"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="outerBorderWidth * 0.5"
+                [attr.fill]="outerBgColor" />
               <circle
                 cx="200"
                 cy="200"
                 r="179"
                 [attr.stroke]="frameColor"
-                stroke-width="6"
+                [attr.stroke-width]="outerBorderWidth * 1.5"
                 stroke-dasharray="8 5"
                 stroke-linecap="round"
                 fill="none" />
-              <circle cx="200" cy="200" r="174" [attr.stroke]="frameColor" stroke-width="2" fill="none" />
-              <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" stroke-width="3" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="174"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="outerBorderWidth * 0.5"
+                fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="126"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="innerBorderWidth"
+                [attr.fill]="innerBgColor" />
             }
 
             @case ('dotted-crest') {
-              <circle cx="200" cy="200" r="183" [attr.stroke]="frameColor" stroke-width="2.5" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="183"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="outerBorderWidth * 0.65"
+                [attr.fill]="outerBgColor" />
               <circle
                 cx="200"
                 cy="200"
                 r="176"
                 [attr.stroke]="frameColor"
-                stroke-width="4"
+                [attr.stroke-width]="outerBorderWidth"
                 stroke-dasharray="1 9"
                 stroke-linecap="round"
                 fill="none" />
-              <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" stroke-width="3" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="126"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="innerBorderWidth"
+                [attr.fill]="innerBgColor" />
               <text x="96" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
               <text x="304" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
             }
@@ -168,14 +252,20 @@
               <polygon
                 points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24"
                 [attr.stroke]="frameColor"
-                stroke-width="4.5"
-                fill="none" />
+                [attr.stroke-width]="outerBorderWidth"
+                [attr.fill]="outerBgColor" />
               <polygon
                 points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33"
                 [attr.stroke]="frameColor"
-                stroke-width="1.5"
+                [attr.stroke-width]="outerBorderWidth * 0.4"
                 fill="none" />
-              <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" stroke-width="3" fill="none" />
+              <circle
+                cx="200"
+                cy="200"
+                r="126"
+                [attr.stroke]="frameColor"
+                [attr.stroke-width]="innerBorderWidth"
+                [attr.fill]="innerBgColor" />
             }
           }
         </g>
@@ -186,7 +276,7 @@
           <path id="bottomPath" d="M 36,200 A 164,164 0 0,0 364,200" />
         </defs>
 
-        <!-- Outer Curved Text Layer (Top + Bottom) -->
+        <!-- Outer Curved Text Layer -->
         <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
           <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
             <textPath href="#topPath" startOffset="50%" text-anchor="middle">

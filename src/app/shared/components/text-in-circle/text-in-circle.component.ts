@@ -48,6 +48,12 @@ export class TextInCircleComponent {
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
   get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'classic-double'; }
 
+  // Circle Border Thickness & Background Color Getters
+  get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 4; }
+  get innerBorderWidth(): number { return this.form.get('innerBorderWidth')?.value ?? 3; }
+  get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
+  get innerBgColor(): string { return this.form.get('innerBgColor')?.value || '#ffffff'; }
+
   // Formatting Getters
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
@@ -67,6 +73,10 @@ export class TextInCircleComponent {
       topText: ['SARAH • BRAD ★ AMY'],
       middleText: ['WILSON'],
       bottomText: ['EST. 2020'],
+      outerBorderWidth: [4],
+      innerBorderWidth: [3],
+      outerBgColor: ['#ffffff'],
+      innerBgColor: ['#ffffff'],
       fontFamily: ['Arial'],
       isAllCaps: [false],
       frameColor: ['#000000'],
