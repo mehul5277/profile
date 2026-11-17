@@ -2,9 +2,9 @@
 
 <app-ticker-client></app-ticker-client>
 
-<section id="clients" class="clients section-bg d-none">
+<section id="clients" class="clients section-bg">
     <div class="container">
-        <div class="row" data-aos="zoom-in">
+        <div class="row">
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                 <img src="assets/img/client-11.png" class="img-fluid" alt="">
             </div>
@@ -32,8 +32,7 @@
     </div>
 </section>
 
-<!-- <app-hero [heroConfig]="heroConfig"></app-hero> -->
-
+<!-- WHAT WE DO -->
 <div class="container-fluid">
     <app-card-1 [cardConfig]="businessSection"></app-card-1>
     <div class="row py-4 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
@@ -45,6 +44,7 @@
     </div>
 </div>
 
+<!-- AGENTIC AI -->
 <div class="container-fluid container-ai glow-purple py-4">
     <app-card-1 [cardConfig]="aiSection"></app-card-1>
     <div class="row pb-3 g-4">
@@ -56,6 +56,7 @@
     </div>
 </div>
 
+<!-- Innovation & Excellence -->
 <div class="container-fluid  py-4">
     <app-card-1 [cardConfig]="innovationSectiom"></app-card-1>
     <div class="row pb-3 g-4">
@@ -68,7 +69,9 @@
 </div>
 
 <div class="container-fluid">
+    <!-- Recognized for Excellence & Innovation -->
     <app-card-1 [cardConfig]="recognitionSection"></app-card-1>
+    <!-- Ready to Transform -->
     <app-hero [heroConfig]="buildSection"></app-hero>
 </div>
 
