@@ -272,13 +272,10 @@ export class HomeComponent implements OnInit {
   }];
   //#endregion
 
-  //#region recognitionSection
+  //#region recognitionSection, Recognition
   recognitionSection: CardConfig = {
-    badges: [{
-      "text": "Recognition"
-    }],
     "icon": "verified_user",
-    "css": "card-primary",
+    "css": "card-primary text-center",
     "type": CardType.CARD,
     "title": "Recognized for Excellence & Innovation",
     "subtitle": "",
@@ -301,7 +298,7 @@ export class HomeComponent implements OnInit {
       "icon": "bi bi-play-circle"
     }],
     "footers": [{
-      "text": "15+ Years of Expertise"
+      "text": ""
     }]
   };
   //#endregion
