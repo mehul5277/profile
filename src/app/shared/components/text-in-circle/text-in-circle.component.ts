@@ -7,6 +7,11 @@ export interface FrameOption {
   label: string;
 }
 
+export interface AnimationOption {
+  id: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-text-in-circle',
   standalone: true,
@@ -26,25 +31,48 @@ export class TextInCircleComponent {
     { id: 'octagon-emblem', label: 'Octagon Frame' }
   ];
 
+  animations: AnimationOption[] = [
+    { id: 'none', label: 'None (Static)' },
+    { id: 'spin-slow', label: 'Slow Rotate' },
+    { id: 'pulse', label: 'Gentle Pulse' },
+    { id: 'counter-spin', label: 'Counter-Spin Outer Ring' }
+  ];
+
+  // Text & Frame Getters
   get topText(): string { return this.form.get('topText')?.value || ''; }
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
+  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'classic-double'; }
+
+  // Formatting Getters
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
-  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'classic-double'; }
+  get frameColor(): string { return this.form.get('frameColor')?.value || '#000000'; }
+  get fontColor(): string { return this.form.get('fontColor')?.value || '#000000'; }
+  get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
+
+  // Scaling & Animation Getters
+  get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
+  get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
+  get animationType(): string { return this.form.get('animationType')?.value || 'none'; }
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
+      selectedFrame: ['classic-double'],
       topText: ['SARAH • BRAD ★ AMY'],
       middleText: ['WILSON'],
       bottomText: ['EST. 2020'],
       fontFamily: ['Arial'],
       isAllCaps: [false],
-      selectedFrame: ['classic-double']
+      frameColor: ['#000000'],
+      fontColor: ['#000000'],
+      letterSpacing: [2],
+      overallScale: [1],
+      middleScale: [1],
+      animationType: ['none']
     });
   }
 
-  // Generates a smooth wavy/scalloped SVG path around (200, 200)
   getScallopedPath(cx: number, cy: number, outerR: number, innerR: number, points: number): string {
     const step = (Math.PI * 2) / points;
     let d = '';
@@ -89,8 +117,8 @@ export class TextInCircleComponent {
     const svgString = serializer.serializeToString(svgElement);
 
     const canvas = document.createElement('canvas');
-    canvas.width = 800;
-    canvas.height = 800;
+    canvas.width = 1000;
+    canvas.height = 1000;
     const ctx = canvas.getContext('2d');
 
     const img = new Image();
