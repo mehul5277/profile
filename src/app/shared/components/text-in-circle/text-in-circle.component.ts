@@ -2,12 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
-export interface FrameOption {
-  id: string;
-  label: string;
-}
-
-export interface AnimationOption {
+export interface SelectOption {
   id: string;
   label: string;
 }
@@ -23,7 +18,7 @@ export class TextInCircleComponent {
   form: FormGroup;
   @ViewChild('svgContainer', { static: false }) svgContainer!: ElementRef;
 
-  miscFrames: FrameOption[] = [
+  miscFrames: SelectOption[] = [
     { id: 'classic-double', label: 'Classic Double Circle' },
     { id: 'scalloped-seal', label: 'Scalloped Stamp Seal' },
     { id: 'rope-ring', label: 'Twisted Rope Border' },
@@ -31,11 +26,20 @@ export class TextInCircleComponent {
     { id: 'octagon-emblem', label: 'Octagon Frame' }
   ];
 
-  animations: AnimationOption[] = [
+  outerTextAnimations: SelectOption[] = [
     { id: 'none', label: 'None (Static)' },
-    { id: 'spin-slow', label: 'Slow Rotate' },
-    { id: 'pulse', label: 'Gentle Pulse' },
-    { id: 'counter-spin', label: 'Counter-Spin Outer Ring' }
+    { id: 'spin-cw', label: 'Rotate Clockwise' },
+    { id: 'spin-ccw', label: 'Rotate Counter-Clockwise' },
+    { id: 'rock', label: 'Gentle Rocking' },
+    { id: 'fade-pulse', label: 'Opacity Pulse' }
+  ];
+
+  centerTextAnimations: SelectOption[] = [
+    { id: 'none', label: 'None (Static)' },
+    { id: 'pulse', label: 'Heartbeat Pulse' },
+    { id: 'float', label: 'Vertical Float' },
+    { id: 'wiggle', label: 'Subtle Tilt Wiggle' },
+    { id: 'fade-pulse', label: 'Opacity Pulse' }
   ];
 
   // Text & Frame Getters
@@ -51,10 +55,11 @@ export class TextInCircleComponent {
   get fontColor(): string { return this.form.get('fontColor')?.value || '#000000'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
 
-  // Scaling & Animation Getters
+  // Scaling & Independent Animation Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
-  get animationType(): string { return this.form.get('animationType')?.value || 'none'; }
+  get outerTextAnimation(): string { return this.form.get('outerTextAnimation')?.value || 'none'; }
+  get centerTextAnimation(): string { return this.form.get('centerTextAnimation')?.value || 'none'; }
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
@@ -69,7 +74,8 @@ export class TextInCircleComponent {
       letterSpacing: [2],
       overallScale: [1],
       middleScale: [1],
-      animationType: ['none']
+      outerTextAnimation: ['none'],
+      centerTextAnimation: ['none']
     });
   }
 

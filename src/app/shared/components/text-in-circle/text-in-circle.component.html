@@ -2,7 +2,7 @@
   <h2>Text in Circle Generator</h2>
 
   <form [formGroup]="form" class="generator-form">
-    <!-- Step 1: Text Inputs -->
+    <!-- Text Inputs -->
     <div class="section-box">
       <div class="form-group">
         <label for="topText">Top Text:</label>
@@ -20,22 +20,31 @@
       </div>
     </div>
 
-    <!-- Step 2: Misc Frame & Animation -->
+    <!-- Frame Selection & Independent Text Animations -->
     <div class="section-box">
+      <div class="form-group">
+        <label for="selectedFrame">Misc Frame:</label>
+        <select id="selectedFrame" formControlName="selectedFrame">
+          @for (frame of miscFrames; track frame.id) {
+            <option [value]="frame.id">{{ frame.label }}</option>
+          }
+        </select>
+      </div>
+
       <div class="form-row">
         <div class="form-group half">
-          <label for="selectedFrame">Misc Frame:</label>
-          <select id="selectedFrame" formControlName="selectedFrame">
-            @for (frame of miscFrames; track frame.id) {
-              <option [value]="frame.id">{{ frame.label }}</option>
+          <label for="outerTextAnimation">Outer Text Animation:</label>
+          <select id="outerTextAnimation" formControlName="outerTextAnimation">
+            @for (anim of outerTextAnimations; track anim.id) {
+              <option [value]="anim.id">{{ anim.label }}</option>
             }
           </select>
         </div>
 
         <div class="form-group half">
-          <label for="animationType">Animation:</label>
-          <select id="animationType" formControlName="animationType">
-            @for (anim of animations; track anim.id) {
+          <label for="centerTextAnimation">Center Text Animation:</label>
+          <select id="centerTextAnimation" formControlName="centerTextAnimation">
+            @for (anim of centerTextAnimations; track anim.id) {
               <option [value]="anim.id">{{ anim.label }}</option>
             }
           </select>
@@ -43,7 +52,7 @@
       </div>
     </div>
 
-    <!-- Step 3: Frame & Font Formatting -->
+    <!-- Frame & Font Formatting -->
     <div class="section-box">
       <div class="form-row">
         <div class="form-group inline">
@@ -75,7 +84,7 @@
         </div>
       </div>
 
-      <!-- Step 4: Scaling & Spacing -->
+      <!-- Scaling & Spacing -->
       <div class="form-row">
         <div class="form-group half">
           <label for="middleScale">Middle Text Scale: {{ middleScale }}x</label>
@@ -95,14 +104,14 @@
     </div>
   </form>
 
-  <!-- Live SVG Preview (Exact Concentric Layout Preserved) -->
+  <!-- Live SVG Preview -->
   <div class="preview-container" #svgContainer>
     <svg
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
       [style.font-family]="fontFamily"
-      [attr.class]="'frame-style-' + selectedFrame + ' anim-' + animationType">
+      [attr.class]="'frame-style-' + selectedFrame">
 
       <!-- Global Scale Group Centered at (200, 200) -->
       <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'" class="badge-root">
@@ -177,31 +186,35 @@
           <path id="bottomPath" d="M 36,200 A 164,164 0 0,0 364,200" />
         </defs>
 
-        <!-- Top Curved Text -->
-        <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
-          <textPath href="#topPath" startOffset="50%" text-anchor="middle">
-            {{ isAllCaps ? topText.toUpperCase() : topText }}
-          </textPath>
-        </text>
+        <!-- Outer Curved Text Layer (Top + Bottom) -->
+        <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
+          <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+            <textPath href="#topPath" startOffset="50%" text-anchor="middle">
+              {{ isAllCaps ? topText.toUpperCase() : topText }}
+            </textPath>
+          </text>
 
-        <!-- Bottom Curved Text -->
-        <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
-          <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
-            {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
-          </textPath>
-        </text>
+          <text font-size="30" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+            <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
+              {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
+            </textPath>
+          </text>
+        </g>
 
-        <!-- Scaled Center Middle Text -->
-        <text
-          x="200"
-          [attr.y]="200 + 12 * middleScale"
-          [attr.font-size]="34 * middleScale"
-          font-weight="bold"
-          [attr.letter-spacing]="letterSpacing * 0.75"
-          text-anchor="middle"
-          [attr.fill]="fontColor">
-          {{ isAllCaps ? middleText.toUpperCase() : middleText }}
-        </text>
+        <!-- Center Middle Text Layer -->
+        <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
+          <text
+            x="200"
+            [attr.y]="200 + 12 * middleScale"
+            [attr.font-size]="34 * middleScale"
+            font-weight="bold"
+            [attr.letter-spacing]="letterSpacing * 0.75"
+            text-anchor="middle"
+            [attr.fill]="fontColor">
+            {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+          </text>
+        </g>
+
       </g>
     </svg>
   </div>

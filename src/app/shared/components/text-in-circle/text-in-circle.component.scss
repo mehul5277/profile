@@ -2,31 +2,43 @@ $primary-color: #007bff;
 $primary-hover: #0056b3;
 $border-color: #dcdcdc;
 
+// --- Outer Text Keyframes ---
 @keyframes spinClockwise {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes spinCounterClockwise {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
-@keyframes gentlePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.04);
-  }
+@keyframes gentleRock {
+  0%, 100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+// --- Center Text Keyframes ---
+@keyframes heartbeatPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes verticalFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes subtleWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-4deg); }
+  75% { transform: rotate(4deg); }
+}
+
+// --- Shared Keyframes ---
+@keyframes opacityPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
 }
 
 .generator-container {
@@ -158,35 +170,43 @@ $border-color: #dcdcdc;
 
   svg {
     .badge-root,
-    .frame-layer {
+    .outer-text-layer,
+    .center-text-layer {
       transform-origin: 200px 200px;
-      transition: transform 0.2s ease-out;
     }
 
-    // Animations
-    &.anim-spin-slow .badge-root {
-      animation: spinClockwise 18s linear infinite;
+    // Outer Text Animations
+    .outer-anim-spin-cw {
+      animation: spinClockwise 16s linear infinite;
     }
 
-    &.anim-pulse .badge-root {
-      animation: gentlePulse 2.8s ease-in-out infinite;
+    .outer-anim-spin-ccw {
+      animation: spinCounterClockwise 16s linear infinite;
     }
 
-    &.anim-counter-spin .frame-layer {
-      animation: spinCounterClockwise 20s linear infinite;
+    .outer-anim-rock {
+      animation: gentleRock 3s ease-in-out infinite;
     }
 
-    // Frame-specific visual styling
-    &.frame-style-classic-double circle {
-      stroke-linecap: butt;
+    .outer-anim-fade-pulse {
+      animation: opacityPulse 2.5s ease-in-out infinite;
     }
 
-    &.frame-style-scalloped-seal path {
-      stroke-linejoin: round;
+    // Center Text Animations
+    .center-anim-pulse {
+      animation: heartbeatPulse 2s ease-in-out infinite;
     }
 
-    &.frame-style-octagon-emblem polygon {
-      stroke-linejoin: miter;
+    .center-anim-float {
+      animation: verticalFloat 2.6s ease-in-out infinite;
+    }
+
+    .center-anim-wiggle {
+      animation: subtleWiggle 2.2s ease-in-out infinite;
+    }
+
+    .center-anim-fade-pulse {
+      animation: opacityPulse 2.5s ease-in-out infinite;
     }
   }
 }
