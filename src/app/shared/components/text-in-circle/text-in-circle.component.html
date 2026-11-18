@@ -1,0 +1,493 @@
+<div class="container-fluid py-4 generator-wrapper">
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Left Column: Full-Width Responsive Bootstrap Form (Hidden during Print) -->
+    <div class="col-12 col-lg-7 col-xl-6 no-print">
+      <div class="card shadow-sm border-0 p-4 bg-white">
+        <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
+
+        <form [formGroup]="form">
+          <!-- 1. Text Content & Divider Ornaments -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content & Divider Symbols</h5>
+            
+            <div class="mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="topText" class="form-label fw-semibold small mb-0">Top Curved Text</label>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Insert top divider">
+                  @for (sym of dividerSymbols; track sym) {
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2" (click)="insertDivider('topText', sym)" title="Insert {{ sym }}">
+                      {{ sym }}
+                    </button>
+                  }
+                </div>
+              </div>
+              <input id="topText" type="text" class="form-control" formControlName="topText" />
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-md-4">
+                <label for="middleTopSubText" class="form-label fw-semibold small">Upper Banner Label</label>
+                <input id="middleTopSubText" type="text" class="form-control" formControlName="middleTopSubText" />
+              </div>
+              <div class="col-md-4">
+                <label for="middleText" class="form-label fw-semibold small">Middle Text</label>
+                <input id="middleText" type="text" class="form-control" formControlName="middleText" />
+              </div>
+              <div class="col-md-4">
+                <label for="middleBottomSubText" class="form-label fw-semibold small">Lower Banner Label</label>
+                <input id="middleBottomSubText" type="text" class="form-control" formControlName="middleBottomSubText" />
+              </div>
+            </div>
+
+            <div class="mb-0">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="bottomText" class="form-label fw-semibold small mb-0">Bottom Curved Text</label>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Insert bottom divider">
+                  @for (sym of dividerSymbols; track sym) {
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2" (click)="insertDivider('bottomText', sym)" title="Insert {{ sym }}">
+                      {{ sym }}
+                    </button>
+                  }
+                </div>
+              </div>
+              <input id="bottomText" type="text" class="form-control" formControlName="bottomText" />
+            </div>
+          </div>
+
+          <!-- 2. Frame & Backgrounds -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">2. Frame & Backgrounds</h5>
+            <div class="mb-3">
+              <label for="selectedFrame" class="form-label fw-semibold small">Misc Frame Style</label>
+              <select id="selectedFrame" class="form-select" formControlName="selectedFrame">
+                @for (frame of miscFrames; track frame.id) {
+                  <option [value]="frame.id">{{ frame.label }}</option>
+                }
+              </select>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="outerBorderWidth" class="form-label small">Outer Border: {{ outerBorderWidth }}px</label>
+                <input id="outerBorderWidth" type="range" class="form-range" min="0" max="14" step="0.5" formControlName="outerBorderWidth" />
+              </div>
+              <div class="col-md-6">
+                <label for="innerBorderWidth" class="form-label small">Inner Border: {{ innerBorderWidth }}px</label>
+                <input id="innerBorderWidth" type="range" class="form-range" min="0" max="14" step="0.5" formControlName="innerBorderWidth" />
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="outerBgColor" class="form-label small">Outer Ring BG Color</label>
+                <div class="input-group">
+                  <input id="outerBgColor" type="color" class="form-control form-control-color w-25" formControlName="outerBgColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="outerBgColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="innerBgColor" class="form-label small">Inner Circle BG Color</label>
+                <div class="input-group">
+                  <input id="innerBgColor" type="color" class="form-control form-control-color w-25" formControlName="innerBgColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="innerBgColor" disabled />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Advanced Typography & Colors -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Colors</h5>
+            
+            <div class="row g-3 mb-3 align-items-end">
+              <div class="col-md-5">
+                <label for="fontFamily" class="form-label fw-semibold small">Font Family</label>
+                <select id="fontFamily" class="form-select form-select-sm" formControlName="fontFamily">
+                  @for (font of fontOptions; track font.id) {
+                    <option [value]="font.id">{{ font.label }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="centerIcon" class="form-label fw-semibold small">Center Crest Icon</label>
+                <select id="centerIcon" class="form-select form-select-sm" formControlName="centerIcon">
+                  @for (icon of centerIcons; track icon.id) {
+                    <option [value]="icon.id">{{ icon.label }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-3 pb-1">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" formControlName="isAllCaps" id="allCapsCheck" />
+                  <label class="form-check-label small fw-semibold" for="allCapsCheck">All Caps</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Color Pickers with Selected HEX Display Side-by-Side -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="frameColor" class="form-label small">Border Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="frameColor" type="color" class="form-control form-control-color w-25" formControlName="frameColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="frameColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="outerFontColor" class="form-label small">Outer Text Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="outerFontColor" type="color" class="form-control form-control-color w-25" formControlName="outerFontColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="outerFontColor" disabled />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="innerFontColor" class="form-label small">Inner Text Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="innerFontColor" type="color" class="form-control form-control-color w-25" formControlName="innerFontColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="innerFontColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="textOutlineColor" class="form-label small">Text Outline Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="textOutlineColor" type="color" class="form-control form-control-color w-25" formControlName="textOutlineColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="textOutlineColor" disabled />
+                </div>
+              </div>
+            </div>
+
+            <!-- Arc Span Controls -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="topArcSpan" class="form-label small">Top Arc Span: {{ topArcSpan }}°</label>
+                <input id="topArcSpan" type="range" class="form-range" min="90" max="240" step="5" formControlName="topArcSpan" />
+              </div>
+              <div class="col-md-6">
+                <label for="bottomArcSpan" class="form-label small">Bottom Arc Span: {{ bottomArcSpan }}°</label>
+                <input id="bottomArcSpan" type="range" class="form-range" min="90" max="240" step="5" formControlName="bottomArcSpan" />
+              </div>
+            </div>
+
+            <!-- Scaling & Outline Controls -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="outerTextScale" class="form-label small">Outer Text Scale: {{ outerTextScale }}x</label>
+                <input id="outerTextScale" type="range" class="form-range" min="0.6" max="1.4" step="0.05" formControlName="outerTextScale" />
+              </div>
+              <div class="col-md-6">
+                <label for="middleScale" class="form-label small">Inner Text Scale: {{ middleScale }}x</label>
+                <input id="middleScale" type="range" class="form-range" min="0.5" max="1.8" step="0.05" formControlName="middleScale" />
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="overallScale" class="form-label small">Badge Scale: {{ overallScale }}x</label>
+                <input id="overallScale" type="range" class="form-range" min="0.6" max="1.15" step="0.05" formControlName="overallScale" />
+              </div>
+              <div class="col-md-4">
+                <label for="letterSpacing" class="form-label small">Spacing: {{ letterSpacing }}px</label>
+                <input id="letterSpacing" type="range" class="form-range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
+              </div>
+              <div class="col-md-4">
+                <label for="textOutlineWidth" class="form-label small">Text Outline: {{ textOutlineWidth }}px</label>
+                <input id="textOutlineWidth" type="range" class="form-range" min="0" max="5" step="0.5" formControlName="textOutlineWidth" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Manual Rotation Sliders & Independent Animations -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fs-6 fw-bold text-secondary mb-0">4. Rotation & Animations</h5>
+              <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-2" (click)="resetRotations()">
+                Reset 0°
+              </button>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="badgeRotation" class="form-label small">Whole Badge: {{ badgeRotation }}°</label>
+                <input id="badgeRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="badgeRotation" />
+              </div>
+              <div class="col-md-4">
+                <label for="outerTextRotation" class="form-label small">Outer Text: {{ outerTextRotation }}°</label>
+                <input id="outerTextRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="outerTextRotation" />
+              </div>
+              <div class="col-md-4">
+                <label for="centerTextRotation" class="form-label small">Center Text: {{ centerTextRotation }}°</label>
+                <input id="centerTextRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="centerTextRotation" />
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
+                <select id="outerTextAnimation" class="form-select form-select-sm" formControlName="outerTextAnimation">
+                  @for (anim of outerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="centerTextAnimation" class="form-label small">Center Text Animation</label>
+                <select id="centerTextAnimation" class="form-select form-select-sm" formControlName="centerTextAnimation">
+                  @for (anim of centerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Export & Print Settings -->
+          <div class="p-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">5. Export & Print Settings</h5>
+
+            <div class="mb-3">
+              <label class="form-label small fw-semibold d-block">Quick Resolution Presets (px)</label>
+              <div class="btn-group btn-group-sm w-100" role="group">
+                @for (res of resolutionPresets; track res) {
+                  <button
+                    type="button"
+                    class="btn"
+                    [class.btn-secondary]="exportHeight === res && preserveAspectRatio"
+                    [class.btn-outline-secondary]="exportHeight !== res || !preserveAspectRatio"
+                    (click)="setPresetResolution(res)">
+                    {{ res }}×{{ res }}
+                  </button>
+                }
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="exportWidth" class="form-label small">Width (px)</label>
+                <input id="exportWidth" type="number" class="form-control form-control-sm" min="100" max="8000" formControlName="exportWidth" />
+              </div>
+              <div class="col-md-6">
+                <label for="exportHeight" class="form-label small">Height (px)</label>
+                <input id="exportHeight" type="number" class="form-control form-control-sm" min="100" max="8000" formControlName="exportHeight" />
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="preserveAspectRatio" id="preserveRatioCheck" />
+                <label class="form-check-label small fw-semibold" for="preserveRatioCheck">Preserve 1:1 Aspect Ratio</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="transparentPng" id="transparentPngCheck" />
+                <label class="form-check-label small fw-semibold" for="transparentPngCheck">Transparent PNG Background</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Column: Live SVG Preview & Export Actions -->
+    <div class="col-12 col-lg-5 col-xl-4 print-area">
+      <div class="sticky-top" style="top: 2rem;">
+        <div class="card shadow-sm border-0 p-3 bg-white print-card">
+          <h5 class="card-title fs-6 fw-bold mb-3 text-secondary text-center no-print">Live Preview</h5>
+          
+          <div class="preview-container mb-3" [class.transparent-grid]="transparentPng" #svgContainer>
+            <svg
+              viewBox="0 0 400 400"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="xMidYMid meet"
+              [style.font-family]="fontFamily"
+              [attr.class]="'frame-style-' + selectedFrame">
+
+              <!-- Centered Scale & Whole Badge Rotation Wrapper -->
+              <g [attr.transform]="'translate(200, 200) rotate(' + badgeRotation + ') scale(' + overallScale + ') translate(-200, -200)'">
+                
+                <!-- Frame Artwork Layer -->
+                <g class="frame-layer">
+                  @switch (selectedFrame) {
+                    @case ('business-logo-badge') {
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <line x1="77" y1="174" x2="323" y2="174" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                      <line x1="77" y1="226" x2="323" y2="226" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                    }
+
+                    @case ('classic-double') {
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+
+                    @case ('family-banner-ring') {
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <line x1="77" y1="174" x2="323" y2="174" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                      <line x1="77" y1="226" x2="323" y2="226" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                    }
+
+                    @case ('scalloped-seal') {
+                      <path [attr.d]="getScallopedPath(200, 200, 194, 178, 36)" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" stroke-dasharray="4 3" [attr.fill]="innerBgColor" />
+                    }
+
+                    @case ('rope-ring') {
+                      <circle cx="200" cy="200" r="184" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="179" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 1.5" stroke-dasharray="8 5" stroke-linecap="round" fill="none" />
+                      <circle cx="200" cy="200" r="174" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+
+                    @case ('dotted-crest') {
+                      <circle cx="200" cy="200" r="183" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.65" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="176" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" stroke-dasharray="1 9" stroke-linecap="round" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <text x="96" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                      <text x="304" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                    }
+
+                    @case ('octagon-emblem') {
+                      <polygon points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <polygon points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.4" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+                  }
+                </g>
+
+                <!-- Dynamic Arc Span Curved Text Paths -->
+                <defs>
+                  <path id="topPath" [attr.d]="topArcPath" />
+                  <path id="bottomPath" [attr.d]="bottomArcPath" />
+                </defs>
+
+                <!-- Outer Curved Text Layer -->
+                <g [attr.transform]="'rotate(' + outerTextRotation + ', 200, 200)'">
+                  <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
+                    <text
+                      [attr.font-size]="30 * outerTextScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing"
+                      [attr.fill]="outerFontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      <textPath href="#topPath" startOffset="50%" text-anchor="middle">
+                        {{ isAllCaps ? topText.toUpperCase() : topText }}
+                      </textPath>
+                    </text>
+                    <text
+                      [attr.font-size]="30 * outerTextScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing"
+                      [attr.fill]="outerFontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
+                        {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
+                      </textPath>
+                    </text>
+                  </g>
+                </g>
+
+                <!-- Center / Inner Middle Text & Ornamental Crest Layer -->
+                <g [attr.transform]="'rotate(' + centerTextRotation + ', 200, 200)'">
+                  <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
+                    @switch (centerIcon) {
+                      @case ('star') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">★</text>
+                      }
+                      @case ('heart') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">♥</text>
+                      }
+                      @case ('diamond') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">❖</text>
+                      }
+                      @case ('crown') {
+                        <path
+                          [attr.transform]="'translate(186, ' + (200 - (26 * middleScale) - 56) + ') scale(1.15)'"
+                          d="M2 18L4 7L9 12L12 5L15 12L20 7L22 18H2ZM3 20H21V22H3V20Z"
+                          [attr.fill]="innerFontColor" />
+                      }
+                      @case ('laurel-dot') {
+                        <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="innerFontColor" />
+                        <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="innerFontColor" />
+                        <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="innerFontColor" />
+                      }
+                    }
+
+                    @if (middleTopSubText) {
+                      <text
+                        x="200"
+                        [attr.y]="200 - (26 * middleScale) - 18"
+                        dominant-baseline="central"
+                        [attr.font-size]="20 * middleScale"
+                        font-weight="500"
+                        [attr.letter-spacing]="letterSpacing * 0.8"
+                        text-anchor="middle"
+                        [attr.fill]="innerFontColor">
+                        {{ isAllCaps ? middleTopSubText.toUpperCase() : middleTopSubText }}
+                      </text>
+                    }
+
+                    <text
+                      x="200"
+                      y="200"
+                      dominant-baseline="central"
+                      [attr.font-size]="34 * middleScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing * 0.75"
+                      text-anchor="middle"
+                      [attr.fill]="innerFontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+                    </text>
+
+                    @if (middleBottomSubText) {
+                      <text
+                        x="200"
+                        [attr.y]="200 + (26 * middleScale) + 20"
+                        dominant-baseline="central"
+                        [attr.font-size]="20 * middleScale"
+                        font-weight="500"
+                        [attr.letter-spacing]="letterSpacing * 0.8"
+                        text-anchor="middle"
+                        [attr.fill]="innerFontColor">
+                        {{ isAllCaps ? middleBottomSubText.toUpperCase() : middleBottomSubText }}
+                      </text>
+                    }
+                  </g>
+                </g>
+
+              </g>
+            </svg>
+          </div>
+
+          <!-- Export & Print Action Buttons -->
+          <div class="row g-2 no-print">
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100 fw-semibold" (click)="downloadSvg()">Save SVG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-success w-100 fw-semibold" (click)="downloadPng()">Save PNG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-info text-white w-100 fw-semibold" (click)="downloadJpg()">Save JPG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-dark w-100 fw-semibold" (click)="printOrSavePdf()">Print / PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

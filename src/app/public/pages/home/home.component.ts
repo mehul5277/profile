@@ -5,11 +5,12 @@ import { PollComponent } from '../../../shared/components/poll/poll.component';
 import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/components/jiexo-jumbo/jiexo-jumbo.component';
 import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
 import { Card1Component, CardConfig, CardType } from '../../../shared/components/card-1/card-1.component';
+import { ClientListComponent } from '../../components/client-list/client-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component, ClientListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -48,11 +49,9 @@ export class HomeComponent implements OnInit {
       }
     ]
   }
-
   //#endregion
 
   //#region Business
-
   businessSection: CardConfig = {
     badges: [{
       "text": "WHAT WE DO"
@@ -141,26 +140,6 @@ export class HomeComponent implements OnInit {
   };
   //#endregion
 
-  //#region Hero
-  // heroConfig: HeroConfig = {
-  //   "badges": [{
-  //     "text": "WHAT WE DO"
-  //   }],
-  //   "title": "Innovative Services Driving",
-  //   "subtitle": "Business Success",
-  //   "description": "End-to-end technology services built for businesses at every stage of growth.",
-  //   "buttons": [{
-  //     "type": ActionType.LINK,
-  //     "text": "All Services",
-  //     "url": "/service",
-  //     "icon": "bi bi-play-circle"
-  //   }],
-  //   "footers": [{
-  //     "text": "© 2024 Our Company. All rights reserved."
-  //   }]
-  // };
-  //#endregion
-
   //#region AI section
   aiSection: CardConfig = {
     badges: [{
@@ -231,42 +210,7 @@ export class HomeComponent implements OnInit {
 
   //#endregion
 
-  //#region recognitionSection
-  recognitionSection: CardConfig = {
-    badges: [{
-      "text": "Recognition"
-    }],
-    "icon": "verified_user",
-    "css": "card-primary",
-    "type": CardType.CARD,
-    "title": "Recognized for Excellence & Innovation",
-    "subtitle": "",
-    "description": "Our commitment to AI-driven transformation is endorsed by leading global organizations; recognized across quality, security, culture, and technology excellence.",
-  };
-  //#endregion
-
-  //#region build
-  buildSection: HeroConfig = {
-    badges: [{
-      "text": "Ready to Transform Your Business?"
-    }],
-    "title": "Let's Build Something",
-    "subtitle": "Extraordinary Together",
-    "description": "From AI strategy to cloud migration, from automation to digital engineering. Our team of experts is ready to help your business lead in the intelligence era. Let’s start with a conversation.",
-    "buttons": [{
-      "type": ActionType.LINK,
-      "text": "Explore Our Services",
-      "url": "/contact",
-      "icon": "bi bi-play-circle"
-    }],
-    "footers": [{
-      "text": "15+ Years of Expertise"
-    }]
-  };
-  //#endregion
-
-  //#region inovation "title": "Continuous innovation + operational excellence",
-
+  //#region innovation + operational excellence
   innovationSectiom: CardConfig = {
     "css": "card-primary",
     "type": CardType.CARD,
@@ -326,7 +270,38 @@ export class HomeComponent implements OnInit {
       "icon": "bi bi-play-circle"
     }]
   }];
+  //#endregion
 
+  //#region recognitionSection, Recognition
+  recognitionSection: CardConfig = {
+    "icon": "verified_user",
+    "css": "card-primary text-center",
+    "type": CardType.CARD,
+    "title": "Recognized for Excellence & Innovation",
+    "subtitle": "",
+    "description": "Our commitment to AI-driven transformation is endorsed by leading global organizations; recognized across quality, security, culture, and technology excellence.",
+  };
+  //#endregion
+
+  //#region build
+  buildSection: HeroConfig = {
+    badges: [{
+      "text": "Ready to Transform Your Business?"
+    }],
+    "title": "Let's Build Something",
+    "subtitle": "Extraordinary Together",
+    "description": "From AI strategy to cloud migration, from automation to digital engineering. Our team of experts is ready to help your business lead in the intelligence era. Let’s start with a conversation.",
+    "buttons": [{
+      "type": ActionType.LINK,
+      "text": "Explore Our Services",
+      "url": "/contact",
+      "icon": "bi bi-play-circle"
+    }],
+    "footers": [{
+      "text": ""
+    }]
+  };
+  //#endregion
 
   ngOnInit() {
     this.cv = this.route.snapshot.data['cvData'];
