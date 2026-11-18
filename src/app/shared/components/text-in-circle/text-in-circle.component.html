@@ -4,7 +4,7 @@
     <!-- Left Column: Full-Width Responsive Bootstrap Form (Hidden during Print) -->
     <div class="col-12 col-lg-7 col-xl-6 no-print">
       <div class="card shadow-sm border-0 p-4 bg-white">
-        <h2 class="mb-4 fw-bold text-dark">[Text in Circle Generator](https://suncatcherstudio.com/text-in-circle/#main)</h2>
+        <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
 
         <form [formGroup]="form">
           <!-- 1. Text Content & Divider Ornaments -->
@@ -96,7 +96,7 @@
             </div>
           </div>
 
-          <!-- 3. Advanced Typography & Independent Text Colors -->
+          <!-- 3. Advanced Typography & Independent Colors with Selected Hex Display -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Colors</h5>
             
@@ -125,23 +125,38 @@
               </div>
             </div>
 
-            <!-- Independent Outer Font Color, Inner Font Color & Border Color -->
+            <!-- Color Pickers with Selected HEX Display Side-by-Side -->
             <div class="row g-3 mb-3">
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <label for="frameColor" class="form-label small">Border Color</label>
-                <input id="frameColor" type="color" class="form-control form-control-color w-100" formControlName="frameColor" />
+                <div class="input-group input-group-sm">
+                  <input id="frameColor" type="color" class="form-control form-control-color w-25" formControlName="frameColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="frameColor" disabled />
+                </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <label for="outerFontColor" class="form-label small">Outer Text Color</label>
-                <input id="outerFontColor" type="color" class="form-control form-control-color w-100" formControlName="outerFontColor" />
+                <div class="input-group input-group-sm">
+                  <input id="outerFontColor" type="color" class="form-control form-control-color w-25" formControlName="outerFontColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="outerFontColor" disabled />
+                </div>
               </div>
-              <div class="col-md-3">
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
                 <label for="innerFontColor" class="form-label small">Inner Text Color</label>
-                <input id="innerFontColor" type="color" class="form-control form-control-color w-100" formControlName="innerFontColor" />
+                <div class="input-group input-group-sm">
+                  <input id="innerFontColor" type="color" class="form-control form-control-color w-25" formControlName="innerFontColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="innerFontColor" disabled />
+                </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <label for="textOutlineColor" class="form-label small">Text Outline Color</label>
-                <input id="textOutlineColor" type="color" class="form-control form-control-color w-100" formControlName="textOutlineColor" />
+                <div class="input-group input-group-sm">
+                  <input id="textOutlineColor" type="color" class="form-control form-control-color w-25" formControlName="textOutlineColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="textOutlineColor" disabled />
+                </div>
               </div>
             </div>
 
@@ -343,7 +358,7 @@
                   <path id="bottomPath" [attr.d]="bottomArcPath" />
                 </defs>
 
-                <!-- Outer Curved Text Layer (Uses outerFontColor) -->
+                <!-- Outer Curved Text Layer -->
                 <g [attr.transform]="'rotate(' + outerTextRotation + ', 200, 200)'">
                   <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
                     <text
@@ -373,7 +388,7 @@
                   </g>
                 </g>
 
-                <!-- Center / Inner Middle Text & Ornamental Crest Layer (Uses innerFontColor) -->
+                <!-- Center / Inner Middle Text & Ornamental Crest Layer -->
                 <g [attr.transform]="'rotate(' + centerTextRotation + ', 200, 200)'">
                   <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
                     @switch (centerIcon) {
