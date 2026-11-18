@@ -19,6 +19,7 @@ export class TextInCircleComponent implements OnInit {
   @ViewChild('svgContainer', { static: false }) svgContainer!: ElementRef;
 
   miscFrames: SelectOption[] = [
+    { id: 'business-logo-badge', label: 'Business Logo Badge (Continuous Curved & Lines)' },
     { id: 'classic-double', label: 'Classic Double Circle' },
     { id: 'family-banner-ring', label: 'Family Banner Ring (Horizontal Lines)' },
     { id: 'scalloped-seal', label: 'Scalloped Stamp Seal' },
@@ -73,7 +74,7 @@ export class TextInCircleComponent implements OnInit {
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
   get middleBottomSubText(): string { return this.form.get('middleBottomSubText')?.value || ''; }
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
-  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'family-banner-ring'; }
+  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'business-logo-badge'; }
 
   // Border & Background Getters
   get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 3; }
@@ -128,19 +129,19 @@ export class TextInCircleComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      selectedFrame: ['family-banner-ring'],
-      topText: ['SARAH • BRAD ★ AMY'],
-      middleTopSubText: ['THE'],
-      middleText: ['WILSON'],
-      middleBottomSubText: ['FAMILY'],
-      bottomText: ['EST. 2020'],
+      selectedFrame: ['business-logo-badge'],
+      topText: ['NAME OF BUSINESS'],
+      middleTopSubText: ['YOUR'],
+      middleText: ['LOGO'],
+      middleBottomSubText: ['HERE'],
+      bottomText: ['LOCATION CITY, STATE • SINCE YEAR'],
       outerBorderWidth: [3],
       innerBorderWidth: [2.5],
       outerBgColor: ['#ffffff'],
       innerBgColor: ['#ffffff'],
       fontFamily: ['Arial, sans-serif'],
       isAllCaps: [false],
-      frameColor: ['#a62626'],
+      frameColor: ['#111111'],
       outerFontColor: ['#111111'],
       innerFontColor: ['#111111'],
       letterSpacing: [2],

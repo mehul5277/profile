@@ -96,7 +96,7 @@
             </div>
           </div>
 
-          <!-- 3. Advanced Typography & Independent Colors with Selected Hex Display -->
+          <!-- 3. Advanced Typography & Colors -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Colors</h5>
             
@@ -312,6 +312,13 @@
                 <!-- Frame Artwork Layer -->
                 <g class="frame-layer">
                   @switch (selectedFrame) {
+                    @case ('business-logo-badge') {
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <line x1="77" y1="174" x2="323" y2="174" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                      <line x1="77" y1="226" x2="323" y2="226" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                    }
+
                     @case ('classic-double') {
                       <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
                       <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
