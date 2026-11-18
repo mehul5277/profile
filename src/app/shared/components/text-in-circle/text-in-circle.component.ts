@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
@@ -14,7 +14,7 @@ export interface SelectOption {
   templateUrl: './text-in-circle.component.html',
   styleUrls: ['./text-in-circle.component.scss']
 })
-export class TextInCircleComponent {
+export class TextInCircleComponent implements OnInit {
   form: FormGroup;
   @ViewChild('svgContainer', { static: false }) svgContainer!: ElementRef;
 
@@ -26,6 +26,28 @@ export class TextInCircleComponent {
     { id: 'dotted-crest', label: 'Dotted Wreath Crest' },
     { id: 'octagon-emblem', label: 'Octagon Frame' }
   ];
+
+  fontOptions: SelectOption[] = [
+    { id: 'Arial, sans-serif', label: 'Arial (Clean Sans)' },
+    { id: '"Times New Roman", serif', label: 'Times New Roman (Classic Serif)' },
+    { id: '"Playfair Display", Georgia, serif', label: 'Playfair Display (Editorial Serif)' },
+    { id: '"Cinzel", Georgia, serif', label: 'Cinzel (Engraved Crest)' },
+    { id: '"Montserrat", sans-serif', label: 'Montserrat (Modern Geometric)' },
+    { id: '"Oswald", sans-serif', label: 'Oswald (Condensed Display)' },
+    { id: '"Great Vibes", cursive', label: 'Great Vibes (Calligraphy Script)' },
+    { id: '"Courier New", monospace', label: 'Courier New (Typewriter)' }
+  ];
+
+  centerIcons: SelectOption[] = [
+    { id: 'none', label: 'None' },
+    { id: 'star', label: 'Classic Star (★)' },
+    { id: 'heart', label: 'Heart (♥)' },
+    { id: 'crown', label: 'Royal Crown' },
+    { id: 'diamond', label: 'Ornamental Diamond (❖)' },
+    { id: 'laurel-dot', label: 'Triple Crest Dots' }
+  ];
+
+  dividerSymbols: string[] = ['•', '★', '♥', '✦', '❖', '❦'];
 
   outerTextAnimations: SelectOption[] = [
     { id: 'none', label: 'None (Static)' },
@@ -59,12 +81,17 @@ export class TextInCircleComponent {
   get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
   get innerBgColor(): string { return this.form.get('innerBgColor')?.value || '#ffffff'; }
 
-  // Formatting Getters
-  get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
+  // Advanced Typography & Ornament Getters
+  get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial, sans-serif'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
   get frameColor(): string { return this.form.get('frameColor')?.value || '#a62626'; }
   get fontColor(): string { return this.form.get('fontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
+  get topArcSpan(): number { return this.form.get('topArcSpan')?.value ?? 180; }
+  get bottomArcSpan(): number { return this.form.get('bottomArcSpan')?.value ?? 180; }
+  get centerIcon(): string { return this.form.get('centerIcon')?.value || 'none'; }
+  get textOutlineWidth(): number { return this.form.get('textOutlineWidth')?.value ?? 0; }
+  get textOutlineColor(): string { return this.form.get('textOutlineColor')?.value || '#ffffff'; }
 
   // Scaling & Animations Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
@@ -79,12 +106,21 @@ export class TextInCircleComponent {
   get preserveAspectRatio(): boolean { return this.form.get('preserveAspectRatio')?.value ?? true; }
   get transparentPng(): boolean { return this.form.get('transparentPng')?.value ?? false; }
 
+  // Dynamic Arc Radii & Custom Arc Path Calculations
   get topArcRadius(): number {
     return 153 - (30 * this.outerTextScale) * 0.3;
   }
 
   get bottomArcRadius(): number {
     return 153 + (30 * this.outerTextScale) * 0.36;
+  }
+
+  get topArcPath(): string {
+    return this.describeArc(200, 200, this.topArcRadius, -this.topArcSpan / 2, this.topArcSpan / 2, true);
+  }
+
+  get bottomArcPath(): string {
+    return this.describeArc(200, 200, this.bottomArcRadius, 180 + this.bottomArcSpan / 2, 180 - this.bottomArcSpan / 2, false);
   }
 
   constructor(private fb: FormBuilder) {
@@ -99,24 +135,27 @@ export class TextInCircleComponent {
       innerBorderWidth: [2.5],
       outerBgColor: ['#ffffff'],
       innerBgColor: ['#ffffff'],
-      fontFamily: ['Arial'],
+      fontFamily: ['Arial, sans-serif'],
       isAllCaps: [false],
       frameColor: ['#a62626'],
       fontColor: ['#111111'],
       letterSpacing: [2],
+      topArcSpan: [180],
+      bottomArcSpan: [180],
+      centerIcon: ['none'],
+      textOutlineWidth: [0],
+      textOutlineColor: ['#ffffff'],
       overallScale: [1],
       outerTextScale: [1],
       middleScale: [1],
       outerTextAnimation: ['none'],
       centerTextAnimation: ['none'],
-      // Export & Print Controls
       exportWidth: [1000],
       exportHeight: [1000],
       preserveAspectRatio: [true],
       transparentPng: [false]
     });
 
-    // Sync width & height when preserveAspectRatio is enabled
     this.form.get('exportHeight')?.valueChanges.subscribe((val) => {
       if (this.preserveAspectRatio && val) {
         this.form.patchValue({ exportWidth: val }, { emitEvent: false });
@@ -136,11 +175,49 @@ export class TextInCircleComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.loadGoogleFonts();
+  }
+
+  private loadGoogleFonts(): void {
+    const id = 'text-in-circle-google-fonts';
+    if (!document.getElementById(id)) {
+      const link = document.createElement('link');
+      link.id = id;
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Montserrat:wght@600;700&family=Oswald:wght@600;700&family=Playfair+Display:wght@600;700&display=swap';
+      document.head.appendChild(link);
+    }
+  }
+
+  insertDivider(targetControl: 'topText' | 'bottomText', symbol: string): void {
+    const current = this.form.get(targetControl)?.value || '';
+    const updated = current ? `${current} ${symbol} ` : `${symbol} `;
+    this.form.patchValue({ [targetControl]: updated });
+  }
+
   setPresetResolution(size: number): void {
     this.form.patchValue({
       exportWidth: size,
       exportHeight: size
     });
+  }
+
+  // Computes SVG elliptical arc path for customizable top/bottom arc spans
+  private describeArc(cx: number, cy: number, r: number, startAngleDeg: number, endAngleDeg: number, clockwise: boolean): string {
+    const startRad = ((startAngleDeg - 90) * Math.PI) / 180;
+    const endRad = ((endAngleDeg - 90) * Math.PI) / 180;
+
+    const x1 = cx + r * Math.cos(startRad);
+    const y1 = cy + r * Math.sin(startRad);
+    const x2 = cx + r * Math.cos(endRad);
+    const y2 = cy + r * Math.sin(endRad);
+
+    const angleDiff = Math.abs(endAngleDeg - startAngleDeg);
+    const largeArcFlag = angleDiff > 180 ? 1 : 0;
+    const sweepFlag = clockwise ? 1 : 0;
+
+    return `M ${x1.toFixed(2)},${y1.toFixed(2)} A ${r.toFixed(2)},${r.toFixed(2)} 0 ${largeArcFlag},${sweepFlag} ${x2.toFixed(2)},${y2.toFixed(2)}`;
   }
 
   getScallopedPath(cx: number, cy: number, outerR: number, innerR: number, points: number): string {
@@ -164,7 +241,6 @@ export class TextInCircleComponent {
     return d + 'Z';
   }
 
-  // 1. Export Vector SVG
   downloadSvg(): void {
     const svgElement = this.svgContainer.nativeElement.querySelector('svg');
     if (!svgElement) return;
@@ -180,17 +256,14 @@ export class TextInCircleComponent {
     this.triggerDownload(blob, `text-in-circle-${this.selectedFrame}.svg`);
   }
 
-  // 2. Export Raster PNG (Supports Transparency & Custom Dimensions)
   downloadPng(): void {
     this.renderToCanvas('image/png', `text-in-circle-${this.selectedFrame}-${this.exportWidth}x${this.exportHeight}.png`, this.transparentPng);
   }
 
-  // 3. Export Raster JPG (Always solid white canvas background)
   downloadJpg(): void {
     this.renderToCanvas('image/jpeg', `text-in-circle-${this.selectedFrame}-${this.exportWidth}x${this.exportHeight}.jpg`, false);
   }
 
-  // 4. Print / Save as PDF via Browser Print Engine
   printOrSavePdf(): void {
     window.print();
   }

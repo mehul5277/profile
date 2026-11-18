@@ -7,12 +7,21 @@
         <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
 
         <form [formGroup]="form">
-          <!-- 1. Text Content -->
+          <!-- 1. Text Content & Divider Ornaments -->
           <div class="p-3 mb-3 bg-light rounded border">
-            <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content</h5>
+            <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content & Divider Symbols</h5>
             
             <div class="mb-3">
-              <label for="topText" class="form-label fw-semibold small">Top Curved Text</label>
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="topText" class="form-label fw-semibold small mb-0">Top Curved Text</label>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Insert top divider">
+                  @for (sym of dividerSymbols; track sym) {
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2" (click)="insertDivider('topText', sym)" title="Insert {{ sym }}">
+                      {{ sym }}
+                    </button>
+                  }
+                </div>
+              </div>
               <input id="topText" type="text" class="form-control" formControlName="topText" />
             </div>
 
@@ -32,7 +41,16 @@
             </div>
 
             <div class="mb-0">
-              <label for="bottomText" class="form-label fw-semibold small">Bottom Curved Text</label>
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <label for="bottomText" class="form-label fw-semibold small mb-0">Bottom Curved Text</label>
+                <div class="btn-group btn-group-sm" role="group" aria-label="Insert bottom divider">
+                  @for (sym of dividerSymbols; track sym) {
+                    <button type="button" class="btn btn-outline-secondary py-0 px-2" (click)="insertDivider('bottomText', sym)" title="Insert {{ sym }}">
+                      {{ sym }}
+                    </button>
+                  }
+                </div>
+              </div>
               <input id="bottomText" type="text" class="form-control" formControlName="bottomText" />
             </div>
           </div>
@@ -78,48 +96,28 @@
             </div>
           </div>
 
-          <!-- 3. Independent Animations -->
+          <!-- 3. Advanced Typography & Ornamental Icons -->
           <div class="p-3 mb-3 bg-light rounded border">
-            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Independent Animations</h5>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
-                <select id="outerTextAnimation" class="form-select" formControlName="outerTextAnimation">
-                  @for (anim of outerTextAnimations; track anim.id) {
-                    <option [value]="anim.id">{{ anim.label }}</option>
-                  }
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label for="centerTextAnimation" class="form-label small">Center Text Animation</label>
-                <select id="centerTextAnimation" class="form-select" formControlName="centerTextAnimation">
-                  @for (anim of centerTextAnimations; track anim.id) {
-                    <option [value]="anim.id">{{ anim.label }}</option>
-                  }
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Typography & Scaling -->
-          <div class="p-3 mb-3 bg-light rounded border">
-            <h5 class="fs-6 fw-bold text-secondary mb-3">4. Typography & Scaling</h5>
+            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Ornaments</h5>
             
-            <div class="row align-items-center mb-3">
-              <div class="col-auto">
-                <label class="form-label fw-semibold small mb-0 me-3">Font Family:</label>
+            <div class="row g-3 mb-3 align-items-end">
+              <div class="col-md-5">
+                <label for="fontFamily" class="form-label fw-semibold small">Font Family</label>
+                <select id="fontFamily" class="form-select form-select-sm" formControlName="fontFamily">
+                  @for (font of fontOptions; track font.id) {
+                    <option [value]="font.id">{{ font.label }}</option>
+                  }
+                </select>
               </div>
-              <div class="col">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" formControlName="fontFamily" value="Arial" id="fontArial" />
-                  <label class="form-check-label small" for="fontArial">Arial</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" formControlName="fontFamily" value="Times New Roman" id="fontTimes" />
-                  <label class="form-check-label small" for="fontTimes">Times</label>
-                </div>
+              <div class="col-md-4">
+                <label for="centerIcon" class="form-label fw-semibold small">Center Crest Icon</label>
+                <select id="centerIcon" class="form-select form-select-sm" formControlName="centerIcon">
+                  @for (icon of centerIcons; track icon.id) {
+                    <option [value]="icon.id">{{ icon.label }}</option>
+                  }
+                </select>
               </div>
-              <div class="col-auto">
+              <div class="col-md-3 pb-1">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" formControlName="isAllCaps" id="allCapsCheck" />
                   <label class="form-check-label small fw-semibold" for="allCapsCheck">All Caps</label>
@@ -127,23 +125,44 @@
               </div>
             </div>
 
+            <!-- Colors & Text Halo Outline -->
             <div class="row g-3 mb-3">
-              <div class="col-md-6">
-                <label for="frameColor" class="form-label small">Border Stroke Color</label>
-                <div class="input-group">
-                  <input id="frameColor" type="color" class="form-control form-control-color w-25" formControlName="frameColor" />
+              <div class="col-md-4">
+                <label for="frameColor" class="form-label small">Border Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="frameColor" type="color" class="form-control form-control-color" formControlName="frameColor" />
                   <input type="text" class="form-control font-monospace bg-white" [value]="frameColor" disabled />
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="fontColor" class="form-label small">Font Color</label>
-                <div class="input-group">
-                  <input id="fontColor" type="color" class="form-control form-control-color w-25" formControlName="fontColor" />
+                <div class="input-group input-group-sm">
+                  <input id="fontColor" type="color" class="form-control form-control-color" formControlName="fontColor" />
                   <input type="text" class="form-control font-monospace bg-white" [value]="fontColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="textOutlineColor" class="form-label small">Text Outline Color</label>
+                <div class="input-group input-group-sm">
+                  <input id="textOutlineColor" type="color" class="form-control form-control-color" formControlName="textOutlineColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="textOutlineColor" disabled />
                 </div>
               </div>
             </div>
 
+            <!-- Arc Span Controls -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="topArcSpan" class="form-label small">Top Arc Span: {{ topArcSpan }}°</label>
+                <input id="topArcSpan" type="range" class="form-range" min="90" max="240" step="5" formControlName="topArcSpan" />
+              </div>
+              <div class="col-md-6">
+                <label for="bottomArcSpan" class="form-label small">Bottom Arc Span: {{ bottomArcSpan }}°</label>
+                <input id="bottomArcSpan" type="range" class="form-range" min="90" max="240" step="5" formControlName="bottomArcSpan" />
+              </div>
+            </div>
+
+            <!-- Scaling & Outline Controls -->
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <label for="outerTextScale" class="form-label small">Outer Text Scale: {{ outerTextScale }}x</label>
@@ -156,13 +175,40 @@
             </div>
 
             <div class="row g-3">
-              <div class="col-md-6">
+              <div class="col-md-4">
                 <label for="overallScale" class="form-label small">Badge Scale: {{ overallScale }}x</label>
                 <input id="overallScale" type="range" class="form-range" min="0.6" max="1.15" step="0.05" formControlName="overallScale" />
               </div>
-              <div class="col-md-6">
-                <label for="letterSpacing" class="form-label small">Letter Spacing: {{ letterSpacing }}px</label>
+              <div class="col-md-4">
+                <label for="letterSpacing" class="form-label small">Spacing: {{ letterSpacing }}px</label>
                 <input id="letterSpacing" type="range" class="form-range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
+              </div>
+              <div class="col-md-4">
+                <label for="textOutlineWidth" class="form-label small">Text Outline: {{ textOutlineWidth }}px</label>
+                <input id="textOutlineWidth" type="range" class="form-range" min="0" max="5" step="0.5" formControlName="textOutlineWidth" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Independent Animations -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">4. Independent Animations</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
+                <select id="outerTextAnimation" class="form-select form-select-sm" formControlName="outerTextAnimation">
+                  @for (anim of outerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="centerTextAnimation" class="form-label small">Center Text Animation</label>
+                <select id="centerTextAnimation" class="form-select form-select-sm" formControlName="centerTextAnimation">
+                  @for (anim of centerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
               </div>
             </div>
           </div>
@@ -275,28 +321,66 @@
                   }
                 </g>
 
-                <!-- Curved Text Paths -->
+                <!-- Dynamic Arc Span Curved Text Paths -->
                 <defs>
-                  <path id="topPath" [attr.d]="'M ' + (200 - topArcRadius) + ',200 A ' + topArcRadius + ',' + topArcRadius + ' 0 1,1 ' + (200 + topArcRadius) + ',200'" />
-                  <path id="bottomPath" [attr.d]="'M ' + (200 - bottomArcRadius) + ',200 A ' + bottomArcRadius + ',' + bottomArcRadius + ' 0 0,0 ' + (200 + bottomArcRadius) + ',200'" />
+                  <path id="topPath" [attr.d]="topArcPath" />
+                  <path id="bottomPath" [attr.d]="bottomArcPath" />
                 </defs>
 
                 <!-- Outer Curved Text Layer -->
                 <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
-                  <text [attr.font-size]="30 * outerTextScale" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+                  <text
+                    [attr.font-size]="30 * outerTextScale"
+                    font-weight="bold"
+                    [attr.letter-spacing]="letterSpacing"
+                    [attr.fill]="fontColor"
+                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                    [attr.stroke-width]="textOutlineWidth"
+                    style="paint-order: stroke fill; stroke-linejoin: round;">
                     <textPath href="#topPath" startOffset="50%" text-anchor="middle">
                       {{ isAllCaps ? topText.toUpperCase() : topText }}
                     </textPath>
                   </text>
-                  <text [attr.font-size]="30 * outerTextScale" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+                  <text
+                    [attr.font-size]="30 * outerTextScale"
+                    font-weight="bold"
+                    [attr.letter-spacing]="letterSpacing"
+                    [attr.fill]="fontColor"
+                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                    [attr.stroke-width]="textOutlineWidth"
+                    style="paint-order: stroke fill; stroke-linejoin: round;">
                     <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
                       {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
                     </textPath>
                   </text>
                 </g>
 
-                <!-- Center / Inner Middle Text Layer -->
+                <!-- Center / Inner Middle Text & Ornamental Crest Layer -->
                 <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
+                  <!-- Optional Ornamental Crest Icon above Upper Label -->
+                  @switch (centerIcon) {
+                    @case ('star') {
+                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                    }
+                    @case ('heart') {
+                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">♥</text>
+                    }
+                    @case ('diamond') {
+                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">❖</text>
+                    }
+                    @case ('crown') {
+                      <path
+                        [attr.transform]="'translate(186, ' + (200 - (26 * middleScale) - 56) + ') scale(1.15)'"
+                        d="M2 18L4 7L9 12L12 5L15 12L20 7L22 18H2ZM3 20H21V22H3V20Z"
+                        [attr.fill]="frameColor" />
+                    }
+                    @case ('laurel-dot') {
+                      <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
+                      <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="frameColor" />
+                      <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
+                    }
+                  }
+
                   @if (middleTopSubText) {
                     <text
                       x="200"
@@ -319,7 +403,10 @@
                     font-weight="bold"
                     [attr.letter-spacing]="letterSpacing * 0.75"
                     text-anchor="middle"
-                    [attr.fill]="fontColor">
+                    [attr.fill]="fontColor"
+                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                    [attr.stroke-width]="textOutlineWidth"
+                    style="paint-order: stroke fill; stroke-linejoin: round;">
                     {{ isAllCaps ? middleText.toUpperCase() : middleText }}
                   </text>
 
