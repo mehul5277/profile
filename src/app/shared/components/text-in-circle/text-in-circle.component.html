@@ -1,339 +1,251 @@
-<div class="generator-container">
-  <h2>Text in Circle Generator</h2>
+<div class="container-fluid py-4 generator-wrapper">
+  <div class="row g-4 justify-content-center">
+    
+    <!-- Left Column: Full Width Controls Form (Bootstrap Grid) -->
+    <div class="col-12 col-lg-7 col-xl-6">
+      <div class="card shadow-sm border-0 p-4 bg-white">
+        <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
 
-  <form [formGroup]="form" class="generator-form">
-    <!-- Text Inputs -->
-    <div class="section-box">
-      <div class="form-group">
-        <label for="topText">Top Text:</label>
-        <input id="topText" type="text" formControlName="topText" />
-      </div>
+        <form [formGroup]="form">
+          <!-- Text Inputs Section -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content</h5>
+            <div class="mb-3">
+              <label for="topText" class="form-label fw-semibold small">Top Text</label>
+              <input id="topText" type="text" class="form-control" formControlName="topText" />
+            </div>
+            <div class="mb-3">
+              <label for="middleText" class="form-label fw-semibold small">Middle Text</label>
+              <input id="middleText" type="text" class="form-control" formControlName="middleText" />
+            </div>
+            <div class="mb-0">
+              <label for="bottomText" class="form-label fw-semibold small">Bottom Text</label>
+              <input id="bottomText" type="text" class="form-control" formControlName="bottomText" />
+            </div>
+          </div>
 
-      <div class="form-group">
-        <label for="middleText">Middle Text:</label>
-        <input id="middleText" type="text" formControlName="middleText" />
-      </div>
+          <!-- Frame & Border Options -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">2. Frame & Backgrounds</h5>
+            <div class="mb-3">
+              <label for="selectedFrame" class="form-label fw-semibold small">Misc Frame Style</label>
+              <select id="selectedFrame" class="form-select" formControlName="selectedFrame">
+                @for (frame of miscFrames; track frame.id) {
+                  <option [value]="frame.id">{{ frame.label }}</option>
+                }
+              </select>
+            </div>
 
-      <div class="form-group">
-        <label for="bottomText">Bottom Text:</label>
-        <input id="bottomText" type="text" formControlName="bottomText" />
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="outerBorderWidth" class="form-label small">Outer Border: {{ outerBorderWidth }}px</label>
+                <input id="outerBorderWidth" type="range" class="form-range" min="0" max="14" step="0.5" formControlName="outerBorderWidth" />
+              </div>
+              <div class="col-md-6">
+                <label for="innerBorderWidth" class="form-label small">Inner Border: {{ innerBorderWidth }}px</label>
+                <input id="innerBorderWidth" type="range" class="form-range" min="0" max="14" step="0.5" formControlName="innerBorderWidth" />
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="outerBgColor" class="form-label small">Outer Ring BG Color</label>
+                <div class="input-group">
+                  <input id="outerBgColor" type="color" class="form-control form-control-color w-25" formControlName="outerBgColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="outerBgColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="innerBgColor" class="form-label small">Inner Circle BG Color</label>
+                <div class="input-group">
+                  <input id="innerBgColor" type="color" class="form-control form-control-color w-25" formControlName="innerBgColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="innerBgColor" disabled />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animations -->
+          <div class="p-3 mb-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Independent Animations</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
+                <select id="outerTextAnimation" class="form-select" formControlName="outerTextAnimation">
+                  @for (anim of outerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="centerTextAnimation" class="form-label small">Center Text Animation</label>
+                <select id="centerTextAnimation" class="form-select" formControlName="centerTextAnimation">
+                  @for (anim of centerTextAnimations; track anim.id) {
+                    <option [value]="anim.id">{{ anim.label }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formatting & Scaling -->
+          <div class="p-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">4. Typography & Scaling</h5>
+            
+            <div class="row align-items-center mb-3">
+              <div class="col-auto">
+                <label class="form-label fw-semibold small mb-0 me-3">Font Family:</label>
+              </div>
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" formControlName="fontFamily" value="Arial" id="fontArial" />
+                  <label class="form-check-label small" for="fontArial">Arial</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" formControlName="fontFamily" value="Times New Roman" id="fontTimes" />
+                  <label class="form-check-label small" for="fontTimes">Times</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" formControlName="isAllCaps" id="allCapsCheck" />
+                  <label class="form-check-label small fw-semibold" for="allCapsCheck">All Caps</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="frameColor" class="form-label small">Border Stroke Color</label>
+                <div class="input-group">
+                  <input id="frameColor" type="color" class="form-control form-control-color w-25" formControlName="frameColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="frameColor" disabled />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="fontColor" class="form-label small">Font Color</label>
+                <div class="input-group">
+                  <input id="fontColor" type="color" class="form-control form-control-color w-25" formControlName="fontColor" />
+                  <input type="text" class="form-control font-monospace bg-white" [value]="fontColor" disabled />
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="outerTextScale" class="form-label small">Outer Text Scale: {{ outerTextScale }}x</label>
+                <input id="outerTextScale" type="range" class="form-range" min="0.6" max="1.4" step="0.05" formControlName="outerTextScale" />
+              </div>
+              <div class="col-md-6">
+                <label for="middleScale" class="form-label small">Inner Text Scale: {{ middleScale }}x</label>
+                <input id="middleScale" type="range" class="form-range" min="0.5" max="1.8" step="0.05" formControlName="middleScale" />
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="overallScale" class="form-label small">Badge Scale: {{ overallScale }}x</label>
+                <input id="overallScale" type="range" class="form-range" min="0.6" max="1.15" step="0.05" formControlName="overallScale" />
+              </div>
+              <div class="col-md-6">
+                <label for="letterSpacing" class="form-label small">Letter Spacing: {{ letterSpacing }}px</label>
+                <input id="letterSpacing" type="range" class="form-range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
+              </div>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
 
-    <!-- Frame Selection & Circle Border/Background Controls -->
-    <div class="section-box">
-      <div class="form-group">
-        <label for="selectedFrame">Misc Frame:</label>
-        <select id="selectedFrame" formControlName="selectedFrame">
-          @for (frame of miscFrames; track frame.id) {
-            <option [value]="frame.id">{{ frame.label }}</option>
-          }
-        </select>
-      </div>
+    <!-- Right Column: Live SVG Preview & Downloads -->
+    <div class="col-12 col-lg-5 col-xl-4">
+      <div class="sticky-top" style="top: 2rem;">
+        <div class="card shadow-sm border-0 p-3 bg-white">
+          <h5 class="card-title fs-6 fw-bold mb-3 text-secondary text-center">Live Preview</h5>
+          
+          <div class="preview-container mb-3" #svgContainer>
+            <svg
+              viewBox="0 0 400 400"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="xMidYMid meet"
+              [style.font-family]="fontFamily"
+              [attr.class]="'frame-style-' + selectedFrame">
 
-      <!-- Border Thickness Scaling -->
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="outerBorderWidth">Outer Border: {{ outerBorderWidth }}px</label>
-          <input id="outerBorderWidth" type="range" min="0" max="14" step="0.5" formControlName="outerBorderWidth" />
-        </div>
+              <!-- Centered Scale Wrapper -->
+              <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'">
+                
+                <!-- Frame Artwork Layer -->
+                <g class="frame-layer">
+                  @switch (selectedFrame) {
+                    @case ('classic-double') {
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+                    @case ('scalloped-seal') {
+                      <path [attr.d]="getScallopedPath(200, 200, 194, 178, 36)" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" stroke-dasharray="4 3" [attr.fill]="innerBgColor" />
+                    }
+                    @case ('rope-ring') {
+                      <circle cx="200" cy="200" r="184" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="179" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 1.5" stroke-dasharray="8 5" stroke-linecap="round" fill="none" />
+                      <circle cx="200" cy="200" r="174" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+                    @case ('dotted-crest') {
+                      <circle cx="200" cy="200" r="183" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.65" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="176" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" stroke-dasharray="1 9" stroke-linecap="round" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <text x="96" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                      <text x="304" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                    }
+                    @case ('octagon-emblem') {
+                      <polygon points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <polygon points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.4" fill="none" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                    }
+                  }
+                </g>
 
-        <div class="form-group half">
-          <label for="innerBorderWidth">Inner Border: {{ innerBorderWidth }}px</label>
-          <input id="innerBorderWidth" type="range" min="0" max="14" step="0.5" formControlName="innerBorderWidth" />
-        </div>
-      </div>
+                <!-- Curved Text Paths -->
+                <defs>
+                  <path id="topPath" [attr.d]="'M ' + (200 - topArcRadius) + ',200 A ' + topArcRadius + ',' + topArcRadius + ' 0 1,1 ' + (200 + topArcRadius) + ',200'" />
+                  <path id="bottomPath" [attr.d]="'M ' + (200 - bottomArcRadius) + ',200 A ' + bottomArcRadius + ',' + bottomArcRadius + ' 0 0,0 ' + (200 + bottomArcRadius) + ',200'" />
+                </defs>
 
-      <!-- Inner & Outer Background Colors -->
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="outerBgColor">Outer Ring BG:</label>
-          <div class="color-picker-wrap">
-            <input id="outerBgColor" type="color" formControlName="outerBgColor" />
-            <span>{{ outerBgColor }}</span>
+                <!-- Outer Curved Text Layer -->
+                <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
+                  <text [attr.font-size]="30 * outerTextScale" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+                    <textPath href="#topPath" startOffset="50%" text-anchor="middle">
+                      {{ isAllCaps ? topText.toUpperCase() : topText }}
+                    </textPath>
+                  </text>
+                  <text [attr.font-size]="30 * outerTextScale" font-weight="bold" [attr.letter-spacing]="letterSpacing" [attr.fill]="fontColor">
+                    <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
+                      {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
+                    </textPath>
+                  </text>
+                </g>
+
+                <!-- Center / Inner Middle Text Layer -->
+                <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
+                  <text x="200" y="200" dominant-baseline="central" [attr.font-size]="34 * middleScale" font-weight="bold" [attr.letter-spacing]="letterSpacing * 0.75" text-anchor="middle" [attr.fill]="fontColor">
+                    {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+                  </text>
+                </g>
+
+              </g>
+            </svg>
           </div>
-        </div>
 
-        <div class="form-group half">
-          <label for="innerBgColor">Inner Circle BG:</label>
-          <div class="color-picker-wrap">
-            <input id="innerBgColor" type="color" formControlName="innerBgColor" />
-            <span>{{ innerBgColor }}</span>
+          <!-- Download Action Buttons -->
+          <div class="d-grid gap-2">
+            <button type="button" class="btn btn-primary fw-semibold" (click)="downloadSvg()">Download SVG</button>
+            <button type="button" class="btn btn-success fw-semibold" (click)="downloadPng()">Download PNG</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Independent Text Animations -->
-    <div class="section-box">
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="outerTextAnimation">Outer Text Animation:</label>
-          <select id="outerTextAnimation" formControlName="outerTextAnimation">
-            @for (anim of outerTextAnimations; track anim.id) {
-              <option [value]="anim.id">{{ anim.label }}</option>
-            }
-          </select>
-        </div>
-
-        <div class="form-group half">
-          <label for="centerTextAnimation">Center Text Animation:</label>
-          <select id="centerTextAnimation" formControlName="centerTextAnimation">
-            @for (anim of centerTextAnimations; track anim.id) {
-              <option [value]="anim.id">{{ anim.label }}</option>
-            }
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <!-- Frame & Font Formatting -->
-    <div class="section-box">
-      <div class="form-row">
-        <div class="form-group inline">
-          <label>Font:</label>
-          <label class="radio-label"><input type="radio" formControlName="fontFamily" value="Arial" /> Arial</label>
-          <label class="radio-label"><input type="radio" formControlName="fontFamily" value="Times New Roman" /> Times</label>
-        </div>
-
-        <label class="checkbox-label">
-          <input type="checkbox" formControlName="isAllCaps" /> All caps
-        </label>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="frameColor">Border Color:</label>
-          <div class="color-picker-wrap">
-            <input id="frameColor" type="color" formControlName="frameColor" />
-            <span>{{ frameColor }}</span>
-          </div>
-        </div>
-
-        <div class="form-group half">
-          <label for="fontColor">Font Color:</label>
-          <div class="color-picker-wrap">
-            <input id="fontColor" type="color" formControlName="fontColor" />
-            <span>{{ fontColor }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Inner & Outer Text Scaling -->
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="outerTextScale">Outer Text Scale: {{ outerTextScale }}x</label>
-          <input id="outerTextScale" type="range" min="0.6" max="1.4" step="0.05" formControlName="outerTextScale" />
-        </div>
-
-        <div class="form-group half">
-          <label for="middleScale">Inner Text Scale: {{ middleScale }}x</label>
-          <input id="middleScale" type="range" min="0.5" max="1.8" step="0.05" formControlName="middleScale" />
-        </div>
-      </div>
-
-      <!-- Badge Scale & Letter Spacing -->
-      <div class="form-row">
-        <div class="form-group half">
-          <label for="overallScale">Badge Scale: {{ overallScale }}x</label>
-          <input id="overallScale" type="range" min="0.6" max="1.15" step="0.05" formControlName="overallScale" />
-        </div>
-
-        <div class="form-group half">
-          <label for="letterSpacing">Letter Spacing: {{ letterSpacing }}px</label>
-          <input id="letterSpacing" type="range" min="0" max="6" step="0.5" formControlName="letterSpacing" />
-        </div>
-      </div>
-    </div>
-  </form>
-
-  <!-- Live SVG Preview (Strictly Center-Aligned at All Scales) -->
-  <div class="preview-container" #svgContainer>
-    <svg
-      viewBox="0 0 400 400"
-      width="100%"
-      height="100%"
-      preserveAspectRatio="xMidYMid meet"
-      [style.font-family]="fontFamily"
-      [attr.class]="'frame-style-' + selectedFrame">
-
-      <!-- 1. Centered Scale Wrapper (Pivots strictly around 200, 200) -->
-      <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'">
-        
-        <!-- 2. Frame Artwork Layer -->
-        <g class="frame-layer">
-          @switch (selectedFrame) {
-            @case ('classic-double') {
-              <circle
-                cx="200"
-                cy="200"
-                r="180"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth"
-                [attr.fill]="outerBgColor" />
-              <circle
-                cx="200"
-                cy="200"
-                r="126"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="innerBorderWidth"
-                [attr.fill]="innerBgColor" />
-            }
-
-            @case ('scalloped-seal') {
-              <path
-                [attr.d]="getScallopedPath(200, 200, 194, 178, 36)"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth"
-                [attr.fill]="outerBgColor" />
-              <circle
-                cx="200"
-                cy="200"
-                r="126"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="innerBorderWidth"
-                stroke-dasharray="4 3"
-                [attr.fill]="innerBgColor" />
-            }
-
-            @case ('rope-ring') {
-              <circle
-                cx="200"
-                cy="200"
-                r="184"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth * 0.5"
-                [attr.fill]="outerBgColor" />
-              <circle
-                cx="200"
-                cy="200"
-                r="179"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth * 1.5"
-                stroke-dasharray="8 5"
-                stroke-linecap="round"
-                fill="none" />
-              <circle
-                cx="200"
-                cy="200"
-                r="174"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth * 0.5"
-                fill="none" />
-              <circle
-                cx="200"
-                cy="200"
-                r="126"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="innerBorderWidth"
-                [attr.fill]="innerBgColor" />
-            }
-
-            @case ('dotted-crest') {
-              <circle
-                cx="200"
-                cy="200"
-                r="183"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth * 0.65"
-                [attr.fill]="outerBgColor" />
-              <circle
-                cx="200"
-                cy="200"
-                r="176"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth"
-                stroke-dasharray="1 9"
-                stroke-linecap="round"
-                fill="none" />
-              <circle
-                cx="200"
-                cy="200"
-                r="126"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="innerBorderWidth"
-                [attr.fill]="innerBgColor" />
-              <text x="96" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
-              <text x="304" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
-            }
-
-            @case ('octagon-emblem') {
-              <polygon
-                points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth"
-                [attr.fill]="outerBgColor" />
-              <polygon
-                points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="outerBorderWidth * 0.4"
-                fill="none" />
-              <circle
-                cx="200"
-                cy="200"
-                r="126"
-                [attr.stroke]="frameColor"
-                [attr.stroke-width]="innerBorderWidth"
-                [attr.fill]="innerBgColor" />
-            }
-          }
-        </g>
-
-        <!-- Curved Text Paths -->
-        <defs>
-          <path
-            id="topPath"
-            [attr.d]="'M ' + (200 - topArcRadius) + ',200 A ' + topArcRadius + ',' + topArcRadius + ' 0 1,1 ' + (200 + topArcRadius) + ',200'" />
-          <path
-            id="bottomPath"
-            [attr.d]="'M ' + (200 - bottomArcRadius) + ',200 A ' + bottomArcRadius + ',' + bottomArcRadius + ' 0 0,0 ' + (200 + bottomArcRadius) + ',200'" />
-        </defs>
-
-        <!-- 3. Outer Curved Text Layer -->
-        <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
-          <text
-            [attr.font-size]="30 * outerTextScale"
-            font-weight="bold"
-            [attr.letter-spacing]="letterSpacing"
-            [attr.fill]="fontColor">
-            <textPath href="#topPath" startOffset="50%" text-anchor="middle">
-              {{ isAllCaps ? topText.toUpperCase() : topText }}
-            </textPath>
-          </text>
-
-          <text
-            [attr.font-size]="30 * outerTextScale"
-            font-weight="bold"
-            [attr.letter-spacing]="letterSpacing"
-            [attr.fill]="fontColor">
-            <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
-              {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
-            </textPath>
-          </text>
-        </g>
-
-        <!-- 4. Center / Inner Middle Text Layer -->
-        <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
-          <text
-            x="200"
-            y="200"
-            dominant-baseline="central"
-            [attr.font-size]="34 * middleScale"
-            font-weight="bold"
-            [attr.letter-spacing]="letterSpacing * 0.75"
-            text-anchor="middle"
-            [attr.fill]="fontColor">
-            {{ isAllCaps ? middleText.toUpperCase() : middleText }}
-          </text>
-        </g>
-
-      </g>
-    </svg>
-  </div>
-
-  <!-- Download Buttons -->
-  <div class="download-actions">
-    <button type="button" (click)="downloadSvg()">Download SVG</button>
-    <button type="button" (click)="downloadPng()">Download PNG</button>
   </div>
 </div>
