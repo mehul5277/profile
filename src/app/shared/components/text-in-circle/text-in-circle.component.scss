@@ -51,6 +51,18 @@
   overflow: hidden;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
 
+  // Subtle checkerboard indicator when Transparent PNG is active
+  &.transparent-grid {
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(45deg, #efefef 25%, transparent 25%),
+      linear-gradient(-45deg, #efefef 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #efefef 75%),
+      linear-gradient(-45deg, transparent 75%, #efefef 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  }
+
   svg {
     display: block;
     width: 100%;
@@ -80,5 +92,41 @@
     .center-anim-float { animation: verticalFloat 2.6s ease-in-out infinite; }
     .center-anim-wiggle { animation: subtleWiggle 2.2s ease-in-out infinite; }
     .center-anim-fade-pulse { animation: opacityPulse 2.5s ease-in-out infinite; }
+  }
+}
+
+// --- Print / Save PDF Styling ---
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .generator-wrapper {
+    background: #ffffff !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  .print-area {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+  }
+
+  .print-card {
+    box-shadow: none !important;
+    border: none !important;
+    width: 650px;
+    max-width: 90vw;
+  }
+
+  .preview-container {
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
   }
 }

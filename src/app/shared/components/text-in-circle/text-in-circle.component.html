@@ -1,13 +1,13 @@
 <div class="container-fluid py-4 generator-wrapper">
   <div class="row g-4 justify-content-center">
     
-    <!-- Left Column: Full-Width Responsive Bootstrap Form -->
-    <div class="col-12 col-lg-7 col-xl-6">
+    <!-- Left Column: Full-Width Responsive Bootstrap Form (Hidden during Print) -->
+    <div class="col-12 col-lg-7 col-xl-6 no-print">
       <div class="card shadow-sm border-0 p-4 bg-white">
         <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
 
         <form [formGroup]="form">
-          <!-- 1. Text Content (All Frames Support Upper/Middle/Lower Center Text) -->
+          <!-- 1. Text Content -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content</h5>
             
@@ -102,7 +102,7 @@
           </div>
 
           <!-- 4. Typography & Scaling -->
-          <div class="p-3 bg-light rounded border">
+          <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">4. Typography & Scaling</h5>
             
             <div class="row align-items-center mb-3">
@@ -166,17 +166,61 @@
               </div>
             </div>
           </div>
+
+          <!-- 5. Export & Print Settings -->
+          <div class="p-3 bg-light rounded border">
+            <h5 class="fs-6 fw-bold text-secondary mb-3">5. Export & Print Settings</h5>
+
+            <div class="mb-3">
+              <label class="form-label small fw-semibold d-block">Quick Resolution Presets (px)</label>
+              <div class="btn-group btn-group-sm w-100" role="group">
+                @for (res of resolutionPresets; track res) {
+                  <button
+                    type="button"
+                    class="btn"
+                    [class.btn-secondary]="exportHeight === res && preserveAspectRatio"
+                    [class.btn-outline-secondary]="exportHeight !== res || !preserveAspectRatio"
+                    (click)="setPresetResolution(res)">
+                    {{ res }}×{{ res }}
+                  </button>
+                }
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="exportWidth" class="form-label small">Width (px)</label>
+                <input id="exportWidth" type="number" class="form-control form-control-sm" min="100" max="8000" formControlName="exportWidth" />
+              </div>
+              <div class="col-md-6">
+                <label for="exportHeight" class="form-label small">Height (px)</label>
+                <input id="exportHeight" type="number" class="form-control form-control-sm" min="100" max="8000" formControlName="exportHeight" />
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="preserveAspectRatio" id="preserveRatioCheck" />
+                <label class="form-check-label small fw-semibold" for="preserveRatioCheck">Preserve 1:1 Aspect Ratio</label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" formControlName="transparentPng" id="transparentPngCheck" />
+                <label class="form-check-label small fw-semibold" for="transparentPngCheck">Transparent PNG Background</label>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>
 
-    <!-- Right Column: Live SVG Preview & Downloads -->
-    <div class="col-12 col-lg-5 col-xl-4">
+    <!-- Right Column: Live SVG Preview & Export Actions -->
+    <div class="col-12 col-lg-5 col-xl-4 print-area">
       <div class="sticky-top" style="top: 2rem;">
-        <div class="card shadow-sm border-0 p-3 bg-white">
-          <h5 class="card-title fs-6 fw-bold mb-3 text-secondary text-center">Live Preview</h5>
+        <div class="card shadow-sm border-0 p-3 bg-white print-card">
+          <h5 class="card-title fs-6 fw-bold mb-3 text-secondary text-center no-print">Live Preview</h5>
           
-          <div class="preview-container mb-3" #svgContainer>
+          <div class="preview-container mb-3" [class.transparent-grid]="transparentPng" #svgContainer>
             <svg
               viewBox="0 0 400 400"
               width="100%"
@@ -185,7 +229,7 @@
               [style.font-family]="fontFamily"
               [attr.class]="'frame-style-' + selectedFrame">
 
-              <!-- Centered Scale Wrapper (Pivots strictly around 200, 200) -->
+              <!-- Centered Scale Wrapper -->
               <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'">
                 
                 <!-- Frame Artwork Layer -->
@@ -251,7 +295,7 @@
                   </text>
                 </g>
 
-                <!-- Center / Inner Middle Text Layer (All Frame Styles) -->
+                <!-- Center / Inner Middle Text Layer -->
                 <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
                   @if (middleTopSubText) {
                     <text
@@ -298,10 +342,20 @@
             </svg>
           </div>
 
-          <!-- Download Action Buttons -->
-          <div class="d-grid gap-2">
-            <button type="button" class="btn btn-primary fw-semibold" (click)="downloadSvg()">Download SVG</button>
-            <button type="button" class="btn btn-success fw-semibold" (click)="downloadPng()">Download PNG</button>
+          <!-- Export & Print Action Buttons -->
+          <div class="row g-2 no-print">
+            <div class="col-6">
+              <button type="button" class="btn btn-primary w-100 fw-semibold" (click)="downloadSvg()">Save SVG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-success w-100 fw-semibold" (click)="downloadPng()">Save PNG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-info text-white w-100 fw-semibold" (click)="downloadJpg()">Save JPG</button>
+            </div>
+            <div class="col-6">
+              <button type="button" class="btn btn-dark w-100 fw-semibold" (click)="printOrSavePdf()">Print / PDF</button>
+            </div>
           </div>
         </div>
       </div>

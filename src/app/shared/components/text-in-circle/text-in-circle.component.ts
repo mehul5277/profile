@@ -43,6 +43,8 @@ export class TextInCircleComponent {
     { id: 'fade-pulse', label: 'Opacity Pulse' }
   ];
 
+  resolutionPresets: number[] = [500, 1000, 2000, 4000];
+
   // Text & Frame Getters
   get topText(): string { return this.form.get('topText')?.value || ''; }
   get middleTopSubText(): string { return this.form.get('middleTopSubText')?.value || ''; }
@@ -51,7 +53,7 @@ export class TextInCircleComponent {
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
   get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'family-banner-ring'; }
 
-  // Circle Border Thickness & Background Color Getters
+  // Border & Background Getters
   get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 3; }
   get innerBorderWidth(): number { return this.form.get('innerBorderWidth')?.value ?? 2.5; }
   get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
@@ -64,14 +66,19 @@ export class TextInCircleComponent {
   get fontColor(): string { return this.form.get('fontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
 
-  // Scaling & Independent Animation Getters
+  // Scaling & Animations Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
   get outerTextScale(): number { return this.form.get('outerTextScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
   get outerTextAnimation(): string { return this.form.get('outerTextAnimation')?.value || 'none'; }
   get centerTextAnimation(): string { return this.form.get('centerTextAnimation')?.value || 'none'; }
 
-  // Dynamic Arc Radii so scaled outer text stays vertically centered inside the ring track
+  // Export & Print Getters
+  get exportWidth(): number { return this.form.get('exportWidth')?.value ?? 1000; }
+  get exportHeight(): number { return this.form.get('exportHeight')?.value ?? 1000; }
+  get preserveAspectRatio(): boolean { return this.form.get('preserveAspectRatio')?.value ?? true; }
+  get transparentPng(): boolean { return this.form.get('transparentPng')?.value ?? false; }
+
   get topArcRadius(): number {
     return 153 - (30 * this.outerTextScale) * 0.3;
   }
@@ -101,7 +108,38 @@ export class TextInCircleComponent {
       outerTextScale: [1],
       middleScale: [1],
       outerTextAnimation: ['none'],
-      centerTextAnimation: ['none']
+      centerTextAnimation: ['none'],
+      // Export & Print Controls
+      exportWidth: [1000],
+      exportHeight: [1000],
+      preserveAspectRatio: [true],
+      transparentPng: [false]
+    });
+
+    // Sync width & height when preserveAspectRatio is enabled
+    this.form.get('exportHeight')?.valueChanges.subscribe((val) => {
+      if (this.preserveAspectRatio && val) {
+        this.form.patchValue({ exportWidth: val }, { emitEvent: false });
+      }
+    });
+
+    this.form.get('exportWidth')?.valueChanges.subscribe((val) => {
+      if (this.preserveAspectRatio && val) {
+        this.form.patchValue({ exportHeight: val }, { emitEvent: false });
+      }
+    });
+
+    this.form.get('preserveAspectRatio')?.valueChanges.subscribe((locked) => {
+      if (locked) {
+        this.form.patchValue({ exportWidth: this.exportHeight }, { emitEvent: false });
+      }
+    });
+  }
+
+  setPresetResolution(size: number): void {
+    this.form.patchValue({
+      exportWidth: size,
+      exportHeight: size
     });
   }
 
@@ -126,6 +164,7 @@ export class TextInCircleComponent {
     return d + 'Z';
   }
 
+  // 1. Export Vector SVG
   downloadSvg(): void {
     const svgElement = this.svgContainer.nativeElement.querySelector('svg');
     if (!svgElement) return;
@@ -141,16 +180,39 @@ export class TextInCircleComponent {
     this.triggerDownload(blob, `text-in-circle-${this.selectedFrame}.svg`);
   }
 
+  // 2. Export Raster PNG (Supports Transparency & Custom Dimensions)
   downloadPng(): void {
+    this.renderToCanvas('image/png', `text-in-circle-${this.selectedFrame}-${this.exportWidth}x${this.exportHeight}.png`, this.transparentPng);
+  }
+
+  // 3. Export Raster JPG (Always solid white canvas background)
+  downloadJpg(): void {
+    this.renderToCanvas('image/jpeg', `text-in-circle-${this.selectedFrame}-${this.exportWidth}x${this.exportHeight}.jpg`, false);
+  }
+
+  // 4. Print / Save as PDF via Browser Print Engine
+  printOrSavePdf(): void {
+    window.print();
+  }
+
+  private renderToCanvas(mimeType: 'image/png' | 'image/jpeg', filename: string, isTransparent: boolean): void {
     const svgElement = this.svgContainer.nativeElement.querySelector('svg');
     if (!svgElement) return;
 
+    const clonedSvg = svgElement.cloneNode(true) as SVGSVGElement;
+    if (!this.preserveAspectRatio) {
+      clonedSvg.setAttribute('preserveAspectRatio', 'none');
+    }
+
     const serializer = new XMLSerializer();
-    const svgString = serializer.serializeToString(svgElement);
+    const svgString = serializer.serializeToString(clonedSvg);
+
+    const width = Math.max(100, Math.min(8000, Number(this.exportWidth) || 1000));
+    const height = Math.max(100, Math.min(8000, Number(this.exportHeight) || 1000));
 
     const canvas = document.createElement('canvas');
-    canvas.width = 1000;
-    canvas.height = 1000;
+    canvas.width = width;
+    canvas.height = height;
     const ctx = canvas.getContext('2d');
 
     const img = new Image();
@@ -160,16 +222,24 @@ export class TextInCircleComponent {
     img.onload = () => {
       if (ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        if (!isTransparent) {
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        canvas.toBlob((blob) => {
-          if (blob) {
-            this.triggerDownload(blob, `text-in-circle-${this.selectedFrame}.png`);
-          }
-          window.URL.revokeObjectURL(url);
-        }, 'image/png');
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              this.triggerDownload(blob, filename);
+            }
+            window.URL.revokeObjectURL(url);
+          },
+          mimeType,
+          mimeType === 'image/jpeg' ? 0.95 : undefined
+        );
       }
     };
 
