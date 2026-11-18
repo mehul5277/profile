@@ -190,9 +190,32 @@
             </div>
           </div>
 
-          <!-- 4. Independent Animations -->
+          <!-- 4. Manual Rotation Sliders & Independent Animations -->
           <div class="p-3 mb-3 bg-light rounded border">
-            <h5 class="fs-6 fw-bold text-secondary mb-3">4. Independent Animations</h5>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fs-6 fw-bold text-secondary mb-0">4. Rotation & Animations</h5>
+              <button type="button" class="btn btn-outline-secondary btn-sm py-0 px-2" (click)="resetRotations()">
+                Reset 0°
+              </button>
+            </div>
+
+            <!-- Interactive Rotation Sliders -->
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label for="badgeRotation" class="form-label small">Whole Badge: {{ badgeRotation }}°</label>
+                <input id="badgeRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="badgeRotation" />
+              </div>
+              <div class="col-md-4">
+                <label for="outerTextRotation" class="form-label small">Outer Text: {{ outerTextRotation }}°</label>
+                <input id="outerTextRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="outerTextRotation" />
+              </div>
+              <div class="col-md-4">
+                <label for="centerTextRotation" class="form-label small">Center Text: {{ centerTextRotation }}°</label>
+                <input id="centerTextRotation" type="range" class="form-range" min="-180" max="180" step="1" formControlName="centerTextRotation" />
+              </div>
+            </div>
+
+            <!-- Continuous CSS Animations -->
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
@@ -275,8 +298,8 @@
               [style.font-family]="fontFamily"
               [attr.class]="'frame-style-' + selectedFrame">
 
-              <!-- Centered Scale Wrapper -->
-              <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'">
+              <!-- Centered Scale & Whole Badge Rotation Wrapper (Pivots strictly around 200, 200) -->
+              <g [attr.transform]="'translate(200, 200) rotate(' + badgeRotation + ') scale(' + overallScale + ') translate(-200, -200)'">
                 
                 <!-- Frame Artwork Layer -->
                 <g class="frame-layer">
@@ -327,102 +350,105 @@
                   <path id="bottomPath" [attr.d]="bottomArcPath" />
                 </defs>
 
-                <!-- Outer Curved Text Layer -->
-                <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
-                  <text
-                    [attr.font-size]="30 * outerTextScale"
-                    font-weight="bold"
-                    [attr.letter-spacing]="letterSpacing"
-                    [attr.fill]="fontColor"
-                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
-                    [attr.stroke-width]="textOutlineWidth"
-                    style="paint-order: stroke fill; stroke-linejoin: round;">
-                    <textPath href="#topPath" startOffset="50%" text-anchor="middle">
-                      {{ isAllCaps ? topText.toUpperCase() : topText }}
-                    </textPath>
-                  </text>
-                  <text
-                    [attr.font-size]="30 * outerTextScale"
-                    font-weight="bold"
-                    [attr.letter-spacing]="letterSpacing"
-                    [attr.fill]="fontColor"
-                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
-                    [attr.stroke-width]="textOutlineWidth"
-                    style="paint-order: stroke fill; stroke-linejoin: round;">
-                    <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
-                      {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
-                    </textPath>
-                  </text>
+                <!-- Outer Curved Text Layer (Manual Rotation Wrapper + Animation Wrapper) -->
+                <g [attr.transform]="'rotate(' + outerTextRotation + ', 200, 200)'">
+                  <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
+                    <text
+                      [attr.font-size]="30 * outerTextScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing"
+                      [attr.fill]="fontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      <textPath href="#topPath" startOffset="50%" text-anchor="middle">
+                        {{ isAllCaps ? topText.toUpperCase() : topText }}
+                      </textPath>
+                    </text>
+                    <text
+                      [attr.font-size]="30 * outerTextScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing"
+                      [attr.fill]="fontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      <textPath href="#bottomPath" startOffset="50%" text-anchor="middle">
+                        {{ isAllCaps ? bottomText.toUpperCase() : bottomText }}
+                      </textPath>
+                    </text>
+                  </g>
                 </g>
 
-                <!-- Center / Inner Middle Text & Ornamental Crest Layer -->
-                <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
-                  <!-- Optional Ornamental Crest Icon above Upper Label -->
-                  @switch (centerIcon) {
-                    @case ('star') {
-                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                <!-- Center / Inner Middle Text & Ornamental Crest Layer (Manual Rotation Wrapper + Animation Wrapper) -->
+                <g [attr.transform]="'rotate(' + centerTextRotation + ', 200, 200)'">
+                  <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
+                    @switch (centerIcon) {
+                      @case ('star') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                      }
+                      @case ('heart') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">♥</text>
+                      }
+                      @case ('diamond') {
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">❖</text>
+                      }
+                      @case ('crown') {
+                        <path
+                          [attr.transform]="'translate(186, ' + (200 - (26 * middleScale) - 56) + ') scale(1.15)'"
+                          d="M2 18L4 7L9 12L12 5L15 12L20 7L22 18H2ZM3 20H21V22H3V20Z"
+                          [attr.fill]="frameColor" />
+                      }
+                      @case ('laurel-dot') {
+                        <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
+                        <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="frameColor" />
+                        <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
+                      }
                     }
-                    @case ('heart') {
-                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">♥</text>
-                    }
-                    @case ('diamond') {
-                      <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">❖</text>
-                    }
-                    @case ('crown') {
-                      <path
-                        [attr.transform]="'translate(186, ' + (200 - (26 * middleScale) - 56) + ') scale(1.15)'"
-                        d="M2 18L4 7L9 12L12 5L15 12L20 7L22 18H2ZM3 20H21V22H3V20Z"
-                        [attr.fill]="frameColor" />
-                    }
-                    @case ('laurel-dot') {
-                      <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
-                      <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="frameColor" />
-                      <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
-                    }
-                  }
 
-                  @if (middleTopSubText) {
+                    @if (middleTopSubText) {
+                      <text
+                        x="200"
+                        [attr.y]="200 - (26 * middleScale) - 18"
+                        dominant-baseline="central"
+                        [attr.font-size]="20 * middleScale"
+                        font-weight="500"
+                        [attr.letter-spacing]="letterSpacing * 0.8"
+                        text-anchor="middle"
+                        [attr.fill]="frameColor">
+                        {{ isAllCaps ? middleTopSubText.toUpperCase() : middleTopSubText }}
+                      </text>
+                    }
+
                     <text
                       x="200"
-                      [attr.y]="200 - (26 * middleScale) - 18"
+                      y="200"
                       dominant-baseline="central"
-                      [attr.font-size]="20 * middleScale"
-                      font-weight="500"
-                      [attr.letter-spacing]="letterSpacing * 0.8"
+                      [attr.font-size]="34 * middleScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing * 0.75"
                       text-anchor="middle"
-                      [attr.fill]="frameColor">
-                      {{ isAllCaps ? middleTopSubText.toUpperCase() : middleTopSubText }}
+                      [attr.fill]="fontColor"
+                      [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
+                      [attr.stroke-width]="textOutlineWidth"
+                      style="paint-order: stroke fill; stroke-linejoin: round;">
+                      {{ isAllCaps ? middleText.toUpperCase() : middleText }}
                     </text>
-                  }
 
-                  <text
-                    x="200"
-                    y="200"
-                    dominant-baseline="central"
-                    [attr.font-size]="34 * middleScale"
-                    font-weight="bold"
-                    [attr.letter-spacing]="letterSpacing * 0.75"
-                    text-anchor="middle"
-                    [attr.fill]="fontColor"
-                    [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
-                    [attr.stroke-width]="textOutlineWidth"
-                    style="paint-order: stroke fill; stroke-linejoin: round;">
-                    {{ isAllCaps ? middleText.toUpperCase() : middleText }}
-                  </text>
-
-                  @if (middleBottomSubText) {
-                    <text
-                      x="200"
-                      [attr.y]="200 + (26 * middleScale) + 20"
-                      dominant-baseline="central"
-                      [attr.font-size]="20 * middleScale"
-                      font-weight="500"
-                      [attr.letter-spacing]="letterSpacing * 0.8"
-                      text-anchor="middle"
-                      [attr.fill]="frameColor">
-                      {{ isAllCaps ? middleBottomSubText.toUpperCase() : middleBottomSubText }}
-                    </text>
-                  }
+                    @if (middleBottomSubText) {
+                      <text
+                        x="200"
+                        [attr.y]="200 + (26 * middleScale) + 20"
+                        dominant-baseline="central"
+                        [attr.font-size]="20 * middleScale"
+                        font-weight="500"
+                        [attr.letter-spacing]="letterSpacing * 0.8"
+                        text-anchor="middle"
+                        [attr.fill]="frameColor">
+                        {{ isAllCaps ? middleBottomSubText.toUpperCase() : middleBottomSubText }}
+                      </text>
+                    }
+                  </g>
                 </g>
 
               </g>

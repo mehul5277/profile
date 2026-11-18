@@ -93,10 +93,13 @@ export class TextInCircleComponent implements OnInit {
   get textOutlineWidth(): number { return this.form.get('textOutlineWidth')?.value ?? 0; }
   get textOutlineColor(): string { return this.form.get('textOutlineColor')?.value || '#ffffff'; }
 
-  // Scaling & Animations Getters
+  // Scaling, Rotation & Animation Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
   get outerTextScale(): number { return this.form.get('outerTextScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
+  get badgeRotation(): number { return this.form.get('badgeRotation')?.value ?? 0; }
+  get outerTextRotation(): number { return this.form.get('outerTextRotation')?.value ?? 0; }
+  get centerTextRotation(): number { return this.form.get('centerTextRotation')?.value ?? 0; }
   get outerTextAnimation(): string { return this.form.get('outerTextAnimation')?.value || 'none'; }
   get centerTextAnimation(): string { return this.form.get('centerTextAnimation')?.value || 'none'; }
 
@@ -106,7 +109,6 @@ export class TextInCircleComponent implements OnInit {
   get preserveAspectRatio(): boolean { return this.form.get('preserveAspectRatio')?.value ?? true; }
   get transparentPng(): boolean { return this.form.get('transparentPng')?.value ?? false; }
 
-  // Dynamic Arc Radii & Custom Arc Path Calculations
   get topArcRadius(): number {
     return 153 - (30 * this.outerTextScale) * 0.3;
   }
@@ -148,6 +150,9 @@ export class TextInCircleComponent implements OnInit {
       overallScale: [1],
       outerTextScale: [1],
       middleScale: [1],
+      badgeRotation: [0],
+      outerTextRotation: [0],
+      centerTextRotation: [0],
       outerTextAnimation: ['none'],
       centerTextAnimation: ['none'],
       exportWidth: [1000],
@@ -179,6 +184,14 @@ export class TextInCircleComponent implements OnInit {
     this.loadGoogleFonts();
   }
 
+  resetRotations(): void {
+    this.form.patchValue({
+      badgeRotation: 0,
+      outerTextRotation: 0,
+      centerTextRotation: 0
+    });
+  }
+
   private loadGoogleFonts(): void {
     const id = 'text-in-circle-google-fonts';
     if (!document.getElementById(id)) {
@@ -203,7 +216,6 @@ export class TextInCircleComponent implements OnInit {
     });
   }
 
-  // Computes SVG elliptical arc path for customizable top/bottom arc spans
   private describeArc(cx: number, cy: number, r: number, startAngleDeg: number, endAngleDeg: number, clockwise: boolean): string {
     const startRad = ((startAngleDeg - 90) * Math.PI) / 180;
     const endRad = ((endAngleDeg - 90) * Math.PI) / 180;
