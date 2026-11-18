@@ -43,7 +43,7 @@ export class TextInCircleComponent {
     { id: 'fade-pulse', label: 'Opacity Pulse' }
   ];
 
-  // Getters
+  // Text & Frame Getters
   get topText(): string { return this.form.get('topText')?.value || ''; }
   get middleTopSubText(): string { return this.form.get('middleTopSubText')?.value || ''; }
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
@@ -51,23 +51,27 @@ export class TextInCircleComponent {
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
   get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'family-banner-ring'; }
 
+  // Circle Border Thickness & Background Color Getters
   get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 3; }
   get innerBorderWidth(): number { return this.form.get('innerBorderWidth')?.value ?? 2.5; }
   get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
   get innerBgColor(): string { return this.form.get('innerBgColor')?.value || '#ffffff'; }
 
+  // Formatting Getters
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
   get frameColor(): string { return this.form.get('frameColor')?.value || '#a62626'; }
   get fontColor(): string { return this.form.get('fontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
 
+  // Scaling & Independent Animation Getters
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
   get outerTextScale(): number { return this.form.get('outerTextScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
   get outerTextAnimation(): string { return this.form.get('outerTextAnimation')?.value || 'none'; }
   get centerTextAnimation(): string { return this.form.get('centerTextAnimation')?.value || 'none'; }
 
+  // Dynamic Arc Radii so scaled outer text stays vertically centered inside the ring track
   get topArcRadius(): number {
     return 153 - (30 * this.outerTextScale) * 0.3;
   }
