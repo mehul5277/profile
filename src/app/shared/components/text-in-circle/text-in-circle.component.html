@@ -147,19 +147,20 @@
     </div>
   </form>
 
-  <!-- Live SVG Preview -->
+  <!-- Live SVG Preview (Strictly Center-Aligned at All Scales) -->
   <div class="preview-container" #svgContainer>
     <svg
       viewBox="0 0 400 400"
       width="100%"
       height="100%"
+      preserveAspectRatio="xMidYMid meet"
       [style.font-family]="fontFamily"
       [attr.class]="'frame-style-' + selectedFrame">
 
-      <!-- Global Scale Group Centered at (200, 200) -->
-      <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'" class="badge-root">
+      <!-- 1. Centered Scale Wrapper (Pivots strictly around 200, 200) -->
+      <g [attr.transform]="'translate(200, 200) scale(' + overallScale + ') translate(-200, -200)'">
         
-        <!-- Frame Artwork Layer -->
+        <!-- 2. Frame Artwork Layer -->
         <g class="frame-layer">
           @switch (selectedFrame) {
             @case ('classic-double') {
@@ -278,7 +279,7 @@
           }
         </g>
 
-        <!-- Dynamically Adjusted Curved Text Paths for Outer Text Scaling -->
+        <!-- Curved Text Paths -->
         <defs>
           <path
             id="topPath"
@@ -288,7 +289,7 @@
             [attr.d]="'M ' + (200 - bottomArcRadius) + ',200 A ' + bottomArcRadius + ',' + bottomArcRadius + ' 0 0,0 ' + (200 + bottomArcRadius) + ',200'" />
         </defs>
 
-        <!-- Outer Curved Text Layer -->
+        <!-- 3. Outer Curved Text Layer -->
         <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
           <text
             [attr.font-size]="30 * outerTextScale"
@@ -311,11 +312,12 @@
           </text>
         </g>
 
-        <!-- Center / Inner Middle Text Layer -->
+        <!-- 4. Center / Inner Middle Text Layer -->
         <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
           <text
             x="200"
-            [attr.y]="200 + 12 * middleScale"
+            y="200"
+            dominant-baseline="central"
             [attr.font-size]="34 * middleScale"
             font-weight="bold"
             [attr.letter-spacing]="letterSpacing * 0.75"
