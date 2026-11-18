@@ -1,30 +1,50 @@
 <div class="container-fluid py-4 generator-wrapper">
   <div class="row g-4 justify-content-center">
     
-    <!-- Left Column: Full Width Controls Form (Bootstrap Grid) -->
+    <!-- Left Column: Full Width Bootstrap Form -->
     <div class="col-12 col-lg-7 col-xl-6">
       <div class="card shadow-sm border-0 p-4 bg-white">
         <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
 
         <form [formGroup]="form">
-          <!-- Text Inputs Section -->
+          <!-- 1. Text Inputs Section -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">1. Text Content</h5>
+            
             <div class="mb-3">
-              <label for="topText" class="form-label fw-semibold small">Top Text</label>
+              <label for="topText" class="form-label fw-semibold small">Top Curved Text</label>
               <input id="topText" type="text" class="form-control" formControlName="topText" />
             </div>
-            <div class="mb-3">
-              <label for="middleText" class="form-label fw-semibold small">Middle Text</label>
-              <input id="middleText" type="text" class="form-control" formControlName="middleText" />
-            </div>
+
+            @if (selectedFrame === 'family-banner-ring') {
+              <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                  <label for="middleTopSubText" class="form-label fw-semibold small">Upper Banner Label</label>
+                  <input id="middleTopSubText" type="text" class="form-control" formControlName="middleTopSubText" />
+                </div>
+                <div class="col-md-4">
+                  <label for="middleText" class="form-label fw-semibold small">Middle Text</label>
+                  <input id="middleText" type="text" class="form-control" formControlName="middleText" />
+                </div>
+                <div class="col-md-4">
+                  <label for="middleBottomSubText" class="form-label fw-semibold small">Lower Banner Label</label>
+                  <input id="middleBottomSubText" type="text" class="form-control" formControlName="middleBottomSubText" />
+                </div>
+              </div>
+            } @else {
+              <div class="mb-3">
+                <label for="middleText" class="form-label fw-semibold small">Middle Text</label>
+                <input id="middleText" type="text" class="form-control" formControlName="middleText" />
+              </div>
+            }
+
             <div class="mb-0">
-              <label for="bottomText" class="form-label fw-semibold small">Bottom Text</label>
+              <label for="bottomText" class="form-label fw-semibold small">Bottom Curved Text</label>
               <input id="bottomText" type="text" class="form-control" formControlName="bottomText" />
             </div>
           </div>
 
-          <!-- Frame & Border Options -->
+          <!-- 2. Frame & Border Options -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">2. Frame & Backgrounds</h5>
             <div class="mb-3">
@@ -65,7 +85,7 @@
             </div>
           </div>
 
-          <!-- Animations -->
+          <!-- 3. Independent Animations -->
           <div class="p-3 mb-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">3. Independent Animations</h5>
             <div class="row g-3">
@@ -88,7 +108,7 @@
             </div>
           </div>
 
-          <!-- Formatting & Scaling -->
+          <!-- 4. Typography & Scaling -->
           <div class="p-3 bg-light rounded border">
             <h5 class="fs-6 fw-bold text-secondary mb-3">4. Typography & Scaling</h5>
             
@@ -182,16 +202,28 @@
                       <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
                       <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
                     }
+
+                    @case ('family-banner-ring') {
+                      <!-- Outer & Inner Circles -->
+                      <circle cx="200" cy="200" r="180" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
+                      <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
+                      <!-- Two Horizontal Banner Divider Lines inside Inner Circle (r=126 at y=174 & y=226 -> chord x = 200 ± 123) -->
+                      <line x1="77" y1="174" x2="323" y2="174" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                      <line x1="77" y1="226" x2="323" y2="226" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth * 0.75" />
+                    }
+
                     @case ('scalloped-seal') {
                       <path [attr.d]="getScallopedPath(200, 200, 194, 178, 36)" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
                       <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" stroke-dasharray="4 3" [attr.fill]="innerBgColor" />
                     }
+
                     @case ('rope-ring') {
                       <circle cx="200" cy="200" r="184" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" [attr.fill]="outerBgColor" />
                       <circle cx="200" cy="200" r="179" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 1.5" stroke-dasharray="8 5" stroke-linecap="round" fill="none" />
                       <circle cx="200" cy="200" r="174" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.5" fill="none" />
                       <circle cx="200" cy="200" r="126" [attr.stroke]="frameColor" [attr.stroke-width]="innerBorderWidth" [attr.fill]="innerBgColor" />
                     }
+
                     @case ('dotted-crest') {
                       <circle cx="200" cy="200" r="183" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.65" [attr.fill]="outerBgColor" />
                       <circle cx="200" cy="200" r="176" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" stroke-dasharray="1 9" stroke-linecap="round" fill="none" />
@@ -199,6 +231,7 @@
                       <text x="96" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
                       <text x="304" y="207" font-size="16" text-anchor="middle" [attr.fill]="frameColor">★</text>
                     }
+
                     @case ('octagon-emblem') {
                       <polygon points="273,24 376,127 376,273 273,376 127,376 24,273 24,127 127,24" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth" [attr.fill]="outerBgColor" />
                       <polygon points="269,33 367,131 367,269 269,367 131,367 33,269 33,131 131,33" [attr.stroke]="frameColor" [attr.stroke-width]="outerBorderWidth * 0.4" fill="none" />
@@ -229,9 +262,58 @@
 
                 <!-- Center / Inner Middle Text Layer -->
                 <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
-                  <text x="200" y="200" dominant-baseline="central" [attr.font-size]="34 * middleScale" font-weight="bold" [attr.letter-spacing]="letterSpacing * 0.75" text-anchor="middle" [attr.fill]="fontColor">
-                    {{ isAllCaps ? middleText.toUpperCase() : middleText }}
-                  </text>
+                  @if (selectedFrame === 'family-banner-ring') {
+                    <!-- Top Label ("THE") -->
+                    <text
+                      x="200"
+                      y="153"
+                      dominant-baseline="central"
+                      font-size="22"
+                      font-weight="500"
+                      [attr.letter-spacing]="letterSpacing * 0.8"
+                      text-anchor="middle"
+                      [attr.fill]="frameColor">
+                      {{ isAllCaps ? middleTopSubText.toUpperCase() : middleTopSubText }}
+                    </text>
+
+                    <!-- Main Middle Text ("WILSON") -->
+                    <text
+                      x="200"
+                      y="200"
+                      dominant-baseline="central"
+                      [attr.font-size]="34 * middleScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing * 0.75"
+                      text-anchor="middle"
+                      [attr.fill]="fontColor">
+                      {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+                    </text>
+
+                    <!-- Bottom Label ("FAMILY") -->
+                    <text
+                      x="200"
+                      y="248"
+                      dominant-baseline="central"
+                      font-size="22"
+                      font-weight="500"
+                      [attr.letter-spacing]="letterSpacing * 0.8"
+                      text-anchor="middle"
+                      [attr.fill]="frameColor">
+                      {{ isAllCaps ? middleBottomSubText.toUpperCase() : middleBottomSubText }}
+                    </text>
+                  } @else {
+                    <text
+                      x="200"
+                      y="200"
+                      dominant-baseline="central"
+                      [attr.font-size]="34 * middleScale"
+                      font-weight="bold"
+                      [attr.letter-spacing]="letterSpacing * 0.75"
+                      text-anchor="middle"
+                      [attr.fill]="fontColor">
+                      {{ isAllCaps ? middleText.toUpperCase() : middleText }}
+                    </text>
+                  }
                 </g>
 
               </g>

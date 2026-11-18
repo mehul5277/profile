@@ -20,6 +20,7 @@ export class TextInCircleComponent {
 
   miscFrames: SelectOption[] = [
     { id: 'classic-double', label: 'Classic Double Circle' },
+    { id: 'family-banner-ring', label: 'Family Banner Ring (Horizontal Lines)' },
     { id: 'scalloped-seal', label: 'Scalloped Stamp Seal' },
     { id: 'rope-ring', label: 'Twisted Rope Border' },
     { id: 'dotted-crest', label: 'Dotted Wreath Crest' },
@@ -44,18 +45,23 @@ export class TextInCircleComponent {
 
   // Getters
   get topText(): string { return this.form.get('topText')?.value || ''; }
+  get middleTopSubText(): string { return this.form.get('middleTopSubText')?.value || ''; }
   get middleText(): string { return this.form.get('middleText')?.value || ''; }
+  get middleBottomSubText(): string { return this.form.get('middleBottomSubText')?.value || ''; }
   get bottomText(): string { return this.form.get('bottomText')?.value || ''; }
-  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'classic-double'; }
-  get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 4; }
-  get innerBorderWidth(): number { return this.form.get('innerBorderWidth')?.value ?? 3; }
+  get selectedFrame(): string { return this.form.get('selectedFrame')?.value || 'family-banner-ring'; }
+
+  get outerBorderWidth(): number { return this.form.get('outerBorderWidth')?.value ?? 3; }
+  get innerBorderWidth(): number { return this.form.get('innerBorderWidth')?.value ?? 2.5; }
   get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
   get innerBgColor(): string { return this.form.get('innerBgColor')?.value || '#ffffff'; }
+
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
-  get frameColor(): string { return this.form.get('frameColor')?.value || '#000000'; }
-  get fontColor(): string { return this.form.get('fontColor')?.value || '#000000'; }
+  get frameColor(): string { return this.form.get('frameColor')?.value || '#a62626'; }
+  get fontColor(): string { return this.form.get('fontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
+
   get overallScale(): number { return this.form.get('overallScale')?.value ?? 1; }
   get outerTextScale(): number { return this.form.get('outerTextScale')?.value ?? 1; }
   get middleScale(): number { return this.form.get('middleScale')?.value ?? 1; }
@@ -72,18 +78,20 @@ export class TextInCircleComponent {
 
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      selectedFrame: ['classic-double'],
+      selectedFrame: ['family-banner-ring'],
       topText: ['SARAH • BRAD ★ AMY'],
+      middleTopSubText: ['THE'],
       middleText: ['WILSON'],
+      middleBottomSubText: ['FAMILY'],
       bottomText: ['EST. 2020'],
-      outerBorderWidth: [4],
-      innerBorderWidth: [3],
+      outerBorderWidth: [3],
+      innerBorderWidth: [2.5],
       outerBgColor: ['#ffffff'],
       innerBgColor: ['#ffffff'],
       fontFamily: ['Arial'],
       isAllCaps: [false],
-      frameColor: ['#000000'],
-      fontColor: ['#000000'],
+      frameColor: ['#a62626'],
+      fontColor: ['#111111'],
       letterSpacing: [2],
       overallScale: [1],
       outerTextScale: [1],

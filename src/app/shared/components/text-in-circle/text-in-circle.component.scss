@@ -63,6 +63,13 @@
       transform-origin: 200px 200px;
     }
 
+    // Frame-specific styling
+    &.frame-style-family-banner-ring {
+      line {
+        stroke-linecap: butt;
+      }
+    }
+
     // Outer Text Animations
     .outer-anim-spin-cw { animation: spinClockwise 16s linear infinite; }
     .outer-anim-spin-ccw { animation: spinCounterClockwise 16s linear infinite; }
