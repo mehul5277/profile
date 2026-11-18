@@ -81,11 +81,12 @@ export class TextInCircleComponent implements OnInit {
   get outerBgColor(): string { return this.form.get('outerBgColor')?.value || '#ffffff'; }
   get innerBgColor(): string { return this.form.get('innerBgColor')?.value || '#ffffff'; }
 
-  // Advanced Typography & Ornament Getters
+  // Advanced Typography & Independent Color Getters
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial, sans-serif'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
   get frameColor(): string { return this.form.get('frameColor')?.value || '#a62626'; }
-  get fontColor(): string { return this.form.get('fontColor')?.value || '#111111'; }
+  get outerFontColor(): string { return this.form.get('outerFontColor')?.value || '#111111'; }
+  get innerFontColor(): string { return this.form.get('innerFontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
   get topArcSpan(): number { return this.form.get('topArcSpan')?.value ?? 180; }
   get bottomArcSpan(): number { return this.form.get('bottomArcSpan')?.value ?? 180; }
@@ -140,7 +141,8 @@ export class TextInCircleComponent implements OnInit {
       fontFamily: ['Arial, sans-serif'],
       isAllCaps: [false],
       frameColor: ['#a62626'],
-      fontColor: ['#111111'],
+      outerFontColor: ['#111111'],
+      innerFontColor: ['#111111'],
       letterSpacing: [2],
       topArcSpan: [180],
       bottomArcSpan: [180],

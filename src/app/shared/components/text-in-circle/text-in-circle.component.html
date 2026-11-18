@@ -4,7 +4,7 @@
     <!-- Left Column: Full-Width Responsive Bootstrap Form (Hidden during Print) -->
     <div class="col-12 col-lg-7 col-xl-6 no-print">
       <div class="card shadow-sm border-0 p-4 bg-white">
-        <h2 class="mb-4 fw-bold text-dark">Text in Circle Generator</h2>
+        <h2 class="mb-4 fw-bold text-dark">[Text in Circle Generator](https://suncatcherstudio.com/text-in-circle/#main)</h2>
 
         <form [formGroup]="form">
           <!-- 1. Text Content & Divider Ornaments -->
@@ -96,9 +96,9 @@
             </div>
           </div>
 
-          <!-- 3. Advanced Typography & Ornamental Icons -->
+          <!-- 3. Advanced Typography & Independent Text Colors -->
           <div class="p-3 mb-3 bg-light rounded border">
-            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Ornaments</h5>
+            <h5 class="fs-6 fw-bold text-secondary mb-3">3. Advanced Typography & Colors</h5>
             
             <div class="row g-3 mb-3 align-items-end">
               <div class="col-md-5">
@@ -125,28 +125,23 @@
               </div>
             </div>
 
-            <!-- Colors & Text Halo Outline -->
+            <!-- Independent Outer Font Color, Inner Font Color & Border Color -->
             <div class="row g-3 mb-3">
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <label for="frameColor" class="form-label small">Border Color</label>
-                <div class="input-group input-group-sm">
-                  <input id="frameColor" type="color" class="form-control form-control-color" formControlName="frameColor" />
-                  <input type="text" class="form-control font-monospace bg-white" [value]="frameColor" disabled />
-                </div>
+                <input id="frameColor" type="color" class="form-control form-control-color w-100" formControlName="frameColor" />
               </div>
-              <div class="col-md-4">
-                <label for="fontColor" class="form-label small">Font Color</label>
-                <div class="input-group input-group-sm">
-                  <input id="fontColor" type="color" class="form-control form-control-color" formControlName="fontColor" />
-                  <input type="text" class="form-control font-monospace bg-white" [value]="fontColor" disabled />
-                </div>
+              <div class="col-md-3">
+                <label for="outerFontColor" class="form-label small">Outer Text Color</label>
+                <input id="outerFontColor" type="color" class="form-control form-control-color w-100" formControlName="outerFontColor" />
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3">
+                <label for="innerFontColor" class="form-label small">Inner Text Color</label>
+                <input id="innerFontColor" type="color" class="form-control form-control-color w-100" formControlName="innerFontColor" />
+              </div>
+              <div class="col-md-3">
                 <label for="textOutlineColor" class="form-label small">Text Outline Color</label>
-                <div class="input-group input-group-sm">
-                  <input id="textOutlineColor" type="color" class="form-control form-control-color" formControlName="textOutlineColor" />
-                  <input type="text" class="form-control font-monospace bg-white" [value]="textOutlineColor" disabled />
-                </div>
+                <input id="textOutlineColor" type="color" class="form-control form-control-color w-100" formControlName="textOutlineColor" />
               </div>
             </div>
 
@@ -199,7 +194,6 @@
               </button>
             </div>
 
-            <!-- Interactive Rotation Sliders -->
             <div class="row g-3 mb-3">
               <div class="col-md-4">
                 <label for="badgeRotation" class="form-label small">Whole Badge: {{ badgeRotation }}°</label>
@@ -215,7 +209,6 @@
               </div>
             </div>
 
-            <!-- Continuous CSS Animations -->
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="outerTextAnimation" class="form-label small">Outer Text Animation</label>
@@ -298,7 +291,7 @@
               [style.font-family]="fontFamily"
               [attr.class]="'frame-style-' + selectedFrame">
 
-              <!-- Centered Scale & Whole Badge Rotation Wrapper (Pivots strictly around 200, 200) -->
+              <!-- Centered Scale & Whole Badge Rotation Wrapper -->
               <g [attr.transform]="'translate(200, 200) rotate(' + badgeRotation + ') scale(' + overallScale + ') translate(-200, -200)'">
                 
                 <!-- Frame Artwork Layer -->
@@ -350,14 +343,14 @@
                   <path id="bottomPath" [attr.d]="bottomArcPath" />
                 </defs>
 
-                <!-- Outer Curved Text Layer (Manual Rotation Wrapper + Animation Wrapper) -->
+                <!-- Outer Curved Text Layer (Uses outerFontColor) -->
                 <g [attr.transform]="'rotate(' + outerTextRotation + ', 200, 200)'">
                   <g [attr.class]="'outer-text-layer outer-anim-' + outerTextAnimation">
                     <text
                       [attr.font-size]="30 * outerTextScale"
                       font-weight="bold"
                       [attr.letter-spacing]="letterSpacing"
-                      [attr.fill]="fontColor"
+                      [attr.fill]="outerFontColor"
                       [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
                       [attr.stroke-width]="textOutlineWidth"
                       style="paint-order: stroke fill; stroke-linejoin: round;">
@@ -369,7 +362,7 @@
                       [attr.font-size]="30 * outerTextScale"
                       font-weight="bold"
                       [attr.letter-spacing]="letterSpacing"
-                      [attr.fill]="fontColor"
+                      [attr.fill]="outerFontColor"
                       [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
                       [attr.stroke-width]="textOutlineWidth"
                       style="paint-order: stroke fill; stroke-linejoin: round;">
@@ -380,29 +373,29 @@
                   </g>
                 </g>
 
-                <!-- Center / Inner Middle Text & Ornamental Crest Layer (Manual Rotation Wrapper + Animation Wrapper) -->
+                <!-- Center / Inner Middle Text & Ornamental Crest Layer (Uses innerFontColor) -->
                 <g [attr.transform]="'rotate(' + centerTextRotation + ', 200, 200)'">
                   <g [attr.class]="'center-text-layer center-anim-' + centerTextAnimation">
                     @switch (centerIcon) {
                       @case ('star') {
-                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">★</text>
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">★</text>
                       }
                       @case ('heart') {
-                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">♥</text>
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">♥</text>
                       }
                       @case ('diamond') {
-                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="frameColor">❖</text>
+                        <text x="200" [attr.y]="200 - (26 * middleScale) - 44" dominant-baseline="central" font-size="22" text-anchor="middle" [attr.fill]="innerFontColor">❖</text>
                       }
                       @case ('crown') {
                         <path
                           [attr.transform]="'translate(186, ' + (200 - (26 * middleScale) - 56) + ') scale(1.15)'"
                           d="M2 18L4 7L9 12L12 5L15 12L20 7L22 18H2ZM3 20H21V22H3V20Z"
-                          [attr.fill]="frameColor" />
+                          [attr.fill]="innerFontColor" />
                       }
                       @case ('laurel-dot') {
-                        <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
-                        <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="frameColor" />
-                        <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="frameColor" />
+                        <circle cx="188" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="innerFontColor" />
+                        <circle cx="200" [attr.cy]="200 - (26 * middleScale) - 46" r="4" [attr.fill]="innerFontColor" />
+                        <circle cx="212" [attr.cy]="200 - (26 * middleScale) - 44" r="2.5" [attr.fill]="innerFontColor" />
                       }
                     }
 
@@ -415,7 +408,7 @@
                         font-weight="500"
                         [attr.letter-spacing]="letterSpacing * 0.8"
                         text-anchor="middle"
-                        [attr.fill]="frameColor">
+                        [attr.fill]="innerFontColor">
                         {{ isAllCaps ? middleTopSubText.toUpperCase() : middleTopSubText }}
                       </text>
                     }
@@ -428,7 +421,7 @@
                       font-weight="bold"
                       [attr.letter-spacing]="letterSpacing * 0.75"
                       text-anchor="middle"
-                      [attr.fill]="fontColor"
+                      [attr.fill]="innerFontColor"
                       [attr.stroke]="textOutlineWidth > 0 ? textOutlineColor : 'none'"
                       [attr.stroke-width]="textOutlineWidth"
                       style="paint-order: stroke fill; stroke-linejoin: round;">
@@ -444,7 +437,7 @@
                         font-weight="500"
                         [attr.letter-spacing]="letterSpacing * 0.8"
                         text-anchor="middle"
-                        [attr.fill]="frameColor">
+                        [attr.fill]="innerFontColor">
                         {{ isAllCaps ? middleBottomSubText.toUpperCase() : middleBottomSubText }}
                       </text>
                     }
