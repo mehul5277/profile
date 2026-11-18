@@ -16,6 +16,7 @@ import { DataPageComponent } from './pages/data-page/data-page.component';
 import { authGuard } from '../guards/auth.guard';
 import { SubLeaseComponent } from './pages/sub-lease/sub-lease.component';
 import { AiPageComponent } from './pages/ai-page/ai-page.component';
+import { TextInCircleComponent } from '../shared/components/text-in-circle/text-in-circle.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'help', component: HelpComponent, canActivate: [authGuard] },
       { path: 'sublease', component: SubLeaseComponent, canActivate: [authGuard] },
       { path: 'ai', component: AiPageComponent, canActivate: [authGuard] },
+      { path: 'stamp', component: TextInCircleComponent },
     ]
   }
 ];

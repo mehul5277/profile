@@ -85,7 +85,7 @@ export class TextInCircleComponent implements OnInit {
   // Advanced Typography & Independent Color Getters
   get fontFamily(): string { return this.form.get('fontFamily')?.value || 'Arial, sans-serif'; }
   get isAllCaps(): boolean { return this.form.get('isAllCaps')?.value || false; }
-  get frameColor(): string { return this.form.get('frameColor')?.value || '#a62626'; }
+  get frameColor(): string { return this.form.get('frameColor')?.value || '#111111'; }
   get outerFontColor(): string { return this.form.get('outerFontColor')?.value || '#111111'; }
   get innerFontColor(): string { return this.form.get('innerFontColor')?.value || '#111111'; }
   get letterSpacing(): number { return this.form.get('letterSpacing')?.value ?? 2; }
