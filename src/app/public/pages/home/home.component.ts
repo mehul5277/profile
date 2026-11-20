@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Data",
-      "url": "/service",
+      "url": "/services/data",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore AI",
-      "url": "/service",
+      "url": "/services/ai-automation",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Cloud",
-      "url": "/service",
+      "url": "/services/cloud",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -120,7 +120,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Engineering",
-      "url": "/service",
+      "url": "/services/digital-engineering",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -134,7 +134,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Business",
-      "url": "/service",
+      "url": "/services/business-services",
       "icon": "bi bi-play-circle"
     }]
   };

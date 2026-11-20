@@ -17,12 +17,14 @@ import { authGuard } from '../guards/auth.guard';
 import { SubLeaseComponent } from './pages/sub-lease/sub-lease.component';
 import { AiPageComponent } from './pages/ai-page/ai-page.component';
 import { TextInCircleComponent } from '../shared/components/text-in-circle/text-in-circle.component';
+import { ServiceLandingComponent } from './pages/service-landing/service-landing.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PublicLayoutComponent,
     children: [
+      { path: 'services/:slug', component: ServiceLandingComponent },
       { path: '', component: HomeComponent },
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver }, canActivate: [authGuard] },
       { path: 'data/:id', component: DataPageComponent, canActivate: [authGuard] },
