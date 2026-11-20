@@ -7,8 +7,13 @@
     </div>
     <div class="card-body py-0">
         @if(cardConfig.icon) {
+        @if(false) {
+        <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary bg-opacity-10 text-primary p-2">
+            <span class="icon md-48 material-symbols-outlined fs-1" [innerHTML]="cardConfig.icon">database</span>
+        </span>}
+        @else {
         <mat-icon class="icon md-48" aria-hidden="false" aria-label="Example home icon" [innerHTML]="cardConfig.icon">database</mat-icon>
-        }
+        } }
         <h2 class="card-title fw-bolder" [innerHTML]="cardConfig.title">Title</h2>
         <h2 class="card-subtitle fw-bold text-primary" [innerHTML]="cardConfig.subtitle">Sub-Title</h2>
         <p class="lead py-2x" [innerHTML]="cardConfig.description">Description</p>
