@@ -1,62 +1,22 @@
-.hero-banner {
-    //background: var(--hero-bg) no-repeat center / cover;
-    color: #fff !important;
-    //background-color: RGBA(var(--bs-dark-rgb), var(--bs-bg-opacity, 1)) !important;
-    background-color: var(--ticker-bg) !important;
-}
-
-/* 1. Create the moving glow background */
-.glow-wrap::before {
-    content: "";
-    position: absolute;
-    top: -3px;
-    /* Pulls glow slightly outside image bounds */
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #ff007f, #7f00ff, #00f0ff, #ff007f);
-    background-size: 400%;
-    //filter: blur(10px);
-    z-index: 0;
-    /* Keeps glow at the bottom layer */
-    animation: moveGlow 10s linear infinite;
-}
-
-.glow-wrap .img-thumbnail {
+// 1. Updated Mixin with Background Position support
+@mixin wave-background($image-path, $theme-color: null, $position: null, $opacity: 0.1) {
     position: relative;
-    z-index: 1;
-    /* Ensures image is above the glow */
-    padding: 0px;
-    /* Optional: creates a small gap between image and glow */
-    border: 0;
-    /* Optional: removes default border for a cleaner look */
-}
+    isolation: isolate;
 
-/* 2. Force the Bootstrap image to honor the stacking layer */
-// .glow-wrap .img-thumbnail {
-//   display: block;
-//   z-index: 1;   /* Forces image to the top layer */
-// }
-
-/* 3. Smooth animation mechanism */
-@keyframes moveGlow {
-    0% {
-        background-position: 0% 50%;
+    @if $theme-color {
+        background-color: var(--bs-#{$theme-color});
     }
 
-    50% {
-        background-position: 100% 50%;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        //background: url('./../../../../assets/image/waves-2.svg') right center / contain no-repeat;
+        // The $position argument sits right before the forward slash (/) size rule
+        background: url('#{$image-path}') #{$position} / contain no-repeat;
+        opacity: $opacity !important;
+        z-index: -1;
     }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.bg-subtle-secondary {
-    --bs-bg: var(--bs-secondary-bg-subtle);
-    background-color: var(--bs-bg);
 }
 
 /* Target only the Bootstrap 'md' window range */
@@ -64,4 +24,20 @@
     .jumbotron-md-full {
         min-height: 100vh;
     }
+}
+
+
+.jumbotron-bg-blue {
+    background-color: var(--nav-color) !important;
+    color: oklch(98% 0 0)
+}
+
+.jumbotron-bg-grid {
+    background-image: linear-gradient(90deg, oklch(100% 0 0/.05) 1px, #0000 1px), linear-gradient(oklch(100% 0 0/.05) 1px, #0000 1px);
+    background-size: 56px 56px
+}
+
+
+.jumbotron-bg-wave {
+    @include wave-background('./../../../../assets/image/waves-2.svg', null, right, 0.1);
 }
