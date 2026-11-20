@@ -25,8 +25,8 @@ export class HomeComponent implements OnInit {
   jumboConfig: JiexoJumboConfig = {
     "title": "Building Intelligent Solutions through",
     "subtitle": "for Business Excellence",
-    "typewriterList": ["Digital Engineering", "Artificial Intelligence", "Data Engineering", "Cloud Computing"],
-    "description": "We help forward-thinking enterprises turn technology into competitive advantage through Data, Cloud, AI and Digital Engineering solutions built for scale and delivered for impact.",
+    "typewriterList": ["Artificial Intelligence", "Data Science", "Data Engineering", "Cloud Computing"],
+    "description": "We help forward-thinking enterprises turn technology into competitive advantage through AI, Data, Cloud and Digital Engineering solutions built for scale and delivered for impact.",
     "badges": [
       {
         "text": "Trusted Partner · Startup to Enterprise",
