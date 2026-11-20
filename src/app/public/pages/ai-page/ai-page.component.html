@@ -1,1 +1,138 @@
-<p>ai-page works!</p>
+<!-- Hero Section -->
+<section class="py-5 bg-dark text-white border-bottom border-secondary border-opacity-25">
+  <div class="container py-4 py-lg-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-2 mb-3">
+          AI & AUTOMATION · AGENTIC AI
+        </span>
+        <h1 class="display-4 fw-bold lh-sm mb-3">
+          Intelligence That Takes Initiative Across Your Enterprise
+        </h1>
+        <p class="lead text-light text-opacity-75 mb-4">
+          Implement intelligent automation and AI-driven solutions that streamline processes, adapt in real time, and turn operational complexity into measurable business advantage.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+            <span>Talk to an Expert</span>
+            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+          </a>
+          <a [href]="'http://localhost:4200/#/service'" class="btn btn-outline-light btn-lg px-4">
+            All Services
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card bg-black bg-opacity-50 border border-secondary border-opacity-50 text-white rounded-4 p-4">
+          <div class="d-flex align-items-center gap-2 text-info small fw-semibold mb-2">
+            <span class="material-symbols-outlined fs-5">auto_awesome</span>
+            <span>WHY AGENTIC AUTOMATION</span>
+          </div>
+          <p class="small text-light text-opacity-75 mb-3">
+            Move beyond static scripts and single-prompt chat. Deploy goal-driven agents with human-in-the-loop controls and enterprise auditability.
+          </p>
+          <hr class="border-secondary border-opacity-50 my-2">
+          <div class="d-flex justify-content-between small pt-2">
+            <span class="text-light text-opacity-50">Core Focus</span>
+            <span class="fw-semibold text-white">Resilience · Speed · Scale</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core AI & Automation Capabilities -->
+<section class="py-5 bg-light">
+  <div class="container py-4">
+    <div class="row justify-content-between align-items-end mb-5 g-3">
+      <div class="col-lg-7">
+        <span class="text-primary fw-semibold text-uppercase small">Capabilities</span>
+        <h2 class="h1 fw-bold text-dark mt-1 mb-0">
+          Purpose-Built AI & Automation Solutions
+        </h2>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a [href]="'http://localhost:4200/#/url%3Fid%3D26'" class="btn btn-outline-primary d-inline-flex align-items-center gap-1">
+          <span>Explore our services</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6" *ngFor="let item of capabilities">
+        <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary bg-opacity-10 text-primary p-3">
+              <span class="material-symbols-outlined fs-3">{{ item.icon }}</span>
+            </span>
+            <span class="badge text-bg-light border text-secondary small">{{ item.badge }}</span>
+          </div>
+          <h3 class="h4 fw-bold text-dark">{{ item.title }}</h3>
+          <p class="text-muted flex-grow-1 mb-4">{{ item.description }}</p>
+          <div>
+            <a [href]="item.linkUrl" class="fw-semibold text-decoration-none d-inline-flex align-items-center gap-1">
+              <span>{{ item.linkText }}</span>
+              <span class="material-symbols-outlined fs-6">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Execution Pillars -->
+<section class="py-5 bg-white border-top">
+  <div class="container py-4">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-lg-8">
+        <span class="text-primary fw-semibold text-uppercase small">How We Deliver</span>
+        <h2 class="h1 fw-bold text-dark mt-1">From Strategy to Production Automation</h2>
+        <p class="text-muted mt-2 mb-0">
+          Structured architecture, seamless integration, and governed cloud execution built for enterprise reliability.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4" *ngFor="let pillar of pillars">
+        <div class="card h-100 border rounded-4 p-4">
+          <span class="display-6 fw-bold text-primary opacity-50 mb-2">{{ pillar.step }}</span>
+          <h3 class="h5 fw-bold text-dark">{{ pillar.title }}</h3>
+          <p class="text-muted small flex-grow-1 mb-4">{{ pillar.summary }}</p>
+          <a [href]="pillar.linkUrl" class="small fw-semibold text-decoration-none d-inline-flex align-items-center gap-1">
+            <span>{{ pillar.linkText }}</span>
+            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA Banner -->
+<section class="py-5 bg-dark text-white">
+  <div class="container py-3">
+    <div class="row align-items-center justify-content-between g-4">
+      <div class="col-lg-8">
+        <div class="d-flex align-items-center gap-2 text-info small fw-semibold mb-2">
+          <span class="material-symbols-outlined fs-5">verified_user</span>
+          <span>ENTERPRISE READY</span>
+        </div>
+        <h2 class="h2 fw-bold mb-2">Ready to Automate High-Impact Workflows?</h2>
+        <p class="text-light text-opacity-75 mb-0">
+          Partner with our AI and digital engineering specialists to scope a pilot or scale enterprise automation.
+        </p>
+      </div>
+      <div class="col-lg-auto">
+        <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+          <span>Get in touch</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
