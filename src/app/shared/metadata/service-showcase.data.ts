@@ -3,7 +3,8 @@ export type ServiceKey =
   | 'ai-automation'
   | 'cloud'
   | 'digital-engineering'
-  | 'business-services';
+  | 'business-services'
+  | (string & {});
 
 export interface ServiceCaseStudy {
   sector: string;
@@ -11,6 +12,11 @@ export interface ServiceCaseStudy {
   challenge: string;
   solution: string;
   outcome: string;
+}
+
+export interface SmartOperatingPrinciple {
+  title: string;
+  detail: string;
 }
 
 export interface ServiceOfferingDetail {
@@ -24,10 +30,7 @@ export interface ServiceOfferingDetail {
   introduction: string;
   benefits: string[];
   howWeCanHelp: string[];
-  howWeOperateSmartly: {
-    title: string;
-    detail: string;
-  }[];
+  howWeOperateSmartly: SmartOperatingPrinciple[];
   caseStudies: ServiceCaseStudy[];
   relatedUrl: string;
   relatedLabel: string;
@@ -218,7 +221,7 @@ export const ALL_SERVICES_DETAIL: ServiceOfferingDetail[] = [
     ],
     howWeCanHelp: [
       'Design and build scalable web applications, portals, and enterprise software platforms.',
-      'Modernize legacy applications and connect disconnected systems using JIXO Bridge and APIs.',
+      'Modernize legacy applications and integrate disconnected systems using JIXO Bridge and APIs.',
       'Raise engineering quality with automated testing, CI/CD, accessibility, and performance tuning.'
     ],
     howWeOperateSmartly: [

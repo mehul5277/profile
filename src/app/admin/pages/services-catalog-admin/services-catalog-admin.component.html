@@ -1,260 +1,273 @@
 <!-- Top Admin Header -->
 <section class="py-4 bg-dark text-white border-bottom border-secondary border-opacity-25">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
-            <div>
-                <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-1 mb-2">
-                    ADMIN · SERVICES CATALOG
-                </span>
-                <h1 class="h2 fw-bold mb-1">Services Catalog Manager</h1>
-                <p class="text-light text-opacity-75 small mb-0">
-                    Edit service content, benefits, smart operating principles, and case studies—or edit raw JSON and export <code>services-catalog.json</code>.
-                </p>
-            </div>
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <div>
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-1 mb-2">
+          ADMIN · SERVICES CATALOG
+        </span>
+        <h1 class="h2 fw-bold mb-1">Services Catalog Manager</h1>
+        <p class="text-light text-opacity-75 small mb-0">
+          Edit service content, benefits, smart operating principles, and case studies—or edit raw JSON and export <code>services-catalog.json</code>.
+        </p>
+      </div>
 
-            <div class="d-flex flex-wrap align-items-center gap-2">
-                <a [routerLink]="['/services', 'ai-automation']" class="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1">
-                    <span class="material-symbols-outlined fs-6">visibility</span>
-                    <span>View Services Page</span>
-                </a>
-                <button type="button" class="btn btn-sm btn-outline-warning" (click)="resetDefault()">
-                    Reset Default
-                </button>
-                <button type="button" class="btn btn-sm btn-success d-inline-flex align-items-center gap-1" (click)="saveCatalog()">
-                    <span class="material-symbols-outlined fs-6">save</span>
-                    <span>Save Catalog</span>
-                </button>
-                <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
-                    <span class="material-symbols-outlined fs-6">download</span>
-                    <span>Download JSON</span>
-                </button>
-            </div>
-        </div>
+      <div class="d-flex flex-wrap align-items-center gap-2">
+        <a [routerLink]="['/services', 'ai-automation']" class="btn btn-sm btn-outline-light d-inline-flex align-items-center gap-1">
+          <span class="material-symbols-outlined fs-6">visibility</span>
+          <span>View Services Page</span>
+        </a>
+
+        <button type="button" class="btn btn-sm btn-outline-warning" (click)="resetDefault()">
+          Reset Default
+        </button>
+
+        <button type="button" class="btn btn-sm btn-success d-inline-flex align-items-center gap-1" (click)="saveCatalog()">
+          <span class="material-symbols-outlined fs-6">save</span>
+          <span>Save Catalog</span>
+        </button>
+
+        <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+          <span class="material-symbols-outlined fs-6">download</span>
+          <span>Download JSON</span>
+        </button>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Main Admin Workspace -->
 <section class="py-4 bg-light min-vh-100">
-    <div class="container">
-        <!-- Alerts -->
-        <div class="alert alert-danger py-2 small" role="alert" *ngIf="errorMessage">
-            {{ errorMessage }}
-        </div>
-        <div class="alert alert-success py-2 small" role="alert" *ngIf="statusMessage">
-            {{ statusMessage }}
-        </div>
-
-        <!-- Mode Switcher & Catalog Metadata -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
-            <div class="row g-3 align-items-end">
-                <div class="col-md-4">
-                    <label class="form-label small fw-bold" for="brandNameInput">Brand Name</label>
-                    <input id="brandNameInput" type="text" class="form-control" [(ngModel)]="catalog.brand">
-                </div>
-                <div class="col-md-5">
-                    <label class="form-label small fw-bold" for="taglineInput">Tagline</label>
-                    <input id="taglineInput" type="text" class="form-control" [(ngModel)]="catalog.tagline">
-                </div>
-                <div class="col-md-3 text-md-end">
-                    <div class="btn-group w-100" role="group" aria-label="Editor mode">
-                        <button type="button" class="btn btn-sm" [class.btn-primary]="editorMode === 'form'" [class.btn-outline-primary]="editorMode !== 'form'" (click)="setMode('form')">
-                            Form Editor
-                        </button>
-                        <button type="button" class="btn btn-sm" [class.btn-primary]="editorMode === 'json'" [class.btn-outline-primary]="editorMode !== 'json'" (click)="setMode('json')">
-                            Raw JSON
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RAW JSON MODE -->
-        <div class="card border-0 shadow-sm rounded-4 p-4" *ngIf="editorMode === 'json'">
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                <h2 class="h5 fw-bold mb-0">Raw Catalog JSON</h2>
-                <div class="d-flex gap-2">
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="formatJson()">
-                        Format JSON
-                    </button>
-                    <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
-                        <span class="material-symbols-outlined fs-6">download</span>
-                        <span>Download JSON</span>
-                    </button>
-                </div>
-            </div>
-            <textarea class="form-control font-monospace small bg-dark text-info" rows="22" [(ngModel)]="jsonText" spellcheck="false" aria-label="Raw services catalog JSON"></textarea>
-        </div>
-
-        <!-- STRUCTURED FORM MODE -->
-        <div class="row g-4" *ngIf="editorMode === 'form'">
-            <!-- Left Sidebar: Service Selector -->
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm rounded-4 p-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3 px-1">
-                        <h2 class="h6 fw-bold text-uppercase text-secondary mb-0">Services ({{ catalog.services.length }})</h2>
-                        <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="addService()">
-                            <span class="material-symbols-outlined fs-6">add</span>
-                            <span>Add</span>
-                        </button>
-                    </div>
-
-                    <div class="list-group list-group-flush gap-1">
-                        <button type="button" class="list-group-item list-group-item-action rounded-3 border d-flex align-items-center justify-content-between" *ngFor="let svc of catalog.services; let i = index" [class.active]="i === selectedIndex" (click)="selectService(i)">
-                            <span class="d-flex align-items-center gap-2 text-truncate">
-                                <span class="material-symbols-outlined fs-5">{{ svc.icon }}</span>
-                                <span class="fw-semibold text-truncate">{{ svc.navLabel }}</span>
-                            </span>
-                            <span class="badge rounded-pill" [class.text-bg-light]="i === selectedIndex" [class.text-bg-secondary]="i !== selectedIndex">
-                                {{ svc.key }}
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Panel: Active Service Editor -->
-            <div class="col-lg-8" *ngIf="activeService">
-                <div class="card border-0 shadow-sm rounded-4 p-4">
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3 mb-4 border-bottom">
-                        <div>
-                            <span class="badge text-bg-primary bg-opacity-10 text-primary mb-1">{{ activeService.badge }}</span>
-                            <h2 class="h5 fw-bold mb-0">Editing: {{ activeService.navLabel }}</h2>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="duplicateService(selectedIndex)">
-                                Duplicate
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeService(selectedIndex)">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Core Metadata -->
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-4">
-                            <label class="form-label small fw-bold">Slug / Key</label>
-                            <input type="text" class="form-control form-control-sm" [(ngModel)]="activeService.key">
-                        </div>
-                        <div class="col-md-4">
-                            <label class="form-label small fw-bold">Nav Label</label>
-                            <input type="text" class="form-control form-control-sm" [(ngModel)]="activeService.navLabel">
-                        </div>
-                        <div class="col-md-4">
-                            <label class="form-label small fw-bold">Material Icon</label>
-                            <input type="text" class="form-control form-control-sm" [(ngModel)]="activeService.icon">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold">Badge</label>
-                            <input type="text" class="form-control form-control-sm" [(ngModel)]="activeService.badge">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold">Explore URL</label>
-                            <input type="text" class="form-control form-control-sm" [(ngModel)]="activeService.exploreUrl">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold">Headline</label>
-                            <input type="text" class="form-control" [(ngModel)]="activeService.headline">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold">Overview</label>
-                            <textarea rows="2" class="form-control" [(ngModel)]="activeService.overview"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label small fw-bold">Introduction</label>
-                            <textarea rows="3" class="form-control" [(ngModel)]="activeService.introduction"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- Benefits -->
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <label class="form-label small fw-bold text-uppercase text-primary mb-0">Benefits</label>
-                            <button type="button" class="btn btn-sm btn-outline-primary" (click)="addStringItem(activeService.benefits, 'New measurable benefit')">
-                                + Add Benefit
-                            </button>
-                        </div>
-                        <div class="d-flex flex-column gap-2">
-                            <div class="input-group input-group-sm" *ngFor="let b of activeService.benefits; let bi = index; trackBy: trackByIndex">
-                                <input type="text" class="form-control" [(ngModel)]="activeService.benefits[bi]">
-                                <button type="button" class="btn btn-outline-danger" (click)="removeStringItem(activeService.benefits, bi)">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- How We Can Help -->
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <label class="form-label small fw-bold text-uppercase text-primary mb-0">How We Can Help</label>
-                            <button type="button" class="btn btn-sm btn-outline-primary" (click)="addStringItem(activeService.howWeCanHelp, 'New capability deliverable')">
-                                + Add Item
-                            </button>
-                        </div>
-                        <div class="d-flex flex-column gap-2">
-                            <div class="input-group input-group-sm" *ngFor="let h of activeService.howWeCanHelp; let hi = index; trackBy: trackByIndex">
-                                <input type="text" class="form-control" [(ngModel)]="activeService.howWeCanHelp[hi]">
-                                <button type="button" class="btn btn-outline-danger" (click)="removeStringItem(activeService.howWeCanHelp, hi)">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- How We Operate Smartly -->
-                    <div class="mb-4">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <label class="form-label small fw-bold text-uppercase text-primary mb-0">How We Operate Smartly</label>
-                            <button type="button" class="btn btn-sm btn-outline-primary" (click)="addSmartItem(activeService)">
-                                + Add Smart Principle
-                            </button>
-                        </div>
-                        <div class="d-flex flex-column gap-3">
-                            <div class="p-3 rounded-3 bg-light border" *ngFor="let smart of activeService.howWeOperateSmartly; let si = index">
-                                <div class="d-flex justify-content-between gap-2 mb-2">
-                                    <input type="text" class="form-control form-control-sm fw-semibold" [(ngModel)]="smart.title" placeholder="Principle title">
-                                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeSmartItem(activeService, si)">Remove</button>
-                                </div>
-                                <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="smart.detail" placeholder="Principle description"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Case Studies -->
-                    <div>
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <label class="form-label small fw-bold text-uppercase text-primary mb-0">Case Studies</label>
-                            <button type="button" class="btn btn-sm btn-outline-primary" (click)="addCaseStudy(activeService)">
-                                + Add Case Study
-                            </button>
-                        </div>
-                        <div class="d-flex flex-column gap-3">
-                            <div class="p-3 rounded-3 bg-light border" *ngFor="let cs of activeService.caseStudies; let ci = index">
-                                <div class="row g-2 mb-2">
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control form-control-sm" [(ngModel)]="cs.sector" placeholder="Sector">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control form-control-sm fw-semibold" [(ngModel)]="cs.title" placeholder="Case study title">
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <button type="button" class="btn btn-sm btn-outline-danger w-100" (click)="removeCaseStudy(activeService, ci)">Delete</button>
-                                    </div>
-                                </div>
-                                <div class="row g-2">
-                                    <div class="col-md-4">
-                                        <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.challenge" placeholder="Challenge"></textarea>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.solution" placeholder="Solution"></textarea>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.outcome" placeholder="Outcome"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <!-- Alerts -->
+    <div class="alert alert-danger py-2 small" role="alert" *ngIf="errorMessage">
+      {{ errorMessage }}
     </div>
+    <div class="alert alert-success py-2 small" role="alert" *ngIf="statusMessage">
+      {{ statusMessage }}
+    </div>
+
+    <!-- Mode Switcher & Catalog Metadata -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-4">
+          <label class="form-label small fw-bold" for="brandNameInput">Brand Name</label>
+          <input id="brandNameInput" type="text" class="form-control" [(ngModel)]="catalog.brand">
+        </div>
+        <div class="col-md-5">
+          <label class="form-label small fw-bold" for="taglineInput">Tagline</label>
+          <input id="taglineInput" type="text" class="form-control" [(ngModel)]="catalog.tagline">
+        </div>
+        <div class="col-md-3 text-md-end">
+          <div class="btn-group w-100" role="group" aria-label="Editor mode">
+            <button type="button" class="btn btn-sm" [class.btn-primary]="editorMode === 'form'" [class.btn-outline-primary]="editorMode !== 'form'" (click)="setMode('form')">
+              Form Editor
+            </button>
+            <button type="button" class="btn btn-sm" [class.btn-primary]="editorMode === 'json'" [class.btn-outline-primary]="editorMode !== 'json'" (click)="setMode('json')">
+              Raw JSON
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAW JSON MODE -->
+    <div class="card border-0 shadow-sm rounded-4 p-4" *ngIf="editorMode === 'json'">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+        <h2 class="h5 fw-bold mb-0">Raw Catalog JSON</h2>
+        <div class="d-flex gap-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="formatJson()">
+            Format JSON
+          </button>
+          <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+            <span class="material-symbols-outlined fs-6">download</span>
+            <span>Download JSON</span>
+          </button>
+        </div>
+      </div>
+      <textarea class="form-control font-monospace small bg-dark text-info" rows="22" [(ngModel)]="jsonText" spellcheck="false" aria-label="Raw services catalog JSON"></textarea>
+    </div>
+
+    <!-- STRUCTURED FORM MODE -->
+    <div class="row g-4" *ngIf="editorMode === 'form'">
+      <!-- Left Sidebar: Service Selector -->
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 p-3">
+          <div class="d-flex align-items-center justify-content-between mb-3 px-1">
+            <h2 class="h6 fw-bold text-uppercase text-secondary mb-0">Services ({{ catalog.services.length }})</h2>
+            <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="addService()">
+              <span class="material-symbols-outlined fs-6">add</span>
+              <span>Add</span>
+            </button>
+          </div>
+
+          <div class="list-group list-group-flush gap-1">
+            <button type="button" class="list-group-item list-group-item-action rounded-3 border d-flex align-items-center justify-content-between" *ngFor="let svc of catalog.services; let i = index" [class.active]="i === selectedIndex" (click)="selectService(i)">
+              <span class="d-flex align-items-center gap-2 text-truncate">
+                <span class="material-symbols-outlined fs-5">{{ svc.icon }}</span>
+                <span class="fw-semibold text-truncate">{{ svc.navLabel }}</span>
+              </span>
+              <span class="badge rounded-pill" [class.text-bg-light]="i === selectedIndex" [class.text-bg-secondary]="i !== selectedIndex">
+                {{ svc.key }}
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Active Service Editor -->
+      <div class="col-lg-8" *ngIf="activeService">
+        <div class="card border-0 shadow-sm rounded-4 p-4">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3 mb-4 border-bottom">
+            <div>
+              <span class="badge text-bg-primary bg-opacity-10 text-primary mb-1">{{ activeService.badge }}</span>
+              <h2 class="h5 fw-bold mb-0">Editing: {{ activeService.navLabel }}</h2>
+            </div>
+            <div class="d-flex gap-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="duplicateService(selectedIndex)">
+                Duplicate
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeService(selectedIndex)">
+                Delete
+              </button>
+            </div>
+          </div>
+
+          <!-- Core Metadata -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <label class="form-label small fw-bold" for="serviceKeyInput">Slug / Key</label>
+              <input id="serviceKeyInput" type="text" class="form-control form-control-sm" [(ngModel)]="activeService.key">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold" for="serviceNavLabelInput">Nav Label</label>
+              <input id="serviceNavLabelInput" type="text" class="form-control form-control-sm" [(ngModel)]="activeService.navLabel">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold" for="serviceIconInput">Material Icon</label>
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-light" title="Live icon preview">
+                  <span class="material-symbols-outlined fs-5 text-primary">{{ activeService.icon || 'help' }}</span>
+                </span>
+                <input id="serviceIconInput" type="text" class="form-control" [(ngModel)]="activeService.icon" placeholder="e.g. database, cloud, memory">
+              </div>
+              <div class="d-flex flex-wrap gap-1 mt-2">
+                <button *ngFor="let preset of iconPresets" type="button" class="btn btn-sm py-0 px-1 d-inline-flex align-items-center" [class.btn-primary]="activeService.icon === preset" [class.btn-outline-secondary]="activeService.icon !== preset" [title]="'Use ' + preset" (click)="applyIconPreset(activeService, preset)">
+                  <span class="material-symbols-outlined" style="font-size: 16px;">{{ preset }}</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold" for="serviceBadgeInput">Badge</label>
+              <input id="serviceBadgeInput" type="text" class="form-control form-control-sm" [(ngModel)]="activeService.badge">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label small fw-bold" for="serviceExploreUrlInput">Explore URL</label>
+              <input id="serviceExploreUrlInput" type="text" class="form-control form-control-sm" [(ngModel)]="activeService.exploreUrl">
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold" for="serviceHeadlineInput">Headline</label>
+              <input id="serviceHeadlineInput" type="text" class="form-control" [(ngModel)]="activeService.headline">
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold" for="serviceOverviewInput">Overview</label>
+              <textarea id="serviceOverviewInput" rows="2" class="form-control" [(ngModel)]="activeService.overview"></textarea>
+            </div>
+            <div class="col-12">
+              <label class="form-label small fw-bold" for="serviceIntroInput">Introduction</label>
+              <textarea id="serviceIntroInput" rows="3" class="form-control" [(ngModel)]="activeService.introduction"></textarea>
+            </div>
+          </div>
+
+          <!-- Benefits -->
+          <div class="mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <label class="form-label small fw-bold text-uppercase text-primary mb-0">Benefits</label>
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)="addStringItem(activeService.benefits, 'New measurable benefit')">
+                + Add Benefit
+              </button>
+            </div>
+            <div class="d-flex flex-column gap-2">
+              <div class="input-group input-group-sm" *ngFor="let b of activeService.benefits; let bi = index; trackBy: trackByIndex">
+                <input type="text" class="form-control" [(ngModel)]="activeService.benefits[bi]">
+                <button type="button" class="btn btn-outline-danger" (click)="removeStringItem(activeService.benefits, bi)">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- How We Can Help -->
+          <div class="mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <label class="form-label small fw-bold text-uppercase text-primary mb-0">How We Can Help</label>
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)="addStringItem(activeService.howWeCanHelp, 'New capability deliverable')">
+                + Add Item
+              </button>
+            </div>
+            <div class="d-flex flex-column gap-2">
+              <div class="input-group input-group-sm" *ngFor="let h of activeService.howWeCanHelp; let hi = index; trackBy: trackByIndex">
+                <input type="text" class="form-control" [(ngModel)]="activeService.howWeCanHelp[hi]">
+                <button type="button" class="btn btn-outline-danger" (click)="removeStringItem(activeService.howWeCanHelp, hi)">Remove</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- How We Operate Smartly -->
+          <div class="mb-4">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <label class="form-label small fw-bold text-uppercase text-primary mb-0">How We Operate Smartly</label>
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)="addSmartItem(activeService)">
+                + Add Smart Principle
+              </button>
+            </div>
+            <div class="d-flex flex-column gap-3">
+              <div class="p-3 rounded-3 bg-light border" *ngFor="let smart of activeService.howWeOperateSmartly; let si = index">
+                <div class="d-flex justify-content-between gap-2 mb-2">
+                  <input type="text" class="form-control form-control-sm fw-semibold" [(ngModel)]="smart.title" placeholder="Principle title">
+                  <button type="button" class="btn btn-sm btn-outline-danger" (click)="removeSmartItem(activeService, si)">Remove</button>
+                </div>
+                <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="smart.detail" placeholder="Principle description"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case Studies -->
+          <div>
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <label class="form-label small fw-bold text-uppercase text-primary mb-0">Case Studies</label>
+              <button type="button" class="btn btn-sm btn-outline-primary" (click)="addCaseStudy(activeService)">
+                + Add Case Study
+              </button>
+            </div>
+            <div class="d-flex flex-column gap-3">
+              <div class="p-3 rounded-3 bg-light border" *ngFor="let cs of activeService.caseStudies; let ci = index">
+                <div class="row g-2 mb-2">
+                  <div class="col-md-4">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="cs.sector" placeholder="Sector">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control form-control-sm fw-semibold" [(ngModel)]="cs.title" placeholder="Case study title">
+                  </div>
+                  <div class="col-md-2 text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger w-100" (click)="removeCaseStudy(activeService, ci)">Delete</button>
+                  </div>
+                </div>
+                <div class="row g-2">
+                  <div class="col-md-4">
+                    <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.challenge" placeholder="Challenge"></textarea>
+                  </div>
+                  <div class="col-md-4">
+                    <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.solution" placeholder="Solution"></textarea>
+                  </div>
+                  <div class="col-md-4">
+                    <textarea rows="2" class="form-control form-control-sm" [(ngModel)]="cs.outcome" placeholder="Outcome"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

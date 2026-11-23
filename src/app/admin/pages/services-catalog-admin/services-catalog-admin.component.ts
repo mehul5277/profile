@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ServicesCatalogResponse, ServicesCatalogService } from '../../../public/services/services-catalog.service';
 import { ServiceCaseStudy, ServiceKey, ServiceOfferingDetail } from '../../../public/metadata/service-showcase.data';
+import { ServicesCatalogAdminService } from '../../services/services-catalog-admin.service';
 
 
 @Component({
@@ -21,6 +22,19 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
     services: []
   };
 
+  readonly iconPresets: string[] = [
+    'database',
+    'memory',
+    'cloud',
+    'code_xml',
+    'headset_mic',
+    'layers',
+    'auto_awesome',
+    'hub',
+    'shield',
+    'analytics'
+  ];
+
   selectedIndex = 0;
   editorMode: 'form' | 'json' = 'form';
   jsonText = '';
@@ -29,17 +43,16 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private catalogService: ServicesCatalogService) {}
+  constructor(
+    private readonly catalogService: ServicesCatalogService,
+    private readonly adminService: ServicesCatalogAdminService
+  ) {}
 
   ngOnInit(): void {
     this.catalogService.catalog$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((data) => {
-        this.catalog = this.cloneCatalog(data);
-        if (this.selectedIndex >= this.catalog.services.length) {
-          this.selectedIndex = Math.max(0, this.catalog.services.length - 1);
-        }
-        this.jsonText = JSON.stringify(this.catalog, null, 2);
+      .subscribe(() => {
+        this.syncFromService();
       });
 
     this.catalogService.loadCatalog()
@@ -56,18 +69,33 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
     return this.catalog.services[this.selectedIndex];
   }
 
+  trackByIndex(index: number): number {
+    return index;
+  }
+
+  applyIconPreset(service: ServiceOfferingDetail, iconName: string): void {
+    this.clearAlerts();
+    service.icon = iconName;
+  }
+
   setMode(mode: 'form' | 'json'): void {
     this.clearAlerts();
     if (mode === 'json') {
-      this.jsonText = JSON.stringify(this.catalog, null, 2);
-    } else if (this.editorMode === 'json') {
-      const parsed = this.parseJsonText();
-      if (!parsed) {
+      this.jsonText = this.adminService.stringifyCatalog(this.catalog);
+      this.editorMode = 'json';
+      return;
+    }
+
+    if (this.editorMode === 'json') {
+      const result = this.adminService.parseAndFormatJson(this.jsonText);
+      if (result.error || !result.catalog) {
+        this.errorMessage = result.error ?? 'Invalid JSON.';
         return;
       }
-      this.catalog = parsed;
+      this.catalog = result.catalog;
     }
-    this.editorMode = mode;
+
+    this.editorMode = 'form';
   }
 
   selectService(index: number): void {
@@ -77,191 +105,132 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
 
   addService(): void {
     this.clearAlerts();
-    const index = this.catalog.services.length + 1;
-    const slug = `custom-service-${index}` as ServiceKey;
-
-    const newService: ServiceOfferingDetail = {
-      key: slug,
-      navLabel: `New Service ${index}`,
-      icon: 'layers',
-      exploreUrl: `http://localhost:4200/#/services/${slug}`,
-      badge: 'NEW PRACTICE',
-      headline: `New Service Headline ${index}`,
-      overview: 'Concise overview of this service offering.',
-      introduction: 'Detailed introduction explaining context and business value.',
-      benefits: ['Measurable operational impact', 'Scalable enterprise execution'],
-      howWeCanHelp: ['Assess current state and design target architecture'],
-      howWeOperateSmartly: [
-        {
-          title: 'Reusable Patterns',
-          detail: 'Standardize repeatable building blocks to speed up delivery.'
-        }
-      ],
-      caseStudies: [
-        {
-          sector: 'Enterprise',
-          title: 'Sample Engagement Case Study',
-          challenge: 'Legacy workflow bottleneck slowed execution.',
-          solution: 'Implemented standardized, automated solution.',
-          outcome: 'Improved speed and reliability.'
-        }
-      ],
-      relatedUrl: 'http://localhost:4200/#/service',
-      relatedLabel: 'Explore services'
-    };
-
-    this.catalog.services.push(newService);
-    this.selectedIndex = this.catalog.services.length - 1;
-    this.jsonText = JSON.stringify(this.catalog, null, 2);
-    this.statusMessage = `Added "${newService.navLabel}". Click "Save Catalog" to persist.`;
+    const res = this.adminService.addService(this.catalog);
+    this.catalog = res.catalog;
+    this.selectedIndex = res.selectedIndex;
+    this.jsonText = this.adminService.stringifyCatalog(this.catalog);
+    this.statusMessage = res.message;
   }
 
   duplicateService(index: number): void {
     this.clearAlerts();
-    const source = this.catalog.services[index];
-    if (!source) {
+    const res = this.adminService.duplicateService(this.catalog, index);
+    if (res.error) {
+      this.errorMessage = res.error;
       return;
     }
-
-    const copy = this.cloneCatalog(source);
-    copy.navLabel = `${source.navLabel} Copy`;
-    copy.headline = `${source.headline} (Copy)`;
-
-    this.catalog.services.splice(index + 1, 0, copy);
-    this.selectedIndex = index + 1;
-    this.jsonText = JSON.stringify(this.catalog, null, 2);
-    this.statusMessage = `Duplicated "${source.navLabel}". Click "Save Catalog" to persist.`;
+    this.catalog = res.catalog;
+    this.selectedIndex = res.selectedIndex;
+    this.jsonText = this.adminService.stringifyCatalog(this.catalog);
+    this.statusMessage = res.message ?? '';
   }
 
   removeService(index: number): void {
     this.clearAlerts();
-    if (this.catalog.services.length <= 1) {
-      this.errorMessage = 'At least one service must remain in the catalog.';
+    const res = this.adminService.removeService(this.catalog, index);
+    if (res.error) {
+      this.errorMessage = res.error;
       return;
     }
-
-    const removed = this.catalog.services[index];
-    this.catalog.services.splice(index, 1);
-    this.selectedIndex = Math.max(0, Math.min(index, this.catalog.services.length - 1));
-    this.jsonText = JSON.stringify(this.catalog, null, 2);
-    this.statusMessage = `Removed "${removed.navLabel}". Click "Save Catalog" to persist.`;
-  }
-
-  // String list helpers (benefits, howWeCanHelp)
-  trackByIndex(index: number): number {
-    return index;
+    this.catalog = res.catalog;
+    this.selectedIndex = res.selectedIndex;
+    this.jsonText = this.adminService.stringifyCatalog(this.catalog);
+    this.statusMessage = res.message ?? '';
   }
 
   addStringItem(list: string[], placeholder: string): void {
-    list.push(placeholder);
+    this.adminService.addListItem(list, placeholder);
   }
 
   removeStringItem(list: string[], index: number): void {
-    list.splice(index, 1);
+    this.adminService.removeListItem(list, index);
   }
 
-  // Smart operating item helpers
   addSmartItem(service: ServiceOfferingDetail): void {
-    service.howWeOperateSmartly.push({
-      title: 'New Smart Practice',
-      detail: 'Describe how we automate, standardize, or optimize this area.'
-    });
+    this.adminService.addSmartItem(service);
   }
 
   removeSmartItem(service: ServiceOfferingDetail, index: number): void {
-    service.howWeOperateSmartly.splice(index, 1);
+    this.adminService.removeSmartItem(service, index);
   }
 
-  // Case study helpers
   addCaseStudy(service: ServiceOfferingDetail): void {
-    const study: ServiceCaseStudy = {
-      sector: 'Enterprise',
-      title: 'New Case Study',
-      challenge: 'Describe the client challenge.',
-      solution: 'Describe the solution delivered.',
-      outcome: 'Describe the measurable outcome.'
-    };
-    service.caseStudies.push(study);
+    this.adminService.addCaseStudy(service);
   }
 
   removeCaseStudy(service: ServiceOfferingDetail, index: number): void {
-    service.caseStudies.splice(index, 1);
+    this.adminService.removeCaseStudy(service, index);
   }
 
   formatJson(): void {
     this.clearAlerts();
-    const parsed = this.parseJsonText();
-    if (!parsed) {
+    const result = this.adminService.parseAndFormatJson(this.jsonText);
+    if (result.error || !result.formatted) {
+      this.errorMessage = result.error ?? 'Invalid JSON.';
       return;
     }
-    this.jsonText = JSON.stringify(parsed, null, 2);
+    this.jsonText = result.formatted;
     this.statusMessage = 'Formatted JSON successfully.';
   }
 
   saveCatalog(): void {
     this.clearAlerts();
-    let payload: ServicesCatalogResponse | null = this.catalog;
+    let target = this.catalog;
 
     if (this.editorMode === 'json') {
-      payload = this.parseJsonText();
-      if (!payload) {
+      const parsed = this.adminService.parseAndFormatJson(this.jsonText);
+      if (parsed.error || !parsed.catalog) {
+        this.errorMessage = parsed.error ?? 'Invalid JSON.';
         return;
       }
-      this.catalog = payload;
+      target = parsed.catalog;
+      this.catalog = parsed.catalog;
     }
 
-    if (!Array.isArray(payload.services) || payload.services.length === 0) {
-      this.errorMessage = 'Catalog must include at least one service.';
+    const result = this.adminService.saveDraft(target);
+    if (!result.ok) {
+      this.errorMessage = result.error ?? 'Failed to save catalog.';
       return;
     }
 
-    this.catalogService.saveCatalog(this.cloneCatalog(payload));
-    this.jsonText = JSON.stringify(this.catalog, null, 2);
-    this.statusMessage = 'Saved catalog changes to storage and updated live catalog state.';
+    this.jsonText = this.adminService.stringifyCatalog(this.catalog);
+    this.statusMessage = result.message ?? 'Saved catalog.';
   }
 
   resetDefault(): void {
     this.clearAlerts();
-    this.catalogService.resetToDefaultFromAsset()
+    this.adminService.resetToDefault()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((restored) => {
-        this.catalog = this.cloneCatalog(restored);
+      .subscribe(() => {
+        this.syncFromService();
         this.selectedIndex = 0;
-        this.jsonText = JSON.stringify(this.catalog, null, 2);
         this.statusMessage = 'Reset catalog to default configuration.';
       });
   }
 
   downloadJson(): void {
     this.clearAlerts();
+    let payload = this.catalog;
+
     if (this.editorMode === 'json') {
-      const parsed = this.parseJsonText();
-      if (!parsed) {
+      const parsed = this.adminService.parseAndFormatJson(this.jsonText);
+      if (parsed.error || !parsed.catalog) {
+        this.errorMessage = parsed.error ?? 'Cannot download invalid JSON.';
         return;
       }
-      this.catalogService.downloadCatalogJson(parsed);
-    } else {
-      this.catalogService.downloadCatalogJson(this.catalog);
+      payload = parsed.catalog;
     }
+
+    this.adminService.downloadJson(payload);
     this.statusMessage = 'Downloaded services-catalog.json.';
   }
 
-  private parseJsonText(): ServicesCatalogResponse | null {
-    try {
-      const parsed = JSON.parse(this.jsonText) as ServicesCatalogResponse;
-      if (!parsed || !Array.isArray(parsed.services)) {
-        this.errorMessage = 'JSON root must be an object containing a "services" array.';
-        return null;
-      }
-      return parsed;
-    } catch (err) {
-      this.errorMessage = `Invalid JSON: ${(err as Error).message}`;
-      return null;
+  private syncFromService(): void {
+    this.catalog = this.adminService.getDraftClone();
+    if (this.selectedIndex >= this.catalog.services.length) {
+      this.selectedIndex = Math.max(0, this.catalog.services.length - 1);
     }
-  }
-
-  private cloneCatalog<T>(value: T): T {
-    return JSON.parse(JSON.stringify(value)) as T;
+    this.jsonText = this.adminService.stringifyCatalog(this.catalog);
   }
 
   private clearAlerts(): void {
