@@ -34,7 +34,7 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.catalogService.catalog$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((data:any) => {
+      .subscribe((data) => {
         this.catalog = this.cloneCatalog(data);
         if (this.selectedIndex >= this.catalog.services.length) {
           this.selectedIndex = Math.max(0, this.catalog.services.length - 1);
@@ -224,7 +224,7 @@ export class ServicesCatalogAdminComponent implements OnInit, OnDestroy {
     this.clearAlerts();
     this.catalogService.resetToDefaultFromAsset()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((restored:any) => {
+      .subscribe((restored) => {
         this.catalog = this.cloneCatalog(restored);
         this.selectedIndex = 0;
         this.jsonText = JSON.stringify(this.catalog, null, 2);
