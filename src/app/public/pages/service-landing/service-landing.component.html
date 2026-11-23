@@ -1,131 +1,185 @@
 <!-- Service Switcher Bar -->
-<div class="bg-white border-bottom sticky-top d-none">
-    <div class="container py-2">
-        <div class="d-flex flex-nowrap overflow-auto gap-2 align-items-center">
-            <button type="button" class="btn btn-sm text-nowrap rounded-pill px-3" *ngFor="let svc of allServices" [class.btn-primary]="svc.slug === activeService.slug" [class.btn-outline-secondary]="svc.slug !== activeService.slug" (click)="selectService(svc.slug)">
-                {{ svc.badge }}
-            </button>
-        </div>
+<div class="bg-white border-bottom sticky-top">
+  <div class="container py-2">
+    <div class="d-flex flex-nowrap overflow-auto gap-2 align-items-center">
+      <a
+        *ngFor="let svc of services"
+        [routerLink]="['/services', svc.key]"
+        (click)="selectService(svc.key)"
+        class="btn btn-sm text-nowrap rounded-pill px-3 d-inline-flex align-items-center gap-1 text-decoration-none"
+        [class.btn-primary]="svc.key === activeService.key"
+        [class.btn-outline-secondary]="svc.key !== activeService.key">
+        <span class="material-symbols-outlined fs-6">{{ svc.icon }}</span>
+        <span>{{ svc.navLabel }}</span>
+      </a>
     </div>
+  </div>
 </div>
 
 <!-- Hero Section -->
-<section class="py-5 bg-dark text-white">
-    <div class="container py-4">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-8">
-                <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-2 mb-3">
-                    {{ activeService.badge }}
-                </span>
-                <h1 class="display-5 fw-bold mb-3">{{ activeService.title }}</h1>
-                <p class="lead text-light text-opacity-75 mb-3">{{ activeService.subtitle }}</p>
-                <p class="text-light text-opacity-75 mb-4">{{ activeService.heroSummary }}</p>
-                <div class="d-flex flex-wrap gap-3">
-                    <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
-                        <span>{{ activeService.ctaLabel }}</span>
-                        <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                    </a>
-                    <a [href]="'http://localhost:4200/#/service'" class="btn btn-outline-light btn-lg px-4">
-                        All Services
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card bg-black bg-opacity-50 border border-secondary border-opacity-50 text-white rounded-4 p-4">
-                    <div class="d-flex align-items-center gap-2 text-info small fw-semibold mb-2">
-                        <span class="material-symbols-outlined fs-5">psychology</span>
-                        <span>HOW WE OPERATE SMARTLY</span>
-                    </div>
-                    <p class="small text-light text-opacity-75 mb-0">
-                        {{ activeService.smartOperatingIntro }}
-                    </p>
-                </div>
-            </div>
+<section class="py-5 bg-dark text-white border-bottom border-secondary border-opacity-25">
+  <div class="container py-4">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-2 mb-3">
+          {{ activeService.badge }}
+        </span>
+        <h1 class="display-5 fw-bold mb-3">{{ activeService.headline }}</h1>
+        <p class="lead text-light text-opacity-75 mb-4">{{ activeService.overview }}</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+            <span>Get in touch</span>
+            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+          </a>
+          <a [href]="'http://localhost:4200/#/service'" class="btn btn-outline-light btn-lg px-4">
+            All Services
+          </a>
         </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card bg-black bg-opacity-50 border border-secondary border-opacity-50 text-white rounded-4 p-4">
+          <div class="d-flex align-items-center gap-2 text-info small fw-semibold mb-2">
+            <span class="material-symbols-outlined fs-5">psychology</span>
+            <span>HOW WE OPERATE SMARTLY</span>
+          </div>
+          <p class="small text-light text-opacity-75 mb-3">
+            We combine reusable engineering patterns, automation, and clear governance so you move faster with less risk.
+          </p>
+          <a [href]="activeService.relatedUrl" class="btn btn-sm btn-outline-info align-self-start">
+            {{ activeService.relatedLabel }}
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- Detailed Breakdown: What We Deliver, How We Help & How We Operate Smartly -->
+<!-- Overview & Introduction -->
+<section class="py-5 bg-white border-bottom">
+  <div class="container py-2">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="p-4 rounded-4 bg-light border h-100">
+          <div class="small fw-bold text-uppercase text-primary mb-2">Overview</div>
+          <p class="text-dark fw-medium mb-0">{{ activeService.overview }}</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="p-4 rounded-4 bg-light border h-100">
+          <div class="small fw-bold text-uppercase text-primary mb-2">Introduction</div>
+          <p class="text-secondary mb-0">{{ activeService.introduction }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits & How We Can Help -->
 <section class="py-5 bg-light">
-    <div class="container py-3">
-        <div class="mb-5">
-            <span class="text-primary fw-semibold text-uppercase small">Detailed Capabilities</span>
-            <h2 class="h1 fw-bold text-dark mt-1">How We Help & How We Operate Smartly</h2>
-            <p class="text-muted mb-0">
-                Every core capability pairs business outcomes with smart engineering and operational practices.
+  <div class="container py-2">
+    <div class="row g-4 mb-5">
+      <!-- Benefits -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase mb-3">
+            <span class="material-symbols-outlined fs-5">trending_up</span>
+            <span>Benefits</span>
+          </div>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            <li class="d-flex align-items-start gap-2 text-secondary" *ngFor="let benefit of activeService.benefits">
+              <span class="material-symbols-outlined text-success fs-5">check_circle</span>
+              <span>{{ benefit }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- How We Can Help -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase mb-3">
+            <span class="material-symbols-outlined fs-5">support_agent</span>
+            <span>How We Can Help</span>
+          </div>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            <li class="d-flex align-items-start gap-2 text-secondary" *ngFor="let item of activeService.howWeCanHelp">
+              <span class="material-symbols-outlined text-primary fs-5">arrow_right_alt</span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- How We Operate Smartly -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5">
+      <div class="d-flex align-items-center gap-2 text-dark fw-bold small text-uppercase mb-3">
+        <span class="material-symbols-outlined fs-5 text-primary">bolt</span>
+        <span>How We Operate Smartly</span>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4" *ngFor="let smart of activeService.howWeOperateSmartly">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <div class="fw-semibold text-dark mb-1">{{ smart.title }}</div>
+            <div class="text-muted small">{{ smart.detail }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div>
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase">
+          <span class="material-symbols-outlined fs-5">work_history</span>
+          <span>Case Studies</span>
+        </div>
+        <a [href]="activeService.exploreUrl" class="small fw-semibold text-decoration-none d-inline-flex align-items-center gap-1">
+          <span>Explore {{ activeService.navLabel }}</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" *ngFor="let cs of activeService.caseStudies">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <span class="badge text-bg-primary bg-opacity-10 text-primary align-self-start mb-2">
+              {{ cs.sector }}
+            </span>
+            <h3 class="h5 fw-bold text-dark mb-2">{{ cs.title }}</h3>
+            <p class="small text-muted mb-2">
+              <strong class="text-dark">Challenge:</strong> {{ cs.challenge }}
             </p>
+            <p class="small text-muted mb-2">
+              <strong class="text-dark">Solution:</strong> {{ cs.solution }}
+            </p>
+            <p class="small text-dark mb-0">
+              <strong>Outcome:</strong> {{ cs.outcome }}
+            </p>
+          </div>
         </div>
-
-        <div class="row g-4">
-            <div class="col-lg-4" *ngFor="let pillar of activeService.pillars">
-                <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
-                    <div class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary bg-opacity-10 text-primary p-3 mb-3 align-self-start">
-                        <span class="material-symbols-outlined fs-3">{{ pillar.icon }}</span>
-                    </div>
-                    <h3 class="h5 fw-bold text-dark mb-3">{{ pillar.title }}</h3>
-
-                    <div class="mb-3">
-                        <div class="small fw-bold text-uppercase text-primary mb-1">How We Help</div>
-                        <p class="text-muted small mb-0">{{ pillar.howWeHelp }}</p>
-                    </div>
-
-                    <div class="p-3 rounded-3 bg-light border mt-auto">
-                        <div class="small fw-bold text-uppercase text-dark mb-1 d-flex align-items-center gap-1">
-                            <span class="material-symbols-outlined fs-6 text-primary">bolt</span>
-                            <span>How We Operate Smartly</span>
-                        </div>
-                        <p class="text-secondary small mb-0">{{ pillar.howWeOperateSmartly }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
-
-<!-- Smart Operating Principles -->
-<section class="py-5 bg-white border-top">
-    <div class="container py-3">
-        <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-8">
-                <span class="text-primary fw-semibold text-uppercase small">Operating Model</span>
-                <h2 class="h2 fw-bold text-dark mt-1">Why Our Execution Scales Smarter</h2>
-            </div>
-        </div>
-
-        <div class="row g-4">
-            <div class="col-md-4" *ngFor="let principle of activeService.smartPrinciples">
-                <div class="card h-100 border rounded-4 p-4">
-                    <span class="badge text-bg-primary bg-opacity-10 text-primary align-self-start mb-3">
-                        {{ principle.metricOrTag }}
-                    </span>
-                    <h3 class="h5 fw-bold text-dark">{{ principle.title }}</h3>
-                    <p class="text-muted small mb-0">{{ principle.detail }}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
 <!-- Bottom CTA -->
 <section class="py-5 bg-dark text-white">
-    <div class="container py-2">
-        <div class="row align-items-center justify-content-between g-4">
-            <div class="col-lg-8">
-                <h2 class="h2 fw-bold mb-2">Ready to Put {{ activeService.badge }} to Work?</h2>
-                <p class="text-light text-opacity-75 mb-0">
-                    Connect with our specialists or explore [JIXO Bridge](http://localhost:4200/#/url%3Fid%3D27) and [JIXO Consult](http://localhost:4200/#/https:/www.kyndryl.com/ca/en/consulting.html) to accelerate execution.
-                </p>
-            </div>
-            <div class="col-lg-auto d-flex flex-wrap gap-3">
-                <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
-                    <span>Get in touch</span>
-                    <span class="material-symbols-outlined fs-6">arrow_forward</span>
-                </a>
-                <a [href]="'http://localhost:4200/#/url%3Fid%3D27'" class="btn btn-outline-light btn-lg px-4">
-                    Learn about JIXO Bridge
-                </a>
-            </div>
-        </div>
+  <div class="container py-2">
+    <div class="row align-items-center justify-content-between g-4">
+      <div class="col-lg-8">
+        <h2 class="h2 fw-bold mb-2">Let's Build Something Extraordinary Together</h2>
+        <p class="text-light text-opacity-75 mb-0">
+          Connect with our specialists or explore [JIXO Bridge](http://localhost:4200/#/url%3Fid%3D27) and [JIXO Consult](http://localhost:4200/#/https:/www.kyndryl.com/ca/en/consulting.html) to accelerate your roadmap.
+        </p>
+      </div>
+      <div class="col-lg-auto">
+        <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+          <span>Get in touch</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
     </div>
+  </div>
 </section>

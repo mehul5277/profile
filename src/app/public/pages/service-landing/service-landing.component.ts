@@ -1,40 +1,46 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import {
-  SERVICE_LANDING_PAGES,
-  ServiceLandingConfig
-} from './../../metadata/service-landing.data';
+  ALL_SERVICES_DETAIL,
+  ServiceKey,
+  ServiceOfferingDetail
+} from './../../metadata/service-showcase.data';
 
 @Component({
   selector: 'app-service-landing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './service-landing.component.html',
   styleUrls: ['./service-landing.component.scss']
 })
 export class ServiceLandingComponent implements OnInit {
-  @Input() serviceSlug?: ServiceLandingConfig['slug'];
+  @Input() serviceSlug?: ServiceKey;
 
-  allServices: ServiceLandingConfig[] = Object.values(SERVICE_LANDING_PAGES);
-  activeService: ServiceLandingConfig = SERVICE_LANDING_PAGES['ai-automation'];
+  services: ServiceOfferingDetail[] = ALL_SERVICES_DETAIL;
+  activeService: ServiceOfferingDetail = ALL_SERVICES_DETAIL[1]; // Default: AI & Automation
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    if (this.serviceSlug && SERVICE_LANDING_PAGES[this.serviceSlug]) {
-      this.activeService = SERVICE_LANDING_PAGES[this.serviceSlug];
+    // 1. Apply embedded @Input() if provided
+    if (this.serviceSlug) {
+      this.selectService(this.serviceSlug);
     }
 
+    // 2. Sync active service when navigating to /services/:slug
     this.route.paramMap.subscribe((params) => {
-      const slug = params.get('slug') as ServiceLandingConfig['slug'] | null;
-      if (slug && SERVICE_LANDING_PAGES[slug]) {
-        this.activeService = SERVICE_LANDING_PAGES[slug];
+      const slug = params.get('slug') as ServiceKey | null;
+      if (slug) {
+        this.selectService(slug);
       }
     });
   }
 
-  selectService(slug: ServiceLandingConfig['slug']): void {
-    this.activeService = SERVICE_LANDING_PAGES[slug];
+  selectService(key: ServiceKey): void {
+    const match = this.services.find((s) => s.key === key);
+    if (match) {
+      this.activeService = match;
+    }
   }
 }
