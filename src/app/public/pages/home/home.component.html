@@ -3,9 +3,42 @@
 <!-- <app-ticker-client></app-ticker-client> -->
 
 <!-- <app-client-list></app-client-list> -->
+<!-- HERO SECTION -->
+<section class="jixo-hero bg-dark text-white py-5">
+    <div class="container py-4 py-lg-5">
+        <div class="row align-items-center gy-4">
+            <div class="col-lg-8">
+                <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info border border-info border-opacity-25 px-3 py-2 mb-3">
+                    Trusted Partner · Startup to Enterprise
+                </span>
+
+                <h1 class="display-4 fw-bold lh-sm mb-3">
+                    Building Intelligent
+                    <span class="text-primary" id="hero-rotating-keyword">AI</span>
+                    Solutions for Measurable Growth
+                </h1>
+
+                <p class="lead text-light text-opacity-75 mb-4 mb-lg-5">
+                    Move beyond manual workflows. We engineer autonomous AI systems, resilient cloud architectures, and real-time data pipelines that scale with your enterprise.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#services" class="btn btn-primary btn-lg px-4 fw-semibold">
+                        Explore Solutions <span class="ms-1">&rarr;</span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-4">
+                        Book a Strategy Call
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-jixo-section></app-jixo-section>
 
 <!-- WHAT WE DO -->
-<div class="container-fluid">
+<div class="container">
     <app-card-1 [cardConfig]="businessSection"></app-card-1>
     <div class="row py-4 row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
         @for(service of businessServices; track $index) {
@@ -17,14 +50,16 @@
 </div>
 
 <!-- AGENTIC AI -->
-<div class="container-fluid container-ai glow-purple py-4">
-    <app-card-1 [cardConfig]="aiSection"></app-card-1>
-    <div class="row pb-3 g-4">
-        @for(service of aiServices; track $index) {
-        <div class="col-md-6 ">
-            <app-card-1 [cardConfig]="service"></app-card-1>
+<div class="container-ai">
+    <div class="container-fluid glow-purple py-4">
+        <app-card-1 [cardConfig]="aiSection"></app-card-1>
+        <div class="row pb-3 g-4">
+            @for(service of aiServices; track $index) {
+            <div class="col-md-6 ">
+                <app-card-1 [cardConfig]="service"></app-card-1>
+            </div>
+            }
         </div>
-        }
     </div>
 </div>
 

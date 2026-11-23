@@ -1,0 +1,233 @@
+<!-- Service Switcher Bar + JSON Admin Actions -->
+<div class="bg-white border-bottom sticky-top">
+  <div class="container py-2">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div class="d-flex flex-nowrap overflow-auto gap-2 align-items-center">
+        <a *ngFor="let svc of services" [routerLink]="['/services', svc.key]" (click)="selectService(svc.key)" class="btn btn-sm text-nowrap rounded-pill px-3 d-inline-flex align-items-center gap-1 text-decoration-none" [class.btn-primary]="svc.key === activeService.key" [class.btn-outline-secondary]="svc.key !== activeService.key">
+          <span class="material-symbols-outlined fs-6">{{ svc.icon }}</span>
+          <span>{{ svc.navLabel }}</span>
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 d-inline-flex align-items-center gap-1" (click)="toggleEditor()">
+          <span class="material-symbols-outlined fs-6">{{ editorOpen ? 'close' : 'data_object' }}</span>
+          <span>{{ editorOpen ? 'Close Editor' : 'Edit JSON' }}</span>
+        </button>
+
+        <button type="button" class="btn btn-sm btn-primary rounded-pill px-3 d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+          <span class="material-symbols-outlined fs-6">download</span>
+          <span>Download JSON</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JSON Catalog Admin Editor Panel -->
+<section class="py-4 bg-dark text-white border-bottom border-secondary border-opacity-50" *ngIf="editorOpen">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+      <div>
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-1 mb-1">
+          CATALOG ADMIN EDITOR
+        </span>
+        <h2 class="h5 fw-bold mb-0">Edit Services JSON Catalog</h2>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-sm btn-outline-light" (click)="formatJsonDraft()">
+          Format JSON
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-warning" (click)="resetCatalog()">
+          Reset Default
+        </button>
+        <button type="button" class="btn btn-sm btn-success" (click)="applyJsonChanges()">
+          Apply & Save
+        </button>
+        <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+          <span class="material-symbols-outlined fs-6">download</span>
+          <span>Download JSON</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="alert alert-danger py-2 small mb-3" role="alert" *ngIf="editorError">
+      {{ editorError }}
+    </div>
+
+    <div class="alert alert-success py-2 small mb-3" role="alert" *ngIf="editorStatus">
+      {{ editorStatus }}
+    </div>
+
+    <textarea class="form-control font-monospace small bg-black text-info border-secondary" rows="14" [(ngModel)]="jsonDraft" spellcheck="false" aria-label="Services catalog JSON editor"></textarea>
+  </div>
+</section>
+
+<!-- Hero Section -->
+<section class="py-5 bg-dark text-white border-bottom border-secondary border-opacity-25" *ngIf="activeService">
+  <div class="container py-4">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-2 mb-3">
+          {{ activeService.badge }}
+        </span>
+        <h1 class="display-5 fw-bold mb-3">{{ activeService.headline }}</h1>
+        <p class="lead text-light text-opacity-75 mb-4">{{ activeService.overview }}</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+            <span>Get in touch</span>
+            <span class="material-symbols-outlined fs-6">arrow_forward</span>
+          </a>
+          <a [href]="'http://localhost:4200/#/service'" class="btn btn-outline-light btn-lg px-4">
+            All Services
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card bg-black bg-opacity-50 border border-secondary border-opacity-50 text-white rounded-4 p-4">
+          <div class="d-flex align-items-center gap-2 text-info small fw-semibold mb-2">
+            <span class="material-symbols-outlined fs-5">psychology</span>
+            <span>HOW WE OPERATE SMARTLY</span>
+          </div>
+          <p class="small text-light text-opacity-75 mb-3">
+            We combine reusable engineering patterns, automation, and clear governance so you move faster with less risk.
+          </p>
+          <a [href]="activeService.relatedUrl" class="btn btn-sm btn-outline-info align-self-start">
+            {{ activeService.relatedLabel }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Overview & Introduction -->
+<section class="py-5 bg-white border-bottom" *ngIf="activeService">
+  <div class="container py-2">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="p-4 rounded-4 bg-light border h-100">
+          <div class="small fw-bold text-uppercase text-primary mb-2">Overview</div>
+          <p class="text-dark fw-medium mb-0">{{ activeService.overview }}</p>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="p-4 rounded-4 bg-light border h-100">
+          <div class="small fw-bold text-uppercase text-primary mb-2">Introduction</div>
+          <p class="text-secondary mb-0">{{ activeService.introduction }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits & How We Can Help -->
+<section class="py-5 bg-light" *ngIf="activeService">
+  <div class="container py-2">
+    <div class="row g-4 mb-5">
+      <!-- Benefits -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase mb-3">
+            <span class="material-symbols-outlined fs-5">trending_up</span>
+            <span>Benefits</span>
+          </div>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            <li class="d-flex align-items-start gap-2 text-secondary" *ngFor="let benefit of activeService.benefits">
+              <span class="material-symbols-outlined text-success fs-5">check_circle</span>
+              <span>{{ benefit }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- How We Can Help -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase mb-3">
+            <span class="material-symbols-outlined fs-5">support_agent</span>
+            <span>How We Can Help</span>
+          </div>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            <li class="d-flex align-items-start gap-2 text-secondary" *ngFor="let item of activeService.howWeCanHelp">
+              <span class="material-symbols-outlined text-primary fs-5">arrow_right_alt</span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- How We Operate Smartly -->
+    <div class="card border-0 shadow-sm rounded-4 p-4 p-lg-5 mb-5">
+      <div class="d-flex align-items-center gap-2 text-dark fw-bold small text-uppercase mb-3">
+        <span class="material-symbols-outlined fs-5 text-primary">bolt</span>
+        <span>How We Operate Smartly</span>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-4" *ngFor="let smart of activeService.howWeOperateSmartly">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <div class="fw-semibold text-dark mb-1">{{ smart.title }}</div>
+            <div class="text-muted small">{{ smart.detail }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div>
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+        <div class="d-flex align-items-center gap-2 text-primary fw-bold small text-uppercase">
+          <span class="material-symbols-outlined fs-5">work_history</span>
+          <span>Case Studies</span>
+        </div>
+        <a [href]="activeService.exploreUrl" class="small fw-semibold text-decoration-none d-inline-flex align-items-center gap-1">
+          <span>Explore {{ activeService.navLabel }}</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6" *ngFor="let cs of activeService.caseStudies">
+          <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+            <span class="badge text-bg-primary bg-opacity-10 text-primary align-self-start mb-2">
+              {{ cs.sector }}
+            </span>
+            <h3 class="h5 fw-bold text-dark mb-2">{{ cs.title }}</h3>
+            <p class="small text-muted mb-2">
+              <strong class="text-dark">Challenge:</strong> {{ cs.challenge }}
+            </p>
+            <p class="small text-muted mb-2">
+              <strong class="text-dark">Solution:</strong> {{ cs.solution }}
+            </p>
+            <p class="small text-dark mb-0">
+              <strong>Outcome:</strong> {{ cs.outcome }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="py-5 bg-dark text-white">
+  <div class="container py-2">
+    <div class="row align-items-center justify-content-between g-4">
+      <div class="col-lg-8">
+        <h2 class="h2 fw-bold mb-2">Let's Build Something Extraordinary Together</h2>
+        <p class="text-light text-opacity-75 mb-0">
+          Connect with our specialists or explore [JIXO Bridge](https://mango-wave-0cf4ee210.2.azurestaticapps.net/#/url%3Fid%3D27) and [JIXO Consult](https://mango-wave-0cf4ee210.2.azurestaticapps.net/#/https:/www.kyndryl.com/ca/en/consulting.html) to accelerate your roadmap.
+        </p>
+      </div>
+      <div class="col-lg-auto">
+        <a [href]="'https://linkedin.com/in/mehul4ca'" class="btn btn-primary btn-lg px-4 d-inline-flex align-items-center gap-2">
+          <span>Get in touch</span>
+          <span class="material-symbols-outlined fs-6">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

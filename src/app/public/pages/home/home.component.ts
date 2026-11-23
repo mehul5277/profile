@@ -6,11 +6,12 @@ import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/component
 import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
 import { Card1Component, CardConfig, CardType } from '../../../shared/components/card-1/card-1.component';
 import { ClientListComponent } from '../../components/client-list/client-list.component';
+import { JixoSectionComponent } from '../../../shared/components/jixo-section/jixo-section.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component, ClientListComponent],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component, ClientListComponent, JixoSectionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -25,8 +26,8 @@ export class HomeComponent implements OnInit {
   jumboConfig: JiexoJumboConfig = {
     "title": "Building Intelligent Solutions through",
     "subtitle": "for Business Excellence",
-    "typewriterList": ["Digital Engineering", "Artificial Intelligence", "Data Engineering", "Cloud Computing"],
-    "description": "We help forward-thinking enterprises turn technology into competitive advantage through Data, Cloud, AI and Digital Engineering solutions built for scale and delivered for impact.",
+    "typewriterList": ["Artificial Intelligence", "Data Science", "Data Engineering", "Cloud Computing"],
+    "description": "We help forward-thinking enterprises turn technology into competitive advantage through AI, Data, Cloud and Digital Engineering solutions built for scale and delivered for impact.",
     "badges": [
       {
         "text": "Trusted Partner · Startup to Enterprise",
@@ -78,7 +79,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Data",
-      "url": "/service",
+      "url": "/services/data",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -92,7 +93,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore AI",
-      "url": "/service",
+      "url": "/services/ai-automation",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -106,7 +107,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Cloud",
-      "url": "/service",
+      "url": "/services/cloud",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -116,11 +117,11 @@ export class HomeComponent implements OnInit {
     "type": CardType.CARD,
     "icon": "code_xml",
     "title": "Digital Engineering",
-    "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience.",
+    "description": "Design, build, and modernize scalable digital systems and applications using cutting-edge engineering practices to optimize performance and user experience.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Engineering",
-      "url": "/service",
+      "url": "/services/digital-engineering",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -134,7 +135,7 @@ export class HomeComponent implements OnInit {
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore Business",
-      "url": "/service",
+      "url": "/services/business-services",
       "icon": "bi bi-play-circle"
     }]
   };
@@ -216,14 +217,14 @@ export class HomeComponent implements OnInit {
     "type": CardType.CARD,
     "title": "Continuous innovation",
     "subtitle": "Operational excellence",
-    "description": ""
+    "description": "Resilience. Speed. Adoption. Efficiency."
   };
   innovationColumns: Array<CardConfig> = [{
     "css": "card-secondary",
     "icon": "counter_1",
     "type": CardType.CARD,
-    "title": "Simplify digital transformation",
-    "description": "JIXO Consult helps you drive innovation and simplify digital transformation with strategic visioning, architecture design, and organizational change management.",
+    "title": "Simplify Transformation",
+    "description": "Accelerate enterprise digital transformation with expert visioning and architecture design.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Discover JIXO Consult",
@@ -235,8 +236,8 @@ export class HomeComponent implements OnInit {
     "css": "card-secondary",
     "icon": "counter_2",
     "type": CardType.CARD,
-    "title": "Overcome business challenges",
-    "description": "Our services combine deep industry expertise with modern skills and advanced technology to help you overcome business challenges and uncover new opportunities for growth.",
+    "title": "Solve Complex Challenges",
+    "description": "Overcome technical roadblocks using deep engineering expertise and scalable tech stacks.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore our services",
@@ -248,8 +249,8 @@ export class HomeComponent implements OnInit {
     "css": "card-secondary",
     "icon": "counter_3",
     "type": CardType.CARD,
-    "title": "Orchestrate and innovate",
-    "description": "JIXO Bridge is an open integration platform designed to help orchestrate and innovate across your IT environment, enabling continuous learning and quicker time to value.",
+    "title": "Orchestrate & Innovate",
+    "description": "Connect siloed systems and speed up time-to-market with JIXO Bridge.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Learn about JIXO Bridge",
@@ -261,8 +262,8 @@ export class HomeComponent implements OnInit {
     "css": "card-secondary",
     "icon": "counter_4",
     "type": CardType.CARD,
-    "title": "Enable hybrid IT with strategic partners",
-    "description": "Be confident that you're making the right technology investments with global alliance partnerships that enable today’s complex hybrid ecosystems.",
+    "title": "Enable Hybrid IT",
+    "description": "Build secure, high-performance multi-cloud ecosystems through global tech alliances.",
     "buttons": [{
       "type": ActionType.LINK,
       "text": "Explore our partners",

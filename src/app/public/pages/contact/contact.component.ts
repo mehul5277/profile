@@ -1,5 +1,6 @@
 import { UpperCasePipe, NgClass, NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 
 
 interface ContactForm {
@@ -14,7 +15,7 @@ interface ContactForm {
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [UpperCasePipe, NgTemplateOutlet],
+  imports: [UpperCasePipe, NgTemplateOutlet, ContactFormComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

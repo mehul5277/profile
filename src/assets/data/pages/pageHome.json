@@ -1,0 +1,77 @@
+{
+    "brand": {
+        "name": "JIXO",
+        "acronymExpansion": "Journey in Exponential Optimization",
+        "pageTitle": "JIXO | Intelligent AI, Data & Cloud Solutions"
+    },
+    "hero": {
+        "badge": "Trusted Partner · Startup to Enterprise",
+        "headlinePrefix": "Building Intelligent",
+        "rotatingKeywords": [
+            "AI",
+            "Data",
+            "Cloud"
+        ],
+        "headlineSuffix": "Solutions for Measurable Growth",
+        "subheadline": "Move beyond manual workflows. We engineer autonomous AI systems, resilient cloud architectures, and real-time data pipelines that scale with your enterprise.",
+        "primaryCta": {
+            "label": "Explore Solutions",
+            "target": "#services"
+        },
+        "secondaryCta": {
+            "label": "Book a Strategy Call",
+            "target": "#contact"
+        }
+    },
+    "servicesSection": {
+        "eyebrow": "WHAT WE DO",
+        "headline": "End-to-End Engineering for Intelligent Enterprises",
+        "subheadline": "From foundational data architecture to autonomous AI agents, we deliver technology built for speed, security, and ROI.",
+        "viewAllCta": {
+            "label": "All Services",
+            "route": "/services"
+        },
+        "items": [
+            {
+                "id": "ai-automation",
+                "icon": "memory",
+                "title": "AI & Automation",
+                "description": "Eliminate operational bottlenecks with custom LLMs, intelligent agents, and predictive models designed to act independently and drive measurable efficiency.",
+                "ctaLabel": "Explore AI Solutions",
+                "route": "/services/ai"
+            },
+            {
+                "id": "data-analytics",
+                "icon": "database",
+                "title": "Data & Analytics",
+                "description": "Turn fragmented raw data into a single source of truth. We build high-throughput pipelines and real-time analytics dashboards for faster executive decisions.",
+                "ctaLabel": "Explore Data Solutions",
+                "route": "/services/data"
+            },
+            {
+                "id": "cloud-devops",
+                "icon": "cloud",
+                "title": "Cloud & DevOps",
+                "description": "Migrate, optimize, and secure your infrastructure. We architect resilient, cost-efficient cloud environments with automated CI/CD pipelines for zero-downtime deployment.",
+                "ctaLabel": "Explore Cloud Solutions",
+                "route": "/services/cloud"
+            },
+            {
+                "id": "digital-engineering",
+                "icon": "code_xml",
+                "title": "Digital Engineering",
+                "description": "Build scalable, user-centric web and enterprise platforms engineered for high performance, seamless third-party integration, and long-term maintainability.",
+                "ctaLabel": "Explore App Development",
+                "route": "/services/engineering"
+            },
+            {
+                "id": "business-services",
+                "icon": "headset_mic",
+                "title": "Business Services",
+                "description": "Streamline operations with ongoing managed support, regulatory compliance alignment, and continuous system optimization as your business scales.",
+                "ctaLabel": "Explore Business Services",
+                "route": "/services/business"
+            }
+        ]
+    }
+}

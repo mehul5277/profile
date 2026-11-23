@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { JsonPipe, NgClass } from '@angular/common';
-import { Jumbotron2Component } from '../../../shared/components/jumbotron2/jumbotron2.component';
+import { Jumbotron2Component, Jumbotron2Config } from '../../../shared/components/jumbotron2/jumbotron2.component';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -24,22 +24,23 @@ export class ServicePageComponent {
     this.dataService.fetchPageData("pageService").subscribe((data: any) => this.serviceData = data[0]);
   }
 
-  get jumbotronConfig() {
-    return Object.assign({}, { subject: this.id() }, this.serviceData.jumbotron);
+  get jumbotronConfig(): Jumbotron2Config {
+    return Object.assign({}, { subject: this.id() }, this.serviceData?.jumbotron);
   }
 
-  get Overview() { return this.serviceData.overview; }
+  get Overview() { return this.serviceData?.overview; }
 
-  get ServiceOffering() { return this.serviceData.sections[0]; }
-  get Section() { return this.serviceData.sections; }
+  get ServiceOffering() { return this.serviceData?.sections?.[0]; }
 
-  get Expertise() { return this.serviceData.Expertise; }
+  get Section() { return this.serviceData?.sections; }
 
-  get Banner() { return this.serviceData.banner[0]; }
+  get Expertise() { return this.serviceData?.Expertise; }
 
-  get Prisum() { return this.serviceData.prisum[0]; }
+  get Banner() { return this.serviceData?.banner?.[0]; }
 
-  get Prisum1() { return this.serviceData.prisum1[0]; }
+  get Prisum() { return this.serviceData?.prisum?.[0]; }
+
+  get Prisum1() { return this.serviceData?.prisum1?.[0]; }
 
   goToUser(userId: number) {
     this.router.navigate(['/user', userId]);

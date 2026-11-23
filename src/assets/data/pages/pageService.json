@@ -41,27 +41,32 @@
                     {
                         "icon": "database",
                         "name": "Data",
-                        "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth."
+                        "description": "Leverage diverse data sources and advanced analytics to uncover actionable insights that drive informed decision-making and strategic growth.",
+                        "url": "data"
                     },
                     {
                         "icon": "memory",
                         "name": "AI & Automation",
-                        "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization."
+                        "description": "Implement intelligent automation and AI-driven solutions to streamline processes, enhance efficiency, and foster innovation across your organization.",
+                        "url": "ai-automation"
                     },
                     {
                         "icon": "cloud",
                         "name": "Cloud",
-                        "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys."
+                        "description": "Utilize flexible and secure cloud platforms that enhance agility, lower costs, and facilitate smooth digital transformation journeys.",
+                        "url": "cloud"
                     },
                     {
                         "icon": "code_xml",
                         "name": "Digital Engineering",
-                        "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience."
+                        "description": "Enhance existing systems with cutting-edge digital engineering practices to improve performance, scalability, and user experience.",
+                        "url": "digital-engineering"
                     },
                     {
                         "icon": "headset_mic",
                         "name": "Business Services",
-                        "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement."
+                        "description": "Streamline operations with comprehensive business services designed to ensure system stability, regulatory compliance, and continuous enhancement.",
+                        "url": "business-services"
                     }
                 ]
             },

@@ -17,17 +17,19 @@ import { authGuard } from '../guards/auth.guard';
 import { SubLeaseComponent } from './pages/sub-lease/sub-lease.component';
 import { AiPageComponent } from './pages/ai-page/ai-page.component';
 import { TextInCircleComponent } from '../shared/components/text-in-circle/text-in-circle.component';
+import { ServiceLandingComponent } from './pages/service-landing/service-landing.component';
 
 const routes: Routes = [
   {
     path: '',
     component: PublicLayoutComponent,
     children: [
+      { path: 'services/:slug', component: ServiceLandingComponent },
       { path: '', component: HomeComponent },
       { path: 'cv', component: CVComponent, resolve: { cvData: CVResolver }, canActivate: [authGuard] },
       { path: 'data/:id', component: DataPageComponent, canActivate: [authGuard] },
-      { path: 'service', component: ServicePageComponent, canActivate: [authGuard] },
-      { path: 'service/:id', component: ServicePageComponent, canActivate: [authGuard] },
+      { path: 'services', component: ServicePageComponent, canActivate: [authGuard] },
+      //{ path: 'service/:id', component: ServicePageComponent, canActivate: [authGuard] },
       { path: 'about-us', component: AboutUsComponent, canActivate: [authGuard] },
       { path: 'company', component: CompanyPageComponent, canActivate: [authGuard] },
       { path: 'company/:id', component: CompanyPageComponent, canActivate: [authGuard] },
