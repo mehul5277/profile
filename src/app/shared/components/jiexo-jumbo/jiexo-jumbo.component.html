@@ -1,13 +1,13 @@
 <!-- jiexo-jumbo -1 -->
 <div class="jumbotron jumbotron-md-full jumbotron-bg-blue jumbotron-bg-grid p-md-5">
     @if(jumbotronConfig) {
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-5">
         @for(badge of jumbotronConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
         }
         <ng-container [ngTemplateOutlet]="jumbotronTypelistTemplate" [ngTemplateOutletContext]="{ 'context' :  jumbotronDefaultConfig }"></ng-container>
 
-        <div class="d-grid gap-2 d-sm-flex py-3 wow fadeInUp" data-wow-duration="2s">
+        <div class="d-grid gap-3 d-sm-flex wow fadeInUp" data-wow-duration="2s">
             @for(button of jumbotronConfig.buttons; track $index) {
             <ng-container [ngTemplateOutlet]="buttonTemplate" [ngTemplateOutletContext]="{ 'context' :  button }"></ng-container>
             }
@@ -42,7 +42,7 @@
     </span>
 </ng-template>
 
-<ng-template #jumbotronDefaultTemplate let-context="context">
+<ng-template #jumbotronTemplate let-context="context">
     <div class="wow fadeInLeft col-md-8" data-wow-duration="1s">
         <h1 class="fs-4xl fw-bold">{{ context.title }}</h1>
         <app-typewriter [strings]="context.typewriterList" [shuffle]="false" [typeSpeed]="100" [backDelay]="1000" [loop]="true" [contentType]="'text'">
