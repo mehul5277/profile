@@ -1,23 +1,71 @@
-<!-- Service Switcher Bar -->
+<!-- Service Switcher Bar + JSON Admin Actions -->
 <div class="bg-white border-bottom sticky-top">
   <div class="container py-2">
-    <div class="d-flex flex-nowrap overflow-auto gap-2 align-items-center">
-      <a
-        *ngFor="let svc of services"
-        [routerLink]="['/services', svc.key]"
-        (click)="selectService(svc.key)"
-        class="btn btn-sm text-nowrap rounded-pill px-3 d-inline-flex align-items-center gap-1 text-decoration-none"
-        [class.btn-primary]="svc.key === activeService.key"
-        [class.btn-outline-secondary]="svc.key !== activeService.key">
-        <span class="material-symbols-outlined fs-6">{{ svc.icon }}</span>
-        <span>{{ svc.navLabel }}</span>
-      </a>
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div class="d-flex flex-nowrap overflow-auto gap-2 align-items-center">
+        <a *ngFor="let svc of services" [routerLink]="['/services', svc.key]" (click)="selectService(svc.key)" class="btn btn-sm text-nowrap rounded-pill px-3 d-inline-flex align-items-center gap-1 text-decoration-none" [class.btn-primary]="svc.key === activeService.key" [class.btn-outline-secondary]="svc.key !== activeService.key">
+          <span class="material-symbols-outlined fs-6">{{ svc.icon }}</span>
+          <span>{{ svc.navLabel }}</span>
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 d-inline-flex align-items-center gap-1" (click)="toggleEditor()">
+          <span class="material-symbols-outlined fs-6">{{ editorOpen ? 'close' : 'data_object' }}</span>
+          <span>{{ editorOpen ? 'Close Editor' : 'Edit JSON' }}</span>
+        </button>
+
+        <button type="button" class="btn btn-sm btn-primary rounded-pill px-3 d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+          <span class="material-symbols-outlined fs-6">download</span>
+          <span>Download JSON</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- JSON Catalog Admin Editor Panel -->
+<section class="py-4 bg-dark text-white border-bottom border-secondary border-opacity-50" *ngIf="editorOpen">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+      <div>
+        <span class="badge rounded-pill text-bg-primary bg-opacity-25 text-info px-3 py-1 mb-1">
+          CATALOG ADMIN EDITOR
+        </span>
+        <h2 class="h5 fw-bold mb-0">Edit Services JSON Catalog</h2>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <button type="button" class="btn btn-sm btn-outline-light" (click)="formatJsonDraft()">
+          Format JSON
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-warning" (click)="resetCatalog()">
+          Reset Default
+        </button>
+        <button type="button" class="btn btn-sm btn-success" (click)="applyJsonChanges()">
+          Apply & Save
+        </button>
+        <button type="button" class="btn btn-sm btn-primary d-inline-flex align-items-center gap-1" (click)="downloadJson()">
+          <span class="material-symbols-outlined fs-6">download</span>
+          <span>Download JSON</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="alert alert-danger py-2 small mb-3" role="alert" *ngIf="editorError">
+      {{ editorError }}
+    </div>
+
+    <div class="alert alert-success py-2 small mb-3" role="alert" *ngIf="editorStatus">
+      {{ editorStatus }}
+    </div>
+
+    <textarea class="form-control font-monospace small bg-black text-info border-secondary" rows="14" [(ngModel)]="jsonDraft" spellcheck="false" aria-label="Services catalog JSON editor"></textarea>
+  </div>
+</section>
+
 <!-- Hero Section -->
-<section class="py-5 bg-dark text-white border-bottom border-secondary border-opacity-25">
+<section class="py-5 bg-dark text-white border-bottom border-secondary border-opacity-25" *ngIf="activeService">
   <div class="container py-4">
     <div class="row align-items-center g-4">
       <div class="col-lg-8">
@@ -56,7 +104,7 @@
 </section>
 
 <!-- Overview & Introduction -->
-<section class="py-5 bg-white border-bottom">
+<section class="py-5 bg-white border-bottom" *ngIf="activeService">
   <div class="container py-2">
     <div class="row g-4">
       <div class="col-lg-5">
@@ -76,7 +124,7 @@
 </section>
 
 <!-- Benefits & How We Can Help -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" *ngIf="activeService">
   <div class="container py-2">
     <div class="row g-4 mb-5">
       <!-- Benefits -->
@@ -171,7 +219,7 @@
       <div class="col-lg-8">
         <h2 class="h2 fw-bold mb-2">Let's Build Something Extraordinary Together</h2>
         <p class="text-light text-opacity-75 mb-0">
-          Connect with our specialists or explore [JIXO Bridge](http://localhost:4200/#/url%3Fid%3D27) and [JIXO Consult](http://localhost:4200/#/https:/www.kyndryl.com/ca/en/consulting.html) to accelerate your roadmap.
+          Connect with our specialists or explore [JIXO Bridge](https://mango-wave-0cf4ee210.2.azurestaticapps.net/#/url%3Fid%3D27) and [JIXO Consult](https://mango-wave-0cf4ee210.2.azurestaticapps.net/#/https:/www.kyndryl.com/ca/en/consulting.html) to accelerate your roadmap.
         </p>
       </div>
       <div class="col-lg-auto">
