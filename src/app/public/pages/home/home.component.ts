@@ -6,11 +6,12 @@ import { JiexoJumboComponent, JiexoJumboConfig } from '../../../shared/component
 import { ActionType, HeroComponent, HeroConfig } from '../../../shared/components/hero/hero.component';
 import { Card1Component, CardConfig, CardType } from '../../../shared/components/card-1/card-1.component';
 import { ClientListComponent } from '../../components/client-list/client-list.component';
+import { JixoSectionComponent } from '../../../shared/components/jixo-section/jixo-section.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component, ClientListComponent],
+  imports: [JiexoJumboComponent, TickerClientComponent, PollComponent, HeroComponent, Card1Component, ClientListComponent, JixoSectionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

@@ -1,7 +1,7 @@
 <!-- jiexo-jumbo -1 -->
 <div class="jumbotron jumbotron-md-full jumbotron-bg-blue jumbotron-bg-grid p-md-5">
     @if(jumbotronConfig) {
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-4">
         @for(badge of jumbotronConfig.badges; track $index) {
         <ng-container [ngTemplateOutlet]="badgeTemplate" [ngTemplateOutletContext]="{ 'context' :  badge }"></ng-container>
         }
