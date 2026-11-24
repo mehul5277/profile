@@ -8,7 +8,7 @@ import { BookmarkCategory, BookmarkDisplayItem, BookmarkItem } from '../../metad
   selector: 'app-bookmark',
   standalone: true,
   templateUrl: './bookmark.component.html',
-  styleUrls: ['./bookmark.component.scss']
+  styleUrls: ['./bookmark.component.css']
 })
 export class BookmarkComponent implements OnInit {
   private readonly bookmarkService = inject(BookmarkService);
@@ -20,6 +20,11 @@ export class BookmarkComponent implements OnInit {
   readonly errorMessage = signal<string | null>(null);
   readonly selectedCategory = signal<string>('all');
   readonly searchTerm = signal<string>('');
+
+  // Quick-add form signals
+  readonly newTitle = signal<string>('');
+  readonly newUrl = signal<string>('');
+  readonly newCategoryId = signal<string>('ui-ux');
 
   readonly categories = computed<BookmarkCategory[]>(() => {
     const safeCategories = Array.isArray(this.rawCategories()) ? this.rawCategories() : [];
@@ -64,17 +69,17 @@ export class BookmarkComponent implements OnInit {
     return match ? match.name : 'Bookmarks';
   });
 
-  readonly visibleItems = computed<BookmarkDisplayItem[]>(() => {
+  readonly visibleItems = computed<Array<BookmarkDisplayItem & { categoryId: string }>>(() => {
     const selected = this.selectedCategory();
     const query = this.searchTerm().trim().toLowerCase();
 
-    const pool: BookmarkDisplayItem[] =
+    const pool: Array<BookmarkDisplayItem & { categoryId: string }> =
       selected === 'all'
         ? this.categories().flatMap((cat) =>
-            (cat.items ?? []).map((item) => this.toDisplayItem(item, cat.name))
+            (cat.items ?? []).map((item) => this.toDisplayItem(item, cat.name, cat.id))
           )
         : (this.categories().find((c) => c.id === selected)?.items ?? []).map((item) =>
-            this.toDisplayItem(item, this.activeCategoryLabel())
+            this.toDisplayItem(item, this.activeCategoryLabel(), selected)
           );
 
     if (!query) {
@@ -103,19 +108,71 @@ export class BookmarkComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
-          this.rawCategories.set(Array.isArray(data) ? data : []);
+          const list = Array.isArray(data) ? data : [];
+          this.rawCategories.set(list);
+          if (list.length > 0 && !list.some((c) => c.id === this.newCategoryId())) {
+            this.newCategoryId.set(list[0].id);
+          }
           this.isLoading.set(false);
         },
         error: () => {
           this.rawCategories.set([]);
-          this.errorMessage.set('Unable to load bookmarks JSON file.');
+          this.errorMessage.set('Unable to load bookmarks.');
           this.isLoading.set(false);
         }
       });
   }
 
-  setCategories(data: BookmarkCategory[]): void {
-    this.rawCategories.set(data);
+  addBookmark(event: Event): void {
+    event.preventDefault();
+    const normalizedUrl = this.normalizeUrl(this.newUrl());
+    if (!normalizedUrl) {
+      return;
+    }
+
+    const updated = this.bookmarkService.addBookmark(
+      this.rawCategories(),
+      this.newCategoryId(),
+      {
+        title: this.newTitle().trim() || this.getDomain(normalizedUrl),
+        url: normalizedUrl
+      }
+    );
+
+    this.rawCategories.set(updated);
+    this.newTitle.set('');
+    this.newUrl.set('');
+  }
+
+  deleteBookmark(url: string, categoryId?: string, event?: Event): void {
+    event?.preventDefault();
+    event?.stopPropagation();
+
+    const updated = this.bookmarkService.deleteBookmark(
+      this.rawCategories(),
+      url,
+      categoryId
+    );
+    this.rawCategories.set(updated);
+  }
+
+  resetBookmarks(): void {
+    this.isLoading.set(true);
+    this.errorMessage.set(null);
+
+    this.bookmarkService
+      .resetToJson()
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (data) => {
+          this.rawCategories.set(Array.isArray(data) ? data : []);
+          this.isLoading.set(false);
+        },
+        error: () => {
+          this.errorMessage.set('Unable to reset bookmarks from JSON.');
+          this.isLoading.set(false);
+        }
+      });
   }
 
   selectCategory(categoryId: string): void {
@@ -131,10 +188,15 @@ export class BookmarkComponent implements OnInit {
     this.searchTerm.set('');
   }
 
-  private toDisplayItem(item: BookmarkItem, categoryName: string): BookmarkDisplayItem {
+  private toDisplayItem(
+    item: BookmarkItem,
+    categoryName: string,
+    categoryId: string
+  ): BookmarkDisplayItem & { categoryId: string } {
     const domain = this.getDomain(item.url);
     return {
       ...item,
+      categoryId,
       categoryName,
       domain,
       faviconSrc: item.favicon || this.buildFaviconUrl(domain)
