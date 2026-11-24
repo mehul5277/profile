@@ -1,5 +1,6 @@
-import { Component, computed, OnInit, signal } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Component, computed, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 export interface BookmarkItem {
   id?: string | number;
   title?: string;
@@ -26,8 +27,14 @@ export interface BookmarkDisplayItem extends BookmarkItem {
   styleUrls: ['./bookmark.component.scss']
 })
 export class BookmarkComponent implements OnInit {
-  private readonly rawCategories = signal<BookmarkCategory[]>([]);
+  private readonly http = inject(HttpClient);
+  private readonly destroyRef = inject(DestroyRef);
 
+  private readonly rawCategories = signal<BookmarkCategory[]>([]);
+  private readonly bookmarksJsonUrl = './assets/data/bookmark.json';
+
+  readonly isLoading = signal<boolean>(true);
+  readonly errorMessage = signal<string | null>(null);
   readonly selectedCategory = signal<string>('all');
   readonly searchTerm = signal<string>('');
 
@@ -101,35 +108,27 @@ export class BookmarkComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.setCategories([
-      {
-        id: 'ui-ux',
-        name: 'UI/UX',
-        items: [
-          { url: 'https://gocxm.com' },
-          { url: 'https://www.zignuts.com' },
-          { url: 'https://uiverse.io' }
-        ]
-      },
-      {
-        id: 'learning',
-        name: 'Learning',
-        items: [
-          { url: 'https://dev.to' },
-          { url: 'https://medium.com' },
-          { url: 'https://medium.com' }
-        ]
-      },
-      {
-        id: 'product-development',
-        name: '** Product Development',
-        items: [
-          { url: 'https://njoyn.com' },
-          { url: 'https://www.crelate.com' },
-          { url: 'https://www.crelate.com' }
-        ]
-      }
-    ]);
+    this.loadBookmarks();
+  }
+
+  loadBookmarks(): void {
+    this.isLoading.set(true);
+    this.errorMessage.set(null);
+
+    this.http
+      .get<BookmarkCategory[]>(this.bookmarksJsonUrl)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (data) => {
+          this.rawCategories.set(Array.isArray(data) ? data : []);
+          this.isLoading.set(false);
+        },
+        error: () => {
+          this.rawCategories.set([]);
+          this.errorMessage.set('Unable to load bookmarks JSON file.');
+          this.isLoading.set(false);
+        }
+      });
   }
 
   setCategories(data: BookmarkCategory[]): void {

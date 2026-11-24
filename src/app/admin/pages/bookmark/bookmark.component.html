@@ -33,117 +33,133 @@
     </div>
   </div>
 
-  <!-- Main Grid: Category Sidebar + Cards -->
-  <div class="row g-4 align-items-start">
-    <!-- Left Sidebar -->
-    <aside class="col-12 col-lg-3" aria-label="Bookmark categories">
-      <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
-        <div class="card-header bg-body-tertiary border-bottom py-2 px-3">
-          <span class="small fw-semibold text-uppercase text-body-secondary">
-            Categories
-          </span>
-        </div>
+  @if (errorMessage(); as error) {
+    <div class="alert alert-danger d-flex align-items-center justify-content-between gap-3" role="alert">
+      <span>{{ error }}</span>
+      <button type="button" class="btn btn-sm btn-outline-danger" (click)="loadBookmarks()">
+        Retry
+      </button>
+    </div>
+  }
 
-        <div class="list-group list-group-flush">
-          <button
-            type="button"
-            class="list-group-item list-group-item-action d-flex align-items-center justify-content-between py-2 px-3 border-0"
-            [class.active]="selectedCategory() === 'all'"
-            [attr.aria-current]="selectedCategory() === 'all' ? 'true' : null"
-            (click)="selectCategory('all')">
-            <span class="fw-medium text-truncate">All</span>
-            <span
-              class="badge rounded-pill ms-2"
-              [class.bg-light]="selectedCategory() === 'all'"
-              [class.text-dark]="selectedCategory() === 'all'"
-              [class.text-bg-secondary]="selectedCategory() !== 'all'">
-              {{ totalBookmarkCount() }}
+  @if (isLoading()) {
+    <div class="d-flex align-items-center gap-2 text-body-secondary py-4">
+      <div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div>
+      <span>Loading bookmarks...</span>
+    </div>
+  } @else {
+    <!-- Main Grid: Category Sidebar + Cards -->
+    <div class="row g-4 align-items-start">
+      <!-- Left Sidebar -->
+      <aside class="col-12 col-lg-3" aria-label="Bookmark categories">
+        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="card-header bg-body-tertiary border-bottom py-2 px-3">
+            <span class="small fw-semibold text-uppercase text-body-secondary">
+              Categories
             </span>
-          </button>
+          </div>
 
-          @for (category of categories(); track category.id) {
+          <div class="list-group list-group-flush">
             <button
               type="button"
               class="list-group-item list-group-item-action d-flex align-items-center justify-content-between py-2 px-3 border-0"
-              [class.active]="selectedCategory() === category.id"
-              [attr.aria-current]="selectedCategory() === category.id ? 'true' : null"
-              (click)="selectCategory(category.id)">
-              <span class="fw-medium text-truncate pe-2">{{ category.name }}</span>
+              [class.active]="selectedCategory() === 'all'"
+              [attr.aria-current]="selectedCategory() === 'all' ? 'true' : null"
+              (click)="selectCategory('all')">
+              <span class="fw-medium text-truncate">All</span>
               <span
-                class="badge rounded-pill flex-shrink-0"
-                [class.bg-light]="selectedCategory() === category.id"
-                [class.text-dark]="selectedCategory() === category.id"
-                [class.text-bg-secondary]="selectedCategory() !== category.id">
-                {{ category.items.length }}
+                class="badge rounded-pill ms-2"
+                [class.bg-light]="selectedCategory() === 'all'"
+                [class.text-dark]="selectedCategory() === 'all'"
+                [class.text-bg-secondary]="selectedCategory() !== 'all'">
+                {{ totalBookmarkCount() }}
               </span>
             </button>
-          }
+
+            @for (category of categories(); track category.id) {
+              <button
+                type="button"
+                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between py-2 px-3 border-0"
+                [class.active]="selectedCategory() === category.id"
+                [attr.aria-current]="selectedCategory() === category.id ? 'true' : null"
+                (click)="selectCategory(category.id)">
+                <span class="fw-medium text-truncate pe-2">{{ category.name }}</span>
+                <span
+                  class="badge rounded-pill flex-shrink-0"
+                  [class.bg-light]="selectedCategory() === category.id"
+                  [class.text-dark]="selectedCategory() === category.id"
+                  [class.text-bg-secondary]="selectedCategory() !== category.id">
+                  {{ category.items.length }}
+                </span>
+              </button>
+            }
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
 
-    <!-- Right Content Grid -->
-    <main class="col-12 col-lg-9">
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <h2 class="h5 fw-semibold mb-0 text-body">{{ activeCategoryLabel() }}</h2>
-        <span class="badge text-bg-light border text-body-secondary fw-normal px-2 py-1">
-          {{ visibleItems().length }} {{ visibleItems().length === 1 ? 'link' : 'links' }}
-        </span>
-      </div>
+      <!-- Right Content Grid -->
+      <main class="col-12 col-lg-9">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h2 class="h5 fw-semibold mb-0 text-body">{{ activeCategoryLabel() }}</h2>
+          <span class="badge text-bg-light border text-body-secondary fw-normal px-2 py-1">
+            {{ visibleItems().length }} {{ visibleItems().length === 1 ? 'link' : 'links' }}
+          </span>
+        </div>
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
-        @for (item of visibleItems(); track item.url) {
-          <div class="col">
-            <a
-              class="card h-100 text-decoration-none border shadow-sm rounded-3 p-3 d-flex flex-row align-items-center gap-3 bookmark-card"
-              [href]="item.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              [title]="item.url">
-              <div
-                class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0"
-                style="width: 40px; height: 40px;">
-                @if (item.faviconSrc) {
-                  <img
-                    [src]="item.faviconSrc"
-                    [alt]="item.domain + ' icon'"
-                    width="20"
-                    height="20"
-                    class="object-fit-contain"
-                    loading="lazy" />
-                } @else {
-                  <i class="bi bi-link-45deg fs-5 text-body-secondary" aria-hidden="true"></i>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
+          @for (item of visibleItems(); track item.url) {
+            <div class="col">
+              <a
+                class="card h-100 text-decoration-none border shadow-sm rounded-3 p-3 d-flex flex-row align-items-center gap-3 bookmark-card"
+                [href]="item.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                [title]="item.url">
+                <div
+                  class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0"
+                  style="width: 40px; height: 40px;">
+                  @if (item.faviconSrc) {
+                    <img
+                      [src]="item.faviconSrc"
+                      [alt]="item.domain + ' icon'"
+                      width="20"
+                      height="20"
+                      class="object-fit-contain"
+                      loading="lazy" />
+                  } @else {
+                    <i class="bi bi-link-45deg fs-5 text-body-secondary" aria-hidden="true"></i>
+                  }
+                </div>
+
+                <div class="min-w-0 flex-grow-1">
+                  <div class="fw-semibold text-body text-truncate">
+                    {{ item.title || item.domain }}
+                  </div>
+                  <div class="small text-body-secondary text-truncate">
+                    {{ item.domain }}
+                  </div>
+                </div>
+
+                <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0" aria-hidden="true"></i>
+              </a>
+            </div>
+          } @empty {
+            <div class="col-12">
+              <div class="card border bg-body-tertiary text-center py-5 px-3 rounded-3">
+                <p class="text-body-secondary mb-2">No bookmarks match your current filter.</p>
+                @if (searchTerm() || selectedCategory() !== 'all') {
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-primary mx-auto"
+                    (click)="clearSearch(); selectCategory('all')">
+                    Reset filters
+                  </button>
                 }
               </div>
-
-              <div class="min-w-0 flex-grow-1">
-                <div class="fw-semibold text-body text-truncate">
-                  {{ item.title || item.domain }}
-                </div>
-                <div class="small text-body-secondary text-truncate">
-                  {{ item.domain }}
-                </div>
-              </div>
-
-              <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0" aria-hidden="true"></i>
-            </a>
-          </div>
-        } @empty {
-          <div class="col-12">
-            <div class="card border bg-body-tertiary text-center py-5 px-3 rounded-3">
-              <p class="text-body-secondary mb-2">No bookmarks match your current filter.</p>
-              @if (searchTerm() || selectedCategory() !== 'all') {
-                <button
-                  type="button"
-                  class="btn btn-sm btn-outline-primary mx-auto"
-                  (click)="clearSearch(); selectCategory('all')">
-                  Reset filters
-                </button>
-              }
             </div>
-          </div>
-        }
-      </div>
-    </main>
-  </div>
+          }
+        </div>
+      </main>
+    </div>
+  }
 </section>
