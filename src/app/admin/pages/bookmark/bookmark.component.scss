@@ -1,11 +1,137 @@
-.bookmark-card {
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+$netflix-red: #e50914;
+$card-light-top: #ffffff;
+$card-light-mid: #f8fafc;
+$card-light-bottom: #eef2f6;
+$text-dark-primary: #0f172a;
+$text-dark-secondary: #475569;
+
+.netflix-card {
+  position: relative;
+  min-height: 190px;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(
+    155deg,
+    $card-light-top 0%,
+    $card-light-mid 65%,
+    $card-light-bottom 100%
+  );
+  color: $text-dark-primary;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  overflow: hidden;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.35) 55%,
+      rgba(255, 255, 255, 0.08) 100%
+    );
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus-within {
+    transform: scale(1.03);
+    z-index: 3;
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14) !important;
+    border-color: rgba($netflix-red, 0.55) !important;
+
+    .netflix-actions {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
+
+  .min-w-0 {
+    min-width: 0;
+  }
 }
 
-.bookmark-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--bs-box-shadow) !important;
-  border-color: var(--bs-primary-border-subtle) !important;
+.netflix-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.netflix-favicon-box {
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+}
+
+.netflix-title {
+  color: $text-dark-primary;
+}
+
+.netflix-domain {
+  color: $text-dark-secondary;
+}
+
+.netflix-url {
+  color: #1e293b;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.netflix-category-badge {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+}
+
+.netflix-actions {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition:
+    opacity 0.18s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: none), (pointer: coarse) {
+  .netflix-actions {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+.netflix-action-btn {
+  background-color: #ffffff;
+  color: $text-dark-primary;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+
+  &:hover,
+  &:focus-visible {
+    background-color: #f1f5f9;
+    color: $text-dark-primary;
+    border-color: rgba(15, 23, 42, 0.28);
+  }
+}
+
+.netflix-delete-btn {
+  color: #dc2626;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border-color: rgba(220, 38, 38, 0.35);
+  }
 }
 
 .list-group-item.active {

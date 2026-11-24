@@ -56,7 +56,7 @@
       <span>Loading bookmarks...</span>
     </div>
   } @else {
-    <!-- Main Grid: Category Sidebar + Cards -->
+    <!-- Main Grid: Category Sidebar + Netflix Cards -->
     <div class="row g-4 align-items-start">
       <!-- Left Sidebar -->
       <aside class="col-12 col-lg-3" aria-label="Bookmark categories">
@@ -161,45 +161,73 @@
           </span>
         </div>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
+        <div class="row row-cols-1 row-cols-md-2 g-3">
           @for (item of visibleItems(); track item.url + '-' + item.categoryId) {
             <div class="col">
-              <div class="card h-100 border shadow-sm rounded-3 p-3 d-flex flex-row align-items-start gap-3 bookmark-card">
-                <a
-                  class="text-decoration-none d-flex flex-row align-items-start gap-3 min-w-0 flex-grow-1"
-                  [href]="item.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  [title]="item.url">
-                  <div
-                    class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0 mt-1"
-                    style="width: 40px; height: 40px;">
-                    @if (shouldShowFavicon(item)) {
-                      <img
-                        [src]="item.faviconSrc"
-                        [alt]="item.domain + ' icon'"
-                        width="20"
-                        height="20"
-                        class="object-fit-contain"
-                        loading="lazy"
-                        (error)="onFaviconError(item.url)" />
-                    } @else {
-                      <i class="bi bi-link-45deg fs-5 text-body-secondary" aria-hidden="true"></i>
-                    }
+              <div class="card netflix-card rounded-3 shadow-sm">
+                <div class="netflix-card-content h-100 p-3 d-flex flex-column justify-content-between gap-2">
+                  <div class="d-flex align-items-start justify-content-between gap-2">
+                    <a
+                      class="text-decoration-none d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      [href]="item.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      [title]="item.url">
+                      <div
+                        class="netflix-favicon-box rounded-2 d-flex align-items-center justify-content-center flex-shrink-0">
+                        @if (shouldShowFavicon(item)) {
+                          <img
+                            [src]="item.faviconSrc"
+                            [alt]="item.domain + ' icon'"
+                            width="20"
+                            height="20"
+                            class="object-fit-contain"
+                            loading="lazy"
+                            (error)="onFaviconError(item.url)" />
+                        } @else {
+                          <i class="bi bi-link-45deg fs-5 text-secondary" aria-hidden="true"></i>
+                        }
+                      </div>
+
+                      <div class="min-w-0">
+                        <div class="fw-bold netflix-title text-truncate">
+                          {{ item.title || item.domain }}
+                        </div>
+                        <div class="small netflix-domain text-truncate">
+                          {{ item.domain }}
+                        </div>
+                      </div>
+                    </a>
+
+                    <div class="netflix-actions d-flex align-items-center gap-1 flex-shrink-0">
+                      <a
+                        class="btn btn-sm netflix-action-btn"
+                        [href]="item.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        [attr.aria-label]="'Open ' + (item.title || item.domain)"
+                        title="Open link">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                      </a>
+
+                      <button
+                        type="button"
+                        class="btn btn-sm netflix-action-btn netflix-delete-btn"
+                        (click)="deleteBookmark(item.url, item.categoryId, $event)"
+                        [attr.aria-label]="'Delete ' + (item.title || item.domain)"
+                        title="Delete bookmark">
+                        <i class="bi bi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
                   </div>
 
-                  <div class="min-w-0 flex-grow-1">
-                    <div class="fw-semibold text-body text-truncate">
-                      {{ item.title || item.domain }}
-                    </div>
-                    <div class="small text-body-secondary text-truncate">
-                      {{ item.domain }}
-                    </div>
-                    <div class="small text-primary-emphasis bookmark-url mt-1" [title]="item.url">
+                  <div>
+                    <div class="small netflix-url" [title]="item.url">
                       {{ item.url }}
                     </div>
+
                     <div class="d-flex align-items-center flex-wrap gap-1 mt-2">
-                      <span class="badge rounded-pill text-bg-light border text-body-secondary">
+                      <span class="badge rounded-pill netflix-category-badge">
                         {{ item.categoryName }}
                       </span>
                       @if (isDuplicateUrl(item.url)) {
@@ -212,18 +240,7 @@
                       }
                     </div>
                   </div>
-
-                  <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0 mt-1" aria-hidden="true"></i>
-                </a>
-
-                <button
-                  type="button"
-                  class="btn btn-sm btn-outline-danger border-0 flex-shrink-0"
-                  (click)="deleteBookmark(item.url, item.categoryId, $event)"
-                  [attr.aria-label]="'Delete ' + (item.title || item.domain)"
-                  title="Delete bookmark">
-                  <i class="bi bi-trash" aria-hidden="true"></i>
-                </button>
+                </div>
               </div>
             </div>
           } @empty {
