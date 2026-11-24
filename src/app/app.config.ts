@@ -1,11 +1,12 @@
 import { APP_INITIALIZER, ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, withComponentInputBinding, withHashLocation } from '@angular/router';
+import { provideRouter, TitleStrategy, withComponentInputBinding, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { MockAuthInterceptor } from './auth/interceptors/mock-auth.interceptor';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatIconRegistry } from '@angular/material/icon';
+import { AppTitleStrategyService } from './core/strategies/app-title-strategy.service';
 
 // export const appConfig: ApplicationConfig = {
 //   providers: [
@@ -37,5 +38,6 @@ export const appConfig: ApplicationConfig = {
       deps: [MatIconRegistry],
       multi: true,
     },
+    { provide: TitleStrategy, useClass: AppTitleStrategyService }
   ]
 };
