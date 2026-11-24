@@ -1,5 +1,5 @@
 <section class="container-fluid py-4 px-3 px-md-4" aria-label="Bookmarks">
-  <!-- Top Header + Search -->
+  <!-- Top Header + Search + Export -->
   <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 pb-3 mb-4 border-bottom">
     <div>
       <h1 class="h3 fw-bold mb-1 text-body">Bookmarks</h1>
@@ -164,15 +164,15 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3">
           @for (item of visibleItems(); track item.url + '-' + item.categoryId) {
             <div class="col">
-              <div class="card h-100 border shadow-sm rounded-3 p-3 d-flex flex-row align-items-center gap-3 bookmark-card">
+              <div class="card h-100 border shadow-sm rounded-3 p-3 d-flex flex-row align-items-start gap-3 bookmark-card">
                 <a
-                  class="text-decoration-none d-flex flex-row align-items-center gap-3 min-w-0 flex-grow-1"
+                  class="text-decoration-none d-flex flex-row align-items-start gap-3 min-w-0 flex-grow-1"
                   [href]="item.url"
                   target="_blank"
                   rel="noopener noreferrer"
                   [title]="item.url">
                   <div
-                    class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0"
+                    class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0 mt-1"
                     style="width: 40px; height: 40px;">
                     @if (shouldShowFavicon(item)) {
                       <img
@@ -195,9 +195,15 @@
                     <div class="small text-body-secondary text-truncate">
                       {{ item.domain }}
                     </div>
+                    <div class="small text-primary-emphasis bookmark-url mt-1" [title]="item.url">
+                      {{ item.url }}
+                    </div>
+                    <span class="badge rounded-pill text-bg-light border text-body-secondary mt-2">
+                      {{ item.categoryName }}
+                    </span>
                   </div>
 
-                  <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0" aria-hidden="true"></i>
+                  <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0 mt-1" aria-hidden="true"></i>
                 </a>
 
                 <button

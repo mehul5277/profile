@@ -152,9 +152,14 @@ export class BookmarkComponent implements OnInit {
     event?.preventDefault();
     event?.stopPropagation();
 
+    const targetUrl = this.normalizeUrl(url);
+    if (!targetUrl) {
+      return;
+    }
+
     const updated = this.bookmarkService.deleteBookmark(
       this.rawCategories(),
-      url,
+      targetUrl,
       categoryId
     );
     this.rawCategories.set(updated);
