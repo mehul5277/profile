@@ -23,6 +23,7 @@ export class BookmarkComponent implements OnInit {
   readonly errorMessage = signal<string | null>(null);
   readonly selectedCategory = signal<string>('all');
   readonly searchTerm = signal<string>('');
+  readonly failedFavicons = signal<Set<string>>(new Set());
 
   // Quick-add form signals
   readonly newTitle = signal<string>('');
@@ -162,6 +163,7 @@ export class BookmarkComponent implements OnInit {
   resetBookmarks(): void {
     this.isLoading.set(true);
     this.errorMessage.set(null);
+    this.failedFavicons.set(new Set());
 
     this.bookmarkService
       .resetToJson()
@@ -189,6 +191,18 @@ export class BookmarkComponent implements OnInit {
     anchor.click();
 
     URL.revokeObjectURL(url);
+  }
+
+  onFaviconError(url: string): void {
+    this.failedFavicons.update((prev) => {
+      const next = new Set(prev);
+      next.add(url);
+      return next;
+    });
+  }
+
+  shouldShowFavicon(item: BookmarkCardItem): boolean {
+    return Boolean(item.faviconSrc) && !this.failedFavicons().has(item.url);
   }
 
   selectCategory(categoryId: string): void {

@@ -174,14 +174,15 @@
                   <div
                     class="rounded-2 bg-body-tertiary border d-flex align-items-center justify-content-center flex-shrink-0"
                     style="width: 40px; height: 40px;">
-                    @if (item.faviconSrc) {
+                    @if (shouldShowFavicon(item)) {
                       <img
                         [src]="item.faviconSrc"
                         [alt]="item.domain + ' icon'"
                         width="20"
                         height="20"
                         class="object-fit-contain"
-                        loading="lazy" />
+                        loading="lazy"
+                        (error)="onFaviconError(item.url)" />
                     } @else {
                       <i class="bi bi-link-45deg fs-5 text-body-secondary" aria-hidden="true"></i>
                     }
