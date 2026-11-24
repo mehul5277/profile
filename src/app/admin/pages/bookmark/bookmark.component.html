@@ -8,8 +8,8 @@
       </p>
     </div>
 
-    <div class="w-100" style="max-width: 360px;">
-      <div class="input-group shadow-sm">
+    <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2 w-100" style="max-width: 480px;">
+      <div class="input-group shadow-sm flex-grow-1">
         <span class="input-group-text bg-body-tertiary border-end-0 text-body-secondary">
           <i class="bi bi-search" aria-hidden="true"></i>
         </span>
@@ -30,6 +30,14 @@
           </button>
         }
       </div>
+
+      <button
+        type="button"
+        class="btn btn-outline-primary text-nowrap"
+        (click)="exportBookmarksJson()">
+        <i class="bi bi-download me-1" aria-hidden="true"></i>
+        Export JSON
+      </button>
     </div>
   </div>
 

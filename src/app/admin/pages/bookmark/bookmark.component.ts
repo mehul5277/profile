@@ -3,12 +3,15 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { BookmarkService } from '../../services/bookmark.service';
 import { BookmarkCategory, BookmarkDisplayItem, BookmarkItem } from '../../metadata/bookmark.model';
 
+export interface BookmarkCardItem extends BookmarkDisplayItem {
+  categoryId: string;
+}
 
 @Component({
   selector: 'app-bookmark',
   standalone: true,
   templateUrl: './bookmark.component.html',
-  styleUrls: ['./bookmark.component.css']
+  styleUrls: ['./bookmark.component.scss']
 })
 export class BookmarkComponent implements OnInit {
   private readonly bookmarkService = inject(BookmarkService);
@@ -69,11 +72,11 @@ export class BookmarkComponent implements OnInit {
     return match ? match.name : 'Bookmarks';
   });
 
-  readonly visibleItems = computed<Array<BookmarkDisplayItem & { categoryId: string }>>(() => {
+  readonly visibleItems = computed<BookmarkCardItem[]>(() => {
     const selected = this.selectedCategory();
     const query = this.searchTerm().trim().toLowerCase();
 
-    const pool: Array<BookmarkDisplayItem & { categoryId: string }> =
+    const pool: BookmarkCardItem[] =
       selected === 'all'
         ? this.categories().flatMap((cat) =>
             (cat.items ?? []).map((item) => this.toDisplayItem(item, cat.name, cat.id))
@@ -175,6 +178,19 @@ export class BookmarkComponent implements OnInit {
       });
   }
 
+  exportBookmarksJson(): void {
+    const payload = JSON.stringify(this.categories(), null, 2);
+    const blob = new Blob([payload], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = 'bookmarks-export.json';
+    anchor.click();
+
+    URL.revokeObjectURL(url);
+  }
+
   selectCategory(categoryId: string): void {
     this.selectedCategory.set(categoryId);
   }
@@ -192,7 +208,7 @@ export class BookmarkComponent implements OnInit {
     item: BookmarkItem,
     categoryName: string,
     categoryId: string
-  ): BookmarkDisplayItem & { categoryId: string } {
+  ): BookmarkCardItem {
     const domain = this.getDomain(item.url);
     return {
       ...item,
