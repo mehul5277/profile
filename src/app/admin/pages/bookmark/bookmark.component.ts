@@ -60,6 +60,28 @@ export class BookmarkComponent implements OnInit {
     });
   });
 
+  readonly duplicateUrls = computed<Set<string>>(() => {
+    const counts = new Map<string, number>();
+
+    for (const cat of this.categories()) {
+      for (const item of cat.items ?? []) {
+        const normalized = this.normalizeUrl(item.url);
+        if (!normalized) {
+          continue;
+        }
+        counts.set(normalized, (counts.get(normalized) ?? 0) + 1);
+      }
+    }
+
+    const duplicates = new Set<string>();
+    for (const [url, count] of counts.entries()) {
+      if (count > 1) {
+        duplicates.add(url);
+      }
+    }
+    return duplicates;
+  });
+
   readonly totalBookmarkCount = computed<number>(() =>
     this.categories().reduce((sum, cat) => sum + (cat.items?.length ?? 0), 0)
   );
@@ -162,7 +184,7 @@ export class BookmarkComponent implements OnInit {
       targetUrl,
       categoryId
     );
-    this.rawCategories.set(updated);
+    this.rawCategories.set([...updated]);
   }
 
   resetBookmarks(): void {
@@ -196,6 +218,11 @@ export class BookmarkComponent implements OnInit {
     anchor.click();
 
     URL.revokeObjectURL(url);
+  }
+
+  isDuplicateUrl(url: string): boolean {
+    const normalized = this.normalizeUrl(url);
+    return Boolean(normalized) && this.duplicateUrls().has(normalized);
   }
 
   onFaviconError(url: string): void {

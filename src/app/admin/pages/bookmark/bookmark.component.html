@@ -198,9 +198,19 @@
                     <div class="small text-primary-emphasis bookmark-url mt-1" [title]="item.url">
                       {{ item.url }}
                     </div>
-                    <span class="badge rounded-pill text-bg-light border text-body-secondary mt-2">
-                      {{ item.categoryName }}
-                    </span>
+                    <div class="d-flex align-items-center flex-wrap gap-1 mt-2">
+                      <span class="badge rounded-pill text-bg-light border text-body-secondary">
+                        {{ item.categoryName }}
+                      </span>
+                      @if (isDuplicateUrl(item.url)) {
+                        <span
+                          class="badge rounded-pill text-bg-warning-subtle border border-warning-subtle text-warning-emphasis px-2"
+                          title="Duplicate URL across categories"
+                          aria-label="Duplicate URL across categories">
+                          <i class="bi bi-files" aria-hidden="true"></i>
+                        </span>
+                      }
+                    </div>
                   </div>
 
                   <i class="bi bi-box-arrow-up-right small text-body-tertiary flex-shrink-0 mt-1" aria-hidden="true"></i>
