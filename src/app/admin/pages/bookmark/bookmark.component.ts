@@ -1,24 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, computed, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-export interface BookmarkItem {
-  id?: string | number;
-  title?: string;
-  url: string;
-  favicon?: string;
-}
+import { BookmarkService } from '../../services/bookmark.service';
+import { BookmarkCategory, BookmarkDisplayItem, BookmarkItem } from '../../metadata/bookmark.model';
 
-export interface BookmarkCategory {
-  id: string;
-  name: string;
-  items: BookmarkItem[];
-}
-
-export interface BookmarkDisplayItem extends BookmarkItem {
-  categoryName: string;
-  domain: string;
-  faviconSrc: string;
-}
 
 @Component({
   selector: 'app-bookmark',
@@ -27,11 +11,10 @@ export interface BookmarkDisplayItem extends BookmarkItem {
   styleUrls: ['./bookmark.component.scss']
 })
 export class BookmarkComponent implements OnInit {
-  private readonly http = inject(HttpClient);
+  private readonly bookmarkService = inject(BookmarkService);
   private readonly destroyRef = inject(DestroyRef);
 
   private readonly rawCategories = signal<BookmarkCategory[]>([]);
-  private readonly bookmarksJsonUrl = './assets/data/bookmark.json';
 
   readonly isLoading = signal<boolean>(true);
   readonly errorMessage = signal<string | null>(null);
@@ -115,8 +98,8 @@ export class BookmarkComponent implements OnInit {
     this.isLoading.set(true);
     this.errorMessage.set(null);
 
-    this.http
-      .get<BookmarkCategory[]>(this.bookmarksJsonUrl)
+    this.bookmarkService
+      .getCategories()
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (data) => {
