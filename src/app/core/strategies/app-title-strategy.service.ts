@@ -7,12 +7,13 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, TitleStrategy } from '@ang
 })
 export class AppTitleStrategyService extends TitleStrategy {
 
-  constructor(private readonly title: Title) {
+  constructor(private readonly titleService: Title) {
     super();
   }
 
   override updateTitle(routerState: RouterStateSnapshot) {
-    const brandName: string = 'Jixo';
+
+    let brand = "Jixo";
 
     // 1. Traverse to the deepest active route to find module info
     const deepestRoute = this.getDeepestRoute(routerState.root);
@@ -24,27 +25,18 @@ export class AppTitleStrategyService extends TitleStrategy {
     let title = this.buildTitle(routerState);
 
     if (!title) {
-      // 2. Strip query parameters/fragments and split the path
+      // 4. Extract and clean the last segment from the actual URL string
       const urlPath = routerState.url.split('?')[0];
-      const segments = urlPath.split('/').filter(segment => segment.length > 0);
+      const segments = urlPath.split('/').filter(s => s.length > 0);
+      const lastSegment = segments[segments.length - 1] || '';
 
-      // 3. Grab the last segment
-      const lastSegment = segments[segments.length - 1] || 'Home';
-
-      // 4. Format the segment (e.g., capitalize the first letter)
-      title = lastSegment.charAt(0).toUpperCase() + lastSegment.slice(1);
-
-      if (title.length < 3) {
-        title = title.toUpperCase();
-      }
+      // 5. Clean up hyphens and handle potential numeric IDs
+      title = this.formatSegment(lastSegment, moduleRoutePath);
     }
 
-    if (title !== undefined) {
-      // Formats the final browser tab string
-      this.title.setTitle(`${brandName} | ${title}`);
-    } else {
-      this.title.setTitle('Jixo');
-    }
+    // 6. Set final title (e.g., "My Company | Products | Details")
+    const prefix = moduleRoutePath ? `${moduleRoutePath}` : brand;
+    this.titleService.setTitle(`${prefix} | ${title}`);
   }
 
   // Helper to drill down to the active leaf node
