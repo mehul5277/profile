@@ -5,6 +5,7 @@ import { HelpComponent } from './pages/help/help.component';
 import { ServicesCatalogAdminComponent } from './pages/services-catalog-admin/services-catalog-admin.component';
 import { PageNotFoundComponent } from '../shared/components/page-not-found/page-not-found.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { BookmarkComponent } from './pages/bookmark/bookmark.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'adminLayout', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 
       { path: 'dashboard', component: DashboardComponent },
+            { path: 'bookmark', component: BookmarkComponent },
       { path: 'help', component: HelpComponent },
       { path: 'services-catalog', component: ServicesCatalogAdminComponent },
 

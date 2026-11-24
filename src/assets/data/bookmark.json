@@ -1,185 +1,191 @@
 [
-    {
-        "stack": "UI/UX",
-        "urls": [
-            "https://gocxm.com",
-            "https://www.zignuts.com",
-            "https://www.compugen.com",
-            "https://www.salesforce.com/industries",
-            "https://servicepath.co",
-            "https://uiverse.io/forms",
-            "https://traits.com",
-            "https://resume.io/resume-templates",
-            "https://hofmannsven.com",
-            "https://www.milanjovanovic.tech",
-            "https://www.resonaite.ai",
-            "https://www.avanciers.com",
-            "https://github.com/darkroomengineering/lenis/tree/main/examples/scrollbar",
-            "https://startscalr.com",
-            "https://wowjs.uk/docs.html",
-            "https://lottiefiles.com/popular-free-animations",
-            "https://www.edoardolunardi.dev/blog/building-smooth-scroll-in-2025-with-lenis",
-            "https://gsap.com/showcase/?tags=Scroll+Animation",
-            "https://codepen.io/ClementRoche/pen/OJqBLod",
-            "https://wpengine.com",
-            "https://www.uxpin.com",
-            "https://www.invisionapp.com",
-            "https://sherritt.com",
-            "https://russelltobin.com",
-            "https://isotope.metafizzy.co/sorting",
-            "https://wpengine.com/ca",
-            "https://www.youtube.com/watch?v=uw5jVO1eNF8",
-            "https://networkpedia.com",
-            "https://www.irissoftware.com",
-            "https://www.lynxify.ca",
-            "https://futransolutions.com",
-            "https://www.talan.com",
-            "https://outlier.ai/about-us?utm_source=Joveo&utm_medium=paid&pod=coders&domain=tier_3_coder&locale=EN&utm_campaign=Scale+%7C+Joveo+%7C+Coders+%7C+Tier+3+Coders+%7C+en-US+%7C+EN+%7C+04%2F05%2F2026&jClickId=95d1ea67-8557-4b71-9328-91dcf7cc74fd&jcid=95d1ea67-8557-4b71-9328-91dcf7cc74fd",
-            "https://gorillalogic.com",
-            "https://bidaya.ai/contact",
-            "https://www.llmaudit.ai",
-            "https://mcpmanager.ai",
-            "https://zoomd.com/albert-ai-autonomous-ai-campaign-management-platform",
-            "https://usercentrics.com/partner-program-overview",
-            "https://fusionnest.com",
-            "https://driverzonegolf.ca/booking",
-            "https://www.htmlelements.com/demos/page-templates/admin-template/scheduler",
-            "https://www.creative-tim.com/marketplace",
-            "https://startbootstrap.com/snippets",
-            "https://startbootstrap.com",
-            "https://github.com/michalsnik/aos",
-            "https://ahmed-stern.cortico.ca/patient/auth/?next=/patient-dashboard/appointments/&2fa=true",
-            "https://www.pockethealth.com",
-            "https://github.com/leo6104/ngx-slick-carousel",
-            "https://medium.com/@mohamadshahkhajeh/i-created-a-checklist-to-help-developers-think-before-they-code-497a834186a1",
-            "https://html5up.net",
-            "https://mir-solutions.com",
-            "https://site.clubrunner.ca",
-            "https://debruyn.dev/about",
-            "https://shiftasia.com/community/"
-        ]
-    },
-    {
-        "stack": "Learning",
-        "urls": [
-            "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
-            "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
-            "https://medium.com/@mohamadshahkhajeh/i-created-a-checklist-to-help-developers-think-before-they-code-497a834186a1",
-            "https://medium.com/@mohamadshahkhajeh/i-created-a-checklist-to-help-developers-think-before-they-code-497a834186a1",
-            "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
-            "https://netbasal.medium.com",
-            "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
-            "https://blog.devgenius.io/combining-json-objects-in-javascript-node-js-abe84f492d0"
-        ]
-    },
-    {
-        "stack": "Branding & Marketing",
-        "urls": [
-            "https://unsplash.com",
-            "https://pixabay.com",
-            "https://www.pexels.com",
-            "https://www.shutterstock.com/search/ai",
-            "https://www.kyndryl.com"
-        ]
-    },
-    {
-        "stack": "** Product Development",
-        "urls": [
-            "https://njoyn.com",
-            "https://www.notion.so/product/roadmap",
-            "https://www.wcg-itx.com",
-            "https://www.crelate.com",
-            "https://elementor.com/help/how-to-add-a-calendar-to-elementor",
-            "https://www.encoretechnical.com",
-            "https://www.tracker-rms.com",
-            "https://gorillalogic.com",
-            "https://futransolutions.com",
-            "https://www.opensystemstech.com",
-            "https://liveassets.ca",
-            "https://www.spiria.com/en/services/expertise/artificial-intelligence",
-            "https://www.aplin.com",
-            "https://time.ly",
-            "https://www.crelate.com",
-            "https://www.htmlelements.com/demos/page-templates/admin-template",
-            "https://www.lawdepot.ca",
-            "https://www.creative-tim.com/marketplace",
-            "https://cortico.health"
-        ]
-    },
-    {
-        "stack": "Resume & Email Templates",
-        "urls": [
-            "http://viralpatel.ca",
-            "https://www.bevertec.com/blogs/ops-blogs/1255095-the-resume-blue-print--a-guide-included---ontario-public-sector",
-            "https://www.figma.com/community/file/1226454418637699136",
-            "https://www.figma.com/community/file/1226454418637699136",
-            "https://www.hireitpeople.com/resume-database",
-            "https://www.haired.app/resume-builder?docId=mrbksd1e5kduh",
-            "https://www.indeed.com/career-advice/finding-a-job/follow-up-email-after-application#toc-email-template",
-            "https://www.hireitpeople.com/resume-database/67-quality-assurance-qa-resumes/page/2",
-            "https://himalayas.app/@shrutipundir"
-        ]
-    },
-    {
-        "stack": "Recruitment & Staffing",
-        "urls": [
-            "https://systematixstg.wpengine.com",
-            "https://www.ampstek.com/careers",
-            "https://jobs.vantixsystems.com",
-            "https://www.eqstaffingsolutions.com",
-            "http://viralpatel.ca"
-        ]
-    },
-    {
-        "stack": "OPS Staffing",
-        "urls": [
-            "https://www.eqstaffingsolutions.com",
-            "https://www.peopletogo.com/jobs"
-        ]
-    },
-    {
-        "stack": "Profile Inspiration",
-        "urls": [
-            "http://viralpatel.ca",
-            "https://www.milanjovanovic.tech",
-            "https://www.lynxify.ca"
-        ]
-    },
-    {
-        "stack": "Tools",
-        "urls": [
-            "https://www.tldraw.com",
-            "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk",
-            "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8",
-            "https://netbasal.medium.com",
-            "https://thejsonconverter.com/tools",
-            "https://www.design.com"
-        ]
-    },
-    {
-        "stack": "AI",
-        "urls": [
-            "https://python.plainenglish.io/i-tried-7-python-libraries-for-ai-heres-what-actually-worked-9b35618637aa"
-        ]
-    },
-    {
-        "stack": "Cloud & Hosting",
-        "urls": [
-            "https://aws.amazon.com",
-            "https://azure.microsoft.com",
-            "https://cloud.google.com",
-            "https://dev.to/nick_thompson/build-your-next-web-app-using-aws-free-tier-services-without-breaking-the-bank-1n5",
-            "https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-angular?pivots=github",
-            "https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-web-framework?source=recommendations&tabs=bash&pivots=angular",
-            "https://learn.microsoft.com/en-us/azure/static-web-apps/plans",
-            "https://www.youtube.com/watch?v=6xORsaw1jlc",
-            "https://www.youtube.com/watch?v=9XUjFZQ3d0I"
-        ]
-    },
-    {
-        "stack": "tiktok",
-        "urls": [
-            "https://vt.tiktok.com/ZS9U3qMKNApwH-EfTyk"
-        ]
-    }
+  {
+    "id": "ui-ux",
+    "name": "UI/UX",
+    "items": [
+      { "url": "https://gocxm.com" },
+      { "url": "https://www.zignuts.com" },
+      { "url": "https://www.compugen.com" },
+      { "url": "https://www.salesforce.com/industries" },
+      { "url": "https://servicepath.co" },
+      { "url": "https://uiverse.io/forms" },
+      { "url": "https://traits.com" },
+      { "url": "https://resume.io/resume-templates" },
+      { "url": "https://hofmannsven.com" },
+      { "url": "https://www.milanjovanovic.tech" },
+      { "url": "https://www.resonaite.ai" },
+      { "url": "https://www.avanciers.com" },
+      { "url": "https://github.com/darkroomengineering/lenis/tree/main/examples/scrollbar" },
+      { "url": "https://startscalr.com" },
+      { "url": "https://wowjs.uk/docs.html" },
+      { "url": "https://lottiefiles.com/popular-free-animations" },
+      { "url": "https://www.edoardolunardi.dev/blog/building-smooth-scroll-in-2025-with-lenis" },
+      { "url": "https://gsap.com/showcase/?tags=Scroll+Animation" },
+      { "url": "https://codepen.io/ClementRoche/pen/OJqBLod" },
+      { "url": "https://wpengine.com" },
+      { "url": "https://www.uxpin.com" },
+      { "url": "https://www.invisionapp.com" },
+      { "url": "https://sherritt.com" },
+      { "url": "https://russelltobin.com" },
+      { "url": "https://isotope.metafizzy.co/sorting" },
+      { "url": "https://wpengine.com/ca" },
+      { "url": "https://www.youtube.com/watch?v=uw5jVO1eNF8" },
+      { "url": "https://networkpedia.com" },
+      { "url": "https://www.irissoftware.com" },
+      { "url": "https://www.lynxify.ca" },
+      { "url": "https://futransolutions.com" },
+      { "url": "https://www.talan.com" },
+      { "url": "https://outlier.ai/about-us?utm_source=Joveo&utm_medium=paid&pod=coders&domain=tier_3_coder&locale=EN&utm_campaign=Scale+%7C+Joveo+%7C+Coders+%7C+Tier+3+Coders+%7C+en-US+%7C+EN+%7C+04%2F05%2F2026&jClickId=95d1ea67-8557-4b71-9328-91dcf7cc74fd&jcid=95d1ea67-8557-4b71-9328-91dcf7cc74fd" },
+      { "url": "https://gorillalogic.com" },
+      { "url": "https://bidaya.ai/contact" },
+      { "url": "https://www.llmaudit.ai" },
+      { "url": "https://mcpmanager.ai" },
+      { "url": "https://zoomd.com/albert-ai-autonomous-ai-campaign-management-platform" },
+      { "url": "https://usercentrics.com/partner-program-overview" },
+      { "url": "https://fusionnest.com" },
+      { "url": "https://driverzonegolf.ca/booking" },
+      { "url": "https://www.htmlelements.com/demos/page-templates/admin-template/scheduler" },
+      { "url": "https://www.creative-tim.com/marketplace" },
+      { "url": "https://startbootstrap.com/snippets" },
+      { "url": "https://startbootstrap.com" },
+      { "url": "https://github.com/michalsnik/aos" },
+      { "url": "https://ahmed-stern.cortico.ca/patient/auth/?next=/patient-dashboard/appointments/&2fa=true" },
+      { "url": "https://www.pockethealth.com" },
+      { "url": "https://github.com/leo6104/ngx-slick-carousel" },
+      { "url": "https://medium.com/@mohamadshahkhajeh/i-created-a-checklist-to-help-developers-think-before-they-code-497a834186a1" },
+      { "url": "https://html5up.net" },
+      { "url": "https://mir-solutions.com" },
+      { "url": "https://site.clubrunner.ca" },
+      { "url": "https://debruyn.dev/about" },
+      { "url": "https://shiftasia.com/community/" }
+    ]
+  },
+  {
+    "id": "learning",
+    "name": "Learning",
+    "items": [
+      { "url": "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk" },
+      { "url": "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8" },
+      { "url": "https://medium.com/@mohamadshahkhajeh/i-created-a-checklist-to-help-developers-think-before-they-code-497a834186a1" },
+      { "url": "https://netbasal.medium.com" },
+      { "url": "https://blog.devgenius.io/combining-json-objects-in-javascript-node-js-abe84f492d0" }
+    ]
+  },
+  {
+    "id": "branding-marketing",
+    "name": "Branding & Marketing",
+    "items": [
+      { "url": "https://unsplash.com" },
+      { "url": "https://pixabay.com" },
+      { "url": "https://www.pexels.com" },
+      { "url": "https://www.shutterstock.com/search/ai" },
+      { "url": "https://www.kyndryl.com" }
+    ]
+  },
+  {
+    "id": "product-development",
+    "name": "Product Development",
+    "items": [
+      { "url": "https://njoyn.com" },
+      { "url": "https://www.notion.so/product/roadmap" },
+      { "url": "https://www.wcg-itx.com" },
+      { "url": "https://www.crelate.com" },
+      { "url": "https://elementor.com/help/how-to-add-a-calendar-to-elementor" },
+      { "url": "https://www.encoretechnical.com" },
+      { "url": "https://www.tracker-rms.com" },
+      { "url": "https://gorillalogic.com" },
+      { "url": "https://futransolutions.com" },
+      { "url": "https://www.opensystemstech.com" },
+      { "url": "https://liveassets.ca" },
+      { "url": "https://www.spiria.com/en/services/expertise/artificial-intelligence" },
+      { "url": "https://www.aplin.com" },
+      { "url": "https://time.ly" },
+      { "url": "https://www.htmlelements.com/demos/page-templates/admin-template" },
+      { "url": "https://www.lawdepot.ca" },
+      { "url": "https://www.creative-tim.com/marketplace" },
+      { "url": "https://cortico.health" }
+    ]
+  },
+  {
+    "id": "resume-email-templates",
+    "name": "Resume & Email Templates",
+    "items": [
+      { "url": "http://viralpatel.ca" },
+      { "url": "https://www.bevertec.com/blogs/ops-blogs/1255095-the-resume-blue-print--a-guide-included---ontario-public-sector" },
+      { "url": "https://www.figma.com/community/file/1226454418637699136" },
+      { "url": "https://www.hireitpeople.com/resume-database" },
+      { "url": "https://www.haired.app/resume-builder?docId=mrbksd1e5kduh" },
+      { "url": "https://www.indeed.com/career-advice/finding-a-job/follow-up-email-after-application#toc-email-template" },
+      { "url": "https://www.hireitpeople.com/resume-database/67-quality-assurance-qa-resumes/page/2" },
+      { "url": "https://himalayas.app/@shrutipundir" }
+    ]
+  },
+  {
+    "id": "recruitment-staffing",
+    "name": "Recruitment & Staffing",
+    "items": [
+      { "url": "https://systematixstg.wpengine.com" },
+      { "url": "https://www.ampstek.com/careers" },
+      { "url": "https://jobs.vantixsystems.com" },
+      { "url": "https://www.eqstaffingsolutions.com" },
+      { "url": "http://viralpatel.ca" }
+    ]
+  },
+  {
+    "id": "ops-staffing",
+    "name": "OPS Staffing",
+    "items": [
+      { "url": "https://www.eqstaffingsolutions.com" },
+      { "url": "https://www.peopletogo.com/jobs" }
+    ]
+  },
+  {
+    "id": "profile-inspiration",
+    "name": "Profile Inspiration",
+    "items": [
+      { "url": "http://viralpatel.ca" },
+      { "url": "https://www.milanjovanovic.tech" },
+      { "url": "https://www.lynxify.ca" }
+    ]
+  },
+  {
+    "id": "tools",
+    "name": "Tools",
+    "items": [
+      { "url": "https://www.tldraw.com" },
+      { "url": "https://dev.to/rodrigokamada/creating-and-running-an-angular-application-in-a-docker-container-40mk" },
+      { "url": "https://medium.com/netanelbasal/on-angulars-default-environment-files-and-how-you-can-make-them-better-d51e7dc2f0c8" },
+      { "url": "https://netbasal.medium.com" },
+      { "url": "https://thejsonconverter.com/tools" }
+    ]
+  },
+  {
+    "id": "ai",
+    "name": "AI",
+    "items": [
+      { "url": "https://python.plainenglish.io/i-tried-7-python-libraries-for-ai-heres-what-actually-worked-9b35618637aa" }
+    ]
+  },
+  {
+    "id": "cloud-hosting",
+    "name": "Cloud & Hosting",
+    "items": [
+      { "url": "https://aws.amazon.com" },
+      { "url": "https://azure.microsoft.com" },
+      { "url": "https://cloud.google.com" },
+      { "url": "https://dev.to/nick_thompson/build-your-next-web-app-using-aws-free-tier-services-without-breaking-the-bank-1n5" },
+      { "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-angular?pivots=github" },
+      { "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/deploy-web-framework?source=recommendations&tabs=bash&pivots=angular" },
+      { "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/plans" },
+      { "url": "https://www.youtube.com/watch?v=6xORsaw1jlc" },
+      { "url": "https://www.youtube.com/watch?v=9XUjFZQ3d0I" }
+    ]
+  },
+  {
+    "id": "tiktok",
+    "name": "TikTok",
+    "items": [
+      { "url": "https://vt.tiktok.com/ZS9U3qMKNApwH-EfTyk" }
+    ]
+  }
 ]

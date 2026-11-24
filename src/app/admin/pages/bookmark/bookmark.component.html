@@ -1,0 +1,265 @@
+<section class="container-fluid py-4 px-3 px-md-4" aria-label="Bookmarks">
+  <!-- Top Header + Search + Export -->
+  <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 pb-3 mb-4 border-bottom">
+    <div>
+      <h1 class="h3 fw-bold mb-1 text-body">Bookmarks</h1>
+      <p class="text-body-secondary small mb-0">
+        Curated links across {{ categories().length }} categories
+      </p>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row align-items-stretch align-items-sm-center gap-2 w-100" style="max-width: 480px;">
+      <div class="input-group shadow-sm flex-grow-1">
+        <span class="input-group-text bg-body-tertiary border-end-0 text-body-secondary">
+          <i class="bi bi-search" aria-hidden="true"></i>
+        </span>
+        <input
+          type="search"
+          class="form-control border-start-0 ps-0"
+          [value]="searchTerm()"
+          (input)="onSearchInput($event)"
+          placeholder="Search title, domain, or URL..."
+          aria-label="Search bookmarks" />
+        @if (searchTerm()) {
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="clearSearch()"
+            aria-label="Clear search">
+            Clear
+          </button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-outline-primary text-nowrap"
+        (click)="exportBookmarksJson()">
+        <i class="bi bi-download me-1" aria-hidden="true"></i>
+        Export JSON
+      </button>
+    </div>
+  </div>
+
+  @if (errorMessage(); as error) {
+    <div class="alert alert-danger d-flex align-items-center justify-content-between gap-3" role="alert">
+      <span>{{ error }}</span>
+      <button type="button" class="btn btn-sm btn-outline-danger" (click)="loadBookmarks()">
+        Retry
+      </button>
+    </div>
+  }
+
+  @if (isLoading()) {
+    <div class="d-flex align-items-center gap-2 text-body-secondary py-4">
+      <div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div>
+      <span>Loading bookmarks...</span>
+    </div>
+  } @else {
+    <!-- Main Grid: Category Sidebar + Netflix Cards -->
+    <div class="row g-4 align-items-start">
+      <!-- Left Sidebar -->
+      <aside class="col-12 col-lg-3" aria-label="Bookmark categories">
+        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="card-header bg-body-tertiary border-bottom py-2 px-3">
+            <span class="small fw-semibold text-uppercase text-body-secondary">
+              Categories
+            </span>
+          </div>
+
+          <div class="list-group list-group-flush">
+            <button
+              type="button"
+              class="list-group-item list-group-item-action d-flex align-items-center justify-content-between py-2 px-3 border-0"
+              [class.active]="selectedCategory() === 'all'"
+              [attr.aria-current]="selectedCategory() === 'all' ? 'true' : null"
+              (click)="selectCategory('all')">
+              <span class="fw-medium text-truncate">All</span>
+              <span
+                class="badge rounded-pill ms-2"
+                [class.bg-light]="selectedCategory() === 'all'"
+                [class.text-dark]="selectedCategory() === 'all'"
+                [class.text-bg-secondary]="selectedCategory() !== 'all'">
+                {{ totalBookmarkCount() }}
+              </span>
+            </button>
+
+            @for (category of categories(); track category.id) {
+              <button
+                type="button"
+                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between py-2 px-3 border-0"
+                [class.active]="selectedCategory() === category.id"
+                [attr.aria-current]="selectedCategory() === category.id ? 'true' : null"
+                (click)="selectCategory(category.id)">
+                <span class="fw-medium text-truncate pe-2">{{ category.name }}</span>
+                <span
+                  class="badge rounded-pill flex-shrink-0"
+                  [class.bg-light]="selectedCategory() === category.id"
+                  [class.text-dark]="selectedCategory() === category.id"
+                  [class.text-bg-secondary]="selectedCategory() !== category.id">
+                  {{ category.items.length }}
+                </span>
+              </button>
+            }
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Content Grid -->
+      <main class="col-12 col-lg-9">
+        <!-- Quick Add + Reset Bar -->
+        <form class="row g-2 align-items-center mb-3 p-3 bg-body-tertiary border rounded-3" (submit)="addBookmark($event)">
+          <div class="col-12 col-sm-3">
+            <select
+              class="form-select form-select-sm"
+              [value]="newCategoryId()"
+              (change)="newCategoryId.set($any($event.target).value)"
+              aria-label="Category">
+              @for (category of categories(); track category.id) {
+                <option [value]="category.id">{{ category.name }}</option>
+              }
+            </select>
+          </div>
+
+          <div class="col-12 col-sm-4">
+            <input
+              type="url"
+              class="form-control form-control-sm"
+              required
+              [value]="newUrl()"
+              (input)="newUrl.set($any($event.target).value)"
+              placeholder="https://example.com"
+              aria-label="Bookmark URL" />
+          </div>
+
+          <div class="col-12 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              [value]="newTitle()"
+              (input)="newTitle.set($any($event.target).value)"
+              placeholder="Title (optional)"
+              aria-label="Bookmark title" />
+          </div>
+
+          <div class="col-12 col-sm-2 d-flex gap-2">
+            <button type="submit" class="btn btn-sm btn-primary w-100">Add</button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-secondary"
+              (click)="resetBookmarks()"
+              title="Reset to JSON">
+              Reset
+            </button>
+          </div>
+        </form>
+
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h2 class="h5 fw-semibold mb-0 text-body">{{ activeCategoryLabel() }}</h2>
+          <span class="badge text-bg-light border text-body-secondary fw-normal px-2 py-1">
+            {{ visibleItems().length }} {{ visibleItems().length === 1 ? 'link' : 'links' }}
+          </span>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          @for (item of visibleItems(); track item.url + '-' + item.categoryId) {
+            <div class="col">
+              <div class="card netflix-card rounded-3 shadow-sm">
+                <div class="netflix-card-content h-100 p-3 d-flex flex-column justify-content-between gap-2">
+                  <div class="d-flex align-items-start justify-content-between gap-2">
+                    <a
+                      class="text-decoration-none d-flex align-items-center gap-2 min-w-0 flex-grow-1"
+                      [href]="item.url"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      [title]="item.url">
+                      <div
+                        class="netflix-favicon-box rounded-2 d-flex align-items-center justify-content-center flex-shrink-0">
+                        @if (shouldShowFavicon(item)) {
+                          <img
+                            [src]="item.faviconSrc"
+                            [alt]="item.domain + ' icon'"
+                            width="20"
+                            height="20"
+                            class="object-fit-contain"
+                            loading="lazy"
+                            (error)="onFaviconError(item.url)" />
+                        } @else {
+                          <i class="bi bi-link-45deg fs-5 text-secondary" aria-hidden="true"></i>
+                        }
+                      </div>
+
+                      <div class="min-w-0">
+                        <div class="fw-bold netflix-title text-truncate">
+                          {{ item.title || item.domain }}
+                        </div>
+                        <div class="small netflix-domain text-truncate">
+                          {{ item.domain }}
+                        </div>
+                      </div>
+                    </a>
+
+                    <div class="netflix-actions d-flex align-items-center gap-1 flex-shrink-0">
+                      <a
+                        class="btn btn-sm netflix-action-btn"
+                        [href]="item.url"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        [attr.aria-label]="'Open ' + (item.title || item.domain)"
+                        title="Open link">
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                      </a>
+
+                      <button
+                        type="button"
+                        class="btn btn-sm netflix-action-btn netflix-delete-btn"
+                        (click)="deleteBookmark(item.url, item.categoryId, $event)"
+                        [attr.aria-label]="'Delete ' + (item.title || item.domain)"
+                        title="Delete bookmark">
+                        <i class="bi bi-trash" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="small netflix-url" [title]="item.url">
+                      {{ item.url }}
+                    </div>
+
+                    <div class="d-flex align-items-center flex-wrap gap-1 mt-2">
+                      <span class="badge rounded-pill netflix-category-badge">
+                        {{ item.categoryName }}
+                      </span>
+                      @if (isDuplicateUrl(item.url)) {
+                        <span
+                          class="badge rounded-pill text-bg-warning-subtle border border-warning-subtle text-warning-emphasis px-2"
+                          title="Duplicate URL across categories"
+                          aria-label="Duplicate URL across categories">
+                          <i class="bi bi-files" aria-hidden="true"></i>
+                        </span>
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          } @empty {
+            <div class="col-12">
+              <div class="card border bg-body-tertiary text-center py-5 px-3 rounded-3">
+                <p class="text-body-secondary mb-2">No bookmarks match your current filter.</p>
+                @if (searchTerm() || selectedCategory() !== 'all') {
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-primary mx-auto"
+                    (click)="clearSearch(); selectCategory('all')">
+                    Reset filters
+                  </button>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </main>
+    </div>
+  }
+</section>
