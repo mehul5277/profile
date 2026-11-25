@@ -102,11 +102,11 @@ export class BookmarkComponent implements OnInit {
     const pool: BookmarkCardItem[] =
       selected === 'all'
         ? this.categories().flatMap((cat) =>
-            (cat.items ?? []).map((item) => this.toDisplayItem(item, cat.name, cat.id))
-          )
+          (cat.items ?? []).map((item) => this.toDisplayItem(item, cat.name, cat.id))
+        )
         : (this.categories().find((c) => c.id === selected)?.items ?? []).map((item) =>
-            this.toDisplayItem(item, this.activeCategoryLabel(), selected)
-          );
+          this.toDisplayItem(item, this.activeCategoryLabel(), selected)
+        );
 
     if (!query) {
       return pool;
@@ -207,8 +207,26 @@ export class BookmarkComponent implements OnInit {
       });
   }
 
-  exportBookmarksJson(): void {
+  exportBookmarksJsonv1(): void {
     const payload = JSON.stringify(this.categories(), null, 2);
+    const blob = new Blob([payload], { type: 'application/json;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = 'bookmarks-export.json';
+    anchor.click();
+
+    URL.revokeObjectURL(url);
+  }
+
+  exportBookmarksJson(): void {
+    const exportData = this.categories().map((category) => ({
+      ...category,
+      items: (category.items ?? []).map(({ title: _omittedTitle, ...rest }) => rest)
+    }));
+
+    const payload = JSON.stringify(exportData, null, 2);
     const blob = new Blob([payload], { type: 'application/json;charset=utf-8' });
     const url = URL.createObjectURL(blob);
 
