@@ -114,6 +114,11 @@ body {
             color: #fff;
             background-color: var(--nav-color) !important;
 
+            small,
+            .text-mutedx {
+                color: #c0c8cf !important;
+            }
+
         }
 
         &.active,

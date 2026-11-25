@@ -1,0 +1,38 @@
+.jixo-nav-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.jixo-item-icon {
+  font-size: 20px;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+
+.jixo-btn-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.jixo-mega-menu {
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.jixo-mega-menu .dropdown-item {
+  white-space: normal;
+}
+
+@media (min-width: 992px) {
+  .jixo-mega-menu {
+    left: 0;
+    right: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .jixo-navbar .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}

@@ -15,31 +15,396 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <!-- TEMPLATE DATA RESPONSIVE MEGA MENU -->
+        <li class="nav-item dropdown position-static">
+          <a
+            class="nav-link dropdown-toggle fw-medium d-inline-flex align-items-center gap-1"
+            href="javascript:void(0)"
+            role="button"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+            aria-expanded="false"
+          >
+            <span class="material-symbols-outlined jixo-nav-icon">dashboard_customize</span>
+            <span>Template Data</span>
+          </a>
+
+          <div class="dropdown-menu jixo-mega-menu w-100 mt-0 border-0 shadow-lg rounded-0 py-3 py-lg-4">
+            <div class="container-fluid px-3 px-lg-4">
+              <div class="row g-3 g-lg-4">
+
+                <!-- Column 1: Core Templates -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Core Templates</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/all">
+                        <span class="material-symbols-outlined jixo-item-icon text-primary">grid_view</span>
+                        <div>
+                          <div class="fw-semibold small">All Templates</div>
+                          <small class="text-muted d-none d-sm-block">Browse &amp; manage master layouts</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/active">
+                        <span class="material-symbols-outlined jixo-item-icon text-success">check_circle</span>
+                        <div>
+                          <div class="fw-semibold small">Active Templates</div>
+                          <small class="text-muted d-none d-sm-block">Currently live in production</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/drafts">
+                        <span class="material-symbols-outlined jixo-item-icon text-warning">draft</span>
+                        <div>
+                          <div class="fw-semibold small">Drafts &amp; Review</div>
+                          <small class="text-muted d-none d-sm-block">Pending approval &amp; staging</small>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 2: Data & Schemas -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Data &amp; Schemas</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/fields">
+                        <span class="material-symbols-outlined jixo-item-icon text-info">data_object</span>
+                        <div>
+                          <div class="fw-semibold small">Field Definitions</div>
+                          <small class="text-muted d-none d-sm-block">Custom attributes &amp; validation</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/import-export">
+                        <span class="material-symbols-outlined jixo-item-icon text-secondary">swap_horiz</span>
+                        <div>
+                          <div class="fw-semibold small">Import / Export</div>
+                          <small class="text-muted d-none d-sm-block">Bulk JSON, CSV &amp; XML tools</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/templates/versions">
+                        <span class="material-symbols-outlined jixo-item-icon text-secondary">history</span>
+                        <div>
+                          <div class="fw-semibold small">Version History</div>
+                          <small class="text-muted d-none d-sm-block">Snapshots &amp; rollback logs</small>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 3: Linked Modules -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Linked Modules</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/clarity">
+                        <span class="material-symbols-outlined jixo-item-icon text-primary">insights</span>
+                        <div>
+                          <div class="fw-semibold small">Clarity Insights</div>
+                          <small class="text-muted d-none d-sm-block">Template engagement &amp; heatmaps</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/azure">
+                        <span class="material-symbols-outlined jixo-item-icon text-primary">cloud_sync</span>
+                        <div>
+                          <div class="fw-semibold small">Azure Sync</div>
+                          <small class="text-muted d-none d-sm-block">Cloud storage &amp; blob bindings</small>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/admin/pricing">
+                        <span class="material-symbols-outlined jixo-item-icon text-success">payments</span>
+                        <div>
+                          <div class="fw-semibold small">Pricing Tiers</div>
+                          <small class="text-muted d-none d-sm-block">Plan entitlements per template</small>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 4: Quick Action Card -->
+                <div class="col-6 col-lg-3">
+                  <div class="card bg-light border-0 h-100">
+                    <div class="card-body d-flex flex-column justify-content-between p-2 p-lg-3">
+                      <div>
+                        <span class="badge bg-primary-subtle text-primary mb-1 mb-lg-2">Quick Action</span>
+                        <h6 class="fw-bold mb-1 small">Create New Template</h6>
+                        <p class="small text-muted mb-2 mb-lg-3 d-none d-sm-block">
+                          Start from a blank schema or clone an existing production template.
+                        </p>
+                      </div>
+                      <a href="#/admin/templates/new" class="btn btn-primary btn-sm w-100 d-inline-flex align-items-center justify-content-center gap-1">
+                        <span class="material-symbols-outlined jixo-btn-icon">add</span>
+                        <span>New Template</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <!-- RESPONSIVE MEGA DROPDOWN -->
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle fw-medium" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
             Template Data
           </a>
+
+          <div class="dropdown-menu jixo-mega-menu w-100 mt-0 border-0 shadow-lg rounded-0 py-3 py-lg-4">
+            <div class="container-fluid px-3 px-lg-4">
+              <div class="row g-3 g-lg-4">
+
+                <!-- Column 1: Core Templates -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Core Templates</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/all">
+                        <div class="fw-semibold small">All Templates</div>
+                        <small class="text-muted d-none d-sm-block">Browse &amp; manage master layouts</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/active">
+                        <div class="fw-semibold small">Active Templates</div>
+                        <small class="text-muted d-none d-sm-block">Currently live in production</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/drafts">
+                        <div class="fw-semibold small">Drafts &amp; Review</div>
+                        <small class="text-muted d-none d-sm-block">Pending approval &amp; staging</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 2: Data & Schemas -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Data &amp; Schemas</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/fields">
+                        <div class="fw-semibold small">Field Definitions</div>
+                        <small class="text-muted d-none d-sm-block">Custom attributes &amp; validation</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/import-export">
+                        <div class="fw-semibold small">Import / Export</div>
+                        <small class="text-muted d-none d-sm-block">Bulk JSON, CSV &amp; XML tools</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/templates/versions">
+                        <div class="fw-semibold small">Version History</div>
+                        <small class="text-muted d-none d-sm-block">Snapshots &amp; rollback logs</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 3: Linked Modules -->
+                <div class="col-6 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Linked Modules</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/clarity">
+                        <div class="fw-semibold small">Clarity Insights</div>
+                        <small class="text-muted d-none d-sm-block">Template engagement &amp; heatmaps</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/azure">
+                        <div class="fw-semibold small">Azure Sync</div>
+                        <small class="text-muted d-none d-sm-block">Cloud storage &amp; blob bindings</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1 text-wrap" href="#/admin/pricing">
+                        <div class="fw-semibold small">Pricing Tiers</div>
+                        <small class="text-muted d-none d-sm-block">Plan entitlements per template</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 4: Quick Action Card -->
+                <div class="col-6 col-lg-3">
+                  <div class="card bg-light border-0 h-100">
+                    <div class="card-body d-flex flex-column justify-content-between p-2 p-lg-3">
+                      <div>
+                        <span class="badge bg-primary-subtle text-primary mb-1 mb-lg-2">Quick Action</span>
+                        <h6 class="fw-bold mb-1 small">Create New Template</h6>
+                        <p class="small text-muted mb-2 mb-lg-3 d-none d-sm-block">
+                          Start from a blank schema or clone an existing production template.
+                        </p>
+                      </div>
+                      <a href="#/admin/templates/new" class="btn btn-primary btn-sm w-100">
+                        + New Template
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- TEMPLATE DATA MEGA MENU (position-static allows full-width dropdown) -->
+        <li class="nav-item dropdown position-static">
+          <a class="nav-link dropdown-toggle fw-medium" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Template Data
+          </a>
+
+          <div class="dropdown-menu w-100 mt-0 border-0 shadow-lg rounded-0 py-4" style="left: 0; right: 0;">
+            <div class="container-fluid px-lg-4">
+              <div class="row g-4">
+
+                <!-- Column 1: Core Templates -->
+                <div class="col-12 col-md-4 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Core Templates</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/all">
+                        <div class="fw-semibold">All Templates</div>
+                        <small class="text-muted text-light">Browse & manage master layouts</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/active">
+                        <div class="fw-semibold">Active Templates</div>
+                        <small class="text-muted">Currently live in production</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/drafts">
+                        <div class="fw-semibold">Drafts & Review</div>
+                        <small class="text-muted">Pending approval & staging</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 2: Data & Schemas -->
+                <div class="col-12 col-md-4 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Data & Schemas</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/fields">
+                        <div class="fw-semibold">Field Definitions</div>
+                        <small class="text-muted">Custom attributes & validation</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/import-export">
+                        <div class="fw-semibold">Import / Export</div>
+                        <small class="text-muted">Bulk JSON, CSV & XML tools</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/templates/versions">
+                        <div class="fw-semibold">Version History</div>
+                        <small class="text-muted">Snapshots & rollback logs</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 3: Integrations -->
+                <div class="col-12 col-md-4 col-lg-3">
+                  <h6 class="text-uppercase text-muted fw-bold small mb-2">Linked Modules</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/clarity">
+                        <div class="fw-semibold">Clarity Insights</div>
+                        <small class="text-muted">Template engagement & heatmaps</small>
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/azure">
+                        <div class="fw-semibold">Azure Sync</div>
+                        <small class="text-muted">Cloud storage & blob bindings</small>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item rounded px-2 py-1" href="#/admin/pricing">
+                        <div class="fw-semibold">Pricing Tiers</div>
+                        <small class="text-muted">Plan entitlements per template</small>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Column 4: Highlight / Quick Action Card -->
+                <div class="col-12 col-lg-3">
+                  <div class="card bg-light border-0 h-100">
+                    <div class="card-body d-flex flex-column justify-content-between p-3">
+                      <div>
+                        <span class="badge bg-primary-subtle text-primary mb-2">Quick Action</span>
+                        <h6 class="fw-bold mb-1">Create New Template</h6>
+                        <p class="small text-muted mb-3">
+                          Start from a blank schema or clone an existing production template.
+                        </p>
+                      </div>
+                      <a href="#/admin/templates/new" class="btn btn-primary btn-sm w-100">
+                        + New Template
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Platform
+          </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLinkActive="active" routerLink="services-catalog">Services Catalog</a></li>
-            <li><a class="dropdown-item" routerLinkActive="active" routerLink=".">Another action</a></li>
+            <li>
+              <a class="dropdown-item" href="https://clarity.microsoft.com/" target="_blank">Clarity</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="https://portal.azure.com" target="_blank">Azure</a>
+            <li>
+            <li>
+              <a class="dropdown-item" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/services/') }" href="https://azure.microsoft.com/en-us/services/" target="_blank">Features</a>
+            </li>
+            <li>
+              <a class="dropdown-item" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/pricing/') }" href="https://azure.microsoft.com/en-us/pricing/" target="_blank">Pricing</a>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item" routerLinkActive="active" routerLink=".">Something else here</a></li>
           </ul>
         </li>
-        <li class="nav-item d-none">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-
 
       </ul>
-      <ng-container [ngTemplateOutlet]="helpNavbar"></ng-container>
 
-      <form class="d-flex" role="search">
+
+      <!-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> -->
+
       <ul class="navbar-nav  mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" (click)="logout()" href="#">Logout</a>
@@ -52,20 +417,3 @@
     </div>
   </div>
 </nav>
-
-<ng-template #helpNavbar>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://clarity.microsoft.com/') }" href="https://clarity.microsoft.com/" target="_blank">Clarity</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://portal.azure.com') }" aria-current="page" href="https://portal.azure.com" target="_blank">Azure</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/services/') }" href="https://azure.microsoft.com/en-us/services/" target="_blank">Features</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [ngClass]="{ 'active' : isActive('https://azure.microsoft.com/en-us/pricing/') }" href="https://azure.microsoft.com/en-us/pricing/" target="_blank">Pricing</a>
-    </li>
-  </ul>
-</ng-template>
