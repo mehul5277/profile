@@ -1,0 +1,491 @@
+@if(false) {
+<!-- RESPONSIVE SOLUTIONS MEGA MENU (VERTICAL NAV + TABS) -->
+<li class="nav-item dropdown position-static">
+    <a class="nav-link dropdown-toggle fw-medium" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        VERTICAL NAV + TABS
+    </a>
+
+    <div class="dropdown-menu jixo-mega-menu jixo-tab-mega w-100 mt-0 border-0 shadow-lg rounded-0 p-2 p-sm-3 p-lg-4">
+        <div class="container-fluid px-1 px-sm-2">
+            <div class="row g-2 g-md-3 g-lg-4 align-items-stretch">
+
+                <!-- Category Tabs: Horizontal scroll bar on small screens, vertical rail on md+ -->
+                <div class="col-12 col-md-4 col-lg-3 border-bottom border-md-bottom-0 border-md-end pb-2 pb-md-0 pe-md-3">
+                    <div class="text-uppercase text-muted fw-bold small mb-2 px-1 d-none d-md-block">Categories</div>
+                    <div class="nav flex-row flex-md-column nav-pills jixo-v-pills gap-1 flex-nowrap overflow-x-auto pb-1 pb-md-0" id="jixoSolutionsTab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active d-inline-flex align-items-center gap-2 text-start text-nowrap flex-shrink-0 py-1 py-md-2 px-2 px-md-3" id="tab-ai-commerce" data-bs-toggle="pill" data-bs-target="#pane-ai-commerce" type="button" role="tab" aria-controls="pane-ai-commerce" aria-selected="true">
+                            <span class="material-symbols-outlined jixo-item-icon">memory</span>
+                            <span class="fw-semibold small">AI &amp; Commerce</span>
+                        </button>
+
+                        <button class="nav-link d-inline-flex align-items-center gap-2 text-start text-nowrap flex-shrink-0 py-1 py-md-2 px-2 px-md-3" id="tab-operations-agency" data-bs-toggle="pill" data-bs-target="#pane-operations-agency" type="button" role="tab" aria-controls="pane-operations-agency" aria-selected="false">
+                            <span class="material-symbols-outlined jixo-item-icon">apartment</span>
+                            <span class="fw-semibold small">Operations &amp; Agency</span>
+                        </button>
+
+                        <button class="nav-link d-inline-flex align-items-center gap-2 text-start text-nowrap flex-shrink-0 py-1 py-md-2 px-2 px-md-3" id="tab-docs-branding" data-bs-toggle="pill" data-bs-target="#pane-docs-branding" type="button" role="tab" aria-controls="pane-docs-branding" aria-selected="false">
+                            <span class="material-symbols-outlined jixo-item-icon">document_share</span>
+                            <span class="fw-semibold small">Docs &amp; Branding</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tab Content Panes -->
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="tab-content h-100" id="jixoSolutionsTabContent">
+
+                        <!-- Pane 1: AI & Commerce -->
+                        <div class="tab-pane fade show active" id="pane-ai-commerce" role="tabpanel" aria-labelledby="tab-ai-commerce" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">AI &amp; Commerce</h6>
+                                <span class="badge bg-primary-subtle text-primary">2 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/jixo-ai">
+                                        <span class="material-symbols-outlined jixo-item-icon text-primary">memory</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">JIXO AI</div>
+                                            <small class="text-muted d-none d-sm-block">Autonomous agents &amp; intelligent workflows</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/storefront">
+                                        <span class="material-symbols-outlined jixo-item-icon text-success">storefront</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">Storefront</div>
+                                            <small class="text-muted d-none d-sm-block">Digital commerce &amp; customer portals</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pane 2: Operations & Agency -->
+                        <div class="tab-pane fade" id="pane-operations-agency" role="tabpanel" aria-labelledby="tab-operations-agency" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">Operations &amp; Agency</h6>
+                                <span class="badge bg-info-subtle text-info">3 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/agency">
+                                        <span class="material-symbols-outlined jixo-item-icon text-info">apartment</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">Agency</div>
+                                            <small class="text-muted d-none d-sm-block">Multi-client delivery &amp; team operations</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/trs">
+                                        <span class="material-symbols-outlined jixo-item-icon text-secondary">view_timeline</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">TRS</div>
+                                            <small class="text-muted d-none d-sm-block">Timeline tracking &amp; structured reporting</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/inventory">
+                                        <span class="material-symbols-outlined jixo-item-icon text-warning">document_share</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">Inventory</div>
+                                            <small class="text-muted d-none d-sm-block">Shared asset &amp; stock coordination</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pane 3: Documents & Branding -->
+                        <div class="tab-pane fade" id="pane-docs-branding" role="tabpanel" aria-labelledby="tab-docs-branding" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">Docs &amp; Branding</h6>
+                                <span class="badge bg-success-subtle text-success">2 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/agreement">
+                                        <span class="material-symbols-outlined jixo-item-icon text-primary">document_share</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">Agreement</div>
+                                            <small class="text-muted d-none d-sm-block">Contract sharing &amp; approval flows</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-6">
+                                    <a class="dropdown-item rounded border p-2 p-md-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/stamp-logo">
+                                        <span class="material-symbols-outlined jixo-item-icon text-success">award_star</span>
+                                        <div class="min-w-0">
+                                            <div class="fw-semibold small">Stamp Logo</div>
+                                            <small class="text-muted d-none d-sm-block">Verified brand marks &amp; seal assets</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Suite CTA Footer/Side Card -->
+                <div class="col-12 col-lg-3">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body d-flex flex-column flex-sm-row flex-lg-column justify-content-between align-items-sm-center align-items-lg-stretch gap-2 p-2 p-md-3">
+                            <div class="min-w-0">
+                                <span class="badge bg-primary-subtle text-primary mb-1">Enterprise Suite</span>
+                                <h6 class="fw-bold mb-1 small">Explore All Solutions</h6>
+                                <p class="small text-muted mb-0 mb-lg-3 d-none d-md-block">
+                                    Connect AI automation, commerce, and shared workflows in one stack.
+                                </p>
+                            </div>
+                            <a href="http://localhost:4200/#/solutions" class="btn btn-primary btn-sm text-nowrap flex-shrink-0">
+                                View All Solutions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</li>
+
+<!-- SOLUTIONS MEGA MENU WITH VERTICAL NAV & TABS -->
+<li class="nav-item dropdown position-static">
+    <a class="nav-link dropdown-toggle fw-medium" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        NAV & TABS
+    </a>
+
+    <div class="dropdown-menu jixo-mega-menu jixo-tab-mega w-100 mt-0 border-0 shadow-lg rounded-0 p-3 p-lg-4">
+        <div class="container-fluid px-0 px-lg-2">
+            <div class="row g-3 g-lg-4 align-items-stretch">
+
+                <!-- Left Vertical Nav Pills -->
+                <div class="col-12 col-md-4 col-lg-3 border-bottom border-md-bottom-0 border-md-end pb-3 pb-md-0 pe-md-3">
+                    <div class="text-uppercase text-muted fw-bold small mb-2 px-2">Categories</div>
+                    <div class="nav flex-row flex-md-column nav-pills jixo-v-pills gap-1 overflow-auto flex-nowrap" id="jixoSolutionsTab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active d-flex align-items-center gap-2 text-start text-nowrap" id="tab-ai-commerce" data-bs-toggle="pill" data-bs-target="#pane-ai-commerce" type="button" role="tab" aria-controls="pane-ai-commerce" aria-selected="true">
+                            <span class="material-symbols-outlined jixo-item-icon">memory</span>
+                            <span class="fw-semibold small">AI &amp; Commerce</span>
+                        </button>
+
+                        <button class="nav-link d-flex align-items-center gap-2 text-start text-nowrap" id="tab-operations-agency" data-bs-toggle="pill" data-bs-target="#pane-operations-agency" type="button" role="tab" aria-controls="pane-operations-agency" aria-selected="false">
+                            <span class="material-symbols-outlined jixo-item-icon">apartment</span>
+                            <span class="fw-semibold small">Operations &amp; Agency</span>
+                        </button>
+
+                        <button class="nav-link d-flex align-items-center gap-2 text-start text-nowrap" id="tab-docs-branding" data-bs-toggle="pill" data-bs-target="#pane-docs-branding" type="button" role="tab" aria-controls="pane-docs-branding" aria-selected="false">
+                            <span class="material-symbols-outlined jixo-item-icon">document_share</span>
+                            <span class="fw-semibold small">Documents &amp; Branding</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Tab Content Panes -->
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="tab-content h-100" id="jixoSolutionsTabContent">
+
+                        <!-- Tab 1: AI & Commerce -->
+                        <div class="tab-pane fade show active" id="pane-ai-commerce" role="tabpanel" aria-labelledby="tab-ai-commerce" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">AI &amp; Commerce</h6>
+                                <span class="badge bg-primary-subtle text-primary">2 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/jixo-ai">
+                                        <span class="material-symbols-outlined jixo-item-icon text-primary">memory</span>
+                                        <div>
+                                            <div class="fw-semibold small">JIXO AI</div>
+                                            <small class="text-muted d-block">Autonomous agents &amp; intelligent workflows</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/storefront">
+                                        <span class="material-symbols-outlined jixo-item-icon text-success">storefront</span>
+                                        <div>
+                                            <div class="fw-semibold small">Storefront</div>
+                                            <small class="text-muted d-block">Digital commerce &amp; customer portals</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Operations & Agency -->
+                        <div class="tab-pane fade" id="pane-operations-agency" role="tabpanel" aria-labelledby="tab-operations-agency" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">Operations &amp; Agency</h6>
+                                <span class="badge bg-info-subtle text-info">3 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/agency">
+                                        <span class="material-symbols-outlined jixo-item-icon text-info">apartment</span>
+                                        <div>
+                                            <div class="fw-semibold small">Agency</div>
+                                            <small class="text-muted d-block">Multi-client delivery &amp; team operations</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/trs">
+                                        <span class="material-symbols-outlined jixo-item-icon text-secondary">view_timeline</span>
+                                        <div>
+                                            <div class="fw-semibold small">TRS</div>
+                                            <small class="text-muted d-block">Timeline tracking &amp; structured reporting</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/inventory">
+                                        <span class="material-symbols-outlined jixo-item-icon text-warning">document_share</span>
+                                        <div>
+                                            <div class="fw-semibold small">Inventory</div>
+                                            <small class="text-muted d-block">Shared asset &amp; stock coordination</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Documents & Branding -->
+                        <div class="tab-pane fade" id="pane-docs-branding" role="tabpanel" aria-labelledby="tab-docs-branding" tabindex="0">
+                            <div class="d-flex justify-content-between align-items-center mb-2 px-1">
+                                <h6 class="text-uppercase text-muted fw-bold small mb-0">Documents &amp; Branding</h6>
+                                <span class="badge bg-success-subtle text-success">2 Solutions</span>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/agreement">
+                                        <span class="material-symbols-outlined jixo-item-icon text-primary">document_share</span>
+                                        <div>
+                                            <div class="fw-semibold small">Agreement</div>
+                                            <small class="text-muted d-block">Contract sharing &amp; approval flows</small>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <a class="dropdown-item rounded border p-3 h-100 d-flex align-items-start gap-2 text-wrap" href="http://localhost:4200/#/solutions/stamp-logo">
+                                        <span class="material-symbols-outlined jixo-item-icon text-success">award_star</span>
+                                        <div>
+                                            <div class="fw-semibold small">Stamp Logo</div>
+                                            <small class="text-muted d-block">Verified brand marks &amp; seal assets</small>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Highlight / Suite Card -->
+                <div class="col-12 col-lg-3">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <span class="badge bg-primary-subtle text-primary mb-2">Enterprise Suite</span>
+                                <h6 class="fw-bold mb-1">Explore All Solutions</h6>
+                                <p class="small text-muted mb-3">
+                                    Connect AI automation, commerce, and shared workflows in one stack.
+                                </p>
+                            </div>
+                            <a href="http://localhost:4200/#/solutions" class="btn btn-primary btn-sm w-100">
+                                View All Solutions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</li>
+
+<!-- Product Dropdown -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Solutions
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="ai">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">memory</mat-icon>
+                <span>JIXO AI</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="agency">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">apartment</mat-icon>
+                <span>Agency</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="cv">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">storefront</mat-icon>
+                <span>Storefront</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="cv">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">view_timeline</mat-icon>
+                <span>TRS</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="sublease">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">document_share</mat-icon>
+                <span>Agreement</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="inventory">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">document_share</mat-icon>
+                <span>Inventory</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item hstack" routerLinkActive="active" routerLink="stamp">
+                <mat-icon class="md-24 me-2" aria-hidden="false" aria-label="Example home icon">award_star</mat-icon>
+                <span>Stamp Logo</span>
+            </a>
+        </li>
+    </ul>
+</li>
+}
+
+<!-- SOLUTIONS RESPONSIVE MEGA MENU -->
+<li class="nav-item dropdown position-static">
+    <a class="nav-link dropdown-toggle fw-medium" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        Solutions
+    </a>
+
+    <div class="dropdown-menu jixo-mega-menu w-100 mt-0 border-0 shadow-lg rounded-0 py-3 py-lg-4">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="row g-3 g-lg-4">
+
+                <!-- Column 1: AI & Commerce -->
+                <div class="col-6 col-lg-3">
+                    <h6 class="text-uppercase text-muted fw-bold small mb-2">AI & Commerce</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1">
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/jixo-ai">
+                                <span class="material-symbols-outlined jixo-item-icon text-primary">memory</span>
+                                <div>
+                                    <div class="fw-semibold small">JIXO AI</div>
+                                    <small class="text-muted d-none d-sm-block">Autonomous agents & intelligent workflows</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/storefront">
+                                <span class="material-symbols-outlined jixo-item-icon text-success">storefront</span>
+                                <div>
+                                    <div class="fw-semibold small">Storefront</div>
+                                    <small class="text-muted d-none d-sm-block">Digital commerce & customer portals</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Operations & Agency -->
+                <div class="col-6 col-lg-3">
+                    <h6 class="text-uppercase text-muted fw-bold small mb-2">Operations & Agency</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1">
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/agency">
+                                <span class="material-symbols-outlined jixo-item-icon text-info">apartment</span>
+                                <div>
+                                    <div class="fw-semibold small">Agency</div>
+                                    <small class="text-muted d-none d-sm-block">Multi-client delivery & team operations</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/trs">
+                                <span class="material-symbols-outlined jixo-item-icon text-secondary">view_timeline</span>
+                                <div>
+                                    <div class="fw-semibold small">TRS</div>
+                                    <small class="text-muted d-none d-sm-block">Timeline tracking & structured reporting</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/inventory">
+                                <span class="material-symbols-outlined jixo-item-icon text-warning">document_share</span>
+                                <div>
+                                    <div class="fw-semibold small">Inventory</div>
+                                    <small class="text-muted d-none d-sm-block">Shared asset & stock coordination</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Docs & Brand Assets -->
+                <div class="col-6 col-lg-3">
+                    <h6 class="text-uppercase text-muted fw-bold small mb-2">Documents & Branding</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-1">
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/agreement">
+                                <span class="material-symbols-outlined jixo-item-icon text-primary">document_share</span>
+                                <div>
+                                    <div class="fw-semibold small">Agreement</div>
+                                    <small class="text-muted d-none d-sm-block">Contract sharing & approval flows</small>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item rounded px-2 py-2 d-flex align-items-start gap-2 text-wrap" href="#/solutions/stamp-logo">
+                                <span class="material-symbols-outlined jixo-item-icon text-success">award_star</span>
+                                <div>
+                                    <div class="fw-semibold small">Stamp Logo</div>
+                                    <small class="text-muted d-none d-sm-block">Verified brand marks & seal assets</small>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Highlight / CTA Card -->
+                <div class="col-6 col-lg-3">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body d-flex flex-column justify-content-between p-2 p-lg-3">
+                            <div>
+                                <span class="badge bg-primary-subtle text-primary mb-1 mb-lg-2">Enterprise Suite</span>
+                                <h6 class="fw-bold mb-1 small">Explore All Solutions</h6>
+                                <p class="small text-muted mb-2 mb-lg-3 d-none d-sm-block">
+                                    Connect AI automation, commerce, and shared workflows in one stack.
+                                </p>
+                            </div>
+                            <a href="#/solutions" class="btn btn-primary btn-sm w-100">
+                                View All Solutions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</li>

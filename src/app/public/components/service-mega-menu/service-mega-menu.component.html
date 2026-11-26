@@ -1,0 +1,34 @@
+<li class="nav-item dropdown position-static" (mouseenter)="setOpen(true)" (mouseleave)="setOpen(false)">
+
+    <a class="nav-link dropdown-toggle d-inline-flex align-items-center gap-1" href="javascript:void(0)" role="button" [attr.aria-expanded]="isOpen" (click)="toggle($event)">
+        <span>Services</span>
+    </a>
+
+    <div class="dropdown-menu w-100 border-0 rounded-0 mt-0 service-mega-menu-panel" [class.show]="isOpen">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+                <div class="col" *ngFor="let group of groups">
+                    <div class="service-mega-group-header">
+                        <span class="material-symbols-outlined service-mega-group-symbol" aria-hidden="true">
+                            {{ group.symbol }}
+                        </span>
+                        <h6 class="service-mega-group-title">{{ group.title }}</h6>
+                    </div>
+
+                    <ul class="service-mega-item-list">
+                        <li *ngFor="let item of group.items">
+                            <a [routerLink]="item.route" (click)="close()" class="service-mega-item-link">
+                                <span class="material-symbols-outlined service-mega-arrow-symbol" aria-hidden="true">
+                                    {{ item.symbol || 'start_tab' }}
+                                </span>
+                                <span>{{ item.label }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</li>
